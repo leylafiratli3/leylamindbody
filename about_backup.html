@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Leyla | Body-Wise Healing</title>
+    <meta name="description" content="Learn about Leyla's journey from chronic pain to becoming a mind-body healing practitioner, her credentials, and her promise to guide others to lasting freedom.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'earth': {
+                            50: '#fdf8f3',
+                            100: '#f9e8d8',
+                            200: '#f3d4b8',
+                            300: '#eab894',
+                            400: '#e0966b',
+                            500: '#d67c4a',
+                            600: '#c86a3d',
+                            700: '#a85535',
+                            800: '#864532',
+                            900: '#6f3b2f',
+                        },
+                        'clay': {
+                            50: '#faf6f2',
+                            100: '#f2e8dd',
+                            200: '#e4d1bc',
+                            300: '#d3b595',
+                            400: '#c19a73',
+                            500: '#b0855f',
+                            600: '#a07352',
+                            700: '#855e45',
+                            800: '#6f4e3c',
+                            900: '#5a4133',
+                        },
+                        'sage': {
+                            50: '#f6f7f6',
+                            100: '#e3e7e3',
+                            200: '#c7d0c7',
+                            300: '#a3b1a3',
+                            400: '#7a8c7a',
+                            500: '#5f715f',
+                            600: '#4a5a4a',
+                            700: '#3d483d',
+                            800: '#333c33',
+                            900: '#2b322b',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 1s ease-out',
+                        'slide-in-right': 'slideInRight 1s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Custom Theme CSS -->
+    <link rel="stylesheet" href="themes.css">
+    
+    <style>
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
+        }
+        
+        .text-theme-primary { color: #844b4b !important; }
+        .bg-theme-primary { background-color: #844b4b !important; }
+        
+        .nav-logo {
+            height: 116px !important;
+            width: 291px !important;
+            max-width: 291px !important;
+            min-height: 116px !important;
+            object-fit: contain !important;
+        }
+    </style>
+</head>
+<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
+    <!-- Header -->
+    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-40 bg-gray-100/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" :class="{ 'bg-gray-100/95': mobileMenuOpen }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-center h-32">
+                <!-- Left Navigation -->
+                <nav class="hidden lg:flex space-x-16 absolute left-0">
+                    <a href="index.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#work-together" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Work With Me
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-xl font-medium text-theme-primary transition-colors duration-300 relative group font-display">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-theme-primary"></span>
+                    </a>
+                </nav>
+
+                <!-- Centered Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center justify-center">
+                        <img src="assets/logo.png" alt="Body-Wise Healing Logo" class="nav-logo hover:scale-105 transition-transform duration-300">
+                    </a>
+                </div>
+
+                <!-- Right Navigation -->
+                <nav class="hidden lg:flex space-x-16 absolute right-0">
+                    <a href="philosophy.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Philosophy
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="resources.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button 
+                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    @keydown.escape="mobileMenuOpen = false"
+                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                    x-bind:aria-expanded="mobileMenuOpen"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
+                <div class="py-6 border-b border-clay-200">
+                    <a href="index.html" class="flex justify-center">
+                        <img src="assets/logo.png" alt="Body-Wise Healing Logo" class="h-40 w-auto">
+                    </a>
+                </div>
+                
+                <nav class="py-6 space-y-4">
+                    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
+                    <a href="index.html#work-together" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Work With Me</a>
+                    <a href="about.html" class="block text-lg font-medium text-theme-primary transition-colors duration-300 font-display">About</a>
+                    <a href="philosophy.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Philosophy</a>
+                    <a href="resources.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Resources</a>
+                    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section class="py-24 lg:py-32 bg-gradient-to-br from-earth-50 to-clay-50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-4 items-start">
+                    <!-- Photo Section -->
+                    <div class="animate-slide-in-left">
+                        <div class="space-y-12">
+                            <!-- Photo 1 -->
+                            <div class="relative">
+                                <div class="w-[32rem] h-[24rem] rounded-3xl overflow-hidden shadow-xl border-3 border-white">
+                                    <img src="assets/leylaprofilepic.jpg" alt="Leyla - Mind-Body Healing Practitioner" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -top-4 -right-4 w-12 h-12 bg-theme-primary/20 rounded-full blur-md"></div>
+                            </div>
+                            
+                            <!-- Photo 2 -->
+                            <div class="relative">
+                                <div class="w-[32rem] h-[24rem] rounded-3xl overflow-hidden shadow-xl border-3 border-white">
+                                    <img src="assets/leylayoga.jpg" alt="Leyla practicing yoga" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-sage-300/20 rounded-full blur-md"></div>
+                            </div>
+
+                            <!-- Photo 3 -->
+                            <div class="relative">
+                                <div class="w-[32rem] h-[24rem] rounded-3xl overflow-hidden shadow-xl border-3 border-white">
+                                    <img src="assets/leylainnaturevertical.jpg" alt="Leyla in nature" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -top-4 -left-4 w-12 h-12 bg-earth-300/20 rounded-full blur-md"></div>
+                            </div>
+
+                            <!-- Photo 4 -->
+                            <div class="relative">
+                                <div class="w-[32rem] h-[24rem] rounded-3xl overflow-hidden shadow-xl border-3 border-white">
+                                    <img src="assets/leylaportrait.jpg" alt="Leyla portrait" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute -bottom-4 -right-4 w-12 h-12 bg-clay-300/20 rounded-full blur-md"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Section -->
+                    <div class="animate-slide-in-right">
+                        <div class="space-y-8">
+                            <div>
+                                <h1 class="text-5xl lg:text-6xl font-display font-light text-clay-800 mb-6 tracking-tight">
+                                    About Me
+                                </h1>
+                                <div class="w-20 h-1 bg-theme-primary mb-8"></div>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <p class="text-lg text-clay-600 leading-relaxed">
+                                    I was born in Istanbul, a city defined by chaos, depth, and the meeting of cultures. Growing up there shaped how I move through the world. As a child, I was diagnosed with advanced scoliosis, and for years I lived with the belief that my body was fragile, unreliable, and something to be endured rather than trusted.
+                                </p>
+                                
+                                <p class="text-lg text-clay-600 leading-relaxed">
+                                    At eighteen I moved to Los Angeles, and two years later I began practicing yoga. For the first time, I experienced my body not as a limitation but as a source of strength, adaptability, and change. Teaching yoga became a way for me to share that discovery with others.
+                                </p>
+
+                                <p class="text-lg text-clay-600 leading-relaxed">
+                                    On October 7, 2023 my world view completely shifted. I saw through how colonial systems of oppression and occupation were shaping our world and started protesting for the end of the ongoing genocide in Palestine and the liberation of its people.
+                                </p>
+
+                                <p class="text-lg text-clay-600 leading-relaxed">
+                                    After a year and a half of protesting, in May 2024, my own body broke down in a way I could never have anticipated. After teaching a class, I was suddenly struck with excruciating pain from my lower back down my right leg. What followed was nearly a year of immobility: months of barely being able to get out of bed, unable to walk more than a few minutes, cycling through endless medical treatments, unable to practice the yoga that had once been my anchor.
+                                </p>
+
+                                <p class="text-lg text-clay-600 leading-relaxed">
+                                    Eventually, I made the decision to leave the U.S. and return to Türkiye. I settled in a small village on the Aegean coast, surrounded by family, community, and nature. It was there that I encountered the work of Dr. John Sarno and the field of mind–body medicine, which I began to weave together with my own practices of yoga and breathwork. I read, I journaled, and I allowed myself to turn toward the pain that had been commanding my life, listening for what it had to say. Within two weeks, the pain lifted completely.
+                                </p>
+
+                                <p class="text-lg text-clay-600 leading-relaxed">
+                                    As I healed the pain in my body, I began to notice how many people around me were living in a similar situation. When we are in pain, our world contracts. We lose access to connection, to movement, to hope and to our power. The loneliness of chronic pain can only truly be understood by those who've experienced it. Having found a way through, I carry a responsibility to share what I've learned.
+                                </p>
+
+                                <p class="text-lg text-clay-600 leading-relaxed">
+                                    At the core of all my work is a commitment to easing suffering and contributing to the transformation of the systems that create it. I root my work in what I learn from nature and in the wisdom of indigenous cultures that have long carried practices of collective healing. I am deeply shaped by liberation movements, which show us again and again the strength and resilience of our people. And I hold close the truth that my own awakening, and my personal liberation from colonial ways of thinking, was made possible through the struggle and perseverance of the people of Palestine.
+                                </p>
+
+                                <p class="text-lg text-clay-600 leading-relaxed font-medium">
+                                    If this resonates with you, and you feel I could be a source of support in your path, I invite you to reach out and connect.
+                                </p>
+                                
+                                <div class="text-center mt-8">
+                                    <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-primary group inline-flex items-center" target="_blank" rel="noopener noreferrer">
+                                        <span>Schedule a Call</span>
+                                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials Section -->
+        <section class="py-16 lg:py-20 relative overflow-hidden bg-theme-primary">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-display font-light text-white mb-6 tracking-tight">
+                        Training & Credentials
+                    </h2>
+                    <div class="w-16 h-1 bg-white mx-auto mb-6"></div>
+                    <p class="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+                        This work is deeply intuitive, rooted in my own lived experience and healing journey. Yet I've also had the privilege of studying with many teachers and practitioners whose wisdom continues to shape and inspire me.
+                    </p>
+                </div>
+
+                <!-- Credentials Text -->
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-white/30">
+                        <div class="space-y-3 text-base text-clay-600 leading-relaxed text-center">
+                            <div><strong>Bachelors of Cognitive Science</strong> - University of Southern California</div>
+                            <div><strong>SarnoXSachs Chronic Pain Practitioner Training</strong></div>
+                            <div><strong>Breathwork Training</strong> - Inspire Breathwork with Hannah Kendaru (ongoing)</div>
+                            <div><strong>200 HR Yoga Teacher Training</strong> - Andrew Sealey and Christine Anderson</div>
+                            <div><strong>300 HR Advanced Yoga Teacher Training</strong> - Rasa Yoga with Sianna Sherman</div>
+                            <div><strong>Meditation Teacher Training</strong> - Punnu Wasu and Monk Greg</div>
+                            <div><strong>Yoga Nidra, Mudra and Pranayama Training</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Promise Section -->
+        <section class="py-16 lg:py-20 relative overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="assets/istanbull.jpg" alt="Leyla in nature" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-br from-earth-900/30 via-earth-800/25 to-clay-900/30"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white/85 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-white/40">
+                    <div class="text-center mb-8">
+                        <h2 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-6 tracking-tight">
+                            Resources
+                        </h2>
+                        <div class="w-16 h-1 bg-theme-primary mx-auto mb-6"></div>
+                    </div>
+                    
+                    <div class="max-w-3xl mx-auto space-y-6">
+                        <p class="text-lg text-clay-600 leading-relaxed">
+                            I believe we must make healing tools and resources accessible to everyone. Here you'll find a collection of reading lists, journal prompts,books, and educational materials that have supported my own healing journey and continue to help others find freedom from chronic pain.
+                        </p>
+                        
+                        <p class="text-lg text-clay-600 leading-relaxed">
+                            These resources draw from mind-body medicine, breathwork, yoga and meditation practices. They're are what helped me reconnect with my body's innate wisdom and begin my own healing journey.
+                        </p>
+                        
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <a href="resources.html" class="btn-primary group inline-flex items-center">
+                            <span>Explore Resources</span>
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-clay-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Stay in Touch Section -->
+            <div class="text-center mb-12">
+                <h3 class="font-display font-light text-3xl mb-8">Stay in Touch</h3>
+                <!-- Mailchimp Signup Form -->
+                <div class="flex justify-center">
+                    <div class="w-80">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <div id="mc_embed_signup">
+                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group relative">
+                                        <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent" id="mce-EMAIL" placeholder="Email Address" required>
+                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div id="mce-responses" class="clear mt-4">
+                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
+                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-clay-700 pt-8 text-center">
+                <p class="text-clay-400 mb-4 text-sm">
+                    This work is educational and not a substitute for medical care.
+                </p>
+                <p class="text-clay-400 text-sm">
+                    © 2025 Leyla Firatli. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <!-- Mailchimp Form Validation Script -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array(); 
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+</body>
+</html>

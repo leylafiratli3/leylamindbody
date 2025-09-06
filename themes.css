@@ -1,0 +1,210 @@
+/* Website Theme Based on Logo Colors */
+:root {
+    /* Primary Logo Colors */
+    --color-primary: #844b4b;      /* Deep burgundy/red-brown */
+    --color-secondary: #b48f74;    /* Warm taupe/beige */
+    --color-accent: #d9c7b8;       /* Light cream/beige */
+    
+    /* Extended Color Palette */
+    --color-primary-dark: #6a3d3d;
+    --color-primary-light: #9a5a5a;
+    --color-secondary-dark: #9a7a5f;
+    --color-secondary-light: #c4a088;
+    --color-accent-dark: #c4b3a6;
+    --color-accent-light: #e8ddd3;
+    --color-accent-lighter: #e8e0d6;
+    
+    /* Background Colors */
+    --color-bg-primary: #fefcfb;
+    --color-bg-secondary: #faf8f6;
+    --color-bg-tertiary: #f5f2ef;
+    
+    /* Text Colors */
+    --color-text-primary: #2d1b1b;
+    --color-text-secondary: #4a2f2f;
+    --color-text-muted: #6b4a4a;
+    
+    /* Border Colors */
+    --color-border-primary: #d9c7b8;
+    --color-border-secondary: #b48f74;
+    --color-border-accent: #844b4b;
+}
+
+/* Tailwind Color Overrides */
+.bg-theme-primary { background-color: var(--color-primary); }
+.bg-theme-secondary { background-color: var(--color-secondary); }
+.bg-theme-accent { background-color: var(--color-accent); }
+.bg-theme-primary-dark { background-color: var(--color-primary-dark); }
+.bg-theme-secondary-dark { background-color: var(--color-secondary-dark); }
+.bg-theme-accent-dark { background-color: var(--color-accent-dark); }
+.bg-theme-accent-light { background-color: var(--color-accent-light); }
+.bg-theme-accent-lighter { background-color: var(--color-accent-lighter); }
+
+.text-theme-primary { color: var(--color-primary); }
+.text-theme-secondary { color: var(--color-secondary); }
+.text-theme-accent { color: var(--color-accent); }
+.text-theme-primary-dark { color: var(--color-primary-dark); }
+.text-theme-secondary-dark { color: var(--color-secondary-dark); }
+
+.border-theme-primary { border-color: var(--color-primary); }
+.border-theme-secondary { border-color: var(--color-secondary); }
+.border-theme-accent { border-color: var(--color-accent); }
+
+/* Gradient Classes */
+.bg-gradient-theme {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+}
+
+.bg-gradient-theme-subtle {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+}
+
+/* Hover States */
+.hover\:bg-theme-primary:hover { background-color: var(--color-primary); }
+.hover\:bg-theme-secondary:hover { background-color: var(--color-secondary); }
+.hover\:bg-theme-accent:hover { background-color: var(--color-accent); }
+
+.hover\:text-theme-primary:hover { color: var(--color-primary); }
+.hover\:text-theme-secondary:hover { color: var(--color-secondary); }
+.hover\:text-theme-accent:hover { color: var(--color-accent); }
+
+/* Focus States */
+.focus\:ring-theme-primary:focus { --tw-ring-color: var(--color-primary); }
+.focus\:border-theme-primary:focus { border-color: var(--color-primary); }
+
+/* Custom Component Classes */
+.btn-theme-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: 1px solid var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.btn-theme-primary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+.btn-theme-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+    border: 1px solid var(--color-secondary);
+    transition: all 0.3s ease;
+}
+
+.btn-theme-secondary:hover {
+    background-color: var(--color-secondary-dark);
+    border-color: var(--color-secondary-dark);
+}
+
+.btn-theme-ghost {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.btn-theme-ghost:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Card Styles */
+.card-theme {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(132, 75, 75, 0.1);
+}
+
+/* Navigation Theme */
+.nav-theme {
+    background-color: rgba(217, 199, 184, 0.9);
+    border-bottom: 1px solid var(--color-border-primary);
+}
+
+.nav-link-theme {
+    color: var(--color-text-secondary);
+    transition: color 0.3s ease;
+}
+
+.nav-link-theme:hover {
+    color: var(--color-primary);
+}
+
+/* Hero Section Theme */
+.hero-theme {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+}
+
+/* Section Backgrounds */
+.section-bg-primary { background-color: var(--color-bg-primary); }
+.section-bg-secondary { background-color: var(--color-bg-secondary); }
+.section-bg-tertiary { background-color: var(--color-bg-tertiary); }
+
+/* FAQ Styles */
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-toggle:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.faq-content {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: max-height, opacity;
+    max-height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+.faq-icon {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    transform: rotate(0deg) !important;
+}
+
+/* FAQ hover effects */
+.faq-item:hover {
+    transform: translateY(-2px);
+}
+
+.faq-toggle:hover .faq-icon {
+    transform: scale(1.1);
+}
+
+/* FAQ open state */
+.faq-content.open {
+    opacity: 1 !important;
+    max-height: 500px !important; /* Increased for better text display */
+}
+
+
+/* FAQ question styling */
+.faq-toggle h3 {
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4;
+}
+
+/* FAQ content text styling */
+.faq-content p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* Smooth transitions for all FAQ elements */
+.faq-item * {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
