@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Leyla | Mind-Body Healing w Leyla</title>
+    <title>Hakkımda | Leyla ile Zihin-Beden İyileşmesi</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,7 +100,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
     <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="../themes.css">
     
     <style>
         .btn-primary {
@@ -140,43 +140,49 @@
     <!-- Header -->
     <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-40 bg-gray-100/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" :class="{ 'bg-gray-100/95': mobileMenuOpen }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-center h-32 md:h-32 h-24">
+            <div class="grid grid-cols-3 items-center h-32">
                 <!-- Left Navigation -->
-                <nav class="hidden lg:flex space-x-16 absolute left-0">
+                <nav class="hidden lg:flex space-x-8 justify-end pr-8">
                     <a href="index.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
-                        Home
+                        Ana Sayfa
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="index.html#work-together" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
-                        Work With Me
+                        Benimle Çalış
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="about.html" class="text-xl font-medium text-theme-primary transition-colors duration-300 relative group font-display">
-                        About
+                        Hakkımda
                         <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-theme-primary"></span>
                     </a>
                 </nav>
 
                 <!-- Centered Logo -->
-                <div class="flex-shrink-0">
+                <div class="flex justify-center">
                     <a href="index.html" class="flex items-center justify-center">
-                        <img src="assets/logo.png" alt="Body-Wise Healing Logo" class="nav-logo hover:scale-105 transition-transform duration-300">
+                        <img src="../assets/logo.png" alt="Zihin-Beden İyileşmesi Logo" class="nav-logo hover:scale-105 transition-transform duration-300">
                     </a>
                 </div>
 
                 <!-- Right Navigation -->
-                <nav class="hidden lg:flex space-x-16 absolute right-0">
+                <nav class="hidden lg:flex space-x-8 justify-start pl-8">
                     <a href="philosophy.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
-                        Philosophy
+                        Felsefem
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="resources.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
-                        Resources
+                        Kaynaklar
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="contact.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
-                        Contact
+                        İletişim
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/en/about.html" class="inline-flex items-center px-4 py-2 text-sm font-medium text-clay-600 transition-all duration-300 border border-clay-200 rounded-lg font-display" 
+                       style="background-color: transparent;" 
+                       onmouseover="this.style.backgroundColor='#844b4b'; this.style.color='white'; this.style.borderColor='#844b4b';" 
+                       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#6b4a4a'; this.style.borderColor='#d9c7b8';">
+                        EN
                     </a>
                 </nav>
 
@@ -185,7 +191,7 @@
                     @click="mobileMenuOpen = !mobileMenuOpen"
                     @keydown.escape="mobileMenuOpen = false"
                     class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300"
-                    aria-label="Toggle menu"
+                    aria-label="Menüyü aç/kapat"
                     aria-expanded="false"
                     x-bind:aria-expanded="mobileMenuOpen"
                 >
@@ -199,12 +205,16 @@
             <!-- Mobile Menu -->
             <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
                 <nav class="py-6 space-y-4 px-4">
-                    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
-                    <a href="index.html#work-together" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Work With Me</a>
-                    <a href="about.html" class="block text-lg font-medium text-theme-primary transition-colors duration-300 font-display">About</a>
-                    <a href="philosophy.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Philosophy</a>
-                    <a href="resources.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Resources</a>
-                    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
+                    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Ana Sayfa</a>
+                    <a href="index.html#work-together" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Birlikte Çalışalım</a>
+                    <a href="about.html" class="block text-lg font-medium text-theme-primary transition-colors duration-300 font-display">Hakkımda</a>
+                    <a href="philosophy.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Felsefe</a>
+                    <a href="resources.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Kaynaklar</a>
+                    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">İletişim</a>
+                    <a href="/en/about.html" class="inline-flex items-center px-4 py-2 text-sm font-medium text-clay-600 transition-all duration-300 border border-clay-200 rounded-lg font-display" 
+                       style="background-color: transparent;" 
+                       onmouseover="this.style.backgroundColor='#844b4b'; this.style.color='white'; this.style.borderColor='#844b4b';" 
+                       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#6b4a4a'; this.style.borderColor='#d9c7b8';">EN</a>
                 </nav>
             </div>
         </div>
@@ -221,7 +231,7 @@
                             <!-- Photo 1 -->
                             <div class="relative">
                                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="assets/leylaprofilepic.jpg" alt="Leyla - Mind-Body Healing Practitioner" class="w-full h-full object-cover">
+                                    <img src="../assets/leylaprofilepic.jpg" alt="Leyla - Zihin-Beden İyileşmesi Uygulayıcısı" class="w-full h-full object-cover">
                                 </div>
                                 <div class="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-8 h-8 md:w-12 md:h-12 bg-theme-primary/20 rounded-full blur-md"></div>
                             </div>
@@ -229,7 +239,7 @@
                             <!-- Photo 2 -->
                             <div class="relative">
                                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="assets/leylayoga.jpg" alt="Leyla practicing yoga" class="w-full h-full object-cover">
+                                    <img src="../assets/leylayoga.jpg" alt="Leyla yoga yaparken" class="w-full h-full object-cover">
                                 </div>
                                 <div class="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 w-8 h-8 md:w-12 md:h-12 bg-sage-300/20 rounded-full blur-md"></div>
                             </div>
@@ -237,7 +247,7 @@
                             <!-- Photo 3 -->
                             <div class="relative">
                                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="assets/leylainnaturevertical.jpg" alt="Leyla in nature" class="w-full h-full object-cover">
+                                    <img src="../assets/leylainnaturevertical.jpg" alt="Leyla doğada" class="w-full h-full object-cover">
                                 </div>
                                 <div class="absolute -top-2 -left-2 md:-top-4 md:-left-4 w-8 h-8 md:w-12 md:h-12 bg-earth-300/20 rounded-full blur-md"></div>
                             </div>
@@ -245,7 +255,7 @@
                             <!-- Photo 4 -->
                             <div class="relative">
                                 <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="assets/leylaportrait.jpg" alt="Leyla portrait" class="w-full h-full object-cover">
+                                    <img src="../assets/leylaportrait.jpg" alt="Leyla portresi" class="w-full h-full object-cover">
                                 </div>
                                 <div class="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 w-8 h-8 md:w-12 md:h-12 bg-clay-300/20 rounded-full blur-md"></div>
                             </div>
@@ -257,47 +267,51 @@
                         <div class="space-y-6 md:space-y-8">
                             <div class="text-center lg:text-left">
                                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-light text-clay-800 mb-4 md:mb-6 tracking-tight">
-                                    About Me
+                                    Hakkımda
                                 </h1>
                                 <div class="w-16 md:w-20 h-1 bg-theme-primary mb-6 md:mb-8 mx-auto lg:mx-0"></div>
                             </div>
                             
                             <div class="space-y-4 md:space-y-6">
                                 <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    I was born in Istanbul, a city defined by chaos, depth, and the meeting of cultures. Growing up there shaped how I move through the world. As a child, I was diagnosed with advanced scoliosis, and for years I lived with the belief that my body was fragile, unreliable, and something to be endured rather than trusted.
+                                    İstanbul'un kaosunda doğdum. Orada büyümek, dünyada nasıl hareket ettiğimi şekillendirdi. Çocukken ileri derecede skolyoz teşhisiyle karşılaştım. Yıllarca vücudumun kırılgan ve güvenilmez olduğuna, hayatım boyunca katlanmam gereken bir engel olduğuna inandım.
                                 </p>
-                                
+                                          
                                 <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    At eighteen I moved to Los Angeles, and two years later I began practicing yoga. For the first time, I experienced my body not as a limitation but as a source of strength, adaptability, and change. Teaching yoga became a way for me to share that discovery with others.
-                                </p>
-
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    On October 7, 2023, my world view completely shifted. I saw through how colonial systems of oppression and occupation were shaping our world and started protesting for the end of the ongoing genocide in Palestine and the liberation of its people.
+                                    On sekiz yaşında Los Angeles'a taşındım ve iki yıl içinde yoga yapmaya başladım. İlk kez bedenimi bir güç ve özgürlük kaynağı olarak deneyimledim. Yoga öğretmek, bu keşfi başkalarıyla paylaşmanın bir yolu haline geldi.
                                 </p>
 
                                 <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    After a year and a half of protesting, in May 2024, my body broke down in a way I could never have anticipated. After teaching a class, I was suddenly struck with excruciating pain from my lower back down my right leg. What followed was nearly a year of immobility: months of barely being able to get out of bed, unable to walk more than a few minutes, cycling through endless medical treatments, unable to practice the yoga that had once been my anchor.
+                                    7 Ekim 2023'te dünya görüşüm tamamen değişti. İçinde yaşadığımız kapitalist ve ataerkil sistemlerinin dünyamızı nasıl şekillendirdiğini gördüm ve Filistin'deki devam eden soykırımın sona ermesi ve halkının özgürleşmesi için eylemlere katılmaya başladım.
                                 </p>
 
                                 <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    Eventually, I decided to leave the U.S. and return to Türkiye. I settled in a small village on the Aegean coast, surrounded by family, community, and nature. It was there that I encountered the work of Dr. John Sarno and the field of mind-body medicine, which I began to weave together with my own practices of yoga and breathwork. I read, I journaled, and I allowed myself to turn toward the pain that had been commanding my life, listening for what it had to say. Within two weeks, the pain lifted completely.
+                                    Bir buçuk yılımı eylemlerde geçirdikten sonra, Mayıs 2024'te bedenim hiç beklemediğim bir şekilde çöktü. Bir ders verdikten sonra, aniden belimden sağ bacağıma kadar dayanılmaz bir ağrı hissettim. Bunu neredeyse bir yıl süren hareketsizlik takip etti: aylarca yataktan zar zor çıkabildim, birkaç dakikadan fazla yürüyemedim, sonsuz tıbbi tedaviler döngüsüne girdim, bir zamanlar hayatımın merkezinde olan yogayı yapamadım.
                                 </p>
 
                                 <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    As I healed the pain in my body, I began to notice how many people around me were living in a similar situation. When we are in pain, our world contracts. We lose access to connection, to movement, to hope and to our power. The loneliness of chronic pain can only truly be understood by those who've experienced it. Having found a way through, I carry a responsibility to share what I've learned.
+                                    Sonunda ABD'den ayrılmaya ve Türkiye'ye dönmeye karar verdim. Ailemle ve doğayla çevrili Ege kıyısında küçük bir köye yerleştim. Orada Dr. John Sarno'nun öncüsü olduğu zihi-beden temelli iyleşme yoluyla karşılaştım ve bunu kendi yoga ve nefes çalışması uygulamalarımla harmanlamaya başladım. Okudum, yazdımve hayatımı yöneten ağrıyı dinlemeye karar verdim. İki hafta içinde bir buçuk senedir beni acı içinde tutan ağrı tamamen geçti ve hala geri gelmedi.
                                 </p>
 
                                 <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    At the core of all my work is a commitment to easing suffering and contributing to the transformation of the systems that create it. I root my work in what I learn from nature and in the wisdom of indigenous cultures that have long carried practices of collective healing. I am deeply shaped by liberation movements, which show us again and again the strength and resilience of our people. And I hold close the truth that my own awakening, and my personal liberation from colonial ways of thinking, was made possible through the struggle and perseverance of the people of Palestine.
+                                    Bedenimdeki ağrıyı iyileştirirken, etrafımdaki birçok insanın benzer bir durumda yaşadığını fark etmeye başladım. Ağrı halindeyken dünyamız daralır. Bağlantıya, harekete, umuda ve gücümüze erişimi kaybederiz. Kronik ağrının yalnızlığını sadece bunu deneyimleyenler gerçekten anlayabilir. Bir yol bulduğum için, öğrendiklerimi paylaşma sorumluluğu hissetmeye başladım.
+                                </p>
+
+                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
+                                    Tüm çalışmamın merkezinde acıyı hafifletme ve onu yaratan sistemlerin dönüşümüne katkıda bulunma niyeti var. Çalışmamı doğadan öğrendiklerimden ve uzun süredir kolektif iyileşme uygulamalarını koruyan kadim kültürlerin bilgeliğinden ilham alarak sürdürüyorum.
+                                </p>
+
+                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
+                                    Dünyamıza olan toplumsal dönüşüm ve özgürleşme hareketlerine derin bir bağlantı hissediyorum. Bu hareketler bana insanlığın gücünü ve direncini tekrar tekrar gösteriyor. Kendi uyanışımın, Filistin halkının mücadelesi sayesinde mümkün olduğu gerçeğini kalbimde tutuyorum.
                                 </p>
 
                                 <p class="text-base md:text-lg text-clay-600 leading-relaxed font-medium">
-                                    If this resonates with you, and you feel I could be a source of support in your path, I invite you to reach out and connect.
+                                    Eğer bu sizin içinizde bir şeyler uyandırıyorsa ve yolunuzda bir destek kaynağı olabileceğimi hissediyorsanız, sizi iletişime geçmek çok isterim.
                                 </p>
                                 
                                 <div class="text-center mt-6 md:mt-8">
                                     <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-primary group inline-flex items-center text-sm md:text-base px-4 md:px-6 py-3 md:py-4" target="_blank" rel="noopener noreferrer">
-                                        <span>Schedule a Call</span>
+                                        <span>Görüşme Ayarla</span>
                                         <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                         </svg>
@@ -315,11 +329,11 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-8 md:mb-12">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-4 md:mb-6 tracking-tight">
-                        Training & Credentials
+                        Eğitim ve Sertifikalar
                     </h2>
                     <div class="w-12 md:w-16 h-1 bg-white mx-auto mb-4 md:mb-6"></div>
                     <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed px-4">
-                        This work is deeply intuitive, rooted in my own lived experience and healing journey. Yet I've also had the privilege of studying with many teachers and practitioners whose wisdom continues to shape and inspire me.
+                        Bu çalışma derinden sezgisel ve kendi yaşanmış deneyime bağlı. Beni şekillendirmeye ve ilham vermeye devam eden birçok öğretmen ve uygulayıcıyla çalışma ayrıcalığına sahip oldum ve onların katkıları sayesinde bu çalışmayı sürdürebilmekteyim.
                     </p>
                 </div>
 
@@ -327,13 +341,13 @@
                 <div class="max-w-3xl mx-auto">
                     <div class="bg-white/90 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg border border-white/30">
                         <div class="space-y-2 md:space-y-3 text-sm md:text-base text-clay-600 leading-relaxed text-center">
-                            <div><strong>Bachelors of Cognitive Science</strong> - University of Southern California</div>
-                            <div><strong>SarnoXSachs Chronic Pain Practitioner Training</strong></div>
-                            <div><strong>Breathwork Training</strong> - Inspire Breathwork with Hannah Kendaru (ongoing)</div>
-                            <div><strong>200 HR Yoga Teacher Training</strong> - Andrew Sealey and Christine Anderson</div>
-                            <div><strong>300 HR Advanced Yoga Teacher Training</strong> - Rasa Yoga with Sianna Sherman</div>
-                            <div><strong>Meditation Teacher Training</strong> - Punnu Wasu and Monk Greg</div>
-                            <div><strong>Yoga Nidra, Mudra and Pranayama Training</strong></div>
+                            <div><strong>Cognitive Science Lisansı</strong> - University of Southern California</div>
+                            <div><strong>SarnoXSachs Kronik Ağrı Uygulayıcı Eğitimi</strong></div>
+                            <div><strong>Nefes Çalışması Eğitimi</strong> - Hannah Kendaru ile Inspire Breathwork (devam ediyor)</div>
+                            <div><strong>200 Saat Yoga Eğitmen Eğitimi</strong> - Andrew Sealey ve Christine Anderson</div>
+                            <div><strong>300 Saat İleri Seviye Yoga Eğitmen Eğitimi</strong> - Sianna Sherman ile Rasa Yoga</div>
+                            <div><strong>Meditasyon Eğitmeni Eğitimi</strong> - Punnu Wasu ve Monk Greg</div>
+                            <div><strong>Yoga Nidra, Mudra ve Pranayama Eğitimi</strong></div>
                         </div>
                     </div>
                 </div>
@@ -344,7 +358,7 @@
         <section class="py-12 md:py-16 lg:py-20 relative overflow-hidden">
             <!-- Background Image -->
             <div class="absolute inset-0">
-                <img src="assets/istanbull.jpg" alt="Leyla in nature" class="w-full h-full object-cover">
+                <img src="../assets/istanbull.jpg" alt="Leyla doğada" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-br from-earth-900/30 via-earth-800/25 to-clay-900/30"></div>
             </div>
             
@@ -352,25 +366,25 @@
                 <div class="bg-white/85 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg border border-white/40">
                     <div class="text-center mb-6 md:mb-8">
                         <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-light text-clay-800 mb-4 md:mb-6 tracking-tight">
-                            Resources
+                            Kaynaklar
                         </h2>
                         <div class="w-12 md:w-16 h-1 bg-theme-primary mx-auto mb-4 md:mb-6"></div>
                     </div>
                     
                     <div class="max-w-3xl mx-auto space-y-4 md:space-y-6">
                         <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                            I believe we must make healing tools and resources accessible to everyone. Here you'll find a collection of reading lists, journal prompts,books, and educational materials that have supported my own healing journey and continue to help others find freedom from chronic pain.
+                            İyileşme araçlarını ve kaynaklarını herkese erişilebilir kılmamız gerektiğine inanıyorum. Burada kendi iyileşme yolculuğumu destekleyen ve başkalarının kronik ağrıdan özgürlük bulmasına yardım eden okuma listeleri,yazı çalışmaları, kitaplar ve eğitim materyallerinin bir koleksiyonunu bulacaksınız.
                         </p>
                         
                         <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                            I am committed to constantly updating these resources as I learn and grow. They are what helped me reconnect with my body's innate wisdom and begin my own healing journey.
+                            Bu kaynakları sürekli güncellemeye kararlıyım çünkü her geçen gün öğreniyor ve gelişiyorum. Bunlar vücudumun doğuştan gelen bilgeliğiyle yeniden bağlantı kurmama ve kendi iyileşme yolculuğuma başlamama yardım eden araçlar.
                         </p>
                         
                     </div>
                     
                     <div class="text-center mt-6 md:mt-8">
                         <a href="resources.html" class="btn-primary group inline-flex items-center text-sm md:text-base px-4 md:px-6 py-3 md:py-4">
-                            <span>Explore Resources</span>
+                            <span>Kaynakları Keşfet</span>
                             <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
@@ -387,7 +401,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Stay in Touch Section -->
             <div class="text-center mb-8 md:mb-12">
-                <h3 class="font-display font-light text-2xl md:text-3xl mb-6 md:mb-8">Stay in Touch</h3>
+                <h3 class="font-display font-light text-2xl md:text-3xl mb-6 md:mb-8">İletişimde Kal</h3>
                 <!-- Mailchimp Signup Form -->
                 <div class="flex justify-center">
                     <div class="w-full max-w-sm md:w-80">
@@ -396,7 +410,7 @@
                             <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
                                 <div id="mc_embed_signup_scroll">
                                     <div class="mc-field-group relative">
-                                        <input type="email" value="" name="EMAIL" class="required email w-full px-4 md:px-6 py-3 md:py-4 pr-12 md:pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent text-sm md:text-base" id="mce-EMAIL" placeholder="Email Address" required>
+                                        <input type="email" value="" name="EMAIL" class="required email w-full px-4 md:px-6 py-3 md:py-4 pr-12 md:pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent text-sm md:text-base" id="mce-EMAIL" placeholder="E-posta Adresi" required>
                                         <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-1 md:right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
                                             <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -420,17 +434,17 @@
             <!-- Copyright -->
             <div class="border-t border-clay-700 pt-8 text-center">
                 <p class="text-clay-400 mb-4 text-sm">
-                    This work is educational and not a substitute for medical care.
+                    Bu çalışma eğitici niteliktedir ve tıbbi bakımın yerini tutmaz.
                 </p>
                 <p class="text-clay-400 text-sm">
-                    © 2025 Leyla Firatli. All rights reserved.
+                    © 2025 Leyla Firatli. Tüm hakları saklıdır.
                 </p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
     
     <!-- Mailchimp Form Validation Script -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>

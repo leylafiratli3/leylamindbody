@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Leyla ile Zihin-Beden İyileşmesi</title>
+    <meta name="description" content="Kronik ağrıdan iyileşme yolculuğunuza başlamak için Leyla ile iletişime geçin.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'earth': {
+                            50: '#fdf8f3',
+                            100: '#f9e8d8',
+                            200: '#f3d4b8',
+                            300: '#eab894',
+                            400: '#e0966b',
+                            500: '#d67c4a',
+                            600: '#c86a3d',
+                            700: '#a85535',
+                            800: '#864532',
+                            900: '#6f3b2f',
+                        },
+                        'clay': {
+                            50: '#faf6f2',
+                            100: '#f2e8dd',
+                            200: '#e4d1bc',
+                            300: '#d3b595',
+                            400: '#c19a73',
+                            500: '#b0855f',
+                            600: '#a07352',
+                            700: '#855e45',
+                            800: '#6f4e3c',
+                            900: '#5a4133',
+                        },
+                        'sage': {
+                            50: '#f6f7f6',
+                            100: '#e3e7e3',
+                            200: '#c7d0c7',
+                            300: '#a3b1a3',
+                            400: '#7a8c7a',
+                            500: '#5f715f',
+                            600: '#4a5a4a',
+                            700: '#3d483d',
+                            800: '#333c33',
+                            900: '#2b322b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <style>
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
+        }
+        
+        .text-theme-primary { color: #844b4b !important; }
+        .bg-theme-primary { background-color: #844b4b !important; }
+        
+        .nav-logo {
+            height: 116px !important;
+            width: 291px !important;
+            max-width: 291px !important;
+            min-height: 116px !important;
+            object-fit: contain !important;
+        }
+    </style>
+</head>
+<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
+    <!-- Header -->
+    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-40 bg-gray-100/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" :class="{ 'bg-gray-100/95': mobileMenuOpen }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24 lg:h-32">
+                <!-- Mobile Menu Button -->
+                <button 
+                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    @keydown.escape="mobileMenuOpen = false"
+                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300"
+                    aria-label="Menüyü aç/kapat"
+                    aria-expanded="false"
+                    x-bind:aria-expanded="mobileMenuOpen"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <!-- Left Navigation -->
+                <nav class="hidden lg:flex space-x-8 justify-end pr-8">
+                    <a href="index.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Ana Sayfa
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#work-together" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Benimle Çalış
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Hakkımda
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Centered Logo -->
+                <div class="flex justify-center">
+                    <a href="index.html" class="flex items-center justify-center">
+                        <img src="../assets/logo.png" alt="Zihin-Beden İyileşmesi Logo" class="nav-logo hover:scale-105 transition-transform duration-300">
+                    </a>
+                </div>
+
+                <!-- Right Navigation -->
+                <nav class="hidden lg:flex space-x-8 justify-start pl-8">
+                    <a href="philosophy.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Felsefe
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="resources.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Kaynaklar
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-xl font-medium text-theme-primary transition-colors duration-300 relative group font-display">
+                        İletişim
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-theme-primary"></span>
+                    </a>
+                    <!-- Language Toggle Button -->
+                    <a href="/en/contact.html" class="inline-flex items-center px-4 py-2 text-sm font-medium text-clay-600 transition-all duration-300 border border-clay-200 rounded-lg font-display" 
+                       style="background-color: transparent;" 
+                       onmouseover="this.style.backgroundColor='#844b4b'; this.style.color='white'; this.style.borderColor='#844b4b';" 
+                       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#6b4a4a'; this.style.borderColor='#d9c7b8';">
+                        EN
+                    </a>
+                </nav>
+
+                <!-- Mobile spacer -->
+                <div class="lg:hidden w-10"></div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
+                <nav class="py-6 space-y-4">
+                    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Ana Sayfa</a>
+                    <a href="index.html#work-together" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Birlikte Çalışalım</a>
+                    <a href="about.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Hakkımda</a>
+                    <a href="philosophy.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Felsefe</a>
+                    <a href="resources.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Kaynaklar</a>
+                    <a href="contact.html" class="block text-lg font-medium text-theme-primary transition-colors duration-300 font-display">İletişim</a>
+                    <a href="/en/contact.html" class="inline-flex items-center px-4 py-2 text-sm font-medium text-clay-600 transition-all duration-300 border border-clay-200 rounded-lg font-display" 
+                       style="background-color: transparent;" 
+                       onmouseover="this.style.backgroundColor='#844b4b'; this.style.color='white'; this.style.borderColor='#844b4b';" 
+                       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#6b4a4a'; this.style.borderColor='#d9c7b8';">EN</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Contact Form Section -->
+        <section class="py-24 lg:py-32 relative overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img src="../assets/istanbul.jpg" alt="İstanbul" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-br from-earth-900/20 via-earth-800/15 to-clay-900/20"></div>
+            </div>
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-lg border border-white/30">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl lg:text-4xl font-display font-light text-clay-800 mb-6 tracking-tight">
+                            Bana bir mesaj gönder.
+                        </h2>
+                        <div class="w-20 h-1 bg-theme-primary mx-auto mb-8"></div>
+                    </div>
+
+                    <form class="space-y-8" action="https://formspree.io/f/myzdlzyp" method="POST" id="contact-form">
+                        <input type="hidden" name="_subject" value="Yeni İletişim Formu Gönderimi">
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <label for="name" class="block text-lg font-medium text-clay-700 mb-3">Ad</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-lg font-medium text-clay-700 mb-3">E-posta</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="how-found" class="block text-lg font-medium text-clay-700 mb-3">Beni nasıl buldunuz?</label>
+                            <input type="text" id="how-found" name="how_found" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-lg font-medium text-clay-700 mb-3">Mesaj</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50 resize-none"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn-primary group">
+                                <span>Mesaj Gönder</span>
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-clay-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Stay in Touch Section -->
+            <div class="text-center mb-12">
+                <h3 class="font-display font-light text-3xl mb-8">İletişimde Kalın</h3>
+                <!-- Mailchimp Signup Form -->
+                <div class="flex justify-center">
+                    <div class="w-80">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <div id="mc_embed_signup">
+                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group relative">
+                                        <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent" id="mce-EMAIL" placeholder="E-posta Adresi" required>
+                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div id="mce-responses" class="clear mt-4">
+                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
+                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-clay-700 pt-8 text-center">
+                <p class="text-clay-400 mb-4 text-sm">
+                    Bu çalışma eğitici niteliktedir ve tıbbi bakımın yerini tutmaz.
+                </p>
+                <p class="text-clay-400 text-sm">
+                    © 2025 Leyla Firatli. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    
+    <!-- Mailchimp Form Validation Script -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array(); 
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+    
+    <!-- Handle contact form submission -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                const originalText = submitButton.innerHTML;
+                submitButton.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Gönderiliyor...';
+                submitButton.disabled = true;
+                
+                // Submit form data
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        showMessage('Mesajınız için teşekkürler! Yakında size dönüş yapacağım.', 'success');
+                        form.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                })
+                .catch(error => {
+                    showMessage('Üzgünüm, mesajınızı gönderirken bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                })
+                .finally(() => {
+                    // Reset button
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                });
+            });
+            
+            function showMessage(message, type) {
+                // Remove existing messages
+                const existingMessage = document.querySelector('.form-message');
+                if (existingMessage) {
+                    existingMessage.remove();
+                }
+                
+                // Create new message
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `form-message ${type === 'success' ? 'bg-green-100 border-green-400 text-green-700' : 'bg-red-100 border-red-400 text-red-700'} border px-4 py-3 rounded mb-6`;
+                messageDiv.innerHTML = message;
+                
+                // Insert before form
+                form.parentNode.insertBefore(messageDiv, form);
+                
+                // Auto-remove after 5 seconds
+                setTimeout(() => {
+                    messageDiv.remove();
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
