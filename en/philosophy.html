@@ -176,11 +176,27 @@
         
         /* Navigation Logo */
         .nav-logo {
-            height: 116px !important;
-            width: 291px !important;
-            max-width: 291px !important;
-            min-height: 116px !important;
+            height: 60px !important;
+            width: auto !important;
+            max-width: 200px !important;
+            min-height: 60px !important;
             object-fit: contain !important;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-logo {
+                height: 80px !important;
+                max-width: 250px !important;
+                min-height: 80px !important;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-logo {
+                height: 116px !important;
+                max-width: 291px !important;
+                min-height: 116px !important;
+            }
         }
         
         /* Animations */
@@ -196,6 +212,20 @@
         
         .animate-float { animation: float 6s ease-in-out infinite; }
         .animate-fade-in-up { animation: fadeInUp 0.8s ease-out; }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 640px) {
+            .max-w-6xl { max-width: 100% !important; }
+            .max-w-7xl { max-width: 100% !important; }
+            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .text-5xl { font-size: 2.5rem !important; }
+            .text-6xl { font-size: 3rem !important; }
+            .text-7xl { font-size: 3.5rem !important; }
+        }
     </style>
     
     <!-- JSON-LD Schema -->
@@ -227,6 +257,21 @@
     <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-40 bg-gray-100/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" :class="{ 'bg-gray-100/95': mobileMenuOpen }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24 lg:h-32">
+                <!-- Mobile Menu Button -->
+                <button 
+                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    @keydown.escape="mobileMenuOpen = false"
+                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                    x-bind:aria-expanded="mobileMenuOpen"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
                 <!-- Left Navigation -->
                 <nav class="hidden lg:flex space-x-8 justify-end pr-8">
                     <a href="index.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
@@ -272,20 +317,8 @@
                     </a>
                 </nav>
 
-                <!-- Mobile Menu Button -->
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    @keydown.escape="mobileMenuOpen = false"
-                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300"
-                    aria-label="Toggle menu"
-                    aria-expanded="false"
-                    x-bind:aria-expanded="mobileMenuOpen"
-                >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+                <!-- Mobile spacer -->
+                <div class="lg:hidden w-10"></div>
             </div>
 
             <!-- Mobile Menu -->

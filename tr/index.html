@@ -176,11 +176,27 @@
         
         /* Navigation Logo */
         .nav-logo {
-            height: 116px !important;
-            width: 291px !important;
-            max-width: 291px !important;
-            min-height: 116px !important;
+            height: 60px !important;
+            width: auto !important;
+            max-width: 200px !important;
+            min-height: 60px !important;
             object-fit: contain !important;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-logo {
+                height: 80px !important;
+                max-width: 250px !important;
+                min-height: 80px !important;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-logo {
+                height: 116px !important;
+                max-width: 291px !important;
+                min-height: 116px !important;
+            }
         }
         
         /* Animations */

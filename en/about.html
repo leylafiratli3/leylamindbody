@@ -127,12 +127,42 @@
         .text-theme-primary { color: #844b4b !important; }
         .bg-theme-primary { background-color: #844b4b !important; }
         
+        /* Mobile Responsiveness */
+        @media (max-width: 640px) {
+            .max-w-6xl { max-width: 100% !important; }
+            .max-w-7xl { max-width: 100% !important; }
+            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .text-5xl { font-size: 2.5rem !important; }
+            .text-6xl { font-size: 3rem !important; }
+            .text-7xl { font-size: 3.5rem !important; }
+        }
+        
         .nav-logo {
-            height: 116px !important;
-            width: 291px !important;
-            max-width: 291px !important;
-            min-height: 116px !important;
+            height: 60px !important;
+            width: auto !important;
+            max-width: 200px !important;
+            min-height: 60px !important;
             object-fit: contain !important;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-logo {
+                height: 80px !important;
+                max-width: 250px !important;
+                min-height: 80px !important;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-logo {
+                height: 116px !important;
+                max-width: 291px !important;
+                min-height: 116px !important;
+            }
         }
     </style>
 </head>
