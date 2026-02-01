@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathwork and Somatics | Mind-Body Healing w Leyla</title>
+    <meta name="description" content="Breathwork and somatic sessions with an Inspire Breathwork–trained facilitator. Body-centred, nervous system–informed healing for liberation and embodiment.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Breathwork and Somatics | MindBody Healing w Leyla">
+    <meta property="og:description" content="Breathwork and somatics sessions for nervous system regulation and healing.">
+    <meta property="og:image" content="/assets/og.jpg">
+    <meta property="og:url" content="https://mindbodyhealingwleyla.com/breathwork-somatics.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breathwork and Somatics | MindBody Healing w Leyla">
+    <meta name="twitter:description" content="Breathwork and somatics sessions for nervous system regulation and healing.">
+    <meta name="twitter:image" content="/assets/og.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'earth': {
+                            50: '#fdf8f3',
+                            100: '#f9e8d8',
+                            200: '#f3d4b8',
+                            300: '#eab894',
+                            400: '#e0966b',
+                            500: '#d67c4a',
+                            600: '#c86a3d',
+                            700: '#a85535',
+                            800: '#864532',
+                            900: '#6f3b2f',
+                        },
+                        'clay': {
+                            50: '#faf6f2',
+                            100: '#f2e8dd',
+                            200: '#e4d1bc',
+                            300: '#d3b595',
+                            400: '#c19a73',
+                            500: '#b0855f',
+                            600: '#a07352',
+                            700: '#855e45',
+                            800: '#6f4e3c',
+                            900: '#5a4133',
+                        },
+                        'sage': {
+                            50: '#f6f7f6',
+                            100: '#e3e7e3',
+                            200: '#c7d0c7',
+                            300: '#a3b1a3',
+                            400: '#7a8c7a',
+                            500: '#5f715f',
+                            600: '#4a5a4a',
+                            700: '#3d483d',
+                            800: '#333c33',
+                            900: '#2b322b',
+                        },
+                        'warm': {
+                            50: '#fef7ed',
+                            100: '#fed7aa',
+                            200: '#fdba74',
+                            300: '#fb923c',
+                            400: '#f97316',
+                            500: '#ea580c',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 1s ease-out',
+                        'slide-in-right': 'slideInRight 1s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Inline Styles to Match Main Site -->
+    <style>
+        /* Button Components */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
+        }
+        
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 2px solid #b48f74;
+            color: #4a2f2f;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: rgba(180, 143, 116, 0.05);
+        }
+        
+        .btn-ghost:hover {
+            background: rgba(180, 143, 116, 0.1);
+            border-color: #9a7a5f;
+            color: #2d1b1b;
+            transform: translateY(-1px);
+        }
+        
+        /* Theme Colors */
+        .text-theme-primary { color: #844b4b !important; }
+        .bg-theme-primary { background-color: #844b4b !important; }
+        .bg-theme-accent { background-color: #d9c7b8 !important; }
+        
+        /* Navigation Logo */
+        .nav-logo {
+            height: 60px !important;
+            width: auto !important;
+            max-width: 200px !important;
+            min-height: 60px !important;
+            object-fit: contain !important;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-logo {
+                height: 80px !important;
+                max-width: 250px !important;
+                min-height: 80px !important;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-logo {
+                height: 116px !important;
+                max-width: 291px !important;
+                min-height: 116px !important;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out; }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 640px) {
+            .max-w-6xl { max-width: 100% !important; }
+            .max-w-7xl { max-width: 100% !important; }
+            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .text-5xl { font-size: 2.5rem !important; }
+            .text-6xl { font-size: 3rem !important; }
+            .text-7xl { font-size: 3.5rem !important; }
+        }
+        
+        /* FAQ Styles */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-content.open {
+            max-height: 500px;
+            transition: max-height 0.3s ease-in;
+        }
+        
+        .bg-theme-accent-lighter { background-color: #e8e0d6 !important; }
+    </style>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Breathwork and Somatics | MindBody Healing w Leyla",
+        "description": "Breathwork and somatics sessions for nervous system regulation and healing.",
+        "author": {
+            "@type": "Person",
+            "name": "Leyla"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "MindBody Healing w Leyla"
+        },
+        "url": "https://mindbodyhealingwleyla.com/breathwork-somatics.html"
+    }
+    </script>
+    <style>
+        .nav-book-session-btn { background-color: transparent; border-color: #d9c7b8; }
+        .nav-book-session-btn:hover { background-color: #844b4b !important; color: white !important; border-color: #844b4b !important; }
+    </style>
+</head>
+<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
+    <!-- Skip Link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-theme-primary text-white px-4 py-2 rounded-lg z-50">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 bg-gray-100/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" :class="{ 'bg-gray-100/95': mobileMenuOpen }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24 lg:h-32">
+                <!-- Mobile Menu Button -->
+                <button 
+                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    @keydown.escape="mobileMenuOpen = false"
+                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                    x-bind:aria-expanded="mobileMenuOpen"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <!-- Left Navigation -->
+                <nav class="hidden lg:flex space-x-8 justify-end pr-8 items-center">
+                    <a href="index.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
+                        <a href="index.html#work-together" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display inline-flex items-center">
+                            Work With Me
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div x-show="workWithMeOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute left-0 top-full pt-2 z-50" style="display: none;">
+                            <div class="bg-white rounded-lg shadow-lg border border-clay-100 py-2 min-w-[220px]">
+                                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-lg font-display font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 transition-colors">Chronic Pain Healing</a>
+                                <a href="breathwork-somatics.html" class="block px-4 py-2 text-lg font-display font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 transition-colors">Breathwork and Somatics</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Centered Logo -->
+                <div class="flex justify-center">
+                    <a href="index.html" class="flex items-center justify-center">
+                        <img src="../assets/logo.png" alt="Body-Wise Healing Logo" class="nav-logo hover:scale-105 transition-transform duration-300">
+                    </a>
+                </div>
+
+                <!-- Right Navigation -->
+                <nav class="hidden lg:flex space-x-8 justify-start pl-8 items-center">
+                    <a href="resources.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Resources
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-book-session-btn inline-flex items-center gap-2 px-4 py-2 text-lg font-medium text-clay-600 transition-all duration-300 border rounded-lg font-display">
+                        Book a session
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </nav>
+
+                <!-- Mobile spacer -->
+                <div class="lg:hidden w-10"></div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
+                <nav class="py-6 space-y-4">
+                    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
+                    <div class="space-y-1">
+                        <span class="block text-lg font-medium text-clay-500 font-display">Work With Me</span>
+                        <a href="chronic-pain-healing.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Chronic Pain Healing</a>
+                        <a href="breathwork-somatics.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Breathwork and Somatics</a>
+                    </div>
+                    <a href="about.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">About</a>
+                    <a href="resources.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Resources</a>
+                    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
+                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display bg-theme-primary text-white border-theme-primary hover:opacity-90 transition-opacity duration-300 mt-2">
+                        Book a session
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Page title -->
+        <section class="pt-16 pb-16 lg:pt-20 lg:pb-20 relative overflow-hidden bg-theme-primary">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-5xl lg:text-7xl font-display font-light text-white tracking-tight">
+                        Breathwork and Somatics
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro -->
+        <section class="py-16 lg:py-20 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/akyaka.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+                <div class="absolute inset-0 bg-earth-50/50"></div>
+            </div>
+            <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="animate-fade-in-up bg-white/90 backdrop-blur-sm rounded-3xl border border-clay-100 shadow-lg p-6 lg:p-10">
+                    <p class="text-clay-700 text-lg leading-relaxed font-sans">This is a space to honor your body's innate wisdom and capacity for healing. I offer breathwork and somatic healing sessions designed to help you connect deeply with yourself, create space around all that is moving through you, and cultivate a sense of embodied agency.</p>
+                    <div class="mt-10 pt-8 border-t border-clay-200 text-center">
+                        <p class="text-clay-700 mb-6 text-lg">Have questions or want to learn more?</p>
+                        <a href="contact.html" class="btn-primary inline-flex items-center gap-2">
+                            Ask here
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Approach -->
+        <section class="py-24 lg:py-32 relative overflow-hidden bg-stone-200">
+            <div class="absolute inset-0">
+                <img src="../assets/leylayogares.jpg" alt="" class="w-full h-full object-cover opacity-5" aria-hidden="true">
+                <div class="absolute inset-0 bg-stone-200/95"></div>
+            </div>
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="text-5xl lg:text-7xl font-display font-light text-theme-primary tracking-tight mb-6">My Approach</h2>
+                    <div class="w-20 h-1 bg-theme-primary mx-auto"></div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
+                    <div class="animate-fade-in-up bg-theme-accent-lighter rounded-3xl p-8 lg:p-10 shadow-lg border border-clay-100 hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-clay-800 mb-5">Agency-Centered &amp; Personalized</h3>
+                        <p class="text-clay-600 text-lg leading-relaxed font-sans">Every session is uniquely tailored to you, honoring your individual needs, experiences, and intentions. I believe you are the expert of your own body, and my role is to support you in listening to its wisdom. We move entirely at your pace—there's no rush, no judgment and only gentle guidance as you explore what arises.</p>
+                    </div>
+                    <div class="animate-fade-in-up bg-theme-accent-lighter rounded-3xl p-8 lg:p-10 shadow-lg border border-clay-100 hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-clay-800 mb-5">Trauma-Informed Practice</h3>
+                        <p class="text-clay-600 text-lg leading-relaxed font-sans">Safety is the foundation of all our work together. I create a container where you feel held, respected, and empowered to set boundaries and explore at your own comfort level. Your nervous system guides our journey, and we honor whatever emerges with compassion and curiosity.</p>
+                    </div>
+                    <div class="animate-fade-in-up bg-theme-accent-lighter rounded-3xl p-8 lg:p-10 shadow-lg border border-clay-100 hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-clay-800 mb-5">Body-Led</h3>
+                        <p class="text-clay-600 text-lg leading-relaxed font-sans">Your body holds the story of your experiences, and it also holds the key to your healing. I believe in the profound wisdom of your somatic intelligence—your body's natural ability to regulate, release, and restore balance.</p>
+                    </div>
+                    <div class="animate-fade-in-up bg-theme-accent-lighter rounded-3xl p-8 lg:p-10 shadow-lg border border-clay-100 hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-clay-800 mb-5">Breath as Bridge</h3>
+                        <p class="text-clay-600 text-lg leading-relaxed font-sans">Your breath serves as the bridge between conscious awareness and your autonomic nervous system. While I incorporate various breath patterns and techniques, I find conscious connected breathwork to be a beautiful tool in walking through this bridge and bring this breath into sessions regularly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What to Expect -->
+        <section class="py-24 lg:py-32 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/desert.JPG" alt="" class="w-full h-full object-cover" aria-hidden="true">
+                <div class="absolute inset-0 bg-earth-50/80"></div>
+            </div>
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="text-5xl lg:text-7xl font-display font-light text-clay-800 tracking-tight mb-6">What to Expect</h2>
+                    <div class="w-20 h-1 bg-theme-primary mx-auto"></div>
+                </div>
+                <div class="space-y-8">
+                    <div class="animate-fade-in-up bg-white/90 backdrop-blur-sm rounded-3xl border border-clay-100 shadow-lg p-8 lg:p-10">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-theme-primary mb-5">Somatic Awareness</h3>
+                        <p class="text-clay-700 text-lg leading-relaxed font-sans">We'll gently tune into the subtle sensations in your body—the places where you hold tension, the areas that feel alive with energy, and the spaces that feel nothing. Through mindful awareness, you'll learn to listen to your body's wisdom and respond with kindness.</p>
+                    </div>
+                    <div class="animate-fade-in-up bg-white/90 backdrop-blur-sm rounded-3xl border border-clay-100 shadow-lg p-8 lg:p-10">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-theme-primary mb-5">Breath Connection</h3>
+                        <p class="text-clay-700 text-lg leading-relaxed font-sans mb-6">Your breath is a powerful tool for transformation. We'll explore different breathing techniques that help you:</p>
+                        <ul class="space-y-4 text-clay-700 text-lg font-sans pl-6 list-none">
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Release stored stress and tension</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Access deeper states of relaxation and clarity</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Process emotions and experiences safely</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Cultivate presence and embodiment</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Strengthen your mind-body connection</span></li>
+                        </ul>
+                    </div>
+                    <div class="animate-fade-in-up bg-white/75 backdrop-blur-md rounded-3xl border border-clay-100 shadow-lg px-12 py-8 lg:px-16 lg:py-12">
+                        <p class="text-lg text-clay-700 leading-relaxed">While all sessions incorporate breathwork and somatic awareness, the specific techniques and focus areas evolve based on your unique needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who This Is For -->
+        <section class="py-24 lg:py-32 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/akyaka.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+            </div>
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white/75 backdrop-blur-md rounded-3xl border border-clay-100 shadow-lg px-12 py-8 lg:px-16 lg:py-12 animate-fade-in-up">
+                    <div class="text-center mb-10">
+                        <h2 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-6">
+                            Who This Is For
+                        </h2>
+                        <p class="text-clay-700 text-lg max-w-2xl mx-auto">These sessions are for you if you're ready to:</p>
+                    </div>
+                    <ul class="space-y-6 text-lg text-clay-700 pl-6 text-left max-w-2xl mx-auto">
+                        <li class="flex items-start gap-4">
+                            <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="leading-relaxed">Release intergenerational patterns and ancestral trauma that manifests as chronic tension, anxiety, or emotional dysregulation in your body</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="leading-relaxed">Address the somatic impacts of oppression, colonial violence, and systemic injustice that live in your nervous system and bodily tissues</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="leading-relaxed">Reclaim your embodied sovereignty by learning to listen to your body's wisdom and make choices from a place of authentic safety</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="leading-relaxed">Develop somatic tools for navigating triggers, emotional overwhelm, and stress responses rooted in trauma</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="leading-relaxed">Cultivate nervous system resilience that allows you to stay present and regulated even when facing challenging emotions or situations</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="leading-relaxed">Create space around stored experiences in your body that no longer serve your healing and growth</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            <span class="leading-relaxed">Strengthen your capacity for self-regulation and co-regulation in relationships and community</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Process -->
+        <section class="py-24 lg:py-32 relative overflow-hidden" style="background-color: #6a3d3d;">
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 lg:mb-20">
+                    <h2 class="text-5xl lg:text-7xl font-display font-light text-white tracking-tight mb-6">The Process</h2>
+                    <div class="w-20 h-1 bg-white mx-auto"></div>
+                </div>
+                <div class="space-y-8">
+                    <div class="animate-fade-in-up bg-white/90 backdrop-blur-sm rounded-3xl border border-clay-100 shadow-lg p-8 lg:p-10">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-theme-primary mb-5">Initial Connection</h3>
+                        <p class="text-clay-700 text-lg leading-relaxed font-sans">We begin with a conversation to understand your goals, intentions, and any areas of focus you'd like to explore. This helps me tailor our sessions to your specific needs.</p>
+                    </div>
+                    <div class="animate-fade-in-up bg-white/90 backdrop-blur-sm rounded-3xl border border-clay-100 shadow-lg p-8 lg:p-10">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-theme-primary mb-5">Session Structure</h3>
+                        <p class="text-clay-700 text-lg leading-relaxed font-sans mb-6">Each session typically includes:</p>
+                        <ul class="space-y-4 text-clay-700 text-lg font-sans pl-0 list-none">
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Grounding and centering to establish safety</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Guided exploration of body sensations</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Breath (we might explore the conscious connected breath or other styles, based on what is needed in your specific session)</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Integration and reflection</span></li>
+                            <li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-theme-primary flex-shrink-0 mt-2" aria-hidden="true"></span><span>Practical tools you can use between sessions</span></li>
+                        </ul>
+                    </div>
+                    <div class="animate-fade-in-up bg-white/90 backdrop-blur-sm rounded-3xl border border-clay-100 shadow-lg p-8 lg:p-10">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-theme-primary mb-5">Ongoing Support</h3>
+                        <p class="text-clay-700 text-lg leading-relaxed font-sans">I provide guidance and support between sessions, helping you integrate the work into your daily life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Take the First Step / CTA -->
+        <section class="py-24 lg:py-28 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/yayla.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+                <div class="absolute inset-0 bg-earth-50/70"></div>
+            </div>
+            <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-5xl lg:text-6xl font-display font-light text-clay-800 tracking-tight mb-6">Take the First Step</h2>
+                <div class="w-20 h-1 bg-theme-primary mx-auto mb-8"></div>
+                <p class="font-sans text-clay-600 text-xl leading-relaxed mb-10">If you're ready to explore the profound wisdom of your breath and body, I invite you to reach out for a conversation.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="btn-primary group font-display inline-flex items-center gap-2 !px-8 !py-4 !text-lg">
+                        Book a session
+                        <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="contact.html" class="btn-ghost font-display inline-flex items-center gap-2 !px-8 !py-4 !text-lg">
+                        Contact me
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-clay-900 text-white py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Stay in Touch Section -->
+            <div class="text-center mb-16">
+                <h3 class="font-display font-light text-4xl lg:text-5xl tracking-tight text-white mb-3">Stay in Touch</h3>
+                <p class="font-sans text-clay-300 text-lg tracking-wide mb-10 max-w-md mx-auto">Join the list for occasional notes on healing, embodiment, and freedom from pain.</p>
+                <div class="flex justify-center">
+                    <div class="w-full max-w-md">
+                        <div id="mc_embed_signup">
+                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group relative">
+                                        <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800/80 border border-clay-600 rounded-full text-white placeholder-clay-500 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent font-sans text-base tracking-wide" id="mce-EMAIL" placeholder="Your email" required>
+                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-theme-primary hover:bg-theme-primary/90 rounded-full flex items-center justify-center transition-all duration-300">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div id="mce-responses" class="clear mt-4">
+                                        <div class="response text-white text-sm font-sans" id="mce-error-response" style="display:none"></div>
+                                        <div class="response text-white text-sm font-sans" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-clay-700/80 pt-10 text-center">
+                <p class="text-clay-400 mb-3 text-sm font-sans tracking-wide leading-relaxed">This work is educational and not a substitute for medical care.</p>
+                <p class="text-clay-500 text-sm font-sans tracking-widest uppercase">© 2025 Leyla</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    
+    <!-- Mailchimp Form Validation Script -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array(); 
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+
+</body>
+</html>

@@ -72,6 +72,17 @@
 .focus\:ring-theme-primary:focus { --tw-ring-color: var(--color-primary); }
 .focus\:border-theme-primary:focus { border-color: var(--color-primary); }
 
+/* Nav Book a session button - burgundy on hover (used on all pages) */
+.nav-book-session-btn {
+    background-color: transparent;
+    border-color: #d9c7b8;
+}
+.nav-book-session-btn:hover {
+    background-color: #844b4b !important;
+    color: white !important;
+    border-color: #844b4b !important;
+}
+
 /* Custom Component Classes */
 .btn-theme-primary {
     background-color: var(--color-primary);

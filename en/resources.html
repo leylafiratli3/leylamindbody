@@ -139,7 +139,7 @@
 </head>
 <body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
     <!-- Header -->
-    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-40 bg-gray-100/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" :class="{ 'bg-gray-100/95': mobileMenuOpen }">
+    <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 bg-gray-100/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300" :class="{ 'bg-gray-100/95': mobileMenuOpen }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-24 lg:h-32">
                 <!-- Mobile Menu Button -->
@@ -163,10 +163,19 @@
                         Home
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="index.html#work-together" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
-                        Work With Me
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-                    </a>
+                    <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
+                        <a href="index.html#work-together" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display inline-flex items-center">
+                            Work With Me
+                            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <div x-show="workWithMeOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute left-0 top-full pt-2 z-50" style="display: none;">
+                            <div class="bg-white rounded-lg shadow-lg border border-clay-100 py-2 min-w-[220px]">
+                                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-lg font-display font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 transition-colors">Chronic Pain Healing</a>
+                                <a href="breathwork-somatics.html" class="block px-4 py-2 text-lg font-display font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 transition-colors">Breathwork and Somatics</a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="about.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
                         About
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
@@ -181,24 +190,18 @@
                 </div>
 
                 <!-- Right Navigation -->
-                <nav class="hidden lg:flex space-x-8 justify-start pl-8">
-                    <a href="philosophy.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
-                        Philosophy
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="resources.html" class="text-xl font-medium text-theme-primary transition-colors duration-300 relative group font-display">
+                <nav class="hidden lg:flex space-x-8 justify-start pl-8 items-center">
+                    <a href="resources.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
                         Resources
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-theme-primary"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="contact.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
                         Contact
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="/tr/resources.html" class="inline-flex items-center px-4 py-2 text-sm font-medium text-clay-600 transition-all duration-300 border border-clay-200 rounded-lg font-display" 
-                       style="background-color: transparent;" 
-                       onmouseover="this.style.backgroundColor='#844b4b'; this.style.color='white'; this.style.borderColor='#844b4b';" 
-                       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#6b4a4a'; this.style.borderColor='#d9c7b8';">
-                        TR
+                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-book-session-btn inline-flex items-center gap-2 px-4 py-2 text-lg font-medium text-clay-600 transition-all duration-300 border rounded-lg font-display">
+                        Book a session
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
                 </nav>
 
@@ -210,15 +213,18 @@
             <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
                 <nav class="py-6 space-y-4">
                     <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
-                    <a href="index.html#work-together" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Work With Me</a>
+                    <div class="space-y-1">
+                        <span class="block text-lg font-medium text-clay-500 font-display">Work With Me</span>
+                        <a href="chronic-pain-healing.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Chronic Pain Healing</a>
+                        <a href="breathwork-somatics.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Breathwork and Somatics</a>
+                    </div>
                     <a href="about.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">About</a>
-                    <a href="philosophy.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Philosophy</a>
-                    <a href="resources.html" class="block text-lg font-medium text-theme-primary transition-colors duration-300 font-display">Resources</a>
+                    <a href="resources.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Resources</a>
                     <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
-                    <a href="/tr/resources.html" class="inline-flex items-center px-4 py-2 text-sm font-medium text-clay-600 transition-all duration-300 border border-clay-200 rounded-lg font-display" 
-                       style="background-color: transparent;" 
-                       onmouseover="this.style.backgroundColor='#844b4b'; this.style.color='white'; this.style.borderColor='#844b4b';" 
-                       onmouseout="this.style.backgroundColor='transparent'; this.style.color='#6b4a4a'; this.style.borderColor='#d9c7b8';">TR</a>
+                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display bg-theme-primary text-white border-theme-primary hover:opacity-90 transition-opacity duration-300 mt-2">
+                        Book a session
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
                 </nav>
             </div>
         </div>
