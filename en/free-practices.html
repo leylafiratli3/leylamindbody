@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Mind-Body Healing w Leyla</title>
-    <meta name="description" content="Get in touch with Leyla to begin your healing journey from chronic pain.">
+    <title>Free Practices | Mind-Body Healing w Leyla</title>
+    <meta name="description" content="Free guided breathwork and meditation practices from Leyla. Listen and practice anytime—quick energy shifts, breathwork, and mindfulness.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/favicon.png">
@@ -135,6 +135,13 @@
                 min-height: 116px !important;
             }
         }
+        
+        /* Insight Timer embed wrapper - matches site radius */
+        .practice-embed-wrapper {
+            border-radius: 1rem;
+            overflow: hidden;
+            background: var(--tw-gradient-from, #f6f7f6);
+        }
     </style>
 </head>
 <body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
@@ -191,9 +198,9 @@
 
                 <!-- Right Navigation -->
                 <nav class="hidden lg:flex space-x-8 justify-start pl-8 items-center">
-                    <a href="free-practices.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
+                    <a href="free-practices.html" class="text-xl font-medium text-theme-primary transition-colors duration-300 relative group font-display">
                         Free Practices
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-theme-primary"></span>
                     </a>
                     <a href="contact.html" class="text-xl font-medium nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display">
                         Contact
@@ -219,7 +226,7 @@
                         <a href="breathwork-somatics.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Breathwork and Somatics</a>
                     </div>
                     <a href="about.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">About</a>
-                    <a href="free-practices.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Free Practices</a>
+                    <a href="free-practices.html" class="block text-lg font-medium text-theme-primary transition-colors duration-300 font-display">Free Practices</a>
                     <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
                     <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display bg-theme-primary text-white border-theme-primary hover:opacity-90 transition-opacity duration-300 mt-2">
                         Book a session
@@ -231,57 +238,96 @@
     </header>
 
     <main>
-
-        <!-- Contact Form Section -->
-        <section class="py-24 lg:py-32 relative overflow-hidden">
-            <!-- Background Image -->
-            <div class="absolute inset-0">
-                <img src="../assets/istanbul.jpg" alt="Istanbul" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-br from-earth-900/20 via-earth-800/15 to-clay-900/20"></div>
-            </div>
-            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-lg border border-white/30">
-                    <div class="text-center mb-16">
-                        <h2 class="text-3xl lg:text-4xl font-display font-light text-clay-800 mb-6 tracking-tight">
-                            Send me a note!
-                        </h2>
-                        <div class="w-20 h-1 bg-theme-primary mx-auto mb-8"></div>
-                    </div>
-
-                    <form class="space-y-8" action="https://formspree.io/f/myzdlzyp" method="POST" id="contact-form">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission">
-                        
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <label for="name" class="block text-lg font-medium text-clay-700 mb-3">Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-lg font-medium text-clay-700 mb-3">Email</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="how-found" class="block text-lg font-medium text-clay-700 mb-3">How did you find me?</label>
-                            <input type="text" id="how-found" name="how_found" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-lg font-medium text-clay-700 mb-3">Message</label>
-                            <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50 resize-none"></textarea>
-                        </div>
-                        
-                        <div class="text-center">
-                            <button type="submit" class="btn-primary group">
-                                <span>Send Message</span>
-                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
+        <!-- Hero -->
+        <section class="py-20 lg:py-24 relative overflow-hidden">
+            <div class="w-full px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl lg:text-7xl font-display font-light text-clay-800 mb-6 tracking-tight">
+                        Free Practices
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-clay-600 max-w-3xl mx-auto leading-relaxed">
+                        Practices taken from my Insight Timer page that you can do anytime. Feel free to reach out with any questions you might have after working with these breath patterns.
+                    </p>
                 </div>
+            </div>
+        </section>
+
+        <!-- Practices grid -->
+        <section class="pb-20 lg:pb-28">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <!-- Quick Energy Shifting Breathwork -->
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Quick Energy Shifting Breathwork</h2>
+                    <p class="text-clay-600 mb-4">Guided breathwork to change how you feel in your body when you feel stuck.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Quick Energy Shifting Breathwork | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/quick-energy-shifting-breathwork?created_at=1770129115&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
+                    </div>
+                </article>
+
+                <!-- Quick Clearing Breathwork -->
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Quick Clearing Breathwork</h2>
+                    <p class="text-clay-600 mb-4">A brief guided practice to release tension in the body.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Quick Clearing Breathwork | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/3-minute-breathwork-to-release-stuck-energy?created_at=1770129746&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
+                    </div>
+                </article>
+
+                <!-- Daily Morning Breathwork And Meditation -->
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Daily Morning Breathwork And Meditation</h2>
+                    <p class="text-clay-600 mb-4">Breathwork and meditation to ground and orient yourself at the start of the day.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Daily Morning Breathwork And Meditation | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/daily-morning-breathwork-and-meditation?created_at=1770128032"></iframe>
+                    </div>
+                </article>
+
+                <!-- Breathe To Clear -->
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Breathe To Clear</h2>
+                    <p class="text-clay-600 mb-4">A practice to clear the system and settle the nervous system when you feel scattered.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Breathe To Clear | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/breathe-to-clear?created_at=1770129633&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
+                    </div>
+                </article>
+
+                <!-- Breathe Deeper -->
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Breathe Deeper</h2>
+                    <p class="text-clay-600 mb-4">Guided practice to expand and deepen the breath—useful when your breathing has become shallow or restricted.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Breathe Deeper | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/breathe-deeper?created_at=1770129649&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
+                    </div>
+                </article>
+
+                <!-- Energy Boost Breath -->
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Energy Boost Breath</h2>
+                    <p class="text-clay-600 mb-4">Breathwork to build energy and alertness when you're low or sluggish.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Energy Boost Breath | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/energy-boost-breath?created_at=1770129690&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
+                    </div>
+                </article>
+
+                <!-- Quick Energy Shifting Breath (3 min) -->
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Quick Energy Shifting Breath</h2>
+                    <p class="text-clay-600 mb-4">A brief guided practice for shifting your state when you don't have much time.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Quick Energy Shifting Breath | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/3-minute-state-shift-breathwork?created_at=1770127981"></iframe>
+                    </div>
+                </article>
+
+                <!-- Add more practices below: duplicate the <article> block and replace the heading, subheading, and iframe src with your next Insight Timer embed. -->
+                <!--
+                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
+                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Practice Title</h2>
+                    <p class="text-clay-600 mb-4">Brief description in your voice—clear, no hype.</p>
+                    <div class="practice-embed-wrapper">
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: ..." frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="YOUR_EMBED_URL"></iframe>
+                    </div>
+                </article>
+                -->
             </div>
         </section>
     </main>
@@ -289,13 +335,10 @@
     <!-- Footer -->
     <footer class="bg-clay-900 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stay in Touch Section -->
             <div class="text-center mb-12">
                 <h3 class="font-display font-light text-3xl mb-8">Stay in Touch</h3>
-                <!-- Mailchimp Signup Form -->
                 <div class="flex justify-center">
                     <div class="w-80">
-                        <!-- Begin Mailchimp Signup Form -->
                         <div id="mc_embed_signup">
                             <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
                                 <div id="mc_embed_signup_scroll">
@@ -311,17 +354,13 @@
                                         <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
                                         <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
                                     </div>
-                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
                                 </div>
                             </form>
                         </div>
-                        <!--End mc_embed_signup-->
                     </div>
                 </div>
             </div>
-            
-            <!-- Copyright -->
             <div class="border-t border-clay-700 pt-8 text-center">
                 <p class="text-clay-400 mb-4 text-sm">
                     This work is educational and not a substitute for medical care.
@@ -333,85 +372,16 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../script.js"></script>
-    
-    <!-- Mailchimp Form Validation Script -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
         (function($) {
-            window.fnames = new Array(); 
+            window.fnames = new Array();
             window.ftypes = new Array();
             fnames[0]='EMAIL';
             ftypes[0]='email';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
-    </script>
-    
-    <!-- Handle contact form submission -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contact-form');
-            const submitButton = form.querySelector('button[type="submit"]');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Show loading state
-                const originalText = submitButton.innerHTML;
-                submitButton.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...';
-                submitButton.disabled = true;
-                
-                // Submit form data
-                const formData = new FormData(form);
-                
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        // Show success message
-                        showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-                        form.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                })
-                .catch(error => {
-                    showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
-                })
-                .finally(() => {
-                    // Reset button
-                    submitButton.innerHTML = originalText;
-                    submitButton.disabled = false;
-                });
-            });
-            
-            function showMessage(message, type) {
-                // Remove existing messages
-                const existingMessage = document.querySelector('.form-message');
-                if (existingMessage) {
-                    existingMessage.remove();
-                }
-                
-                // Create new message
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `form-message ${type === 'success' ? 'bg-green-100 border-green-400 text-green-700' : 'bg-red-100 border-red-400 text-red-700'} border px-4 py-3 rounded mb-6`;
-                messageDiv.innerHTML = message;
-                
-                // Insert before form
-                form.parentNode.insertBefore(messageDiv, form);
-                
-                // Auto-remove after 5 seconds
-                setTimeout(() => {
-                    messageDiv.remove();
-                }, 5000);
-            }
-        });
     </script>
 </body>
 </html>
