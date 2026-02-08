@@ -136,11 +136,29 @@
             }
         }
         
-        /* Insight Timer embed wrapper - matches site radius */
+        /* Insight Timer embed wrapper - fixed height so play button / focus doesn't shift the page */
         .practice-embed-wrapper {
             border-radius: 1rem;
             overflow: hidden;
             background: var(--tw-gradient-from, #f6f7f6);
+            height: 250px;
+            flex-shrink: 0;
+        }
+        .practice-embed-wrapper iframe {
+            display: block;
+            height: 250px !important;
+            max-height: 250px;
+            scroll-margin-top: 5rem;
+            scroll-margin-bottom: 2rem;
+        }
+        /* Reduce scroll jump when focus moves into second (or first) iframe */
+        .practices-grid-section {
+            scroll-margin-top: 6rem;
+            overflow-anchor: none;
+        }
+        .practices-grid-section article {
+            scroll-margin-top: 6rem;
+            overflow-anchor: none;
         }
     </style>
 </head>
@@ -253,14 +271,14 @@
         </section>
 
         <!-- Practices grid -->
-        <section class="pb-20 lg:pb-28">
+        <section class="practices-grid-section pb-20 lg:pb-28">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <!-- Daily Morning Breathwork And Meditation -->
                 <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
                     <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Daily Morning Breathwork And Meditation</h2>
                     <p class="text-clay-600 mb-4">Breathwork and meditation to ground and orient yourself at the start of the day.</p>
                     <div class="practice-embed-wrapper">
-                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Daily Morning Breathwork And Meditation | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/daily-morning-breathwork-and-meditation?created_at=1770128032"></iframe>
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Daily Morning Breathwork And Meditation | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" src="https://widgets.insighttimer.com/track/daily-morning-breathwork-and-meditation?created_at=1770128032"></iframe>
                     </div>
                 </article>
 
@@ -269,7 +287,7 @@
                     <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Breathe Deeper</h2>
                     <p class="text-clay-600 mb-4">Guided practice to expand and deepen the breath—useful when your breathing has become shallow or restricted.</p>
                     <div class="practice-embed-wrapper">
-                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Breathe Deeper | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/breathe-deeper?created_at=1770129649&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
+                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Breathe Deeper | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" src="https://widgets.insighttimer.com/track/breathe-deeper?created_at=1770129649&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
                     </div>
                 </article>
 
@@ -337,6 +355,16 @@
             ftypes[0]='email';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
+    </script>
+    <!-- Swallow Insight Timer postMessage so widget updates don't affect the page (no resize = no layout jump on play) -->
+    <script>
+        (function() {
+            var INSIGHT_TIMER_ORIGIN = 'https://widgets.insighttimer.com';
+            window.addEventListener('message', function(event) {
+                if (event.origin !== INSIGHT_TIMER_ORIGIN) return;
+                try { /* accept message, do not resize iframe – keeps layout stable when pressing play */ } catch (e) { /* ignore */ }
+            }, false);
+        })();
     </script>
 </body>
 </html>
