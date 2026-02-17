@@ -306,28 +306,28 @@
 
                 <!-- Nav: compact block — logo, then all links + CTAs with even spacing -->
                 <nav class="hidden lg:flex flex-1 items-center justify-evenly min-w-0 px-6">
-                    <a href="#" class="nav-link font-sans transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Home</a>
+                    <a href="#" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Home</a>
+                    <a href="about.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">About</a>
                     <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
-                        <a href="#work-together" class="nav-link font-sans inline-flex items-center gap-0.5 transition-colors py-1">
+                        <a href="#work-together" class="nav-link font-display inline-flex items-center gap-0.5 transition-colors py-1">
                             Work With Me
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </a>
                         <div x-show="workWithMeOpen" x-transition class="absolute left-0 top-full pt-1 z-50" style="display: none;">
                             <div class="bg-white rounded-md shadow border border-clay-100 py-1.5 min-w-[200px]">
-                                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-[0.9375rem] font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-sans">Chronic Pain Healing</a>
-                                <a href="breathwork-somatics.html" class="block px-4 py-2 text-[0.9375rem] font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-sans">Breathwork and Somatics</a>
+                                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-[0.9375rem] font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display">Freedom from Chronic Pain</a>
+                                <a href="breathwork-somatics.html" class="block px-4 py-2 text-[0.9375rem] font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
                             </div>
                         </div>
                     </div>
-                    <a href="about.html" class="nav-link font-sans transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">About</a>
-                    <a href="free-practices.html" class="nav-link font-sans transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Free Practices</a>
-                    <a href="contact.html" class="nav-link font-sans transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Contact</a>
+                    <a href="free-practices.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Free Practices</a>
+                    <a href="contact.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Contact</a>
                     <div class="flex items-center gap-3 flex-shrink-0">
-                        <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-cta nav-book-session-btn inline-flex items-center gap-1.5 border font-sans transition-colors">
+                        <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-cta nav-book-session-btn inline-flex items-center gap-1.5 border font-display transition-colors">
                             Book a session
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
-                        <a href="/tr/" class="nav-cta nav-lang-btn inline-flex items-center border font-sans transition-colors">Türkçe</a>
+                        <a href="/tr/" class="nav-cta nav-lang-btn inline-flex items-center border font-display transition-colors">Türkçe</a>
                     </div>
                 </nav>
 
@@ -337,20 +337,20 @@
             <!-- Mobile Menu -->
             <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
                 <nav class="py-4 space-y-1">
-                    <a href="#" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-sans">Home</a>
+                    <a href="#" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-display">Home</a>
+                    <a href="about.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-display">About</a>
                     <div class="space-y-0">
-                        <span class="block py-1.5 text-xs font-medium text-clay-500 font-sans uppercase tracking-wider">Work With Me</span>
-                        <a href="chronic-pain-healing.html" class="block py-2 pl-3 text-sm text-clay-600 hover:text-theme-primary font-sans">Chronic Pain Healing</a>
-                        <a href="breathwork-somatics.html" class="block py-2 pl-3 text-sm text-clay-600 hover:text-theme-primary font-sans">Breathwork and Somatics</a>
+                        <span class="block py-1.5 text-xs font-medium text-clay-500 font-display uppercase tracking-wider">Work With Me</span>
+                        <a href="chronic-pain-healing.html" class="block py-2 pl-3 text-sm text-clay-600 hover:text-theme-primary font-display">Freedom from Chronic Pain</a>
+                        <a href="breathwork-somatics.html" class="block py-2 pl-3 text-sm text-clay-600 hover:text-theme-primary font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
                     </div>
-                    <a href="about.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-sans">About</a>
-                    <a href="free-practices.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-sans">Free Practices</a>
-                    <a href="contact.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-sans">Contact</a>
-                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-3 px-3 py-2 text-sm font-medium rounded-md bg-theme-primary text-white font-sans">
+                    <a href="free-practices.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-display">Free Practices</a>
+                    <a href="contact.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-display">Contact</a>
+                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-3 px-3 py-2 text-sm font-medium rounded-md bg-theme-primary text-white font-display">
                         Book a session
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                     </a>
-                    <a href="/tr/" class="inline-flex items-center mt-2 px-3 py-2 text-sm font-medium rounded-md border border-clay-200 text-clay-600 font-sans">Türkçe</a>
+                    <a href="/tr/" class="inline-flex items-center mt-2 px-3 py-2 text-sm font-medium rounded-md border border-clay-200 text-clay-600 font-display">Türkçe</a>
                 </nav>
             </div>
         </div>
@@ -487,12 +487,12 @@
                             </div>
                         </div>
                         
-                        <!-- Breathwork and Somatics -->
+                        <!-- Breathwork and Somatic Awareness -->
                         <div class="group">
                             <div class="bg-clay-50/95 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-clay-200/80 hover:shadow-2xl hover:border-clay-300/60 transition-all duration-300 hover:-translate-y-1.5 h-full flex flex-col">
                                 <div class="text-center mb-6">
                                     <div class="inline-block bg-theme-primary rounded-2xl px-8 py-5 shadow-md border border-clay-300/30">
-                                        <h3 class="text-2xl lg:text-3xl font-display font-light text-white tracking-tight">Breathwork and Somatics</h3>
+                                        <h3 class="text-2xl lg:text-3xl font-display font-light text-white tracking-tight">Breathwork and Somatic Awareness</h3>
                                     </div>
                                 </div>
                                 <p class="text-clay-700 text-xl leading-relaxed font-light text-center flex-grow font-sans">
@@ -542,35 +542,35 @@
                     <!-- Pillar 1 -->
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                         <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Your nervous system is reacting to an unhealthy world</h3>
-                        <p class="text-clay-600 font-sans text-lg leading-relaxed">
+                        <p class="text-clay-600 font-display text-lg leading-relaxed">
                             Chronic pain, anxiety, overwhelm and disconnection are intelligent responses of your body trying to survive during end stage capitalism. There is nothing wrong or broken with you.
                         </p>
                     </div>
                     <!-- Pillar 2 -->
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                         <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Healing comes from listening and understanding</h3>
-                        <p class="text-clay-600 font-sans text-lg leading-relaxed">
+                        <p class="text-clay-600 font-display text-lg leading-relaxed">
                             Lasting freedom comes from listening and understanding the message of our nervous systems. When we listen to what our bodies are trying to tell us, the need for symptoms diminishes.
                         </p>
                     </div>
                     <!-- Pillar 3 -->
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                         <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Empowerment over dependency</h3>
-                        <p class="text-clay-600 font-sans text-lg leading-relaxed">
+                        <p class="text-clay-600 font-display text-lg leading-relaxed">
                             My role is not to make you reliant on me, but be a source of support as you heal yourself. I provide space, guidance, and practices so you can become your own healer. The more people who reclaim their agency, the more we loosen the grip of the systems. I hope after some time of working together, you will no longer need me.
                         </p>
                     </div>
                     <!-- Pillar 4 -->
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                         <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Individual healing enables collective change</h3>
-                        <p class="text-clay-600 font-sans text-lg leading-relaxed">
+                        <p class="text-clay-600 font-display text-lg leading-relaxed">
                             Your personal healing is an act of collective liberation. When we heal individually, we strengthen the collective. When the collective heals, we transform the systems that cause suffering. Your healing matters for the world.
                         </p>
                     </div>
                     <!-- Pillar 5 -->
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                         <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Rooted in love and empathy</h3>
-                        <p class="text-clay-600 font-sans text-lg leading-relaxed">
+                        <p class="text-clay-600 font-display text-lg leading-relaxed">
                             I approach this work with deep love and empathy for all human beings. I meet you where you are without judgment, with the understanding that we are all doing our best in an imperfect system. Your humanity is honored in every session.
                         </p>
                     </div>
