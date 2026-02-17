@@ -357,27 +357,34 @@
     </header>
 
     <main id="main">
-        <!-- Hero Section: Single yayla background, text overlay -->
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <img src="../assets/yayla.jpg" alt="Yayla landscape" class="absolute inset-0 w-full h-full object-cover object-center">
-            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div class="animate-fade-in-up text-center bg-earth-50/70 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-earth-200/30">
-                    <h1 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-6 tracking-tight">
-                        Hi I'm Leyla.
-                    </h1>
-                    <p class="text-xl lg:text-2xl text-clay-600 leading-relaxed font-light mb-8 font-sans">
-                        In a world designed to damage our nervous systems, the anxiety, pain, overwhelm, and disconnection you feel is your body's intelligent response to an unhealthy system. I offer mind body healing sessions rooted in breath and somatics to walk with you as you reclaim your own healing power.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center text-lg lg:text-xl">
-                        <a href="#work-together" class="btn-primary group font-display !px-8 !py-4 !text-xl">
-                            <span>Learn more</span>
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                        <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-ghost group font-display !px-8 !py-4 !text-xl" target="_blank" rel="noopener noreferrer">
-                            <span>Book a session</span>
-                        </a>
+        <!-- Hero Section: split layout (matches TR design) -->
+        <section class="relative min-h-[60vh] lg:min-h-[66vh] overflow-hidden bg-earth-50">
+            <div class="grid lg:grid-cols-5 min-h-[60vh] lg:min-h-[66vh]">
+                <div class="relative lg:col-span-3 min-h-[32vh] lg:min-h-[66vh]">
+                    <img src="../assets/leylaheroo.jpg" alt="Leyla" class="absolute inset-0 w-full h-full object-cover object-left object-top opacity-95">
+                    <div class="absolute inset-0 bg-gradient-to-r from-clay-900/35 via-clay-900/15 to-transparent"></div>
+                </div>
+                <div class="lg:col-span-2 flex items-center bg-stone-200">
+                    <div class="w-full max-w-[40rem] px-6 py-8 sm:px-10 lg:px-12 lg:py-12 animate-fade-in-up">
+                        <h1 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-6 tracking-tight leading-tight text-left">
+                            Hi, I'm Leyla.
+                        </h1>
+                        <p class="text-lg lg:text-xl text-clay-700 leading-relaxed font-light mb-8 font-sans text-left">
+                            In a world designed to damage our nervous systems, the anxiety, pain, overwhelm, and disconnection you feel is your body's intelligent response to an unhealthy system.
+                            <br><br>
+                            I offer mind body healing sessions rooted in somatic awareness and breath to walk with you as you reclaim your own healing power.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 items-start text-lg lg:text-xl">
+                            <a href="#work-together" class="btn-primary group font-display !px-8 !py-4 !text-xl">
+                                <span>Learn more</span>
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                            <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-ghost group font-display !px-8 !py-4 !text-xl" target="_blank" rel="noopener noreferrer">
+                                <span>Book a session</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -386,21 +393,16 @@
         <!-- About Me Section -->
         <section class="py-24 lg:py-32 bg-gradient-to-br from-earth-50 to-clay-50 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-8 lg:gap-24 items-center">
+                <div class="grid lg:grid-cols-5 gap-8 lg:gap-16 items-stretch">
                     <!-- Photo Section -->
-                    <div class="animate-slide-in-left">
-                        <div class="relative">
-                            <!-- Rectangular frame -->
-                            <div class="w-full max-w-md mx-auto h-64 sm:h-80 md:h-96 lg:h-[32rem] rounded-lg overflow-hidden shadow-2xl border-4 border-theme-primary">
-                                <img src="../assets/leylaprofilepic.jpg" alt="Leyla - Mind-Body Healing Practitioner" class="w-full h-full object-cover">
-                            </div>
-                            <!-- Subtle accent -->
-                            <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-theme-accent-lighter/15 rounded-full blur-2xl"></div>
+                    <div class="animate-slide-in-left lg:order-2 lg:col-span-2 self-stretch h-full">
+                        <div class="relative w-full h-full min-h-[32rem] lg:min-h-[36rem] overflow-hidden rounded-2xl lg:rounded-3xl">
+                            <img src="../assets/leylaprofilepic.jpg" alt="Leyla - Mind-Body Healing Practitioner" class="absolute inset-0 w-full h-full object-cover object-center">
                         </div>
                     </div>
                     
                     <!-- Content Section -->
-                    <div class="animate-slide-in-right">
+                    <div class="animate-slide-in-right lg:order-1 lg:col-span-3 flex">
                         <div class="space-y-8">
                             <div>
                                 <h2 class="text-[3.3rem] lg:text-[4.125rem] font-display font-light text-clay-800 mb-6 tracking-tight">

@@ -318,51 +318,47 @@
     </header>
 
     <main id="main">
-        <!-- Hero Section: match EN layout and typography -->
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <img src="../assets/leylaheroo.jpg" alt="Yayla manzarası" class="absolute inset-0 w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-earth-50/40"></div>
-            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div class="animate-fade-in-up text-center bg-earth-50/70 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-earth-200/30">
-                    <h1 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-6 tracking-tight">
-                        Merhaba, Ben Leyla.
-                    </h1>
-                    <p class="text-xl lg:text-2xl text-clay-600 leading-relaxed font-light mb-8 font-sans">
-                        Sinir sistemlerimize zarar verecek şekilde kurgulanmış bir dünyada hissettiğin kaygı, ağrı, tükenmişlik ve kopukluk, bedeninin sağlıksız bir sisteme verdiği akıllıca bir yanıt. Nefes ve somatik temelli zihin-beden iyileşmesi seansları sunuyorum; kendi iyileştirici gücünü geri alırken yanında yürüyorum.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center text-lg lg:text-xl">
-                        <a href="#work-together" class="btn-primary group font-display !px-8 !py-4 !text-xl">
-                            <span>Daha fazla</span>
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                        <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-ghost group font-display !px-8 !py-4 !text-xl" target="_blank" rel="noopener noreferrer">
-                            <span>Seans al</span>
-                        </a>
+        <!-- Hero Section: split layout with shorter, softer image -->
+        <section class="relative min-h-[60vh] lg:min-h-[66vh] overflow-hidden bg-earth-50">
+            <div class="grid lg:grid-cols-5 min-h-[60vh] lg:min-h-[66vh]">
+                <div class="relative lg:col-span-3 min-h-[32vh] lg:min-h-[66vh]">
+                    <img src="../assets/leylaheroo.jpg" alt="Yayla manzarası" class="absolute inset-0 w-full h-full object-cover object-left object-top opacity-95">
+                    <div class="absolute inset-0 bg-gradient-to-r from-clay-900/35 via-clay-900/15 to-transparent"></div>
+                </div>
+                <div class="lg:col-span-2 flex items-center bg-stone-200">
+                    <div class="w-full max-w-[40rem] px-6 py-8 sm:px-10 lg:px-12 lg:py-12 animate-fade-in-up">
+                        <h1 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-6 tracking-tight leading-tight text-left">
+                            Merhaba, Ben Leyla.
+                        </h1>
+                        <p class="text-lg lg:text-xl text-clay-700 leading-relaxed font-light mb-8 font-sans text-left">
+                            Nefes, somatik farkındalık ve kronik ağrı konularında uzmanlaşan bir zihin-beden rehberiyim. Amacım, kendini iyileştirmek için ihtiyacın olan her şeyin zaten içinde olduğunu sana hatırlatmak.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 items-start text-lg lg:text-xl">
+                            <a href="#work-together" class="btn-ghost group font-display !px-8 !py-4 !text-lg lg:!text-xl">
+                                <span>Benimle Çalış</span>
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Me Section -->
+        <!-- About Me Section: text 60% / image 40% like hero -->
         <section class="py-24 lg:py-32 bg-gradient-to-br from-earth-50 to-clay-50 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-8 lg:gap-24 items-center">
-                    <!-- Photo Section -->
-                    <div class="animate-slide-in-left">
-                        <div class="relative">
-                            <!-- Rectangular frame -->
-                            <div class="w-full max-w-md mx-auto h-64 sm:h-80 md:h-96 lg:h-[32rem] rounded-lg overflow-hidden shadow-2xl border-4 border-theme-primary">
-                                <img src="../assets/leylaprofilepic.jpg" alt="Leyla - Zihin-Beden İyileşmesi Uygulayıcısı" class="w-full h-full object-cover">
-                            </div>
-                            <!-- Subtle accent -->
-                            <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-theme-accent-lighter/15 rounded-full blur-2xl"></div>
+                <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
+                    <!-- Photo Section - spans 40% of section (2/5) like hero text column -->
+                    <div class="animate-slide-in-left lg:order-2 lg:col-span-2 self-stretch min-h-[20rem] lg:min-h-0">
+                        <div class="relative w-full h-full min-h-[20rem] lg:min-h-full overflow-hidden rounded-2xl lg:rounded-3xl">
+                            <img src="../assets/leylaprofilepic.jpg" alt="Leyla - Zihin-Beden İyileşmesi Uygulayıcısı" class="absolute inset-0 w-full h-full object-cover object-center">
                         </div>
                     </div>
                     
                     <!-- Content Section - typography matches EN -->
-                    <div class="animate-slide-in-right">
+                    <div class="animate-slide-in-right lg:order-1 lg:col-span-3 flex">
                         <div class="space-y-8">
                             <div>
                                 <h2 class="text-[3.3rem] lg:text-[4.125rem] font-display font-light text-clay-800 mb-6 tracking-tight">
@@ -371,19 +367,20 @@
                                 <div class="w-20 h-1 bg-theme-primary mb-8"></div>
                             </div>
                             
-                            <div class="space-y-6 font-sans">
-                                <p class="text-[1.375rem] text-clay-600 leading-relaxed font-light">
-                                    Kendi kronik bel ağrısı, kaygı ve panik atak iyileşme yolculuğumda şunu keşfettim: bizi iyileştirebilecek tek kişi kendimiz. Sinir sistemimizin mesajını dinlemeye başladığımızda semptomlar etkisini yitiriyor — kalıcı özgürlük mümkün hale geliyor.
-                                </p>
-                                
-                                <p class="text-xl text-clay-600 leading-relaxed">
-                                    Bu çalışmayı, insanların bu güçle yeniden bağlantı kurmasına yardım etmek ve çoğu zaman bizi yüzüstü bırakan hastane, ilaç ve batılı terapi döngülerine bir alternatif sunmak için yapıyorum.
-                                </p>
-                                
-                                <p class="text-xl text-clay-600 leading-relaxed font-bold">
-                                    Kararlılık, sabır ve güvenle herkesin kendi iyileşmesinin kaynağı olabileceğine inanıyorum. Benim rolüm, nefes çalışması, somatik farkındalık ve zihin-beden anlayışıyla bu dönüşümün gerçekleşmesi için alan, araç ve destek sunmak.
-                                </p>
-                            </div>
+                        <div class="space-y-6 font-sans">
+                            <p class="text-[1.375rem] text-clay-600 leading-relaxed font-light">
+                                Kendi kronik bel ağrısı, kaygı ve panik atak iyileşme yolculuğumda kendimi iyileştirebilecek tek kişinin ben olduğunu farkettim.
+                            </p>
+                            <p class="text-xl text-clay-600 leading-relaxed">
+                                Bedenimizin bizimle iletişimini dinlemeye başladığımızda hem fiziksel hem zihinsel semptomlar etkisini yavaş yavaş kaybediyor. Kalıcı özgürlük o zaman mümkün oluyor.
+                            </p>
+                            <p class="text-xl text-clay-600 leading-relaxed">
+                                Bu çalışmayı, insanların bu güçle yeniden bağlantı kurmasına yardımcı olmak ve çoğu zaman bizi yüzüstü bırakan hastane, ilaç ve Batı merkezli terapi döngülerine bir alternatif oluşturmak için sunuyorum.
+                            </p>
+                            <p class="text-xl text-clay-600 leading-relaxed">
+                                Kararlılık, sabır ve güvenle herkesin kendi iyileşmesinin kaynağı olabileceğine inanıyorum. Benim rolüm; nefes çalışması, somatik farkındalık ve zihin-beden yaklaşımıyla bu sürecin gerçekleşmesi için destekleyici bir alan oluşturmak.
+                            </p>
+                        </div>
                             
                             <div class="pt-4">
                                 <a href="about.html" class="btn-primary group inline-flex items-center">
@@ -411,7 +408,7 @@
                 <div class="animate-fade-in-up">
                     <!-- Quote Text -->
                     <blockquote class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-8 italic leading-relaxed">
-                        Bu yolda, iyileşme vücudun zekasına güvenmekten ve onun doğal şifa gücünü kullanabilmesi için ihtiyaç duyduğu alanı, farkındalığı ve şefkati ona vermek ile başlar.
+                        İyileşme, bedenin doğal bilgeliğine güvenmekle başlar. Ona ihtiyaç duyduğu alanı, farkındalığı ve şefkati verdiğimizde şifa süreci kendiliğinden açılır.
                     </blockquote>
                 </div>
             </div>
@@ -472,12 +469,9 @@
                     </div>
                     
                     <div class="text-center">
-                        <a href="https://calendly.com/leylafiratli/introduction-call" class="inline-flex items-center font-display bg-clay-600 text-white px-10 py-4 rounded-xl font-medium text-xl hover:bg-clay-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5" target="_blank" rel="noopener noreferrer">
-                            Tanışma Görüşmeni Ayarla
-                            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
+                        <p class="text-white/95 font-sans text-lg leading-relaxed max-w-2xl mx-auto">
+                            Seanslarla ilgili bilgi almak için, <a href="mailto:leylafiratli3@gmail.com" class="text-white underline hover:no-underline">leylafiratli3@gmail.com</a> email adresinden veya <a href="contact.html" class="text-white underline hover:no-underline">iletişim formundan</a> benimle iletişime geçebilirsin.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -492,47 +486,44 @@
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-10">
                     <h2 class="text-6xl lg:text-7xl font-display font-light text-white mb-4 drop-shadow-sm">
-                        Çalışmamın Temeli
+                        Yaklaşımımın Temelleri
                     </h2>
                     <p class="text-white/95 text-lg font-sans font-light leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
-                        Kendi iyileşme yolculuğumdan ve dünyanın bedenlerimizi nasıl etkilediğine dair anlayışımdan doğan bu temel ilkeler çalışmama rehberlik ediyor.
+                        Kendi iyileşme yolculuğumdan ve yaşadığımız dünyanın bedenlerimizi nasıl etkilediğine dair anlayışımdan doğan bu ilkeler, çalışmama rehberlik ediyor.
                     </p>
                 </div>
                 <div class="flex flex-col gap-4 max-w-5xl mx-auto">
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
                         <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Sinir sistemin sağlıksız bir dünyaya tepki veriyor</h3>
                         <p class="text-clay-600 font-sans text-lg leading-relaxed">
-                            Kronik ağrı, kaygı, tükenmişlik ve kopukluk, kapitalizmin son aşamasında hayatta kalmaya çalışan bedeninin akıllıca verdiği yanıtlar. Seninle ilgili yanlış veya kırık bir şey yok.
+                            Kronik ağrı, kaygı, tükenmişlik ve kopukluk; bu dünyada hayatta kalmaya çalışan bedenin yarattığı güçlü bir koruma sistemidir. Eğer bu durumları yaşıyorsan, bu çok normal ve seninle ilgili yanlış ya da kırık bir şey yok.
                         </p>
                     </div>
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">İyileşme dinlemek ve anlamaktan gelir</h3>
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">İyileşme dinlemek ve anlamakla başlar</h3>
                         <p class="text-clay-600 font-sans text-lg leading-relaxed">
-                            Kalıcı özgürlük, sinir sistemimizin mesajını dinlemek ve anlamaktan gelir. Bedenlerimizin bize anlatmaya çalıştığına kulak verdiğimizde, semptomlara duyulan ihtiyaç azalır.
+                            Kalıcı özgürlük, sinir sistemimizin mesajını dinleyip anlamakla mümkün olur. Bedenimizin bize anlatmaya çalıştığı şeyi duyduğumuzda, semptomlara duyulan ihtiyaç azalır.
                         </p>
                     </div>
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Bağımlılık değil, güçlenme</h3>
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Kendini sadece sen iyileştirebilirsin</h3>
                         <p class="text-clay-600 font-sans text-lg leading-relaxed">
-                            Rolüm seni bana bağımlı kılmak değil; kendini iyileştirirken yanında bir destek olmak. Alan, rehberlik ve pratikler sunuyorum ki kendi iyileştiricin olabilesin. Ne kadar çok insan kendi gücünü geri alırsa, sistemlerin baskısı o kadar gevşer. Bir süre birlikte çalıştıktan sonra artık bana ihtiyacın kalmamasını umuyorum.
+                            İyileşmek, bir seçimdir ve kendini iyileştirebilecek tek kişi sensin. Benim yapabiliceğim tek şey, bu yolda yanında yürümek ve sana bana iyi gelen pratikleri aktarmak. Bir süre birlikte çalıştıktan sonra artık bana ihtiyaç duymamanı amaçlıyorum.
                         </p>
                     </div>
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Bireysel iyileşme toplumsal dönüşümü mümkün kılar</h3>
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Bireysel iyileşme toplumsal dönüşümü besler</h3>
                         <p class="text-clay-600 font-sans text-lg leading-relaxed">
-                            Kişisel iyileşmen toplumsal özgürleşme eylemidir. Birey olarak iyileştiğimizde topluluğu güçlendiririz; topluluk iyileştiğinde acıya neden olan sistemleri dönüştürürüz. İyileşmen dünya için önemli.
+                            Kişisel iyileşme aynı zamanda toplumsal bir eylemdir. Birey olarak güçlendikçe topluluk güçlenir; topluluk güçlendikçe sistemler zayıflar ve dünya değişmeye başlar. İyileşmen sadece senin için değil.
                         </p>
                     </div>
                     <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Sevgi ve empatiyle köklenmiş</h3>
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Sevgi ve empatiye dayalı</h3>
                         <p class="text-clay-600 font-sans text-lg leading-relaxed">
-                            Bu çalışmaya tüm insanlara derin sevgi ve empatiyle yaklaşıyorum. Olduğun yerde, yargısız karşılıyorum; mükemmel olmayan bir sistemde hepimiz elimizden geleni yaptığımızı bilerek. İnsanlığın her seansında onurlandırılıyor.
+                            Bu çalışmaya derin bir sevgi ve empatiyle yaklaşıyorum. Mükemmel olmayan bir sistemde hepimizin elinden geleni yaptığını bilerek ilerliyoruz. Her seansta insanlığın onurlandırılır.
                         </p>
                     </div>
                 </div>
-                <p class="text-white/95 font-sans text-lg leading-relaxed text-center mt-10 max-w-2xl mx-auto drop-shadow-sm">
-                    Bu ilkeler sunduğum her seansı, her sohbeti ve her pratiği şekillendiriyor.
-                </p>
             </div>
         </section>
 
@@ -545,7 +536,7 @@
                 <div class="animate-fade-in-up">
                     <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-lg border border-white/40">
                         <blockquote class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-0 italic leading-relaxed">
-                            Bedenimizle her yeniden bağlandığımızda, kopukluğumuz üzerinden beslenen sistemlerin baskısı zayıflar. Bu çalışmayı, ağrıyla sınırlanmadığımızda mümkün hale gelen daha geniş özgürleşmeye katkı sunmak için paylaşıyorum.
+                            Bedenimizle her yeniden bağ kurduğumuzda, kopukluğumuzdan beslenen sistemler zayıflar. Bu çalışmayı, özgür ve ağrısız bedenlerimizle yaratabileceğimiz daha sağlıklı dünya düzenlerini hayal ederek paylaşıyorum.
                         </blockquote>
                     </div>
                 </div>
@@ -558,16 +549,15 @@
                 <img src="../assets/yayla.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
                 <div class="absolute inset-0 bg-earth-50/75"></div>
             </div>
-            <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl lg:text-5xl font-display font-light text-clay-800 tracking-tight mb-4">
-                    Soruların mı var, daha fazla mı öğrenmek istiyorsun?
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl lg:text-5xl font-display font-light text-clay-800 tracking-tight mb-4 whitespace-nowrap">
+                    Soruların varsa benimle iletişime geçebilirsin.
                 </h2>
-                <div class="w-16 h-1 bg-theme-primary mx-auto mb-8"></div>
-                <p class="font-sans text-clay-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl mx-auto">
-                    İletişim formundan yaz; sana dönüş yapacağım.
+                <p class="font-sans text-clay-600 text-lg lg:text-xl leading-relaxed mb-10">
+                    Seanslarla ilgili bilgi almak için, leylafiratli3@gmail.com email adresinden veya aşağıdaki formdan benimle iletişime&nbsp;geçebilirsin.
                 </p>
                 <a href="contact.html" class="btn-primary group font-display inline-flex items-center gap-2 !px-8 !py-4 !text-lg">
-                    Buradan yaz
+                    Form
                     <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
@@ -575,11 +565,51 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-clay-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h3 class="font-display font-light text-4xl">İletişimde kal</h3>
-    </div>
-</footer>
+    <footer class="bg-clay-900 text-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Stay in Touch Section -->
+            <div class="text-center mb-8 md:mb-12">
+                <h3 class="font-display font-light text-2xl md:text-3xl mb-6 md:mb-8">İletişimde kal</h3>
+                <!-- Mailchimp Signup Form -->
+                <div class="flex justify-center">
+                    <div class="w-full max-w-sm md:w-80">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <div id="mc_embed_signup">
+                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group relative">
+                                        <input type="email" value="" name="EMAIL" class="required email w-full px-4 md:px-6 py-3 md:py-4 pr-12 md:pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent text-sm md:text-base" id="mce-EMAIL" placeholder="E-posta Adresi" required>
+                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-1 md:right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                                            <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div id="mce-responses" class="clear mt-4">
+                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
+                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-clay-700 pt-8 text-center">
+                <p class="text-clay-400 mb-4 text-sm">
+                    Bu çalışma eğitici niteliktedir ve tıbbi bakımın yerini tutmaz.
+                </p>
+                <p class="text-clay-400 text-sm">
+                    © 2025 Leyla. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="../script.js"></script>
