@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kronik Ağrılardan Özgürleşme Seansları | Leyla ile Zihin-Beden İyileşmesi</title>
+    <meta name="description" content="Kronik ağrıların nedeni bastırılmış duygulardır. Zihin-beden seanslarıyla sinir sistemini iyileştirme.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kronik Ağrılardan Özgürleşme Seansları | Leyla ile Zihin-Beden">
+    <meta property="og:description" content="Kronik ağrıların nedeni bastırılmış duygulardır. Zihin-beden seanslarıyla sinir sistemini iyileştirme.">
+    <meta property="og:image" content="/assets/og.jpg">
+    <meta property="og:url" content="https://mindbodyhealingwleyla.com/chronic-pain-healing.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kronik Ağrılardan Özgürleşme Seansları | Leyla ile Zihin-Beden">
+    <meta name="twitter:description" content="Kronik ağrıların nedeni bastırılmış duygulardır. Zihin-beden seanslarıyla sinir sistemini iyileştirme.">
+    <meta name="twitter:image" content="/assets/og.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'earth': {
+                            50: '#fdf8f3',
+                            100: '#f9e8d8',
+                            200: '#f3d4b8',
+                            300: '#eab894',
+                            400: '#e0966b',
+                            500: '#d67c4a',
+                            600: '#c86a3d',
+                            700: '#a85535',
+                            800: '#864532',
+                            900: '#6f3b2f',
+                        },
+                        'clay': {
+                            50: '#faf6f2',
+                            100: '#f2e8dd',
+                            200: '#e4d1bc',
+                            300: '#d3b595',
+                            400: '#c19a73',
+                            500: '#b0855f',
+                            600: '#a07352',
+                            700: '#855e45',
+                            800: '#6f4e3c',
+                            900: '#5a4133',
+                        },
+                        'sage': {
+                            50: '#f6f7f6',
+                            100: '#e3e7e3',
+                            200: '#c7d0c7',
+                            300: '#a3b1a3',
+                            400: '#7a8c7a',
+                            500: '#5f715f',
+                            600: '#4a5a4a',
+                            700: '#3d483d',
+                            800: '#333c33',
+                            900: '#2b322b',
+                        },
+                        'warm': {
+                            50: '#fef7ed',
+                            100: '#fed7aa',
+                            200: '#fdba74',
+                            300: '#fb923c',
+                            400: '#f97316',
+                            500: '#ea580c',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 1s ease-out',
+                        'slide-in-right': 'slideInRight 1s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Inline Styles to Match Main Site -->
+    <style>
+        /* Button Components */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
+        }
+        
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 2px solid #b48f74;
+            color: #4a2f2f;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: rgba(180, 143, 116, 0.05);
+        }
+        
+        .btn-ghost:hover {
+            background: rgba(180, 143, 116, 0.1);
+            border-color: #9a7a5f;
+            color: #2d1b1b;
+            transform: translateY(-1px);
+        }
+        
+        /* Theme Colors */
+        .text-theme-primary { color: #844b4b !important; }
+        .bg-theme-primary { background-color: #844b4b !important; }
+        .bg-theme-accent { background-color: #d9c7b8 !important; }
+        
+        /* Navigation Logo */
+        .nav-logo {
+            height: 60px !important;
+            width: auto !important;
+            max-width: 200px !important;
+            min-height: 60px !important;
+            object-fit: contain !important;
+        }
+        
+        @media (min-width: 640px) {
+            .nav-logo {
+                height: 80px !important;
+                max-width: 250px !important;
+                min-height: 80px !important;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-logo {
+                height: 116px !important;
+                max-width: 291px !important;
+                min-height: 116px !important;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out; }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 640px) {
+            .max-w-6xl { max-width: 100% !important; }
+            .max-w-7xl { max-width: 100% !important; }
+            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .text-5xl { font-size: 2.5rem !important; }
+            .text-6xl { font-size: 3rem !important; }
+            .text-7xl { font-size: 3.5rem !important; }
+        }
+        
+        /* FAQ Styles */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-content.open {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in;
+        }
+        
+        .bg-theme-accent-lighter { background-color: #e8e0d6 !important; }
+    </style>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Kronik Ağrılardan Özgürleşme Seansları | Leyla ile Zihin-Beden",
+        "description": "Kronik ağrıların nedeni bastırılmış duygulardır. Zihin-beden seanslarıyla sinir sistemini iyileştirme.",
+        "author": {
+            "@type": "Person",
+            "name": "Leyla"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "MindBody Healing w Leyla"
+        },
+        "url": "https://mindbodyhealingwleyla.com/chronic-pain-healing.html"
+    }
+    </script>
+    <style>
+        .nav-book-session-btn { background-color: #844b4b; color: white; border-color: #844b4b; }
+        .nav-book-session-btn:hover { background-color: #6d3a3a !important; color: white !important; border-color: #6d3a3a !important; }
+        .nav-lang-btn { background-color: transparent; border-color: #d9c7b8; color: #5a4133; }
+        .nav-lang-btn:hover { background-color: #f0ebe6; border-color: #c4b5a8; color: #5a4133; }
+        .nav-link { font-size: 1.0625rem; font-weight: 500; letter-spacing: 0.01em; color: #5a4133; }
+        .nav-link:hover { color: #844b4b; }
+        .nav-cta { font-size: 1.0625rem; font-weight: 500; padding: 0.625rem 1.25rem; border-radius: 0.375rem; }
+        @media (min-width: 1024px) { .nav-link { font-size: 1.25rem; } .nav-cta { font-size: 1.125rem; padding: 0.75rem 1.5rem; } }
+        .nav-logo { height: 58px !important; width: auto !important; max-width: 220px !important; min-height: 58px !important; object-fit: contain !important; }
+        @media (min-width: 1024px) { .nav-logo { height: 72px !important; max-width: 280px !important; min-height: 72px !important; } }
+    </style>
+</head>
+<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-theme-primary text-white px-4 py-2 rounded-lg z-50">Ana içeriğe geç</a>
+    <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 border-b border-clay-100 transition-all duration-300" style="background-color: #f5f4f6;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 lg:h-24 w-full gap-4">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" @keydown.escape="mobileMenuOpen = false" class="lg:hidden p-2 -ml-1 rounded hover:bg-clay-100 focus:outline-none focus:ring-2 focus:ring-theme-primary/30" aria-label="Menüyü aç/kapat" x-bind:aria-expanded="mobileMenuOpen">
+                    <svg class="w-5 h-5 text-clay-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path><path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <a href="index.html" class="flex items-center flex-shrink-0"><img src="../assets/leylafiratlilogo.png" alt="Leyla Firatli" class="nav-logo"></a>
+                <nav class="hidden lg:flex flex-1 items-center justify-evenly min-w-0 px-6">
+                    <a href="index.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Anasayfa</a>
+                    <a href="about.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Hakkımda</a>
+                    <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
+                        <a href="index.html#work-together" class="nav-link font-display inline-flex items-center gap-0.5 transition-colors py-1">Benimle Çalış<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a>
+                        <div x-show="workWithMeOpen" x-transition class="absolute left-0 top-full pt-1 z-50" style="display: none;">
+                            <div class="bg-white rounded-md shadow border border-clay-100 py-1.5 min-w-[240px]">
+                                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display">Kronik Ağrılardan Özgürleşme</a>
+                                <a href="breathwork-somatics.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display">Nefes ve Somatik Farkındalık</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="free-practices.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Ücretsiz Pratikler</a>
+                    <a href="contact.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">İletişim</a>
+                </nav>
+                <div class="hidden lg:flex items-center gap-3 flex-shrink-0">
+                    <a href="/en/" class="nav-cta nav-lang-btn inline-flex items-center border font-display transition-colors">EN</a>
+                </div>
+                <div class="lg:hidden flex-1"></div>
+            </div>
+            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
+                <nav class="py-4 space-y-1">
+                    <a href="index.html" class="block py-2.5 text-base font-medium text-clay-600 hover:text-theme-primary font-display">Anasayfa</a>
+                    <a href="about.html" class="block py-2.5 text-base font-medium text-clay-600 hover:text-theme-primary font-display">Hakkımda</a>
+                    <div class="space-y-0">
+                        <span class="block py-1.5 text-sm font-medium text-clay-500 font-display uppercase tracking-wider">Benimle Çalış</span>
+                        <a href="chronic-pain-healing.html" class="block py-2.5 pl-3 text-base text-clay-600 hover:text-theme-primary font-display">Kronik Ağrılardan Özgürleşme</a>
+                        <a href="breathwork-somatics.html" class="block py-2.5 pl-3 text-base text-clay-600 hover:text-theme-primary font-display">Nefes ve Somatik Farkındalık</a>
+                    </div>
+                    <a href="free-practices.html" class="block py-2.5 text-base font-medium text-clay-600 hover:text-theme-primary font-display">Ücretsiz Pratikler</a>
+                    <a href="contact.html" class="block py-2.5 text-base font-medium text-clay-600 hover:text-theme-primary font-display">İletişim</a>
+                    <a href="/en/" class="inline-flex items-center mt-3 px-4 py-3 text-base font-medium rounded-md border border-clay-200 text-clay-600 font-display">EN</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero: burgundy only, no image -->
+        <section class="pt-20 pb-16 lg:pt-24 lg:pb-20 relative overflow-hidden bg-theme-primary">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-light text-white tracking-tight leading-tight">
+                    Kronik Ağrılardan Özgürleşme Seansları
+                </h1>
+            </div>
+        </section>
+
+        <!-- First section: text left, photo right (photo in frame), constrained width like other sections -->
+        <section class="bg-white py-12 lg:py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 xl:gap-20 items-stretch">
+            <div class="flex flex-col justify-center lg:pr-4">
+                <div class="max-w-xl">
+                    <h2 class="font-display font-light text-xl sm:text-2xl lg:text-3xl text-theme-primary leading-snug mb-8">
+                        Kronik ağrıların nedeni bedenimizde değil, bastırılmış duygularımızdadır.
+                    </h2>
+                    <div class="space-y-5 text-clay-700 text-base sm:text-lg leading-[1.7]">
+                        <p>Uzun süren stres, bastırılmış duygular, ifade edilememiş öfke, yas ya da sınır ihlalleri sinir sisteminde birikerek bedende ağrı veya rahatsızlık olarak kendini gösterebilir.</p>
+                        <p>Bu ağrı gerçektir. Ama çoğu zaman bir hasardan çok, bir koruma mekanizmasıdır.</p>
+                        <p>Sinir sistemi güvende hissetmediğinde bizimle iletişime geçmeye çalışır. Bu iletişim bazen bel ağrısı, bazen boyun tutulması, bazen migren, bazen de başka kronik semptomlar olarak ortaya çıkar.</p>
+                    </div>
+                    <h3 class="font-display font-light text-lg sm:text-xl lg:text-2xl text-clay-800 mt-10 mb-4">
+                        Araştırmalar Ne Söylüyor?
+                    </h3>
+                    <div class="space-y-5 text-clay-700 text-base sm:text-lg leading-[1.7]">
+                        <p>1994 yılında <em>New England Journal of Medicine</em>'de yayımlanan bir MRI çalışmasında, hiçbir sırt ağrısı şikâyeti olmayan 98 kişiye görüntüleme yapıldı.</p>
+                        <p>Katılımcıların yalnızca %36'sında "tamamen normal" diskler vardı. Geri kalanlarda fıtık ve yapısal değişiklikler bulunmasına rağmen hiçbiri ağrı yaşamıyordu.</p>
+                        <p class="font-medium text-theme-primary">Bu ve benzeri araştırmalar bize şunu gösteriyor: Yapısal bulgular her zaman ağrının nedeni değildir. Ağrıyı yaratan sinir sisteminin öğrendiği koruma kalıplarıdır.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center lg:justify-end lg:pl-4 h-full min-h-[360px] lg:min-h-0 w-full">
+                <div class="w-full max-w-full lg:min-w-0 h-full rounded-2xl overflow-hidden border border-clay-200 shadow-xl bg-white">
+                    <img src="../assets/leylainnaturevertical.jpg" alt="Leyla doğada" class="w-full h-full object-cover object-center">
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sinir Sistemi Neden Ağrı Üretir? — desert background, resim yok -->
+        <section class="py-20 lg:py-32 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/desert.JPG" alt="" class="w-full h-full object-cover" aria-hidden="true">
+                <div class="absolute inset-0 bg-earth-50/80"></div>
+            </div>
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white/75 backdrop-blur-md rounded-3xl border border-clay-100 shadow-lg px-8 py-10 lg:px-12 lg:py-14">
+                    <h2 class="font-display font-light text-3xl lg:text-4xl text-theme-primary mb-8 text-center">
+                        Sinir Sistemi Neden Ağrı Üretir?
+                    </h2>
+                    <div class="space-y-5 text-clay-700 leading-relaxed text-lg">
+                        <p>Beynimiz için en büyük tehditlerden biri dışlanmak, reddedilmek ve yalnız kalmaktır. Evrimsel olarak yalnız kalmak hayatta kalamamak anlamına gelirdi. Bu yüzden aidiyet sinir sistemi için temel bir güvenlik göstergesidir.</p>
+                        <p>Çocukken çoğumuz şunu öğreniriz:<br><strong>"Sevilmek için bazı duygularımı göstermemeliyim."</strong></p>
+                        <p>Öfke, kıskançlık, yoğun ihtiyaç, hayal kırıklığı… Bu duygular "tehlikeli" olarak kodlanabilir. Sinir sistemi bu duyguları bastırır. Bu bastırma eylemi, sistemde yük olarak kalır.</p>
+                        <p>Zamanla bu yük arttığında, duygular yüzeye yaklaşmaya başlar. Tam bu noktada sinir sistemi dikkati duygudan uzaklaştırmak için bedene güçlü sinyaller gönderebilir.<br><strong>Ağrı ortaya çıkar.</strong></p>
+                        <p>Ağrı halindeyken dikkatimizi duygularımızdan ağrımıza veririz. Böylece sistem, "tehlikeli" olarak algıladığı duygulardan bizi korumuş olur.</p>
+                        <p>Bel ve boyun ağrıları, kas–iskelet problemleri, yorgunluk, IBS ya da migren gibi kronik tabloların altında sıklıkla bu mekanizma çalışır.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bu seanslarda ne yapıyoruz? — kart içinde, yuvarlak bullet, arka plan burgundy -->
+        <section class="py-14 lg:py-20 bg-theme-primary">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl border border-clay-100 shadow-lg px-8 py-10 lg:px-12 lg:py-14">
+                    <h2 class="text-3xl lg:text-4xl font-display font-light text-theme-primary mb-6 text-center">
+                        Bu seanslarda ne yapıyoruz?
+                    </h2>
+                    <p class="text-clay-700 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">
+                        Kronik ağrılardan iyileşmenin yolu, ağrıya neden olan zihin beden bağlantısını anlamak ve sinir sistemimize bastırılmış duygularımızın tehlikeli olmadığını öğretmektir. Birlikte:
+                    </p>
+                    <ul class="space-y-4 text-clay-700 text-lg leading-relaxed max-w-2xl mx-auto">
+                        <li class="flex items-start gap-3">
+                            <span class="inline-flex w-5 h-5 rounded-full bg-theme-primary/20 flex-shrink-0 mt-0.5 flex items-center justify-center" aria-hidden="true"><span class="w-2 h-2 rounded-full bg-theme-primary"></span></span>
+                            <span>Zihin–beden temelli ağrıların nasıl oluştuğunu anlarız</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="inline-flex w-5 h-5 rounded-full bg-theme-primary/20 flex-shrink-0 mt-0.5 flex items-center justify-center" aria-hidden="true"><span class="w-2 h-2 rounded-full bg-theme-primary"></span></span>
+                            <span>Ağrının bu nedenle ortaya çıktığına dair şüphelerimizi araştırırız</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="inline-flex w-5 h-5 rounded-full bg-theme-primary/20 flex-shrink-0 mt-0.5 flex items-center justify-center" aria-hidden="true"><span class="w-2 h-2 rounded-full bg-theme-primary"></span></span>
+                            <span>Ağrıyı dinler, hikâyesini ve bizi neden koruduğunu keşfederiz</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="inline-flex w-5 h-5 rounded-full bg-theme-primary/20 flex-shrink-0 mt-0.5 flex items-center justify-center" aria-hidden="true"><span class="w-2 h-2 rounded-full bg-theme-primary"></span></span>
+                            <span>Bastırılmış duygulara regüle edilmiş bir sinir sistemi içinde, güvenli bir tempoda temas ederiz</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="inline-flex w-5 h-5 rounded-full bg-theme-primary/20 flex-shrink-0 mt-0.5 flex items-center justify-center" aria-hidden="true"><span class="w-2 h-2 rounded-full bg-theme-primary"></span></span>
+                            <span>Sinir sistemine ağrıya artık ihtiyaç olmadığını deneyimsel olarak öğretiriz</span>
+                        </li>
+                    </ul>
+                    <p class="mt-10 text-clay-700 text-lg leading-relaxed text-center max-w-2xl mx-auto">
+                        Bu adımlarla, sinir sistemi koruma kalkanını yavaşça alçaltmaya başlar. Ağrı da çoğu zaman buna paralel olarak azalır.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bu çalışma kimler için — background = üst section (Sinir Sistemi) resmi = yayla -->
+        <section class="py-24 lg:py-32 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/yayla.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+            </div>
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white/75 backdrop-blur-md rounded-3xl border border-clay-100 shadow-lg px-8 py-8 lg:px-16 lg:py-12 animate-fade-in-up">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl lg:text-4xl xl:text-5xl font-display font-light text-clay-800 mb-6">
+                            Bu çalışma kimler için?
+                        </h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-10 text-left">
+                        <ul class="space-y-6 text-lg text-clay-700 pl-6">
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Aylarca ya da yıllarca süren ağrılarla yaşayanlar</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Ağrıları nedensizce artıp azalanlar</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Ağrıları yer değiştirenler</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Batı tıp sisteminin verdiği yöntemlerle iyileşemeyenler</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-6 text-lg text-clay-700 pl-6">
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Bel/boyun fıtığı, fibromiyalji, IBS, migren gibi teşhisleri olanlar</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Hareket etmekten korkmaya ve hayattan zevk alamamaya başlayanlar</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Ağrılarının duygusal bir boyutu olabileceğini hissedenler</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <svg aria-hidden="true" class="w-6 h-6 mt-0.5 text-theme-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <span class="leading-relaxed">Ağrısız bir hayat için harekete geçmeye hazır olanlar</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bilgi al / CTA: email + iletişim (kadınlara özel metni yok) -->
+        <section class="py-20 lg:py-32 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/desert.JPG" alt="" class="w-full h-full object-cover" aria-hidden="true">
+                <div class="absolute inset-0 bg-earth-50/80"></div>
+            </div>
+            <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-clay-900 text-xl lg:text-2xl leading-relaxed mb-10">Seanslarla ilgili bilgi almak için, <a href="mailto:leylafiratli3@gmail.com" class="text-theme-primary font-medium underline hover:no-underline">leylafiratli3@gmail.com</a> email adresinden veya aşağıdaki formdan benimle iletişime geçebilirsin.</p>
+                <a href="contact.html" class="btn-primary inline-flex items-center gap-2 font-display text-lg px-8 py-4">
+                    İletişim
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-earth-50 to-clay-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="animate-fade-in-up">
+                    <div class="text-center mb-16">
+                        <h2 class="text-5xl lg:text-6xl font-display font-light text-theme-primary mb-6">
+                            Sık Sorulan Sorular
+                        </h2>
+                        <p class="text-xl text-clay-600 max-w-2xl mx-auto leading-relaxed">
+                            Birlikte çalışma ve iyileşme süreci hakkında merak edilenler
+                        </p>
+                    </div>
+                    <div class="space-y-6" x-data="{ 
+                        activeFaq: null,
+                        toggleFaq(num) {
+                            this.activeFaq = this.activeFaq === num ? null : num;
+                        }
+                    }">
+                        <div class="faq-item bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-clay-100/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <button type="button" class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-clay-50/30 transition-colors duration-200 group focus:outline-none" @click="toggleFaq(1)" :aria-expanded="activeFaq === 1">
+                                <h3 class="text-xl font-display font-light text-clay-800 pr-4 group-hover:text-theme-primary transition-colors duration-200">Yani… bu ağrı kafamda mı?</h3>
+                                <svg class="w-6 h-6 text-theme-primary flex-shrink-0 transition-transform duration-300" :class="{ 'rotate-180': activeFaq === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div x-show="activeFaq === 1" x-transition class="px-8 pb-6">
+                                <p class="text-clay-600 leading-relaxed text-lg">Hayır. Ağrı hayal değil—gerçek, fiziksel bir deneyim—ama kaynağı yapısal hasar değil, sinir sisteminde.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-clay-100/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <button type="button" class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-clay-50/30 transition-colors duration-200 group focus:outline-none" @click="toggleFaq(2)" :aria-expanded="activeFaq === 2">
+                                <h3 class="text-xl font-display font-light text-clay-800 pr-4 group-hover:text-theme-primary transition-colors duration-200">Önce doktor onayı gerekir mi?</h3>
+                                <svg class="w-6 h-6 text-theme-primary flex-shrink-0 transition-transform duration-300" :class="{ 'rotate-180': activeFaq === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div x-show="activeFaq === 2" x-transition class="px-8 pb-6">
+                                <p class="text-clay-600 leading-relaxed text-lg">Ciddi bir şeyi elemek için doktora görünmek faydalı olabilir—o gönül rahatlığı çoğu zaman iyileşmeyi destekliyor. Yine de bu çalışma güvenli, eğitim amaçlı ve kontrendikasyonu yok; ek tıbbi tetkik isteyip istememene bakılmaksızın başlayabilirsin.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-clay-100/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <button type="button" class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-clay-50/30 transition-colors duration-200 group focus:outline-none" @click="toggleFaq(3)" :aria-expanded="activeFaq === 3">
+                                <h3 class="text-xl font-display font-light text-clay-800 pr-4 group-hover:text-theme-primary transition-colors duration-200">Bel fıtığı, skolyoz, artrit veya IBS gibi gerçek bir tanım varsa?</h3>
+                                <svg class="w-6 h-6 text-theme-primary flex-shrink-0 transition-transform duration-300" :class="{ 'rotate-180': activeFaq === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div x-show="activeFaq === 3" x-transition class="px-8 pb-6">
+                                <p class="text-clay-600 leading-relaxed text-lg">Zihin-beden çalışması bu bulguları yok saymaz; araştırmalar (ve deneyim) aynı tanıya sahip birçok kişinin ağrısız yaşadığını gösteriyor. Bu bulgularla beraber de ağrısız yaşayabilirsin. Benim hem yüksek derece skolyozum hem de bel fıtığım var ama neredeyse hiç ağrı hissetmiyorum.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-clay-100/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <button type="button" class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-clay-50/30 transition-colors duration-200 group focus:outline-none" @click="toggleFaq(4)" :aria-expanded="activeFaq === 4">
+                                <h3 class="text-xl font-display font-light text-clay-800 pr-4 group-hover:text-theme-primary transition-colors duration-200">Kaç seans gerekir?</h3>
+                                <svg class="w-6 h-6 text-theme-primary flex-shrink-0 transition-transform duration-300" :class="{ 'rotate-180': activeFaq === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div x-show="activeFaq === 4" x-transition class="px-8 pb-6">
+                                <p class="text-clay-600 leading-relaxed text-lg">Herkesin yolculuğu kendine özel. Kimi tek bir seanstan sonra rahatlama hisseder; kimi haftalar, aylar süren düzenli pratiğe ihtiyaç duyar. Sağlam bir temel için genelde 4–6 seans öneriyorum.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-clay-100/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <button type="button" class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-clay-50/30 transition-colors duration-200 group focus:outline-none" @click="toggleFaq(5)" :aria-expanded="activeFaq === 5">
+                                <h3 class="text-xl font-display font-light text-clay-800 pr-4 group-hover:text-theme-primary transition-colors duration-200">Ya iyileşmezsem?</h3>
+                                <svg class="w-6 h-6 text-theme-primary flex-shrink-0 transition-transform duration-300" :class="{ 'rotate-180': activeFaq === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div x-show="activeFaq === 5" x-transition class="px-8 pb-6">
+                                <p class="text-clay-600 leading-relaxed text-lg">Bu en sık duyduğum korkulardan biri. İyi haber: dünyada sayısız insan (ben dahil) bu yolla iyileşti ve sen de iyileşebilirsin.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border border-clay-100/50 overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <button type="button" class="faq-toggle w-full px-8 py-6 text-left flex items-center justify-between hover:bg-clay-50/30 transition-colors duration-200 group focus:outline-none" @click="toggleFaq(6)" :aria-expanded="activeFaq === 6">
+                                <h3 class="text-xl font-display font-light text-clay-800 pr-4 group-hover:text-theme-primary transition-colors duration-200">Zihin-beden ağrısı genelde neyle karıştırılıyor?</h3>
+                                <svg class="w-6 h-6 text-theme-primary flex-shrink-0 transition-transform duration-300" :class="{ 'rotate-180': activeFaq === 6 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div x-show="activeFaq === 6" x-transition class="px-8 pb-6">
+                                <p class="text-clay-600 leading-relaxed text-lg">Zihin-beden ağrısı sıklıkla tıbbi veya yapısal durumlarla karıştırılıyor: fıtık veya bel fıtığı, skolyoz, artrit veya eklem dejenerasyonu, fibromiyalji, kronik yorgunluk sendromu, irritabl bağırsak sendromu ve diğer bağırsak sorunları, migren veya gerilim tipi baş ağrıları, pelvik ağrı sendromları, karpal tünel veya tekrarlayan zorlanma yaralanmaları, otoimmün benzeri durumlar ve daha birçok tanı.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-clay-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Stay in Touch Section -->
+            <div class="text-center mb-12">
+                <h3 class="font-display font-light text-3xl mb-8">İletişimde kal</h3>
+                <!-- Mailchimp Signup Form -->
+                <div class="flex justify-center">
+                    <div class="w-80">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <div id="mc_embed_signup">
+                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group relative">
+                                        <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent" id="mce-EMAIL" placeholder="E-posta adresin" required>
+                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div id="mce-responses" class="clear mt-4">
+                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
+                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-clay-700 pt-8 text-center">
+                <p class="text-clay-400 mb-4 text-sm">
+                    Bu çalışma eğitim amaçlıdır; tıbbi bakımın yerine geçmez.
+                </p>
+                <p class="text-clay-400 text-sm">
+                    © 2025 Leyla. Tüm hakları saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    
+    <!-- Mailchimp Form Validation Script -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array(); 
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+
+</body>
+</html>
