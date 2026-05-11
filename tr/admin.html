@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Zihin Beden Yolu Kayıtları</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .btn {
+            padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+            font-weight: 500; font-size: 0.9rem; cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-primary { background: #844b4b; color: white; border: none; }
+        .btn-primary:hover { background: #6a3d3d; }
+        .btn-outline { background: transparent; color: #844b4b; border: 1.5px solid #844b4b; }
+        .btn-outline:hover { background: #844b4b; color: white; }
+        .btn-danger { background: #dc2626; color: white; border: none; }
+        .btn-danger:hover { background: #b91c1c; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+
+    <!-- Login screen -->
+    <div id="login-screen" class="min-h-screen flex items-center justify-center px-4">
+        <div class="w-full max-w-sm bg-white rounded-xl shadow-lg p-8">
+            <h1 class="text-xl font-semibold text-gray-800 mb-1">Admin Girişi</h1>
+            <p class="text-sm text-gray-500 mb-6">Zihin Beden Yolu kayıtlarını görüntüle</p>
+            <form id="loginForm">
+                <label class="block text-sm font-medium text-gray-600 mb-1.5">Şifre</label>
+                <input type="password" id="password" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#844b4b]/20 focus:border-[#844b4b] mb-1" placeholder="Şifreyi girin" autofocus>
+                <p id="login-error" class="text-red-500 text-xs mb-4 hidden">Yanlış şifre</p>
+                <button type="submit" class="btn btn-primary w-full">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard (hidden until login) -->
+    <div id="dashboard" class="hidden">
+        <!-- Top bar -->
+        <div class="bg-white border-b border-gray-200 sticky top-0 z-10">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+                <div>
+                    <h1 class="text-lg font-semibold text-gray-800">Zihin Beden Yolu</h1>
+                    <p class="text-sm text-gray-500">Kayıt Yönetimi</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="exportCSV()" class="btn btn-outline text-sm">
+                        <span>CSV İndir</span>
+                    </button>
+                    <button onclick="logout()" class="btn text-sm text-gray-500 hover:text-gray-700" style="border: 1px solid #e5e7eb;">
+                        Çıkış
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                    <p class="text-sm text-gray-500 mb-1">Toplam Kayıt</p>
+                    <p id="stat-total" class="text-3xl font-semibold" style="color: #844b4b;">0</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                    <p class="text-sm text-gray-500 mb-1">WhatsApp İsteyenler</p>
+                    <p id="stat-whatsapp" class="text-3xl font-semibold" style="color: #844b4b;">0</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                    <p class="text-sm text-gray-500 mb-1">Kalan Kontenjan</p>
+                    <p id="stat-remaining" class="text-3xl font-semibold" style="color: #844b4b;">15</p>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-base font-semibold text-gray-700">Kayıtlar</h2>
+                <button onclick="clearAll()" class="btn btn-danger text-xs !py-2 !px-3">Tümünü Sil</button>
+            </div>
+
+            <!-- Table -->
+            <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-gray-100" style="background: #faf6f2;">
+                                <th class="text-left px-5 py-3 font-medium text-gray-600">#</th>
+                                <th class="text-left px-5 py-3 font-medium text-gray-600">Ad Soyad</th>
+                                <th class="text-left px-5 py-3 font-medium text-gray-600">E-posta</th>
+                                <th class="text-left px-5 py-3 font-medium text-gray-600">Telefon</th>
+                                <th class="text-left px-5 py-3 font-medium text-gray-600">Kayıt Tarihi</th>
+                                <th class="text-left px-5 py-3 font-medium text-gray-600"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="registrations-table">
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Empty state -->
+                <div id="empty-state" class="hidden py-16 text-center">
+                    <p class="text-gray-400 text-sm">Henüz kayıt yok</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'zihinbedenyolu_registrations';
+        const ADMIN_PASSWORD = 'leyla2026';
+        const MAX_CAPACITY = 15;
+
+        function getRegistrations() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+            catch { return []; }
+        }
+
+        function renderDashboard() {
+            const registrations = getRegistrations();
+            const tbody = document.getElementById('registrations-table');
+            const emptyState = document.getElementById('empty-state');
+
+            // Stats
+            document.getElementById('stat-total').textContent = registrations.length;
+            document.getElementById('stat-whatsapp').textContent = registrations.filter(r => r.phone).length;
+            document.getElementById('stat-remaining').textContent = Math.max(0, MAX_CAPACITY - registrations.length);
+
+            if (registrations.length === 0) {
+                tbody.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            tbody.innerHTML = registrations.map((r, i) => {
+                const date = new Date(r.registeredAt);
+                const dateStr = date.toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                const timeStr = date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+                return `
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                        <td class="px-5 py-3.5 text-gray-400">${i + 1}</td>
+                        <td class="px-5 py-3.5 font-medium text-gray-800">${escapeHtml(r.name)}</td>
+                        <td class="px-5 py-3.5 text-gray-600">${escapeHtml(r.email)}</td>
+                        <td class="px-5 py-3.5 text-gray-600">${r.phone ? escapeHtml(r.phone) : '<span class="text-gray-300">—</span>'}</td>
+                        <td class="px-5 py-3.5 text-gray-500">${dateStr} ${timeStr}</td>
+                        <td class="px-5 py-3.5">
+                            <button onclick="deleteRegistration(${i})" class="text-red-400 hover:text-red-600 transition-colors text-xs">Sil</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function deleteRegistration(index) {
+            if (!confirm('Bu kaydı silmek istediğinize emin misiniz?')) return;
+            const registrations = getRegistrations();
+            registrations.splice(index, 1);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(registrations));
+            renderDashboard();
+        }
+
+        function clearAll() {
+            if (!confirm('TÜM kayıtları silmek istediğinize emin misiniz? Bu işlem geri alınamaz.')) return;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+            renderDashboard();
+        }
+
+        function exportCSV() {
+            const registrations = getRegistrations();
+            if (registrations.length === 0) { alert('İndirilecek kayıt yok.'); return; }
+
+            const headers = ['Ad Soyad', 'E-posta', 'Telefon', 'Kayıt Tarihi'];
+            const rows = registrations.map(r => [
+                r.name,
+                r.email,
+                r.phone || '',
+                new Date(r.registeredAt).toLocaleString('tr-TR')
+            ]);
+
+            let csv = '\uFEFF'; // BOM for Turkish chars
+            csv += headers.join(',') + '\n';
+            rows.forEach(row => {
+                csv += row.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(',') + '\n';
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'zihin_beden_yolu_kayitlar.csv';
+            link.click();
+        }
+
+        function logout() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('login-screen').classList.remove('hidden');
+            document.getElementById('password').value = '';
+        }
+
+        // Login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pw = document.getElementById('password').value;
+            if (pw === ADMIN_PASSWORD) {
+                document.getElementById('login-screen').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden');
+                renderDashboard();
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        });
+
+        // Auto-refresh dashboard every 5 seconds when visible
+        setInterval(() => {
+            if (!document.getElementById('dashboard').classList.contains('hidden')) {
+                renderDashboard();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

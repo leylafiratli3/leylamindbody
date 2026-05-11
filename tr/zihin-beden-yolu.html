@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zihin Beden Yolu - Leyla Fıratlı</title>
+    <meta name="description" content="Kronik ağrı ve semptomlardan özgürleştiren zihin beden yöntemini öğrenmek için ayda bir kez herkese açık hediye ders & soru-cevap.">
+
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <meta property="og:title" content="Zihin Beden Yolu - Leyla Fıratlı">
+    <meta property="og:description" content="Ayda bir kez herkese açık hediye ders & soru-cevap. Katılım ücretsiz.">
+    <meta property="og:image" content="/assets/og.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'earth': {
+                            50: '#fdf8f3', 100: '#f9e8d8', 200: '#f3d4b8', 300: '#eab894',
+                        },
+                        'clay': {
+                            50: '#faf6f2', 100: '#f2e8dd', 200: '#e4d1bc', 300: '#d3b595',
+                            400: '#c19a73', 500: '#b0855f', 600: '#a07352', 700: '#855e45',
+                            800: '#6f4e3c', 900: '#5a4133',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-theme-primary { color: #844b4b !important; }
+        .bg-theme-primary { background-color: #844b4b !important; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 0.75rem; padding: 1rem 2.5rem;
+            font-weight: 500; font-size: 1.1rem;
+            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
+            color: white; transition: all 0.3s ease; text-decoration: none;
+            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
+        }
+        .btn-primary:disabled {
+            opacity: 0.6; cursor: not-allowed; transform: none;
+        }
+
+        .form-input {
+            width: 100%; padding: 0.875rem 1.25rem;
+            border: 1.5px solid #e4d1bc; border-radius: 0.75rem;
+            background: white; color: #5a4133; font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .form-input:focus {
+            outline: none; border-color: #844b4b;
+            box-shadow: 0 0 0 3px rgba(132, 75, 75, 0.1);
+        }
+        .form-input::placeholder { color: #c19a73; }
+
+        /* Arch shape for portrait */
+        .arch-frame {
+            border-radius: 160px 160px 20px 20px;
+            overflow: hidden;
+        }
+
+        @keyframes fadeInUp { 0% { opacity:0; transform:translateY(20px); } 100% { opacity:1; transform:translateY(0); } }
+        .animate-in { animation: fadeInUp 0.6s ease-out; }
+
+        /* Success state */
+        .success-checkmark {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
+            margin: 0 auto 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-earth-50 text-clay-800 font-sans">
+
+    <!-- Main content -->
+    <div class="min-h-screen flex items-center justify-center px-4 py-10 lg:py-16">
+        <div class="w-full max-w-xl">
+
+            <!-- Card -->
+            <div class="bg-white rounded-3xl shadow-xl border border-clay-100 overflow-hidden">
+
+                <!-- Header section -->
+                <div class="text-center pt-10 pb-6 px-6 sm:px-10" style="background: linear-gradient(180deg, #f9f3ed 0%, #ffffff 100%);">
+                    <h1 class="text-5xl sm:text-6xl font-display font-light text-clay-800 tracking-tight mb-3" style="text-transform: uppercase; letter-spacing: 0.04em;">
+                        Zihin Beden Yolu
+                    </h1>
+                    <div class="w-12 h-[2px] mx-auto mb-6" style="background: linear-gradient(90deg, #844b4b, #d4a0a0);"></div>
+                    <p class="text-lg sm:text-xl font-display font-light text-clay-600 italic leading-relaxed max-w-md mx-auto">
+                        Kronik ağrı ve semptomlardan özgürleştiren zihin beden yöntemini öğrenmek için ayda bir kez herkese açık hediye ders & soru-cevap
+                    </p>
+                </div>
+
+                <!-- Portrait -->
+                <div class="flex justify-center px-6 py-4">
+                    <div class="w-48 sm:w-56">
+                        <div class="arch-frame shadow-lg">
+                            <img src="../assets/portraitleyla.png" alt="Leyla Fıratlı" class="w-full aspect-[3/4] object-cover object-center">
+                        </div>
+                        <p class="text-center mt-3 font-display text-clay-600 text-lg">Leyla Fıratlı ile</p>
+                    </div>
+                </div>
+
+                <!-- Details -->
+                <div class="text-center px-6 sm:px-10 pb-6">
+                    <p class="text-2xl sm:text-3xl font-display font-light text-clay-800 mb-2">
+                        Her Ayın İlk Salı Akşamı <span class="text-clay-400 mx-1">&middot;</span> Saat 20.00
+                    </p>
+                    <p class="text-2xl sm:text-3xl font-display font-semibold text-clay-800 mb-3">
+                        Sadece 15 kişi
+                    </p>
+                    <p class="text-lg font-display text-clay-600 italic">
+                        Katılım <span class="font-semibold not-italic" style="color: #844b4b;">Ücretsiz</span>.
+                    </p>
+                </div>
+
+                <!-- Divider -->
+                <div class="px-6 sm:px-10">
+                    <div class="border-t border-clay-100"></div>
+                </div>
+
+                <!-- Registration form -->
+                <div id="registration-form" class="px-6 sm:px-10 py-8">
+                    <h2 class="text-2xl font-display font-light text-clay-800 mb-1 text-center">Kayıt Ol</h2>
+                    <p class="text-base font-display text-clay-500 mb-6 text-center">2 Haziran 2026</p>
+
+                    <form id="eventForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-sans font-medium text-clay-600 mb-1.5">Ad Soyad *</label>
+                            <input type="text" id="name" name="name" required class="form-input" placeholder="Adınız">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-sans font-medium text-clay-600 mb-1.5">E-posta *</label>
+                            <input type="email" id="email" name="email" required class="form-input" placeholder="ornek@email.com">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-sans font-medium text-clay-600 mb-1.5">
+                                Telefon <span class="text-clay-400 font-light">(WhatsApp grubuna katılmak istersen)</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+90 5XX XXX XX XX">
+                        </div>
+                        <div class="pt-2">
+                            <button type="submit" id="submitBtn" class="btn-primary font-display">
+                                Kayıt Ol
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success state (hidden by default) -->
+                <div id="success-message" class="px-6 sm:px-10 py-12 text-center hidden animate-in">
+                    <div class="success-checkmark">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-display font-light text-clay-800 mb-3">Kaydın Alındı!</h2>
+                    <p class="text-lg font-sans text-clay-600 leading-relaxed max-w-sm mx-auto">
+                        Teşekkürler! Etkinlik linkini 24 saat önce e-posta adresine göndereceğiz.
+                    </p>
+                    <div class="mt-8">
+                        <a href="index.html" class="inline-flex items-center font-display text-base transition-colors" style="color: #844b4b;">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
+                            Anasayfaya dön
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Already registered state (hidden) -->
+                <div id="already-registered" class="px-6 sm:px-10 py-12 text-center hidden animate-in">
+                    <h2 class="text-3xl font-display font-light text-clay-800 mb-3">Zaten Kayıtlısın</h2>
+                    <p class="text-lg font-sans text-clay-600 leading-relaxed max-w-sm mx-auto">
+                        Bu e-posta adresiyle daha önce kayıt yapılmış. Görüşmek üzere!
+                    </p>
+                    <div class="mt-8">
+                        <a href="index.html" class="inline-flex items-center font-display text-base transition-colors" style="color: #844b4b;">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
+                            Anasayfaya dön
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const FORMSPREE_URL = 'https://formspree.io/f/mrejrkrw';
+
+        document.getElementById('eventForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email) return;
+
+            btn.disabled = true;
+            btn.textContent = 'Gönderiliyor...';
+
+            try {
+                const res = await fetch(FORMSPREE_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone || 'Belirtilmedi',
+                        _subject: 'Yeni Kayıt: Zihin Beden Yolu - ' + name
+                    })
+                });
+
+                if (res.ok) {
+                    document.getElementById('registration-form').classList.add('hidden');
+                    document.getElementById('success-message').classList.remove('hidden');
+                } else {
+                    throw new Error('Form gönderilemedi');
+                }
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Kayıt Ol';
+                alert('Bir hata oluştu, lütfen tekrar deneyin.');
+            }
+        });
+    </script>
+</body>
+</html>

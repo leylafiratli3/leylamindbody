@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mind-Body Healing w Leyla</title>
     <meta name="description" content="Mind-body healing for chronic pain.">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/favicon.png">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="MindBody Healing w Leyla">
     <meta property="og:description" content="Mind-body healing for chronic pain">
     <meta property="og:image" content="/assets/og.jpg">
     <meta property="og:url" content="https://bodywisehealing.com">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MindBody Healing w Leyla">
     <meta name="twitter:description" content="Mind-body healing for chronic pain">
     <meta name="twitter:image" content="/assets/og.jpg">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,231 +39,97 @@
                     },
                     colors: {
                         'earth': {
-                            50: '#fdf8f3',
-                            100: '#f9e8d8',
-                            200: '#f3d4b8',
-                            300: '#eab894',
-                            400: '#e0966b',
-                            500: '#d67c4a',
-                            600: '#c86a3d',
-                            700: '#a85535',
-                            800: '#864532',
-                            900: '#6f3b2f',
+                            50: '#fdf8f3', 100: '#f9e8d8', 200: '#f3d4b8', 300: '#eab894',
+                            400: '#e0966b', 500: '#d67c4a', 600: '#c86a3d', 700: '#a85535',
+                            800: '#864532', 900: '#6f3b2f',
                         },
                         'clay': {
-                            50: '#faf6f2',
-                            100: '#f2e8dd',
-                            200: '#e4d1bc',
-                            300: '#d3b595',
-                            400: '#c19a73',
-                            500: '#b0855f',
-                            600: '#a07352',
-                            700: '#855e45',
-                            800: '#6f4e3c',
-                            900: '#5a4133',
+                            50: '#faf6f2', 100: '#f2e8dd', 200: '#e4d1bc', 300: '#d3b595',
+                            400: '#c19a73', 500: '#b0855f', 600: '#a07352', 700: '#855e45',
+                            800: '#6f4e3c', 900: '#5a4133',
                         },
                         'sage': {
-                            50: '#f6f7f6',
-                            100: '#e3e7e3',
-                            200: '#c7d0c7',
-                            300: '#a3b1a3',
-                            400: '#7a8c7a',
-                            500: '#5f715f',
-                            600: '#4a5a4a',
-                            700: '#3d483d',
-                            800: '#333c33',
-                            900: '#2b322b',
+                            50: '#f6f7f6', 100: '#e3e7e3', 200: '#c7d0c7', 300: '#a3b1a3',
+                            400: '#7a8c7a', 500: '#5f715f', 600: '#4a5a4a', 700: '#3d483d',
+                            800: '#333c33', 900: '#2b322b',
                         },
-                        'warm': {
-                            50: '#fef7ed',
-                            100: '#fed7aa',
-                            200: '#fdba74',
-                            300: '#fb923c',
-                            400: '#f97316',
-                            500: '#ea580c',
-                            600: '#dc2626',
-                            700: '#b91c1c',
-                        }
                     },
                     animation: {
-                        'float': 'float 6s ease-in-out infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out',
-                        'fade-in-down': 'fadeInDown 0.8s ease-out',
-                        'slide-in-left': 'slideInLeft 1s ease-out',
-                        'slide-in-right': 'slideInRight 1s ease-out',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                     },
                     keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
-                        fadeInDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        }
                     }
                 }
             }
         }
     </script>
-    
+
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Custom Styles - REMOVED TO AVOID CONFLICTS -->
-    
-    <!-- Inline Styles to Replace External CSS -->
+
     <style>
-        /* Button Components */
+        .text-theme-primary { color: #844b4b !important; }
+        .bg-theme-primary { background-color: #844b4b !important; }
+
         .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.875rem;
-            font-weight: 500;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 0.75rem; padding: 0.875rem 2rem;
+            font-weight: 500; font-size: 1.05rem;
             background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
-            color: white;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            color: white; transition: all 0.3s ease; text-decoration: none;
             box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
         }
-        
         .btn-primary:hover {
             background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
         }
-        
         .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border: 2px solid #b48f74;
-            color: #4a2f2f;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            background: rgba(180, 143, 116, 0.05);
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 0.75rem; padding: 0.875rem 2rem;
+            font-weight: 500; font-size: 1.05rem;
+            border: 1.5px solid #c19a73; color: #5a4133;
+            transition: all 0.3s ease; text-decoration: none; background: transparent;
         }
-        
         .btn-ghost:hover {
-            background: rgba(180, 143, 116, 0.1);
-            border-color: #9a7a5f;
-            color: #2d1b1b;
+            background: rgba(193, 154, 115, 0.08); border-color: #a07352;
             transform: translateY(-1px);
         }
-        
-        /* Theme Colors */
-        .text-theme-primary { color: #844b4b !important; }
-        .bg-theme-primary { background-color: #844b4b !important; }
 
-        /* Nav: primary CTA solid, language toggle subtle */
-        .nav-book-session-btn {
-            background-color: #844b4b;
-            color: white;
-            border-color: #844b4b;
-        }
-        .nav-book-session-btn:hover {
-            background-color: #6d3a3a !important;
-            color: white !important;
-            border-color: #6d3a3a !important;
-        }
-        .nav-lang-btn {
-            background-color: transparent;
-            border-color: #d9c7b8;
-            color: #5a4133;
-        }
-        .nav-lang-btn:hover {
-            background-color: #f0ebe6;
-            border-color: #c4b5a8;
-            color: #5a4133;
-        }
-
-        
-        /* Nav: logo left, single bar — larger bar and type, no stretched middle */
         .nav-logo {
-    height: 58px !important;
-    width: auto !important;
-    max-width: 220px !important;
-    min-height: 58px !important;
-    object-fit: contain !important;
-}
-
-@media (min-width: 1024px) {
-    .nav-logo {
-        height: 72px !important;
-        max-width: 280px !important;
-        min-height: 72px !important;
-    }
-}
+            height: 58px !important; width: auto !important; max-width: 220px !important;
+            min-height: 58px !important; object-fit: contain !important;
+        }
+        @media (min-width: 1024px) {
+            .nav-logo { height: 72px !important; max-width: 280px !important; min-height: 72px !important; }
+        }
         .nav-link { font-size: 1.0625rem; font-weight: 500; letter-spacing: 0.01em; color: #5a4133; }
         .nav-link:hover { color: #844b4b; }
         .nav-cta { font-size: 1.0625rem; font-weight: 500; padding: 0.625rem 1.25rem; border-radius: 0.375rem; }
+        .nav-book-session-btn { background-color: #844b4b; color: white; border-color: #844b4b; }
+        .nav-book-session-btn:hover { background-color: #6d3a3a !important; color: white !important; border-color: #6d3a3a !important; }
+        .nav-lang-btn { background-color: transparent; border-color: #d9c7b8; color: #5a4133; }
+        .nav-lang-btn:hover { background-color: #f0ebe6; border-color: #c4b5a8; }
         @media (min-width: 1024px) {
             .nav-link { font-size: 1.25rem; }
             .nav-cta { font-size: 1.125rem; padding: 0.75rem 1.5rem; }
         }
-        
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        @keyframes fadeInUp { 0% { opacity:0; transform:translateY(30px); } 100% { opacity:1; transform:translateY(0); } }
         .animate-fade-in-up { animation: fadeInUp 0.8s ease-out; }
-        
-        /* Mobile Responsiveness */
+
         @media (max-width: 640px) {
-            .max-w-6xl { max-width: 100% !important; }
-            .max-w-7xl { max-width: 100% !important; }
-            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
             .text-5xl { font-size: 2.5rem !important; }
             .text-6xl { font-size: 3rem !important; }
             .text-7xl { font-size: 3.5rem !important; }
         }
-        
-        /* FAQ Styles */
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .faq-content.open {
-            max-height: 500px; /* Adjust based on content length */
-            transition: max-height 0.3s ease-in;
-        }
     </style>
-    
-    <!-- JSON-LD Schema -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -276,35 +142,23 @@
     </script>
 </head>
 <body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
-    <!-- Skip Link -->
-            <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-theme-primary text-white px-4 py-2 rounded-lg z-50">
-        Skip to main content
-    </a>
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-theme-primary text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
 
     <!-- Header -->
     <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 border-b border-clay-100 transition-all duration-300" style="background-color: #f5f4f6;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 lg:h-24 w-full gap-4">
-                <!-- Mobile menu -->
-                <button
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    @keydown.escape="mobileMenuOpen = false"
+                <button @click="mobileMenuOpen = !mobileMenuOpen" @keydown.escape="mobileMenuOpen = false"
                     class="lg:hidden p-2 -ml-1 rounded hover:bg-clay-100 focus:outline-none focus:ring-2 focus:ring-theme-primary/30"
-                    aria-label="Toggle menu"
-                    x-bind:aria-expanded="mobileMenuOpen"
-                >
+                    aria-label="Toggle menu" x-bind:aria-expanded="mobileMenuOpen">
                     <svg class="w-5 h-5 text-clay-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
-
-                <!-- Logo (left corner) -->
                 <a href="/en/" class="flex items-center flex-shrink-0">
                     <img src="../assets/leylafiratlilogo.png" alt="Leyla Firatli" class="nav-logo">
                 </a>
-
-                <!-- Nav: compact block — logo, then all links + CTAs with even spacing -->
                 <nav class="hidden lg:flex flex-1 items-center justify-evenly min-w-0 px-6">
                     <a href="#" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">Home</a>
                     <a href="about.html" class="nav-link font-display transition-colors relative py-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-theme-primary after:transition-[width] hover:after:w-full">About</a>
@@ -330,11 +184,8 @@
                         <a href="/tr/" class="nav-cta nav-lang-btn inline-flex items-center border font-display transition-colors">Türkçe</a>
                     </div>
                 </nav>
-
                 <div class="lg:hidden flex-1"></div>
             </div>
-
-            <!-- Mobile Menu -->
             <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
                 <nav class="py-4 space-y-1">
                     <a href="#" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-display">Home</a>
@@ -342,14 +193,11 @@
                     <div class="space-y-0">
                         <span class="block py-1.5 text-xs font-medium text-clay-500 font-display uppercase tracking-wider">Work With Me</span>
                         <a href="chronic-pain-healing.html" class="block py-2 pl-3 text-sm text-clay-600 hover:text-theme-primary font-display">Freedom from Chronic Pain</a>
-                        <a href="breathwork-somatics.html" class="block py-2 pl-3 text-sm text-clay-600 hover:text-theme-primary font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
+                        <a href="breathwork-somatics.html" class="block py-2 pl-3 text-sm text-clay-600 hover:text-theme-primary font-display">Breathwork and Somatic Awareness</a>
                     </div>
                     <a href="free-practices.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-display">Free Practices</a>
                     <a href="contact.html" class="block py-2 text-sm font-medium text-clay-600 hover:text-theme-primary font-display">Contact</a>
-                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-3 px-3 py-2 text-sm font-medium rounded-md bg-theme-primary text-white font-display">
-                        Book a session
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
+                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-3 px-3 py-2 text-sm font-medium rounded-md bg-theme-primary text-white font-display">Book a session</a>
                     <a href="/tr/" class="inline-flex items-center mt-2 px-3 py-2 text-sm font-medium rounded-md border border-clay-200 text-clay-600 font-display">Türkçe</a>
                 </nav>
             </div>
@@ -357,32 +205,34 @@
     </header>
 
     <main id="main">
-        <!-- Hero Section: split layout (matches TR design) -->
-        <section class="relative min-h-[60vh] lg:min-h-[66vh] overflow-hidden bg-earth-50">
-            <div class="grid lg:grid-cols-5 min-h-[60vh] lg:min-h-[66vh]">
-                <div class="relative lg:col-span-3 min-h-[32vh] lg:min-h-[66vh]">
-                    <img src="../assets/leylaheroo.jpg" alt="Leyla" class="absolute inset-0 w-full h-full object-cover object-left object-top opacity-95">
-                    <div class="absolute inset-0 bg-gradient-to-r from-clay-900/35 via-clay-900/15 to-transparent"></div>
+
+        <!-- ==================== HERO ==================== -->
+        <section class="relative min-h-[85vh] lg:min-h-screen overflow-hidden">
+            <div class="grid lg:grid-cols-2 min-h-[85vh] lg:min-h-screen">
+                <!-- Image half -->
+                <div class="relative min-h-[50vh] lg:min-h-screen order-1">
+                    <img src="../assets/yogashoot.jpg" alt="Leyla yoga" class="absolute inset-0 w-full h-full object-cover object-center">
                 </div>
-                <div class="lg:col-span-2 flex items-center bg-stone-200">
-                    <div class="w-full max-w-[40rem] px-6 py-8 sm:px-10 lg:px-12 lg:py-12 animate-fade-in-up">
-                        <h1 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-6 tracking-tight leading-tight text-left">
-                            Hi, I'm Leyla.
+                <!-- Text half -->
+                <div class="order-2 flex items-center bg-earth-50 relative">
+                    <div class="w-full px-6 sm:px-10 lg:px-14 xl:px-20 py-12 lg:py-0 animate-fade-in-up">
+                        <h1 class="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-display font-light text-clay-800 mb-6 tracking-tight leading-[1.05]">
+                            Hi, I'm <span class="italic" style="color: #844b4b;">Leyla</span>.
                         </h1>
-                        <p class="text-lg lg:text-xl text-clay-700 leading-relaxed font-light mb-8 font-sans text-left">
+                        <div class="w-16 h-[2px] mb-8" style="background: linear-gradient(90deg, #844b4b, #d4a0a0);"></div>
+                        <p class="text-lg lg:text-xl text-clay-600 leading-relaxed font-light font-sans max-w-lg mb-4">
                             In a world designed to damage our nervous systems, the anxiety, pain, overwhelm, and disconnection you feel is your body's intelligent response to an unhealthy system.
-                            <br><br>
-                            I offer mind body healing sessions rooted in somatic awareness and breath to walk with you as you reclaim your own healing power.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-4 items-start text-lg lg:text-xl">
-                            <a href="#work-together" class="btn-primary group font-display !px-8 !py-4 !text-xl">
+                        <p class="text-lg lg:text-xl text-clay-600 leading-relaxed font-light font-sans max-w-lg mb-10">
+                            I offer mind-body healing sessions rooted in somatic awareness and breath to walk with you as you reclaim your own healing power.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#work-together" class="btn-primary font-display">
                                 <span>Learn more</span>
-                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </a>
-                            <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-ghost group font-display !px-8 !py-4 !text-xl" target="_blank" rel="noopener noreferrer">
-                                <span>Book a session</span>
+                            <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-ghost font-display" target="_blank" rel="noopener noreferrer">
+                                Book a session
                             </a>
                         </div>
                     </div>
@@ -390,48 +240,38 @@
             </div>
         </section>
 
-        <!-- About Me Section -->
-        <section class="py-24 lg:py-32 bg-gradient-to-br from-earth-50 to-clay-50 relative">
+        <!-- ==================== ABOUT ==================== -->
+        <section class="py-24 lg:py-32 relative" style="background: linear-gradient(180deg, #f5f0eb 0%, #ede6de 100%);">
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-5 gap-8 lg:gap-16 items-stretch">
-                    <!-- Photo Section -->
-                    <div class="animate-slide-in-left lg:order-2 lg:col-span-2 self-stretch h-full">
-                        <div class="relative w-full h-full min-h-[32rem] lg:min-h-[36rem] overflow-hidden rounded-2xl lg:rounded-3xl">
-                            <img src="../assets/leylaprofilepic.jpg" alt="Leyla - Mind-Body Healing Practitioner" class="absolute inset-0 w-full h-full object-cover object-center">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <!-- Text -->
+                    <div class="order-2 lg:order-1">
+                        <h2 class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-4 tracking-tight">About Me</h2>
+                        <div class="w-16 h-[2px] mb-8" style="background: linear-gradient(90deg, #844b4b, #d4a0a0);"></div>
+                        <div class="space-y-5 font-sans">
+                            <p class="text-lg text-clay-600 leading-relaxed font-light">
+                                Through my own journey of healing chronic back pain, anxiety and panic attacks I discovered that the only person that can heal us is ourselves. When we begin to listen to the message of our nervous systems, symptoms loosen their grip — and lasting freedom becomes possible.
+                            </p>
+                            <p class="text-lg text-clay-500 leading-relaxed font-light">
+                                I do this work to help people reconnect with that power, and to offer an alternative to the cycles of hospitals, medications and Western therapy that so often fail us.
+                            </p>
+                            <p class="text-lg text-clay-700 leading-relaxed font-medium">
+                                I believe that with commitment, patience, and trust, anyone can be the source of their own healing. My role is simply to create the space, tools, and support for that transformation to unfold through breathwork, somatic awareness, and mind-body understanding.
+                            </p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="about.html" class="btn-ghost font-display group inline-flex items-center">
+                                <span>More About My Story</span>
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
                         </div>
                     </div>
-                    
-                    <!-- Content Section -->
-                    <div class="animate-slide-in-right lg:order-1 lg:col-span-3 flex">
-                        <div class="space-y-8">
-                            <div>
-                                <h2 class="text-[3.3rem] lg:text-[4.125rem] font-display font-light text-clay-800 mb-6 tracking-tight">
-                                    About Me
-                                </h2>
-                                <div class="w-20 h-1 bg-theme-primary mb-8"></div>
-                            </div>
-                            
-                            <div class="space-y-6 font-sans">
-                                <p class="text-[1.375rem] text-clay-600 leading-relaxed font-light">
-                                    Through my own journey of healing chronic back pain, anxiety and panic attacks I discovered that the only person that can heal us is ourselves. When we begin to listen to the message of our nervous systems, symptoms loosen their grip — and lasting freedom becomes possible.
-                                </p>
-                                
-                                <p class="text-xl text-clay-600 leading-relaxed">
-                                    I do this work to help people reconnect with that power, and to offer an alternative to the cycles of hospitals, medications and Western therapy that so often fail us.
-                                </p>
-                                
-                                <p class="text-xl text-clay-600 leading-relaxed font-bold">
-                                    I believe that with commitment, patience, and trust, anyone can be the source of their own healing. My role is simply to create the space, tools, and support for that transformation to unfold through breathwork, somatic awareness, and mind-body understanding.
-                                </p>
-                            </div>
-                            
-                            <div class="pt-4">
-                                <a href="about.html" class="btn-primary group inline-flex items-center">
-                                    <span>More About My Story</span>
-                                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                    </svg>
-                                </a>
+                    <!-- Portrait (arch shape) -->
+                    <div class="flex justify-center order-1 lg:order-2">
+                        <div class="relative w-72 sm:w-80 lg:w-[380px]">
+                            <div class="relative overflow-hidden shadow-xl" style="border-radius: 200px 200px 20px 20px;">
+                                <img src="../assets/portraitleyla.png" alt="Leyla portrait" class="w-full aspect-[3/4] object-cover object-center">
                             </div>
                         </div>
                     </div>
@@ -439,186 +279,147 @@
             </div>
         </section>
 
-        <!-- Quote Section -->
-        <section class="py-24 lg:py-32 relative overflow-hidden">
-            <!-- Background Image -->
-            <div class="absolute inset-0">
-                <img src="../assets/desert.JPG" alt="Desert landscape" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-br from-earth-100/80 via-clay-50/90 to-sage-50/80"></div>
-            </div>
-            
-            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="animate-fade-in-up">
-                    <!-- Quote Text -->
-                    <blockquote class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-8 italic leading-relaxed">
-                        In this path, healing comes from trusting the body's intelligence and giving it the space, awareness and compassion it needs to do the healing work it is naturally gifted at doing.
-                    </blockquote>
-                </div>
+        <!-- ==================== QUOTE ==================== -->
+        <section class="py-20 lg:py-28 relative overflow-hidden bg-earth-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="w-12 h-[2px] mx-auto mb-10" style="background: linear-gradient(90deg, #844b4b, #d4a0a0);"></div>
+                <blockquote class="text-3xl sm:text-4xl lg:text-5xl font-display font-light text-clay-800 italic leading-relaxed">
+                    In this path, healing comes from trusting the body's intelligence and giving it the space, awareness and compassion it needs to do the healing work it is naturally gifted at doing.
+                </blockquote>
+                <div class="w-12 h-[2px] mx-auto mt-10" style="background: linear-gradient(90deg, #d4a0a0, #844b4b);"></div>
             </div>
         </section>
 
-        <!-- Services and Offerings -->
-        <section id="work-together" class="py-24 lg:py-32 relative overflow-hidden bg-theme-primary">
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="animate-fade-in-up">
-                    <div class="text-center mb-16 lg:mb-20">
-                        <h2 class="text-6xl lg:text-7xl font-display font-light text-white mb-6">
-                            Ways to Work Together
-                        </h2>
+        <!-- ==================== SERVICES ==================== -->
+        <section id="work-together" class="py-24 lg:py-32 relative" style="background: #844b4b;">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl lg:text-6xl font-display font-light text-white tracking-tight">
+                        Ways to Work Together
+                    </h2>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-14">
+                    <!-- Card 1 -->
+                    <div class="group rounded-2xl p-8 lg:p-10 bg-earth-50 border border-clay-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-clay-800 mb-4 tracking-tight">Chronic Pain Focused Healing</h3>
+                        <div class="w-10 h-[2px] mb-6" style="background: #844b4b;"></div>
+                        <p class="text-clay-600 text-lg leading-relaxed font-light font-sans mb-8">
+                            A mind-body approach for persistent pain that lingers, flares, or defies clear explanation. This work treats pain as communication from the nervous system and supports you to listen, regulate, and find lasting relief without endless treatments or fear of your own body.
+                        </p>
+                        <a href="chronic-pain-healing.html" class="inline-flex items-center text-base font-display group-hover:translate-x-1 transition-transform" style="color: #844b4b;">
+                            <span>Learn more</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
                     </div>
-                    
-                    <div class="flex justify-center">
-                        <div class="grid lg:grid-cols-2 gap-10 mb-10 max-w-5xl">
-                        <!-- Chronic Pain Focused Healing -->
-                        <div class="group">
-                            <div class="bg-clay-50/95 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-clay-200/80 hover:shadow-2xl hover:border-clay-300/60 transition-all duration-300 hover:-translate-y-1.5 h-full flex flex-col">
-                                <div class="text-center mb-6">
-                                    <div class="inline-block bg-theme-primary rounded-2xl px-8 py-5 shadow-md border border-clay-300/30">
-                                        <h3 class="text-2xl lg:text-3xl font-display font-light text-white tracking-tight">Chronic Pain Focused&nbsp;Healing</h3>
-                                    </div>
-                                </div>
-                                <p class="text-clay-700 text-xl leading-relaxed font-light text-center flex-grow font-sans">
-                                    A mind-body approach for persistent pain that lingers, flares, or defies clear explanation. This work treats pain as communication from the nervous system and supports you to listen, regulate, and find lasting relief without endless treatments or fear of your own body.
-                                </p>
-                                <div class="text-center mt-8">
-                                    <a href="chronic-pain-healing.html" class="btn-primary group font-display !px-8 !py-4 !text-xl inline-flex items-center">
-                                        <span>Learn more</span>
-                                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Breathwork and Somatic Awareness -->
-                        <div class="group">
-                            <div class="bg-clay-50/95 backdrop-blur-sm rounded-3xl p-10 shadow-xl border border-clay-200/80 hover:shadow-2xl hover:border-clay-300/60 transition-all duration-300 hover:-translate-y-1.5 h-full flex flex-col">
-                                <div class="text-center mb-6">
-                                    <div class="inline-block bg-theme-primary rounded-2xl px-8 py-5 shadow-md border border-clay-300/30">
-                                        <h3 class="text-2xl lg:text-3xl font-display font-light text-white tracking-tight">Breathwork and Somatic Awareness</h3>
-                                    </div>
-                                </div>
-                                <p class="text-clay-700 text-xl leading-relaxed font-light text-center flex-grow font-sans">
-                                    Deeply personalized one-on-one work integrating mind-body principles, breathwork, somatic awareness and nervous system regulation to build the foundation of your personal healing practice.
-                                </p>
-                                <div class="text-center mt-8">
-                                    <a href="breathwork-somatics.html" class="btn-primary group font-display !px-8 !py-4 !text-xl inline-flex items-center">
-                                        <span>Learn more</span>
-                                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Call to Action -->
-                    <div class="text-center">
-                        <a href="https://calendly.com/leylafiratli/introduction-call" class="inline-flex items-center font-display bg-clay-600 text-white px-10 py-4 rounded-xl font-medium text-xl hover:bg-clay-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5" target="_blank" rel="noopener noreferrer">
-                            Book Your Intro Call
-                            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
+
+                    <!-- Card 2 -->
+                    <div class="group rounded-2xl p-8 lg:p-10 bg-earth-50 border border-clay-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        <h3 class="text-2xl lg:text-3xl font-display font-light text-clay-800 mb-4 tracking-tight">Breathwork and Somatic Awareness</h3>
+                        <div class="w-10 h-[2px] mb-6" style="background: #844b4b;"></div>
+                        <p class="text-clay-600 text-lg leading-relaxed font-light font-sans mb-8">
+                            Deeply personalized one-on-one work integrating mind-body principles, breathwork, somatic awareness and nervous system regulation to build the foundation of your personal healing practice.
+                        </p>
+                        <a href="breathwork-somatics.html" class="inline-flex items-center text-base font-display group-hover:translate-x-1 transition-transform" style="color: #844b4b;">
+                            <span>Learn more</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                     </div>
                 </div>
+
+                <div class="text-center">
+                    <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-primary font-display text-lg !px-10 !py-4" target="_blank" rel="noopener noreferrer">
+                        Book Your Intro Call
+                        <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- The Foundation of My Work -->
-        <section class="py-16 lg:py-20 relative overflow-hidden">
-            <!-- Background: desert image covering full section -->
-            <div class="absolute inset-0 min-h-full">
-                <img src="../assets/desert.JPG" alt="" class="absolute inset-0 w-full h-full object-cover object-center" aria-hidden="true">
-                <div class="absolute inset-0 bg-clay-900/35"></div>
+        <!-- ==================== PRINCIPLES ==================== -->
+        <section class="py-24 lg:py-32 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="../assets/desert.JPG" alt="" class="w-full h-full object-cover" aria-hidden="true">
+                <div class="absolute inset-0 bg-clay-900/40"></div>
             </div>
-            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10">
-                    <h2 class="text-6xl lg:text-7xl font-display font-light text-white mb-4 drop-shadow-sm">
+            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <h2 class="text-5xl lg:text-6xl font-display font-light text-white tracking-tight mb-4">
                         The Foundation of My Work
                     </h2>
-                    <p class="text-white/95 text-lg font-sans font-light leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
+                    <p class="text-white/90 text-lg font-sans font-light leading-relaxed max-w-2xl mx-auto">
                         My work is guided by these core principles that emerged from my own healing journey and my understanding of how our world impacts our bodies.
                     </p>
                 </div>
-                <div class="flex flex-col gap-4 max-w-5xl mx-auto">
-                    <!-- Pillar 1 -->
-                    <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Your nervous system is reacting to an unhealthy world</h3>
-                        <p class="text-clay-600 font-display text-lg leading-relaxed">
+                <div class="space-y-4">
+                    <div class="group p-6 lg:p-8 rounded-xl bg-white/90 backdrop-blur-sm border border-clay-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-2">Your nervous system is reacting to an unhealthy world</h3>
+                        <p class="text-clay-600 font-sans text-base lg:text-lg leading-relaxed">
                             Chronic pain, anxiety, overwhelm and disconnection are intelligent responses of your body trying to survive during end stage capitalism. There is nothing wrong or broken with you.
                         </p>
                     </div>
-                    <!-- Pillar 2 -->
-                    <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Healing comes from listening and understanding</h3>
-                        <p class="text-clay-600 font-display text-lg leading-relaxed">
+                    <div class="group p-6 lg:p-8 rounded-xl bg-white/90 backdrop-blur-sm border border-clay-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-2">Healing comes from listening and understanding</h3>
+                        <p class="text-clay-600 font-sans text-base lg:text-lg leading-relaxed">
                             Lasting freedom comes from listening and understanding the message of our nervous systems. When we listen to what our bodies are trying to tell us, the need for symptoms diminishes.
                         </p>
                     </div>
-                    <!-- Pillar 3 -->
-                    <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Empowerment over dependency</h3>
-                        <p class="text-clay-600 font-display text-lg leading-relaxed">
+                    <div class="group p-6 lg:p-8 rounded-xl bg-white/90 backdrop-blur-sm border border-clay-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-2">Empowerment over dependency</h3>
+                        <p class="text-clay-600 font-sans text-base lg:text-lg leading-relaxed">
                             My role is not to make you reliant on me, but be a source of support as you heal yourself. I provide space, guidance, and practices so you can become your own healer. The more people who reclaim their agency, the more we loosen the grip of the systems. I hope after some time of working together, you will no longer need me.
                         </p>
                     </div>
-                    <!-- Pillar 4 -->
-                    <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Individual healing enables collective change</h3>
-                        <p class="text-clay-600 font-display text-lg leading-relaxed">
+                    <div class="group p-6 lg:p-8 rounded-xl bg-white/90 backdrop-blur-sm border border-clay-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-2">Individual healing enables collective change</h3>
+                        <p class="text-clay-600 font-sans text-base lg:text-lg leading-relaxed">
                             Your personal healing is an act of collective liberation. When we heal individually, we strengthen the collective. When the collective heals, we transform the systems that cause suffering. Your healing matters for the world.
                         </p>
                     </div>
-                    <!-- Pillar 5 -->
-                    <div class="group p-6 lg:p-8 rounded-2xl bg-white/95 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-3">Rooted in love and empathy</h3>
-                        <p class="text-clay-600 font-display text-lg leading-relaxed">
+                    <div class="group p-6 lg:p-8 rounded-xl bg-white/90 backdrop-blur-sm border border-clay-100 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+                        <h3 class="text-xl lg:text-2xl font-display font-light text-clay-800 mb-2">Rooted in love and empathy</h3>
+                        <p class="text-clay-600 font-sans text-base lg:text-lg leading-relaxed">
                             I approach this work with deep love and empathy for all human beings. I meet you where you are without judgment, with the understanding that we are all doing our best in an imperfect system. Your humanity is honored in every session.
                         </p>
                     </div>
                 </div>
-                <p class="text-white/95 font-sans text-lg leading-relaxed text-center mt-10 max-w-2xl mx-auto drop-shadow-sm whitespace-nowrap">
+                <p class="text-white/90 font-sans text-lg leading-relaxed text-center mt-10 max-w-2xl mx-auto">
                     These principles shape every session, every conversation, and every practice I offer.
                 </p>
             </div>
         </section>
 
-        <!-- Closing strip -->
-        <section class="py-24 lg:py-32 relative overflow-hidden">
-            <!-- Background Image -->
-            <div class="absolute inset-0">
-                <img src="../assets/yay.jpg" alt="Yay landscape" class="w-full h-full object-cover">
-            </div>
-            
-            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="animate-fade-in-up">
-                    <!-- Quote Text -->
-                    <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-lg border border-white/40">
-                        <blockquote class="text-4xl lg:text-5xl font-display font-light text-clay-800 mb-0 italic leading-relaxed">
-                            Each time we reconnect with our body, the hold of systems that thrive on our disconnection weakens.  I share this work to contribute to the wider liberation that becomes possible when we are no longer bound by pain.
-                        </blockquote>
-                    </div>
+        <!-- ==================== CLOSING QUOTE ==================== -->
+        <section class="relative overflow-hidden">
+            <div class="grid lg:grid-cols-2 min-h-[50vh]">
+                <div class="relative min-h-[40vh] lg:min-h-[50vh]">
+                    <img src="../assets/yay.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <div class="flex items-center bg-earth-50 px-6 sm:px-10 lg:px-16 py-16 lg:py-0">
+                    <blockquote class="text-2xl sm:text-3xl lg:text-4xl font-display font-light text-clay-800 italic leading-relaxed">
+                        Each time we reconnect with our body, the hold of systems that thrive on our disconnection weakens. I share this work to contribute to the wider liberation that becomes possible when we are no longer bound by pain.
+                    </blockquote>
                 </div>
             </div>
         </section>
 
-        <!-- Call to action -->
+        <!-- ==================== CTA ==================== -->
         <section class="py-24 lg:py-28 relative overflow-hidden">
             <div class="absolute inset-0">
                 <img src="../assets/yayla.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
-                <div class="absolute inset-0 bg-earth-50/75"></div>
+                <div class="absolute inset-0 bg-earth-50/80 backdrop-blur-sm"></div>
             </div>
             <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-4xl lg:text-5xl font-display font-light text-clay-800 tracking-tight mb-4">
                     Have questions or want to learn more?
                 </h2>
-                <div class="w-16 h-1 bg-theme-primary mx-auto mb-8"></div>
-                <p class="font-sans text-clay-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl mx-auto whitespace-nowrap">
+                <div class="w-16 h-[2px] mx-auto mb-8" style="background: linear-gradient(90deg, #844b4b, #d4a0a0);"></div>
+                <p class="font-sans text-clay-600 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl mx-auto">
                     Reach out through the contact form and I will get back to you.
                 </p>
-                <a href="contact.html" class="btn-primary group font-display inline-flex items-center gap-2 !px-8 !py-4 !text-lg">
+                <a href="contact.html" class="btn-primary font-display group inline-flex items-center gap-2 !px-8 !py-4 !text-lg">
                     Ask here
-                    <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
         </section>
@@ -627,107 +428,68 @@
     <!-- Footer -->
     <footer class="bg-clay-900 text-white py-20 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stay in Touch Section -->
             <div class="text-center mb-16">
                 <h3 class="font-display font-light text-4xl lg:text-5xl tracking-tight text-white mb-3">Stay in Touch</h3>
-                <p class="font-sans text-clay-300 text-lg tracking-wide mb-10 max-w-md mx-auto">
+                <p class="font-sans text-clay-400 text-lg tracking-wide mb-10 max-w-md mx-auto">
                     Join the list for occasional notes on healing, embodiment, and freedom from pain.
                 </p>
-                <!-- Mailchimp Signup Form -->
                 <div class="flex justify-center">
                     <div class="w-full max-w-md">
-                        <!-- Begin Mailchimp Signup Form -->
                         <div id="mc_embed_signup">
                             <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
                                 <div id="mc_embed_signup_scroll">
                                     <div class="mc-field-group relative">
                                         <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800/80 border border-clay-600 rounded-full text-white placeholder-clay-500 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent font-sans text-base tracking-wide" id="mce-EMAIL" placeholder="Your email" required>
                                         <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-theme-primary hover:bg-theme-primary/90 rounded-full flex items-center justify-center transition-all duration-300">
-                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                            </svg>
+                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                                         </button>
                                     </div>
                                     <div id="mce-responses" class="clear mt-4">
                                         <div class="response text-white text-sm font-sans" id="mce-error-response" style="display:none"></div>
                                         <div class="response text-white text-sm font-sans" id="mce-success-response" style="display:none"></div>
                                     </div>
-                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
                                 </div>
                             </form>
                         </div>
-                        <!--End mc_embed_signup-->
                     </div>
                 </div>
             </div>
-            
-            <!-- Copyright -->
             <div class="border-t border-clay-700/80 pt-10 text-center">
-                <p class="text-clay-400 mb-3 text-sm font-sans tracking-wide leading-relaxed">
-                    This work is educational and not a substitute for medical care.
-                </p>
-                <p class="text-clay-500 text-sm font-sans tracking-widest uppercase">
-                    © 2025 Leyla
-                </p>
+                <p class="text-clay-400 mb-3 text-sm font-sans tracking-wide leading-relaxed">This work is educational and not a substitute for medical care.</p>
+                <p class="text-clay-500 text-sm font-sans tracking-widest uppercase">&copy; 2025 Leyla</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../script.js"></script>
-    
-    <!-- Mailchimp Form Validation Script -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
         (function($) {
-            window.fnames = new Array(); 
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';
-            ftypes[0]='email';
+            window.fnames = new Array(); window.ftypes = new Array();
+            fnames[0]='EMAIL'; ftypes[0]='email';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
-        
-        // Custom handling for Mailchimp responses
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('mc-embedded-subscribe-form');
             if (form) {
-                // Override Mailchimp's default response handling
                 window.mce_success_cb = function(resp) {
-                    const successDiv = document.getElementById('mce-success-response');
-                    const errorDiv = document.getElementById('mce-error-response');
-                    
-                    // Hide error message
-                    if (errorDiv) errorDiv.style.display = 'none';
-                    
-                    // Show success message
-                    if (successDiv) {
-                        successDiv.innerHTML = 'Thank you for subscribing!';
-                        successDiv.style.display = 'block';
-                    }
+                    const s = document.getElementById('mce-success-response');
+                    const e = document.getElementById('mce-error-response');
+                    if (e) e.style.display = 'none';
+                    if (s) { s.innerHTML = 'Thank you for subscribing!'; s.style.display = 'block'; }
                 };
-                
                 window.mce_error_cb = function(resp) {
-                    const successDiv = document.getElementById('mce-success-response');
-                    const errorDiv = document.getElementById('mce-error-response');
-                    
-                    // Hide success message
-                    if (successDiv) successDiv.style.display = 'none';
-                    
-                    // Show error message
-                    if (errorDiv) {
-                        // Check if it's an "already subscribed" error
-                        if (resp.msg && resp.msg.includes('already subscribed')) {
-                            errorDiv.innerHTML = 'You\'re already subscribed!';
-                        } else {
-                            errorDiv.innerHTML = resp.msg || 'Please try again.';
-                        }
-                        errorDiv.style.display = 'block';
+                    const s = document.getElementById('mce-success-response');
+                    const e = document.getElementById('mce-error-response');
+                    if (s) s.style.display = 'none';
+                    if (e) {
+                        e.innerHTML = (resp.msg && resp.msg.includes('already subscribed')) ? "You're already subscribed!" : (resp.msg || 'Please try again.');
+                        e.style.display = 'block';
                     }
                 };
             }
         });
     </script>
-
 </body>
 </html>
