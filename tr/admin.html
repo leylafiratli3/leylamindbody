@@ -65,18 +65,14 @@
 
         <!-- Stats -->
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
                     <p class="text-sm text-gray-500 mb-1">Toplam Kayıt</p>
                     <p id="stat-total" class="text-3xl font-semibold" style="color: #844b4b;">0</p>
                 </div>
                 <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                    <p class="text-sm text-gray-500 mb-1">WhatsApp İsteyenler</p>
+                    <p class="text-sm text-gray-500 mb-1">WhatsApp Numarası Var</p>
                     <p id="stat-whatsapp" class="text-3xl font-semibold" style="color: #844b4b;">0</p>
-                </div>
-                <div class="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                    <p class="text-sm text-gray-500 mb-1">Kalan Kontenjan</p>
-                    <p id="stat-remaining" class="text-3xl font-semibold" style="color: #844b4b;">15</p>
                 </div>
             </div>
 
@@ -113,49 +109,52 @@
     </div>
 
     <script>
-        const STORAGE_KEY = 'zihinbedenyolu_registrations';
-        const ADMIN_PASSWORD = 'leyla2026';
-        const MAX_CAPACITY = 15;
+        const API_URL = 'https://leyla-mindbody-api.fly.dev';
+        let authToken = '';
 
-        function getRegistrations() {
-            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
-            catch { return []; }
+        function authHeaders() {
+            return { 'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/json' };
         }
 
-        function renderDashboard() {
-            const registrations = getRegistrations();
+        async function renderDashboard() {
             const tbody = document.getElementById('registrations-table');
             const emptyState = document.getElementById('empty-state');
 
-            // Stats
-            document.getElementById('stat-total').textContent = registrations.length;
-            document.getElementById('stat-whatsapp').textContent = registrations.filter(r => r.phone).length;
-            document.getElementById('stat-remaining').textContent = Math.max(0, MAX_CAPACITY - registrations.length);
+            try {
+                const res = await fetch(API_URL + '/api/registrations', { headers: authHeaders() });
+                if (res.status === 401) { logout(); return; }
+                const data = await res.json();
 
-            if (registrations.length === 0) {
-                tbody.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
+                document.getElementById('stat-total').textContent = data.stats.total;
+                document.getElementById('stat-whatsapp').textContent = data.stats.withPhone;
+
+                if (data.registrations.length === 0) {
+                    tbody.innerHTML = '';
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+
+                emptyState.classList.add('hidden');
+                tbody.innerHTML = data.registrations.map((r, i) => {
+                    const date = new Date(r.registered_at + 'Z');
+                    const dateStr = date.toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                    const timeStr = date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+                    return `
+                        <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                            <td class="px-5 py-3.5 text-gray-400">${i + 1}</td>
+                            <td class="px-5 py-3.5 font-medium text-gray-800">${escapeHtml(r.name)}</td>
+                            <td class="px-5 py-3.5 text-gray-600">${escapeHtml(r.email)}</td>
+                            <td class="px-5 py-3.5 text-gray-600">${r.phone ? escapeHtml(r.phone) : '<span class="text-gray-300">—</span>'}</td>
+                            <td class="px-5 py-3.5 text-gray-500">${dateStr} ${timeStr}</td>
+                            <td class="px-5 py-3.5">
+                                <button onclick="deleteRegistration(${r.id})" class="text-red-400 hover:text-red-600 transition-colors text-xs">Sil</button>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            } catch (err) {
+                console.error('Dashboard yüklenemedi:', err);
             }
-
-            emptyState.classList.add('hidden');
-            tbody.innerHTML = registrations.map((r, i) => {
-                const date = new Date(r.registeredAt);
-                const dateStr = date.toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-                const timeStr = date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
-                return `
-                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                        <td class="px-5 py-3.5 text-gray-400">${i + 1}</td>
-                        <td class="px-5 py-3.5 font-medium text-gray-800">${escapeHtml(r.name)}</td>
-                        <td class="px-5 py-3.5 text-gray-600">${escapeHtml(r.email)}</td>
-                        <td class="px-5 py-3.5 text-gray-600">${r.phone ? escapeHtml(r.phone) : '<span class="text-gray-300">—</span>'}</td>
-                        <td class="px-5 py-3.5 text-gray-500">${dateStr} ${timeStr}</td>
-                        <td class="px-5 py-3.5">
-                            <button onclick="deleteRegistration(${i})" class="text-red-400 hover:text-red-600 transition-colors text-xs">Sil</button>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
         }
 
         function escapeHtml(str) {
@@ -164,70 +163,57 @@
             return div.innerHTML;
         }
 
-        function deleteRegistration(index) {
+        async function deleteRegistration(id) {
             if (!confirm('Bu kaydı silmek istediğinize emin misiniz?')) return;
-            const registrations = getRegistrations();
-            registrations.splice(index, 1);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(registrations));
+            await fetch(API_URL + '/api/registrations/' + id, { method: 'DELETE', headers: authHeaders() });
             renderDashboard();
         }
 
-        function clearAll() {
+        async function clearAll() {
             if (!confirm('TÜM kayıtları silmek istediğinize emin misiniz? Bu işlem geri alınamaz.')) return;
-            localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+            await fetch(API_URL + '/api/registrations', { method: 'DELETE', headers: authHeaders() });
             renderDashboard();
         }
 
         function exportCSV() {
-            const registrations = getRegistrations();
-            if (registrations.length === 0) { alert('İndirilecek kayıt yok.'); return; }
-
-            const headers = ['Ad Soyad', 'E-posta', 'Telefon', 'Kayıt Tarihi'];
-            const rows = registrations.map(r => [
-                r.name,
-                r.email,
-                r.phone || '',
-                new Date(r.registeredAt).toLocaleString('tr-TR')
-            ]);
-
-            let csv = '\uFEFF'; // BOM for Turkish chars
-            csv += headers.join(',') + '\n';
-            rows.forEach(row => {
-                csv += row.map(cell => '"' + String(cell).replace(/"/g, '""') + '"').join(',') + '\n';
-            });
-
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'zihin_beden_yolu_kayitlar.csv';
-            link.click();
+            window.open(API_URL + '/api/registrations/export?auth=' + encodeURIComponent(authToken));
         }
 
         function logout() {
+            authToken = '';
             document.getElementById('dashboard').classList.add('hidden');
             document.getElementById('login-screen').classList.remove('hidden');
             document.getElementById('password').value = '';
         }
 
-        // Login
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        // Login - validates password against the backend
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const pw = document.getElementById('password').value;
-            if (pw === ADMIN_PASSWORD) {
-                document.getElementById('login-screen').classList.add('hidden');
-                document.getElementById('dashboard').classList.remove('hidden');
-                renderDashboard();
-            } else {
+            authToken = pw;
+
+            try {
+                const res = await fetch(API_URL + '/api/registrations', { headers: authHeaders() });
+                if (res.ok) {
+                    document.getElementById('login-screen').classList.add('hidden');
+                    document.getElementById('dashboard').classList.remove('hidden');
+                    renderDashboard();
+                } else {
+                    authToken = '';
+                    document.getElementById('login-error').classList.remove('hidden');
+                }
+            } catch (err) {
+                authToken = '';
                 document.getElementById('login-error').classList.remove('hidden');
             }
         });
 
-        // Auto-refresh dashboard every 5 seconds when visible
+        // Auto-refresh every 10 seconds
         setInterval(() => {
             if (!document.getElementById('dashboard').classList.contains('hidden')) {
                 renderDashboard();
             }
-        }, 5000);
+        }, 10000);
     </script>
 </body>
 </html>

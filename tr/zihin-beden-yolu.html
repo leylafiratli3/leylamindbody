@@ -128,9 +128,6 @@
                     <p class="text-2xl sm:text-3xl font-display font-light text-clay-800 mb-2">
                         Her Ayın İlk Salı Akşamı <span class="text-clay-400 mx-1">&middot;</span> Saat 20.00
                     </p>
-                    <p class="text-2xl sm:text-3xl font-display font-semibold text-clay-800 mb-3">
-                        Sadece 15 kişi
-                    </p>
                     <p class="text-lg font-display text-clay-600 italic">
                         Katılım <span class="font-semibold not-italic" style="color: #844b4b;">Ücretsiz</span>.
                     </p>
@@ -157,9 +154,9 @@
                         </div>
                         <div>
                             <label for="phone" class="block text-sm font-sans font-medium text-clay-600 mb-1.5">
-                                Telefon <span class="text-clay-400 font-light">(WhatsApp grubuna katılmak istersen)</span>
+                                Telefon (WhatsApp) *
                             </label>
-                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+90 5XX XXX XX XX">
+                            <input type="tel" id="phone" name="phone" required class="form-input" placeholder="+90 5XX XXX XX XX">
                         </div>
                         <div class="pt-2">
                             <button type="submit" id="submitBtn" class="btn-primary font-display">
@@ -207,7 +204,7 @@
     </div>
 
     <script>
-        const FORMSPREE_URL = 'https://formspree.io/f/mrejrkrw';
+        const API_URL = 'https://leyla-mindbody-api.fly.dev';
 
         document.getElementById('eventForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -217,28 +214,28 @@
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
 
-            if (!name || !email) return;
+            if (!name || !email || !phone) return;
 
             btn.disabled = true;
             btn.textContent = 'Gönderiliyor...';
 
             try {
-                const res = await fetch(FORMSPREE_URL, {
+                const res = await fetch(API_URL + '/api/register', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        phone: phone || 'Belirtilmedi',
-                        _subject: 'Yeni Kayıt: Zihin Beden Yolu - ' + name
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, phone })
                 });
 
-                if (res.ok) {
+                const data = await res.json();
+
+                if (res.status === 201) {
                     document.getElementById('registration-form').classList.add('hidden');
                     document.getElementById('success-message').classList.remove('hidden');
+                } else if (data.code === 'DUPLICATE') {
+                    document.getElementById('registration-form').classList.add('hidden');
+                    document.getElementById('already-registered').classList.remove('hidden');
                 } else {
-                    throw new Error('Form gönderilemedi');
+                    throw new Error(data.error);
                 }
             } catch (err) {
                 btn.disabled = false;
