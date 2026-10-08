@@ -89,6 +89,10 @@ strong { font-weight: 600; }
   font-family: var(--font-body); font-weight: 500; z-index: 100; border-radius: 999px;
 }
 .skip-link:focus { left: 0.5rem; top: 0.5rem; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
 
 /* ---------- Background contexts ---------- */
 .bg-ecru      { background: var(--ecru);      color: var(--indigo); }
@@ -411,6 +415,55 @@ body.menu-open { overflow: hidden; }
   font-size: 1.04rem; color: var(--indigo);
 }
 .criteria-bridge a { font-weight: 600; white-space: nowrap; }
+
+/* ---------- Free-class banner ---------- */
+.class-banner {
+  display: block; width: 100%; margin: 0 auto;
+  border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+/* Give the banner the larger share so its baked-in text stays readable */
+@media (min-width: 820px) {
+  .class-postcard { grid-template-columns: 1.4fr 0.6fr; max-width: 1452px; }
+}
+/* ~10% larger section overall */
+#free-class h2 { font-size: clamp(2rem, 4.4vw, 3.3rem); }
+#free-class .eyebrow { font-size: 0.95rem; }
+#free-class p { font-size: 1.16rem; }
+.class-banner:hover { transform: translateY(-5px); box-shadow: var(--shadow-drop); }
+.class-banner:focus-visible { outline: 3px solid var(--indigo); outline-offset: 4px; }
+.class-banner img { display: block; width: 100%; height: auto; }
+
+/* ---------- Feature quote (rose) ---------- */
+.quote-feature { overflow: hidden; padding-block: clamp(44px, 7vw, 88px); }
+.quote-feature-text {
+  font-family: var(--font-head); font-style: italic; font-weight: 400;
+  font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.2;
+  color: var(--indigo); margin: 0 auto; max-width: 24ch;
+}
+
+/* ---------- Free-class opt-in + player ---------- */
+.fc-form { max-width: 540px; margin: 1.75rem auto 0; }
+.fc-fields { display: grid; gap: 0.75rem; margin-bottom: 1rem; }
+@media (min-width: 560px) { .fc-fields { grid-template-columns: 1fr 1fr; } }
+.fc-form input {
+  width: 100%; padding: 0.9rem 1.15rem; font: inherit;
+  background: var(--ecru); color: var(--indigo);
+  border: 1.5px solid transparent; border-radius: 999px; outline: none;
+  transition: border-color .2s ease;
+}
+.fc-form input::placeholder { color: rgba(35, 40, 94, 0.55); }
+.fc-form input:focus { border-color: var(--rose); }
+.fc-form .btn { width: 100%; }
+.fc-error { margin: 0.9rem 0 0; color: var(--rose); font-weight: 500; }
+.fc-fineprint { margin: 0.75rem 0 0; font-size: 0.85rem; opacity: 0.8; }
+.fc-video {
+  position: relative; padding-top: 56.25%;
+  border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: var(--shadow-card); background: #000;
+}
+.fc-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* ---------- Cards ---------- */
 .cards { display: grid; gap: 1.5rem; }

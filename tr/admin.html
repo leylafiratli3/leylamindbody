@@ -144,7 +144,7 @@
                             <td class="px-5 py-3.5 text-gray-400">${i + 1}</td>
                             <td class="px-5 py-3.5 font-medium text-gray-800">${escapeHtml(r.name)}</td>
                             <td class="px-5 py-3.5 text-gray-600">${escapeHtml(r.email)}</td>
-                            <td class="px-5 py-3.5 text-gray-600">${r.phone ? escapeHtml(r.phone) : '<span class="text-gray-300">—</span>'}</td>
+                            <td class="px-5 py-3.5 text-gray-600">${r.phone ? escapeHtml(r.phone) : '<span class="text-gray-300">, </span>'}</td>
                             <td class="px-5 py-3.5 text-gray-500">${dateStr} ${timeStr}</td>
                             <td class="px-5 py-3.5">
                                 <button onclick="deleteRegistration(${r.id})" class="text-red-400 hover:text-red-600 transition-colors text-xs">Sil</button>

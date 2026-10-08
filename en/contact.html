@@ -1,418 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Mind-Body Healing w Leyla</title>
-    <meta name="description" content="Get in touch with Leyla to begin your healing journey from chronic pain.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'display': ['Cormorant Garamond', 'serif'],
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        'earth': {
-                            50: '#fdf8f3',
-                            100: '#f9e8d8',
-                            200: '#f3d4b8',
-                            300: '#eab894',
-                            400: '#e0966b',
-                            500: '#d67c4a',
-                            600: '#c86a3d',
-                            700: '#a85535',
-                            800: '#864532',
-                            900: '#6f3b2f',
-                        },
-                        'clay': {
-                            50: '#faf6f2',
-                            100: '#f2e8dd',
-                            200: '#e4d1bc',
-                            300: '#d3b595',
-                            400: '#c19a73',
-                            500: '#b0855f',
-                            600: '#a07352',
-                            700: '#855e45',
-                            800: '#6f4e3c',
-                            900: '#5a4133',
-                        },
-                        'sage': {
-                            50: '#f6f7f6',
-                            100: '#e3e7e3',
-                            200: '#c7d0c7',
-                            300: '#a3b1a3',
-                            400: '#7a8c7a',
-                            500: '#5f715f',
-                            600: '#4a5a4a',
-                            700: '#3d483d',
-                            800: '#333c33',
-                            900: '#2b322b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="../themes.css">
-    
-    <style>
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
-            color: white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
-        }
-        
-        .text-theme-primary { color: #844b4b !important; }
-        .bg-theme-primary { background-color: #844b4b !important; }
-.nav-book-session-btn { background-color: #844b4b; color: white; border-color: #844b4b; }
-.nav-book-session-btn:hover { background-color: #6d3a3a !important; color: white !important; border-color: #6d3a3a !important; }
-.nav-lang-btn { background-color: transparent; border-color: #d9c7b8; color: #5a4133; }
-.nav-lang-btn:hover { background-color: #f0ebe6; border-color: #c4b5a8; color: #5a4133; }
-.nav-link-theme { color: #5a4133; }
-.nav-link { font-size: 1.0625rem; font-weight: 500; letter-spacing: 0.01em; color: #5a4133; }
-.nav-link:hover { color: #844b4b; }
-.nav-cta { font-size: 1.0625rem; font-weight: 500; padding: 0.625rem 1.25rem; border-radius: 0.375rem; }
-@media (min-width: 1024px) {
-    .nav-link { font-size: 1.25rem; }
-    .nav-cta { font-size: 1.125rem; padding: 0.75rem 1.5rem; }
-}
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 640px) {
-            .max-w-6xl { max-width: 100% !important; }
-            .max-w-7xl { max-width: 100% !important; }
-            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .text-5xl { font-size: 2.5rem !important; }
-            .text-6xl { font-size: 3rem !important; }
-            .text-7xl { font-size: 3.5rem !important; }
-        }
-        
-        .nav-logo {
-    height: 58px !important;
-    width: auto !important;
-    max-width: 220px !important;
-    min-height: 58px !important;
-    object-fit: contain !important;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@media (min-width: 1024px) {
-    .nav-logo {
-        height: 72px !important;
-        max-width: 280px !important;
-        min-height: 72px !important;
+  <title>Contact Leyla Fıratlı | Mind-Body Medicine for Chronic Pain</title>
+  <meta name="description" content="Have a question about mind-body medicine for chronic pain, or want to see if we're a fit? Send a note, or book a free intro call online.">
+  <link rel="canonical" href="https://mindbodyhealingwithleyla.com/en/contact.html">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+  <meta property="og:title" content="Contact Leyla Fıratlı | Mind-Body Medicine for Chronic Pain">
+  <meta property="og:description" content="Have a question about mind-body medicine for chronic pain, or want to see if we're a fit? Send a note, or book a free intro call online.">
+  <meta property="og:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
+  <meta property="og:url" content="https://mindbodyhealingwithleyla.com/en/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Leyla Fıratlı | Mind-Body Medicine for Chronic Pain">
+  <meta name="twitter:description" content="Have a question about mind-body medicine for chronic pain, or want to see if we're a fit? Send a note, or book a free intro call online.">
+  <meta name="twitter:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="../liberation.css">
+
+  <style>
+    .field { margin-bottom: 1.5rem; }
+    .field label { display: block; font-family: var(--font-head); font-weight: 600; color: var(--plum); margin-bottom: 0.4rem; }
+    .field input, .field textarea {
+      width: 100%; font-family: var(--font-body); font-size: 1rem; color: var(--ink);
+      background: #fff; border: 2px solid var(--plum); border-radius: var(--radius);
+      padding: 0.75rem 0.9rem;
     }
-}
-    </style>
+    .field input:focus, .field textarea:focus { outline: 3px solid var(--saffron); outline-offset: 1px; }
+    .form-row { display: grid; gap: 1.5rem; }
+    @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+    .form-status { font-family: var(--font-head); font-weight: 600; margin-top: 1rem; }
+    .form-status.ok { color: #2e6b2e; }
+    .form-status.err { color: var(--red); }
+  </style>
 </head>
-<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
-    <!-- Header -->
-    <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 border-b border-gray-200 transition-all duration-300" style="background-color: #f5f4f6;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 lg:h-24 w-full gap-4">
-                <!-- Mobile Menu Button -->
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    @keydown.escape="mobileMenuOpen = false"
-                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300 text-clay-600"
-                    aria-label="Toggle menu"
-                    aria-expanded="false"
-                    x-bind:aria-expanded="mobileMenuOpen"
-                >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- Logo (left) -->
-<a href="index.html" class="flex items-center flex-shrink-0">
-    <img src="../assets/leylafiratlilogo.png" alt="Body-Wise Healing Logo" class="nav-logo">
-</a>
-<!-- Desktop Navigation -->
-<nav class="hidden lg:flex flex-1 items-center justify-evenly min-w-0 px-6">
-    <a href="index.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Home
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="about.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        About
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
-        <a href="index.html#work-together" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display inline-flex items-center py-1">
-            Work With Me
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-            <svg class="w-3.5 h-3.5 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </a>
-        <div x-show="workWithMeOpen" x-transition class="absolute left-0 top-full pt-1 z-50" style="display: none;">
-            <div class="bg-white rounded-md shadow border border-clay-100 py-1.5 min-w-[280px]">
-                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-                <a href="breathwork-somatics.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="/en/" class="brand">Leyla Fıratlı</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/en/chronic-pain-healing.html">Work with me</a>
+        <a href="/en/about.html">About</a>
+        <a href="#" target="_blank" rel="noopener">Writing</a>
+        <a href="/en/contact.html">Contact</a>
+        <a href="/en/free-practices.html" class="btn btn-primary nav-cta">Free class</a>
+      </nav>
+      <button class="nav-toggle" data-menu-toggle aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
-    <a href="free-practices.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Free Practices
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="contact.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Contact
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-</nav>
+  </header>
 
-<div class="hidden lg:flex items-center gap-3 flex-shrink-0">
-    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-cta nav-book-session-btn inline-flex items-center gap-1.5 border font-display transition-colors">
-        Book a session
-        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-    </a>
-    <a href="/tr/" class="nav-cta nav-lang-btn inline-flex items-center border font-display transition-colors">Türkçe</a>
-</div>
-
-<!-- Mobile spacer -->
-<div class="lg:hidden flex-1"></div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
-                <nav class="py-6 space-y-4">
-    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
-    <a href="about.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">About</a>
-    <div class="space-y-1">
-        <span class="block text-lg font-medium text-clay-500 font-display">Work With Me</span>
-        <a href="chronic-pain-healing.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-        <a href="breathwork-somatics.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-top">
+      <a href="/en/" class="mobile-brand">Leyla Fıratlı</a>
+      <button class="mobile-close" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
-    <a href="free-practices.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Free Practices</a>
-    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
-    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display bg-theme-primary text-white border-theme-primary hover:opacity-90 transition-opacity duration-300 mt-2">
-        Book a session
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-    </a>
-    <a href="/tr/" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display text-clay-600 hover:bg-clay-50 transition-colors duration-300 mt-2">Türkçe</a>
-</nav>
-            </div>
+    <nav aria-label="Mobile">
+      <a href="/en/chronic-pain-healing.html">Work with me</a>
+      <a href="/en/about.html">About</a>
+      <a href="#" target="_blank" rel="noopener">Writing</a>
+      <a href="/en/contact.html">Contact</a>
+    </nav>
+    <div class="mobile-foot">
+      <a href="/en/free-practices.html" class="btn btn-primary">Free class</a>
+      <div class="mobile-social">
+        <a href="#">Substack</a>
+        <a href="#">Bluesky</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="section bg-indigo">
+      <img src="../assets/figures/fig-rest.webp" class="fig fig-accent rot-r" style="top:2.2rem;right:3%" alt="" loading="lazy" aria-hidden="true">
+      <div class="wrap-narrow reveal in">
+        <p class="eyebrow">Contact</p>
+        <h1>Send me <span style="color:var(--rose)">a note</span></h1>
+        <p class="lede">Have a question, or want to explore whether this work fits you? Write to me below, or book a free intro call, all 1:1 work is online, so you can reach me from anywhere.</p>
+        <div class="btn-row">
+          <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener" class="btn btn-outline">Book a free intro call</a>
         </div>
-    </header>
+      </div>
+    </section>
+    <div class="edge" style="background:var(--indigo)"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--ecru)" d="M0,100 L0,45 C220,95 430,5 660,42 C880,78 1050,22 1200,55 L1200,100 Z"/></svg></div>
 
-    <main>
 
-        <!-- Contact Form Section -->
-        <section class="py-24 lg:py-32 relative overflow-hidden">
-            <!-- Background Image -->
-            <div class="absolute inset-0">
-                <img src="../assets/istanbul.jpg" alt="Istanbul" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-br from-earth-900/20 via-earth-800/15 to-clay-900/20"></div>
+    <section class="section wrap">
+      <div class="wrap-narrow" style="padding-inline:0">
+        <form action="https://formspree.io/f/myzdlzyp" method="POST" id="contact-form" class="reveal">
+          <input type="hidden" name="_subject" value="New contact form submission, mindbodyhealingwithleyla.com">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
             </div>
-            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-lg border border-white/30">
-                    <div class="text-center mb-16">
-                        <h2 class="text-3xl lg:text-4xl font-display font-light text-clay-800 mb-6 tracking-tight">
-                            Send me a note!
-                        </h2>
-                    </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="how-found">How did you find me?</label>
+            <input type="text" id="how-found" name="how_found">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
 
-                    <form class="space-y-8" action="https://formspree.io/f/myzdlzyp" method="POST" id="contact-form">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission">
-                        
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <label for="name" class="block text-lg font-medium text-clay-700 mb-3">Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-lg font-medium text-clay-700 mb-3">Email</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="how-found" class="block text-lg font-medium text-clay-700 mb-3">How did you find me?</label>
-                            <input type="text" id="how-found" name="how_found" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-lg font-medium text-clay-700 mb-3">Message</label>
-                            <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-clay-200 rounded-xl focus:ring-2 focus:ring-theme-primary focus:border-transparent transition-all duration-300 bg-white/50 resize-none"></textarea>
-                        </div>
-                        
-                        <div class="text-center">
-                            <button type="submit" class="btn-primary group">
-                                <span>Send Message</span>
-                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg-clay-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stay in Touch Section -->
-            <div class="text-center mb-12">
-                <h3 class="font-display font-light text-3xl mb-8">Stay in Touch</h3>
-                <!-- Mailchimp Signup Form -->
-                <div class="flex justify-center">
-                    <div class="w-80">
-                        <!-- Begin Mailchimp Signup Form -->
-                        <div id="mc_embed_signup">
-                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-                                <div id="mc_embed_signup_scroll">
-                                    <div class="mc-field-group relative">
-                                        <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent" id="mce-EMAIL" placeholder="Email Address" required>
-                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
-                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div id="mce-responses" class="clear mt-4">
-                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
-                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
-                                    </div>
-                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--End mc_embed_signup-->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="border-t border-clay-700 pt-8 text-center">
-                <p class="text-clay-400 mb-4 text-sm">
-                    This work is educational and not a substitute for medical care.
-                </p>
-                <p class="text-clay-400 text-sm">
-                    © 2025 Leyla. All rights reserved.
-                </p>
-            </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-brand">Leyla Fıratlı</p>
+      <div class="footer-grid">
+        <nav class="footer-nav" aria-label="Footer">
+          <p class="footer-head">Navigate</p>
+          <a href="/en/">Home</a>
+          <a href="/en/chronic-pain-healing.html">Work with me</a>
+          <a href="/en/free-practices.html">Free class</a>
+          <a href="/en/about.html">About</a>
+          <a href="/en/contact.html">Contact</a>
+        </nav>
+        <nav class="footer-nav" aria-label="More">
+          <p class="footer-head">More</p>
+          <a href="/en/decolonial-approach.html">A decolonial approach</a>
+          <a href="/en/breathwork-somatics.html">Breathwork &amp; somatic work</a>
+          <a href="/en/resources.html">Resources</a>
+          <a href="#" target="_blank" rel="noopener">Writing</a>
+        </nav>
+        <div class="footer-social">
+          <p class="footer-head">Connect</p>
+          <a href="#">Substack</a>
+          <a href="#">Bluesky</a>
+          <a href="#">Instagram</a>
         </div>
-    </footer>
+      </div>
+      <div class="footer-bottom">
+        <p>This work is educational and not a substitute for medical care.</p>
+        <p>&copy; 2026 Leyla Fıratlı</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="../script.js"></script>
-    
-    <!-- Mailchimp Form Validation Script -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-        (function($) {
-            window.fnames = new Array(); 
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';
-            ftypes[0]='email';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-    </script>
-    
-    <!-- Handle contact form submission -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contact-form');
-            const submitButton = form.querySelector('button[type="submit"]');
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Show loading state
-                const originalText = submitButton.innerHTML;
-                submitButton.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...';
-                submitButton.disabled = true;
-                
-                // Submit form data
-                const formData = new FormData(form);
-                
-                fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        // Show success message
-                        showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
-                        form.reset();
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                })
-                .catch(error => {
-                    showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
-                })
-                .finally(() => {
-                    // Reset button
-                    submitButton.innerHTML = originalText;
-                    submitButton.disabled = false;
-                });
-            });
-            
-            function showMessage(message, type) {
-                // Remove existing messages
-                const existingMessage = document.querySelector('.form-message');
-                if (existingMessage) {
-                    existingMessage.remove();
-                }
-                
-                // Create new message
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `form-message ${type === 'success' ? 'bg-green-100 border-green-400 text-green-700' : 'bg-red-100 border-red-400 text-red-700'} border px-4 py-3 rounded mb-6`;
-                messageDiv.innerHTML = message;
-                
-                // Insert before form
-                form.parentNode.insertBefore(messageDiv, form);
-                
-                // Auto-remove after 5 seconds
-                setTimeout(() => {
-                    messageDiv.remove();
-                }, 5000);
-            }
+  <script src="../site.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('form-status');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var original = btn.textContent;
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        status.textContent = '';
+        status.className = 'form-status';
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            form.reset();
+            status.textContent = 'Thank you, your note is on its way. I’ll be in touch soon.';
+            status.className = 'form-status ok';
+          } else {
+            status.textContent = 'Something went wrong. Please email me directly instead.';
+            status.className = 'form-status err';
+          }
+        }).catch(function () {
+          status.textContent = 'Something went wrong. Please email me directly instead.';
+          status.className = 'form-status err';
+        }).finally(function () {
+          btn.textContent = original;
+          btn.disabled = false;
         });
-    </script>
+      });
+    })();
+  </script>
 </body>
 </html>

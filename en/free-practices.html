@@ -1,390 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Practices | Mind-Body Healing w Leyla</title>
-    <meta name="description" content="Free guided breathwork and meditation practices from Leyla. Listen and practice anytime—quick energy shifts, breathwork, and mindfulness.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'display': ['Cormorant Garamond', 'serif'],
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        'earth': {
-                            50: '#fdf8f3',
-                            100: '#f9e8d8',
-                            200: '#f3d4b8',
-                            300: '#eab894',
-                            400: '#e0966b',
-                            500: '#d67c4a',
-                            600: '#c86a3d',
-                            700: '#a85535',
-                            800: '#864532',
-                            900: '#6f3b2f',
-                        },
-                        'clay': {
-                            50: '#faf6f2',
-                            100: '#f2e8dd',
-                            200: '#e4d1bc',
-                            300: '#d3b595',
-                            400: '#c19a73',
-                            500: '#b0855f',
-                            600: '#a07352',
-                            700: '#855e45',
-                            800: '#6f4e3c',
-                            900: '#5a4133',
-                        },
-                        'sage': {
-                            50: '#f6f7f6',
-                            100: '#e3e7e3',
-                            200: '#c7d0c7',
-                            300: '#a3b1a3',
-                            400: '#7a8c7a',
-                            500: '#5f715f',
-                            600: '#4a5a4a',
-                            700: '#3d483d',
-                            800: '#333c33',
-                            900: '#2b322b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="../themes.css">
-    
-    <style>
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
-            color: white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
-        }
-        
-        .text-theme-primary { color: #844b4b !important; }
-        .bg-theme-primary { background-color: #844b4b !important; }
-.nav-book-session-btn { background-color: #844b4b; color: white; border-color: #844b4b; }
-.nav-book-session-btn:hover { background-color: #6d3a3a !important; color: white !important; border-color: #6d3a3a !important; }
-.nav-lang-btn { background-color: transparent; border-color: #d9c7b8; color: #5a4133; }
-.nav-lang-btn:hover { background-color: #f0ebe6; border-color: #c4b5a8; color: #5a4133; }
-.nav-link-theme { color: #5a4133; }
-.nav-link { font-size: 1.0625rem; font-weight: 500; letter-spacing: 0.01em; color: #5a4133; }
-.nav-link:hover { color: #844b4b; }
-.nav-cta { font-size: 1.0625rem; font-weight: 500; padding: 0.625rem 1.25rem; border-radius: 0.375rem; }
-@media (min-width: 1024px) {
-    .nav-link { font-size: 1.25rem; }
-    .nav-cta { font-size: 1.125rem; padding: 0.75rem 1.5rem; }
-}
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 640px) {
-            .max-w-6xl { max-width: 100% !important; }
-            .max-w-7xl { max-width: 100% !important; }
-            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .text-5xl { font-size: 2.5rem !important; }
-            .text-6xl { font-size: 3rem !important; }
-            .text-7xl { font-size: 3.5rem !important; }
-        }
-        
-        .nav-logo {
-    height: 58px !important;
-    width: auto !important;
-    max-width: 220px !important;
-    min-height: 58px !important;
-    object-fit: contain !important;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@media (min-width: 1024px) {
-    .nav-logo {
-        height: 72px !important;
-        max-width: 280px !important;
-        min-height: 72px !important;
-    }
-}
-        
-        /* Insight Timer embed wrapper - fixed height so play button / focus doesn't shift the page */
-        .practice-embed-wrapper {
-            border-radius: 1rem;
-            overflow: hidden;
-            background: var(--tw-gradient-from, #f6f7f6);
-            height: 250px;
-            flex-shrink: 0;
-        }
-        .practice-embed-wrapper iframe {
-            display: block;
-            height: 250px !important;
-            max-height: 250px;
-            scroll-margin-top: 5rem;
-            scroll-margin-bottom: 2rem;
-        }
-        /* Reduce scroll jump when focus moves into second (or first) iframe */
-        .practices-grid-section {
-            scroll-margin-top: 6rem;
-            overflow-anchor: none;
-        }
-        .practices-grid-section article {
-            scroll-margin-top: 6rem;
-            overflow-anchor: none;
-        }
-    </style>
+  <title>Free 1-Hour Mind-Body Class for Chronic Pain | Leyla Fıratlı</title>
+  <meta name="description" content="A free 1-hour online class on the mind-body approach to chronic pain: understand how pain works, breathe together, and see if this path is for you.">
+  <link rel="canonical" href="https://mindbodyhealingwithleyla.com/en/free-practices.html">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+  <meta property="og:title" content="Free 1-Hour Mind-Body Class for Chronic Pain | Leyla Fıratlı">
+  <meta property="og:description" content="A free 1-hour online class on the mind-body approach to chronic pain: understand how pain works, breathe together, and see if this path is for you.">
+  <meta property="og:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
+  <meta property="og:url" content="https://mindbodyhealingwithleyla.com/en/free-practices.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free 1-Hour Mind-Body Class for Chronic Pain | Leyla Fıratlı">
+  <meta name="twitter:description" content="A free 1-hour online class on the mind-body approach to chronic pain: understand how pain works, breathe together, and see if this path is for you.">
+  <meta name="twitter:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="../liberation.css">
 </head>
-<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
-    <!-- Header -->
-    <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 border-b border-gray-200 transition-all duration-300" style="background-color: #f5f4f6;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 lg:h-24 w-full gap-4">
-                <!-- Mobile Menu Button -->
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    @keydown.escape="mobileMenuOpen = false"
-                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300 text-clay-600"
-                    aria-label="Toggle menu"
-                    aria-expanded="false"
-                    x-bind:aria-expanded="mobileMenuOpen"
-                >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- Logo (left) -->
-<a href="index.html" class="flex items-center flex-shrink-0">
-    <img src="../assets/leylafiratlilogo.png" alt="Body-Wise Healing Logo" class="nav-logo">
-</a>
-<!-- Desktop Navigation -->
-<nav class="hidden lg:flex flex-1 items-center justify-evenly min-w-0 px-6">
-    <a href="index.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Home
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="about.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        About
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
-        <a href="index.html#work-together" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display inline-flex items-center py-1">
-            Work With Me
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-            <svg class="w-3.5 h-3.5 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </a>
-        <div x-show="workWithMeOpen" x-transition class="absolute left-0 top-full pt-1 z-50" style="display: none;">
-            <div class="bg-white rounded-md shadow border border-clay-100 py-1.5 min-w-[280px]">
-                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-                <a href="breathwork-somatics.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="/en/" class="brand">Leyla Fıratlı</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/en/chronic-pain-healing.html">Work with me</a>
+        <a href="/en/about.html">About</a>
+        <a href="#" target="_blank" rel="noopener">Writing</a>
+        <a href="/en/contact.html">Contact</a>
+        <a href="/en/free-practices.html" class="btn btn-primary nav-cta">Free class</a>
+      </nav>
+      <button class="nav-toggle" data-menu-toggle aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
-    <a href="free-practices.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Free Practices
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="contact.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Contact
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-</nav>
+  </header>
 
-<div class="hidden lg:flex items-center gap-3 flex-shrink-0">
-    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-cta nav-book-session-btn inline-flex items-center gap-1.5 border font-display transition-colors">
-        Book a session
-        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-    </a>
-    <a href="/tr/" class="nav-cta nav-lang-btn inline-flex items-center border font-display transition-colors">Türkçe</a>
-</div>
-
-<!-- Mobile spacer -->
-<div class="lg:hidden flex-1"></div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
-                <nav class="py-6 space-y-4">
-    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
-    <a href="about.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">About</a>
-    <div class="space-y-1">
-        <span class="block text-lg font-medium text-clay-500 font-display">Work With Me</span>
-        <a href="chronic-pain-healing.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-        <a href="breathwork-somatics.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-top">
+      <a href="/en/" class="mobile-brand">Leyla Fıratlı</a>
+      <button class="mobile-close" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
-    <a href="free-practices.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Free Practices</a>
-    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
-    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display bg-theme-primary text-white border-theme-primary hover:opacity-90 transition-opacity duration-300 mt-2">
-        Book a session
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-    </a>
-    <a href="/tr/" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display text-clay-600 hover:bg-clay-50 transition-colors duration-300 mt-2">Türkçe</a>
-</nav>
-            </div>
+    <nav aria-label="Mobile">
+      <a href="/en/chronic-pain-healing.html">Work with me</a>
+      <a href="/en/about.html">About</a>
+      <a href="#" target="_blank" rel="noopener">Writing</a>
+      <a href="/en/contact.html">Contact</a>
+    </nav>
+    <div class="mobile-foot">
+      <a href="/en/free-practices.html" class="btn btn-primary">Free class</a>
+      <div class="mobile-social">
+        <a href="#">Substack</a>
+        <a href="#">Bluesky</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="section bg-indigo">
+      <img src="../assets/figures/fig-lotus.webp" class="fig fig-accent rot-r" style="top:2.2rem;right:3%" alt="" loading="lazy" aria-hidden="true">
+      <div class="wrap-narrow reveal in">
+        <span class="stamp">Free 50-minute class</span>
+        <h1 style="margin-top:1rem">Mind Body Medicine <span style="color:var(--rose)">101</span></h1>
+        <p class="lede">A free 50-minute class on the mind-body approach to chronic pain. I share my story, explain how mind-body pain happens, help you tell whether yours is, and leave you with a roadmap and tools to start. Watch instantly, no experience needed.</p>
+        <div class="btn-row"><a href="#watch" class="btn btn-primary btn-lg">Watch the free class</a></div>
+      </div>
+    </section>
+    <div class="edge" style="background:var(--indigo)"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--ecru)" d="M0,100 L0,45 C220,95 430,5 660,42 C880,78 1050,22 1200,55 L1200,100 Z"/></svg></div>
+
+    <!-- What the hour looks like -->
+    <section class="section bg-ecru">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <h2>What you'll learn</h2>
+          <ul class="check-list">
+            <li>my own story of chronic pain, and how I found my way out</li>
+            <li>what mind-body medicine is, and the science of how pain really works</li>
+            <li>how mind-body pain happens, and how to tell if yours is mind-body</li>
+            <li>a roadmap and practical tools to start working with your pain today</li>
+          </ul>
+          <p>It's free and on-demand, with no pressure to work with me afterwards. If it opens something for you, we can talk about next steps.</p>
         </div>
-    </header>
-
-    <main>
-        <!-- Hero -->
-        <section class="py-20 lg:py-24 relative overflow-hidden">
-            <div class="w-full px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h1 class="text-5xl lg:text-7xl font-display font-light text-clay-800 mb-6 tracking-tight">
-                        Free Practices
-                    </h1>
-                    <p class="text-xl lg:text-2xl text-clay-600 max-w-3xl mx-auto leading-relaxed">
-                        Practices taken from my Insight Timer page that you can do anytime. Feel free to reach out with any questions you might have after working with these breath patterns.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Practices grid -->
-        <section class="practices-grid-section pb-20 lg:pb-28">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                <!-- Morning Grounding Meditation For Restless Minds -->
-                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
-                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Morning Grounding Meditation For Restless Minds</h2>
-                    <p class="text-clay-600 mb-4">A grounding practice to steady and settle the mind at the start of the day.</p>
-                    <div class="practice-embed-wrapper">
-                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Morning Grounding Meditation For Restless Minds | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" src="https://widgets.insighttimer.com/track/morning-grounding-meditation-for-restless-minds?created_at=1770808035&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
-                    </div>
-                </article>
-
-                <!-- Grounding Somatic Practice For Overwhelm And Anxiety -->
-                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
-                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Grounding Somatic Practice For Overwhelm And Anxiety</h2>
-                    <p class="text-clay-600 mb-4">A somatic practice to ground and regulate when you feel overwhelmed or anxious.</p>
-                    <div class="practice-embed-wrapper">
-                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Grounding Somatic Practice For Overwhelm And Anxiety | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" src="https://widgets.insighttimer.com/track/grounding-somatic-practice-for-overwhelm-and-anxiety?created_at=1770808075&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
-                    </div>
-                </article>
-
-                <!-- 5-Minute Nervous System Reset With Breath -->
-                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
-                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">5-Minute Nervous System Reset With Breath</h2>
-                    <p class="text-clay-600 mb-4">A short breath-based practice to reset and regulate the nervous system.</p>
-                    <div class="practice-embed-wrapper">
-                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: 5-Minute Nervous System Reset With Breath | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" src="https://widgets.insighttimer.com/track/5-minute-nervous-system-reset-with-breath?created_at=1770808095&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
-                    </div>
-                </article>
-
-                <!-- Breathe Deeper -->
-                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
-                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Breathe Deeper</h2>
-                    <p class="text-clay-600 mb-4">Guided practice to expand and deepen the breath—useful when your breathing has become shallow or restricted.</p>
-                    <div class="practice-embed-wrapper">
-                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: Breathe Deeper | Leyla Firatli" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" src="https://widgets.insighttimer.com/track/breathe-deeper?created_at=1770129649&cid=55yiwMqlCHddSZNkjXgshFKBaLg1"></iframe>
-                    </div>
-                </article>
-
-                <!-- Add more practices below: duplicate the <article> block and replace the heading, subheading, and iframe src with your next Insight Timer embed. -->
-                <!--
-                <article class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300">
-                    <h2 class="text-2xl sm:text-3xl font-display font-medium text-clay-800 mb-2">Practice Title</h2>
-                    <p class="text-clay-600 mb-4">Brief description in your voice—clear, no hype.</p>
-                    <div class="practice-embed-wrapper">
-                        <iframe style="border-radius:16px" width="100%" height="250px" title="Insight Timer Embed: ..." frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="YOUR_EMBED_URL"></iframe>
-                    </div>
-                </article>
-                -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-clay-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h3 class="font-display font-light text-3xl mb-8">Stay in Touch</h3>
-                <div class="flex justify-center">
-                    <div class="w-80">
-                        <div id="mc_embed_signup">
-                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-                                <div id="mc_embed_signup_scroll">
-                                    <div class="mc-field-group relative">
-                                        <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent" id="mce-EMAIL" placeholder="Email Address" required>
-                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
-                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div id="mce-responses" class="clear mt-4">
-                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
-                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
-                                    </div>
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-clay-700 pt-8 text-center">
-                <p class="text-clay-400 mb-4 text-sm">
-                    This work is educational and not a substitute for medical care.
-                </p>
-                <p class="text-clay-400 text-sm">
-                    © 2025 Leyla. All rights reserved.
-                </p>
-            </div>
+        <div class="hero-media reveal center">
+          <img src="../assets/figures/fig-dance.webp" class="fig fig-media" alt="Illustration of a body moving freely, mid-dance" width="563" height="626" loading="lazy">
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="../script.js"></script>
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-        (function($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';
-            ftypes[0]='email';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-    </script>
-    <!-- Swallow Insight Timer postMessage so widget updates don't affect the page (no resize = no layout jump on play) -->
-    <script>
-        (function() {
-            var INSIGHT_TIMER_ORIGIN = 'https://widgets.insighttimer.com';
-            window.addEventListener('message', function(event) {
-                if (event.origin !== INSIGHT_TIMER_ORIGIN) return;
-                try { /* accept message, do not resize iframe – keeps layout stable when pressing play */ } catch (e) { /* ignore */ }
-            }, false);
-        })();
-    </script>
+    <!-- Who it's for (rose) -->
+    <section class="section bg-rose">
+      <div class="wrap-narrow center reveal">
+        <div class="pq-inline center">
+          <p>If your pain lingers, flares, or doesn't match your scans, and you sense there's more to the story, this hour is for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Watch the free class (indigo) -->
+    <section class="section bg-indigo center" id="watch">
+      <div class="wrap-narrow reveal">
+        <!-- Opt-in gate -->
+        <div id="fc-gate">
+          <h2>Watch the free class</h2>
+          <p>Enter your details and start watching straight away. I'll also email you the link so you can come back any time.</p>
+          <form id="fc-form" class="fc-form" novalidate>
+            <div class="fc-fields">
+              <input type="text" name="name" placeholder="Your first name" autocomplete="given-name" aria-label="Your first name">
+              <input type="email" name="email" placeholder="Your email" autocomplete="email" required aria-label="Your email">
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Watch now</button>
+            <p class="fc-error" id="fc-error" role="alert" hidden></p>
+            <p class="fc-fineprint">No spam, ever. Unsubscribe any time.</p>
+          </form>
+        </div>
+        <!-- Player (revealed after signup) -->
+        <div id="fc-player" hidden>
+          <h2>Mind Body Medicine 101</h2>
+          <div class="fc-video">
+            <iframe id="fc-iframe" src="" title="Mind Body Medicine 101, a free class" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="margin-top:1.5rem">When you're ready for the next step, <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener">book a free intro call</a>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-brand">Leyla Fıratlı</p>
+      <div class="footer-grid">
+        <nav class="footer-nav" aria-label="Footer">
+          <p class="footer-head">Navigate</p>
+          <a href="/en/">Home</a>
+          <a href="/en/chronic-pain-healing.html">Work with me</a>
+          <a href="/en/free-practices.html">Free class</a>
+          <a href="/en/about.html">About</a>
+          <a href="/en/contact.html">Contact</a>
+        </nav>
+        <nav class="footer-nav" aria-label="More">
+          <p class="footer-head">More</p>
+          <a href="/en/decolonial-approach.html">A decolonial approach</a>
+          <a href="/en/breathwork-somatics.html">Breathwork &amp; somatic work</a>
+          <a href="/en/resources.html">Resources</a>
+          <a href="#" target="_blank" rel="noopener">Writing</a>
+        </nav>
+        <div class="footer-social">
+          <p class="footer-head">Connect</p>
+          <a href="#">Substack</a>
+          <a href="#">Bluesky</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>This work is educational and not a substitute for medical care.</p>
+        <p>&copy; 2026 Leyla Fıratlı</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../site.js"></script>
+  <script>
+  (function () {
+    var API = 'https://leyla-mindbody-api.fly.dev';
+    var LOCALE = 'en';
+    var gate = document.getElementById('fc-gate');
+    var player = document.getElementById('fc-player');
+    var iframe = document.getElementById('fc-iframe');
+    var form = document.getElementById('fc-form');
+    var errEl = document.getElementById('fc-error');
+    if (!form) return;
+
+    function showPlayer() {
+      gate.hidden = true;
+      player.hidden = false;
+      if (iframe.getAttribute('src')) return;
+      fetch(API + '/api/free-class/video?locale=' + LOCALE)
+        .then(function (r) { return r.json(); })
+        .then(function (d) { if (d.url) iframe.src = d.url; })
+        .catch(function () {});
+    }
+
+    // Returning visitor, from the email link (?watch=1) or a prior signup.
+    var params = new URLSearchParams(location.search);
+    if (params.get('watch') === '1' || localStorage.getItem('fcWatched') === '1') {
+      showPlayer();
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errEl.hidden = true;
+      var btn = form.querySelector('button[type=submit]');
+      var fd = new FormData(form);
+      var email = (fd.get('email') || '').trim();
+      var name = (fd.get('name') || '').trim();
+      if (!email || email.indexOf('@') < 0) {
+        errEl.textContent = 'Please enter a valid email address.';
+        errEl.hidden = false;
+        return;
+      }
+      var orig = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'One moment…';
+      fetch(API + '/api/free-class/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, locale: LOCALE }),
+      })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (!res.ok) throw new Error((res.d && res.d.error) || 'Something went wrong.');
+          localStorage.setItem('fcWatched', '1');
+          showPlayer();
+        })
+        .catch(function (err) {
+          errEl.textContent = err.message || 'Something went wrong. Please try again.';
+          errEl.hidden = false;
+          btn.disabled = false;
+          btn.textContent = orig;
+        });
+    });
+  })();
+  </script>
 </body>
 </html>

@@ -8,6 +8,11 @@ primary_region = 'ams'
 
 [build]
 
+# Re-enable once the store's Neon DATABASE_URL secret is set.
+# The free-class feature uses SQLite and does not need this migration.
+# [deploy]
+#   release_command = 'npm run db:migrate'
+
 [env]
   DATA_DIR = '/data'
   PORT = '3000'

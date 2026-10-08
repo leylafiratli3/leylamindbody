@@ -1,494 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Leyla | Mind-Body Healing w Leyla</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'display': ['Cormorant Garamond', 'serif'],
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        'earth': {
-                            50: '#fdf8f3',
-                            100: '#f9e8d8',
-                            200: '#f3d4b8',
-                            300: '#eab894',
-                            400: '#e0966b',
-                            500: '#d67c4a',
-                            600: '#c86a3d',
-                            700: '#a85535',
-                            800: '#864532',
-                            900: '#6f3b2f',
-                        },
-                        'clay': {
-                            50: '#faf6f2',
-                            100: '#f2e8dd',
-                            200: '#e4d1bc',
-                            300: '#d3b595',
-                            400: '#c19a73',
-                            500: '#b0855f',
-                            600: '#a07352',
-                            700: '#855e45',
-                            800: '#6f4e3c',
-                            900: '#5a4133',
-                        },
-                        'sage': {
-                            50: '#f6f7f6',
-                            100: '#e3e7e3',
-                            200: '#c7d0c7',
-                            300: '#a3b1a3',
-                            400: '#7a8c7a',
-                            500: '#5f715f',
-                            600: '#4a5a4a',
-                            700: '#3d483d',
-                            800: '#333c33',
-                            900: '#2b322b',
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out',
-                        'fade-in-down': 'fadeInDown 0.8s ease-out',
-                        'slide-in-left': 'slideInLeft 1s ease-out',
-                        'slide-in-right': 'slideInRight 1s ease-out',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        fadeInDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(50px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="../themes.css">
-    
-    <style>
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
-            color: white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
-        }
-        
-        .text-theme-primary { color: #844b4b !important; }
-        .bg-theme-primary { background-color: #844b4b !important; }
-.nav-book-session-btn { background-color: #844b4b; color: white; border-color: #844b4b; }
-.nav-book-session-btn:hover { background-color: #6d3a3a !important; color: white !important; border-color: #6d3a3a !important; }
-.nav-lang-btn { background-color: transparent; border-color: #d9c7b8; color: #5a4133; }
-.nav-lang-btn:hover { background-color: #f0ebe6; border-color: #c4b5a8; color: #5a4133; }
-.nav-link-theme { color: #5a4133; }
-.nav-link { font-size: 1.0625rem; font-weight: 500; letter-spacing: 0.01em; color: #5a4133; }
-.nav-link:hover { color: #844b4b; }
-.nav-cta { font-size: 1.0625rem; font-weight: 500; padding: 0.625rem 1.25rem; border-radius: 0.375rem; }
-@media (min-width: 1024px) {
-    .nav-link { font-size: 1.25rem; }
-    .nav-cta { font-size: 1.125rem; padding: 0.75rem 1.5rem; }
-}
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 640px) {
-            .max-w-6xl { max-width: 100% !important; }
-            .max-w-7xl { max-width: 100% !important; }
-            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .text-5xl { font-size: 2.5rem !important; }
-            .text-6xl { font-size: 3rem !important; }
-            .text-7xl { font-size: 3.5rem !important; }
-        }
-        
-        .nav-logo {
-    height: 58px !important;
-    width: auto !important;
-    max-width: 220px !important;
-    min-height: 58px !important;
-    object-fit: contain !important;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@media (min-width: 1024px) {
-    .nav-logo {
-        height: 72px !important;
-        max-width: 280px !important;
-        min-height: 72px !important;
-    }
-}
-    </style>
+  <title>About Leyla Fıratlı | Breathwork Therapist &amp; Mind-Body Practitioner</title>
+  <meta name="description" content="How I found freedom from a year of debilitating back pain, and why I now offer decolonial mind-body medicine for chronic pain.">
+  <link rel="canonical" href="https://mindbodyhealingwithleyla.com/en/about.html">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+  <meta property="og:title" content="About Leyla Fıratlı | Breathwork Therapist &amp; Mind-Body Practitioner">
+  <meta property="og:description" content="How I found freedom from a year of debilitating back pain, and why I now offer decolonial mind-body medicine for chronic pain.">
+  <meta property="og:image" content="https://mindbodyhealingwithleyla.com/assets/leylaprofilepic.jpg">
+  <meta property="og:url" content="https://mindbodyhealingwithleyla.com/en/about.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Leyla Fıratlı | Breathwork Therapist &amp; Mind-Body Practitioner">
+  <meta name="twitter:description" content="How I found freedom from a year of debilitating back pain, and why I now offer decolonial mind-body medicine for chronic pain.">
+  <meta name="twitter:image" content="https://mindbodyhealingwithleyla.com/assets/leylaprofilepic.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="../liberation.css">
 </head>
-<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
-    <!-- Header -->
-    <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 border-b border-gray-200 transition-all duration-300" style="background-color: #f5f4f6;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 lg:h-24 w-full gap-4">
-                <!-- Mobile Menu Button -->
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    @keydown.escape="mobileMenuOpen = false"
-                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300"
-                    aria-label="Toggle menu"
-                    aria-expanded="false"
-                    x-bind:aria-expanded="mobileMenuOpen"
-                >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- Logo (left) -->
-<a href="index.html" class="flex items-center flex-shrink-0">
-    <img src="../assets/leylafiratlilogo.png" alt="Body-Wise Healing Logo" class="nav-logo">
-</a>
-<!-- Desktop Navigation -->
-<nav class="hidden lg:flex flex-1 items-center justify-evenly min-w-0 px-6">
-    <a href="index.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Home
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="about.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        About
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
-        <a href="index.html#work-together" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display inline-flex items-center py-1">
-            Work With Me
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-            <svg class="w-3.5 h-3.5 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </a>
-        <div x-show="workWithMeOpen" x-transition class="absolute left-0 top-full pt-1 z-50" style="display: none;">
-            <div class="bg-white rounded-md shadow border border-clay-100 py-1.5 min-w-[280px]">
-                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-                <a href="breathwork-somatics.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="/en/" class="brand">Leyla Fıratlı</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/en/chronic-pain-healing.html">Work with me</a>
+        <a href="/en/about.html">About</a>
+        <a href="#" target="_blank" rel="noopener">Writing</a>
+        <a href="/en/contact.html">Contact</a>
+        <a href="/en/free-practices.html" class="btn btn-primary nav-cta">Free class</a>
+      </nav>
+      <button class="nav-toggle" data-menu-toggle aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
-    <a href="free-practices.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Free Practices
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="contact.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Contact
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-</nav>
+  </header>
 
-<div class="hidden lg:flex items-center gap-3 flex-shrink-0">
-    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-cta nav-book-session-btn inline-flex items-center gap-1.5 border font-display transition-colors">
-        Book a session
-        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-    </a>
-    <a href="/tr/" class="nav-cta nav-lang-btn inline-flex items-center border font-display transition-colors">Türkçe</a>
-</div>
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-top">
+      <a href="/en/" class="mobile-brand">Leyla Fıratlı</a>
+      <button class="mobile-close" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <a href="/en/chronic-pain-healing.html">Work with me</a>
+      <a href="/en/about.html">About</a>
+      <a href="#" target="_blank" rel="noopener">Writing</a>
+      <a href="/en/contact.html">Contact</a>
+    </nav>
+    <div class="mobile-foot">
+      <a href="/en/free-practices.html" class="btn btn-primary">Free class</a>
+      <div class="mobile-social">
+        <a href="#">Substack</a>
+        <a href="#">Bluesky</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </div>
 
-<!-- Mobile spacer -->
-<div class="lg:hidden flex-1"></div>
-            </div>
+  <main id="main">
 
-            <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
-                <nav class="py-6 space-y-4 px-4">
-                    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
-                    <a href="about.html" class="block text-lg font-medium text-theme-primary transition-colors duration-300 font-display">About</a>
-                    <div class="space-y-1">
-                        <span class="block text-lg font-medium text-clay-500 font-display">Work With Me</span>
-                        <a href="chronic-pain-healing.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-                        <a href="breathwork-somatics.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
-                    </div>
-                    <a href="free-practices.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Free Practices</a>
-                    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
-                    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display bg-theme-primary text-white border-theme-primary hover:opacity-90 transition-opacity duration-300 mt-2">
-                        Book a session
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
-                    <a href="/tr/" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display text-clay-600 hover:bg-clay-50 transition-colors duration-300 mt-2">Türkçe</a>
-                </nav>
-            </div>
+    <!-- Intro / story -->
+    <section class="section bg-indigo">
+      <div class="wrap hero-grid">
+        <div class="reveal in">
+          <p class="eyebrow">Meet Leyla</p>
+          <h1>I know this pain <span style="color:var(--rose)">from the inside.</span></h1>
+          <p class="lede">I'm Leyla, a breathwork therapist and mind-body practitioner offering decolonial mind-body medicine for chronic pain. This is how I found my way through, and why I now walk alongside you.</p>
         </div>
-    </header>
-
-    <main>
-        <!-- About Me Section -->
-        <section class="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-earth-50 to-clay-50 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-8 lg:gap-4 items-start">
-                    <!-- Photo Section -->
-                    <div class="animate-slide-in-left order-2 lg:order-1">
-                        <div class="space-y-8 md:space-y-12">
-                            <!-- Photo 1 -->
-                            <div class="relative">
-                                <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="../assets/leylaprofilepic.jpg" alt="Leyla - Mind-Body Healing Practitioner" class="w-full h-full object-cover">
-                                </div>
-                                <div class="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-8 h-8 md:w-12 md:h-12 bg-theme-primary/20 rounded-full blur-md"></div>
-                            </div>
-                            
-                            <!-- Photo 2 -->
-                            <div class="relative">
-                                <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="../assets/leylayoga.jpg" alt="Leyla practicing yoga" class="w-full h-full object-cover">
-                                </div>
-                                <div class="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 w-8 h-8 md:w-12 md:h-12 bg-sage-300/20 rounded-full blur-md"></div>
-                            </div>
-
-                            <!-- Photo 3 -->
-                            <div class="relative">
-                                <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="../assets/leylainnaturevertical.jpg" alt="Leyla in nature" class="w-full h-full object-cover">
-                                </div>
-                                <div class="absolute -top-2 -left-2 md:-top-4 md:-left-4 w-8 h-8 md:w-12 md:h-12 bg-earth-300/20 rounded-full blur-md"></div>
-                            </div>
-
-                            <!-- Photo 4 -->
-                            <div class="relative">
-                                <div class="w-full max-w-sm mx-auto md:max-w-none md:w-[32rem] h-64 md:h-[24rem] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl border-3 border-white">
-                                    <img src="../assets/leylaportrait.jpg" alt="Leyla portrait" class="w-full h-full object-cover">
-                                </div>
-                                <div class="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 w-8 h-8 md:w-12 md:h-12 bg-clay-300/20 rounded-full blur-md"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Content Section -->
-                    <div class="animate-slide-in-right order-1 lg:order-2">
-                        <div class="space-y-6 md:space-y-8">
-                            <div class="text-center lg:text-left">
-                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-light text-clay-800 mb-4 md:mb-6 tracking-tight">
-                                    About Me
-                                </h1>
-                                <div class="w-16 md:w-20 h-1 bg-theme-primary mb-6 md:mb-8 mx-auto lg:mx-0"></div>
-                            </div>
-                            
-                            <div class="space-y-4 md:space-y-6">
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    I was born in Istanbul, a city defined by chaos, depth, and the meeting of cultures. Growing up there shaped how I move through the world. As a child, I was diagnosed with advanced scoliosis, and for years I lived with the belief that my body was fragile, unreliable, and something to be endured rather than trusted.
-                                </p>
-                                
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    At eighteen I moved to Los Angeles, and two years later I began practicing yoga. For the first time, I experienced my body not as a limitation but as a source of strength, adaptability, and change. Teaching yoga became a way for me to share that discovery with others.
-                                </p>
-
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    On May 2024, my body broke down in a way I could never have anticipated. After teaching a class, I was suddenly struck with excruciating pain from my lower back down my right leg. What followed was nearly a year of immobility: months of barely being able to get out of bed, unable to walk more than a few minutes, cycling through endless medical treatments, unable to practice the yoga that had once been my anchor.
-                                </p>
-
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    Eventually, I decided to leave the U.S. and return to Türkiye. I settled in a small village on the Aegean coast, surrounded by family, community, and nature. It was there that I encountered the work of Dr. John Sarno and the field of mind-body medicine, which I began to weave together with my own practices of yoga and breathwork. I read, I journaled, and I allowed myself to turn toward the pain that had been commanding my life, listening for what it had to say. Within two weeks, the pain lifted completely.
-                                </p>
-
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    As I healed the pain in my body, I began to notice how many people around me were living in a similar situation. When we are in pain, our world contracts. We lose access to connection, to movement, to hope and to our power. The loneliness of chronic pain can only truly be understood by those who've experienced it. Having found a way through, I carry a responsibility to share what I've learned.
-                                </p>
-
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                                    At the core of all my work is a commitment to easing suffering and contributing to the transformation of the systems that create it. I root my work in what I learn from nature and in the wisdom of indigenous cultures that have long carried practices of collective healing. I am deeply shaped by liberation movements, which show us again and again the strength and resilience of our people. 
-                                </p>
-
-                                <p class="text-base md:text-lg text-clay-600 leading-relaxed font-medium">
-                                    If this resonates with you, and you feel I could be a source of support in your path, I invite you to reach out and connect.
-                                </p>
-                                
-                                <div class="text-center mt-6 md:mt-8">
-                                    <a href="https://calendly.com/leylafiratli/introduction-call" class="btn-primary group inline-flex items-center text-sm md:text-base px-4 md:px-6 py-3 md:py-4" target="_blank" rel="noopener noreferrer">
-                                        <span>Schedule a Call</span>
-                                        <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="hero-media reveal in">
+          <div class="framed img-arch">
+            <div class="ph">
+              <picture>
+                <source srcset="../assets/grove-portrait.webp" type="image/webp">
+                <img src="../assets/grove-portrait.jpg" alt="Leyla Fıratlı resting against a eucalyptus tree in a grove" width="1050" height="1400">
+              </picture>
             </div>
-        </section>
-
-        <!-- Credentials Section -->
-        <section class="py-12 md:py-16 lg:py-20 relative overflow-hidden bg-theme-primary">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8 md:mb-12">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-light text-white mb-4 md:mb-6 tracking-tight">
-                        Training & Credentials
-                    </h2>
-                    <div class="w-12 md:w-16 h-1 bg-white mx-auto mb-4 md:mb-6"></div>
-                    <p class="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed px-4">
-                        This work is deeply intuitive, rooted in my own lived experience and healing journey. Yet I've also had the privilege of studying with many teachers and practitioners whose wisdom continues to shape and inspire me.
-                    </p>
-                </div>
-
-                <!-- Credentials Text -->
-                <div class="max-w-3xl mx-auto">
-                    <div class="bg-white/90 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg border border-white/30">
-                        <div class="space-y-2 md:space-y-3 text-sm md:text-base text-clay-600 leading-relaxed text-center">
-                            <div><strong>Bachelors of Cognitive Science</strong> - University of Southern California</div>
-                            <div><strong>SarnoXSachs Chronic Pain Practitioner Training</strong></div>
-                            <div><strong>Breathwork Training</strong> - Inspire Breathwork with Hannah Kendaru (ongoing)</div>
-                            <div><strong>200 HR Yoga Teacher Training</strong> - Andrew Sealey and Christine Anderson</div>
-                            <div><strong>300 HR Advanced Yoga Teacher Training</strong> - Rasa Yoga with Sianna Sherman</div>
-                            <div><strong>Meditation Teacher Training</strong> - Punnu Wasu and Monk Greg</div>
-                            <div><strong>Yoga Nidra, Mudra and Pranayama Training</strong></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- My Promise Section -->
-        <section class="py-12 md:py-16 lg:py-20 relative overflow-hidden">
-            <!-- Background Image -->
-            <div class="absolute inset-0">
-                <img src="../assets/istanbull.jpg" alt="Leyla in nature" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-br from-earth-900/30 via-earth-800/25 to-clay-900/30"></div>
-            </div>
-            
-            <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white/85 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg border border-white/40">
-                    <div class="text-center mb-6 md:mb-8">
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-light text-clay-800 mb-4 md:mb-6 tracking-tight">
-                            Resources
-                        </h2>
-                        <div class="w-12 md:w-16 h-1 bg-theme-primary mx-auto mb-4 md:mb-6"></div>
-                    </div>
-                    
-                    <div class="max-w-3xl mx-auto space-y-4 md:space-y-6">
-                        <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                            I believe we must make healing tools and resources accessible to everyone. Here you'll find a collection of reading lists, journal prompts,books, and educational materials that have supported my own healing journey and continue to help others find freedom from chronic pain.
-                        </p>
-                        
-                        <p class="text-base md:text-lg text-clay-600 leading-relaxed">
-                            I am committed to constantly updating these resources as I learn and grow. They are what helped me reconnect with my body's innate wisdom and begin my own healing journey.
-                        </p>
-                        
-                    </div>
-                    
-                    <div class="text-center mt-6 md:mt-8">
-                        <a href="resources.html" class="btn-primary group inline-flex items-center text-sm md:text-base px-4 md:px-6 py-3 md:py-4">
-                            <span>Explore Resources</span>
-                            <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-clay-900 text-white py-12 md:py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stay in Touch Section -->
-            <div class="text-center mb-8 md:mb-12">
-                <h3 class="font-display font-light text-2xl md:text-3xl mb-6 md:mb-8">Stay in Touch</h3>
-                <!-- Mailchimp Signup Form -->
-                <div class="flex justify-center">
-                    <div class="w-full max-w-sm md:w-80">
-                        <!-- Begin Mailchimp Signup Form -->
-                        <div id="mc_embed_signup">
-                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-                                <div id="mc_embed_signup_scroll">
-                                    <div class="mc-field-group relative">
-                                        <input type="email" value="" name="EMAIL" class="required email w-full px-4 md:px-6 py-3 md:py-4 pr-12 md:pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent text-sm md:text-base" id="mce-EMAIL" placeholder="Email Address" required>
-                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-1 md:right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
-                                            <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div id="mce-responses" class="clear mt-4">
-                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
-                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
-                                    </div>
-                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--End mc_embed_signup-->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="border-t border-clay-700 pt-8 text-center">
-                <p class="text-clay-400 mb-4 text-sm">
-                    This work is educational and not a substitute for medical care.
-                </p>
-                <p class="text-clay-400 text-sm">
-                    © 2025 Leyla. All rights reserved.
-                </p>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+    <div class="edge" style="background:var(--indigo)"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--ecru)" d="M0,100 L0,45 C220,95 430,5 660,42 C880,78 1050,22 1200,55 L1200,100 Z"/></svg></div>
 
-    <!-- Scripts -->
-    <script src="../script.js"></script>
-    
-    <!-- Mailchimp Form Validation Script -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-        (function($) {
-            window.fnames = new Array(); 
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';
-            ftypes[0]='email';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-    </script>
+    <section class="section wrap">
+      <div class="wrap-narrow prose reveal" style="padding-inline:0">
+        <p>I was born in Istanbul, a city defined by chaos, depth, and the meeting of cultures. Growing up there shaped how I move through the world. As a child, I was diagnosed with advanced scoliosis. Doctors told me I'd either live in pain my whole life or have surgery to rearrange my spine, and for years I lived with the belief that my body was fragile, unreliable, and something to be endured rather than trusted.</p>
+
+        <p>At eighteen I moved to Los Angeles, and two years later I began practicing yoga. For the first time, I experienced my body not as a limitation but as a source of strength, adaptability, and change. Teaching yoga became a way for me to share that discovery with others.</p>
+
+        <p>On May 2024, my body broke down in a way I could never have anticipated. After teaching a class, I was suddenly struck with excruciating pain from my lower back down my right leg. What followed was nearly a year of immobility: months of barely being able to get out of bed, unable to walk more than a few minutes, cycling through endless medical treatments, unable to practice the yoga that had once been my anchor.</p>
+
+        <p>Eventually, I decided to leave the U.S. and return to Türkiye. I settled in Akyaka, a small village on the Aegean coast, surrounded by family, community, and nature. It was there that I encountered the work of Dr. John Sarno and the field of mind-body medicine, which I began to weave together with my own practices of yoga and breathwork. I read, I journaled, and I allowed myself to turn toward the pain that had been commanding my life, listening for what it had to say. Within two weeks, the pain lifted completely.</p>
+
+        <div class="framed img-pebble" style="margin:2.5rem auto;max-width:520px">
+          <div class="ph">
+            <picture>
+              <source srcset="../assets/akyaka.webp" type="image/webp">
+              <img src="../assets/akyaka.jpg" alt="Akyaka, the village on the Aegean coast where Leyla found her freedom" width="900" height="720" loading="lazy">
+            </picture>
+          </div>
+        </div>
+
+        <p>As I healed the pain in my body, I began to notice how many people around me were living in a similar situation. When we are in pain, our world contracts. We lose access to connection, to movement, to hope and to our power. Having found a way through, I carry a responsibility to share what I've learned.</p>
+
+        <div class="pq-inline" style="margin-block:2.5rem">
+          <p>The loneliness of chronic pain can only be understood by those who've lived it.</p>
+        </div>
+
+        <p>At the core of all my work is a commitment to easing suffering and contributing to the transformation of the systems that create it. I root my work in what I learn from nature and in the wisdom of indigenous cultures that have long carried practices of collective healing. I am deeply shaped by liberation movements, which show us again and again the strength and resilience of our people.</p>
+
+        <div class="pq-inline" style="margin-block:2.5rem">
+          <p>I refuse to separate spirituality from justice.</p>
+        </div>
+
+        <div class="pq-inline" style="margin-block:2.5rem">
+          <p>I hope that after some time working together, you won't need me anymore.</p>
+        </div>
+
+        <p><strong>If this resonates with you, and you feel I could be a source of support in your path, I invite you to reach out and connect.</strong></p>
+
+        <div class="btn-row" style="margin-top:1.5rem">
+          <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener" class="btn btn-primary">Book a free intro call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training & credentials -->
+    <section class="section band-plum on-plum">
+      <div class="wrap-narrow reveal">
+        <h2>Training &amp; credentials</h2>
+        <p>This work is deeply intuitive, rooted in my own lived experience. I've also had the privilege of studying with many teachers whose wisdom continues to shape it.</p>
+        <ul style="list-style:none;padding:0;margin:1.5rem 0 0;line-height:1.9">
+          <li>Bachelor of Cognitive Science, University of Southern California</li>
+          <li>SarnoXSachs Chronic Pain Practitioner Training</li>
+          <li>Certified Breathwork Therapist, Inspire Breathwork</li>
+          <li>200-hour Yoga Teacher Training, Andrew Sealey and Christine Anderson</li>
+          <li>300-hour Advanced Yoga Teacher Training, Rasa Yoga with Sianna Sherman</li>
+          <li>Meditation Teacher Training, Punnu Wasu and Monk Greg</li>
+          <li>Yoga Nidra, Mudra and Pranayama Training</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Third-person bio -->
+    <section class="section wrap">
+      <div class="wrap-narrow prose reveal" style="padding-inline:0">
+        <h2>About Leyla Fıratlı</h2>
+        <p>Leyla Fıratlı is a breathwork therapist and mind-body practitioner offering decolonial mind-body medicine for chronic pain. Based in Akyaka, Türkiye, she works with clients online and in person in Türkiye, the US, the UK, and beyond. Trained through the SarnoXSachs Chronic Pain Practitioner Training and certified in breathwork therapy with Inspire Breathwork, she draws on the work of Dr. John Sarno, somatic awareness, and nervous system regulation to support people with persistent symptoms, including back pain, sciatica, anxiety, and pain without a clear structural cause. She holds a degree in Cognitive Science from the University of Southern California and over 500 hours of yoga teacher training. Her approach connects individual pain to collective and political conditions.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-brand">Leyla Fıratlı</p>
+      <div class="footer-grid">
+        <nav class="footer-nav" aria-label="Footer">
+          <p class="footer-head">Navigate</p>
+          <a href="/en/">Home</a>
+          <a href="/en/chronic-pain-healing.html">Work with me</a>
+          <a href="/en/free-practices.html">Free class</a>
+          <a href="/en/about.html">About</a>
+          <a href="/en/contact.html">Contact</a>
+        </nav>
+        <nav class="footer-nav" aria-label="More">
+          <p class="footer-head">More</p>
+          <a href="/en/decolonial-approach.html">A decolonial approach</a>
+          <a href="/en/breathwork-somatics.html">Breathwork &amp; somatic work</a>
+          <a href="/en/resources.html">Resources</a>
+          <a href="#" target="_blank" rel="noopener">Writing</a>
+        </nav>
+        <div class="footer-social">
+          <p class="footer-head">Connect</p>
+          <a href="#">Substack</a>
+          <a href="#">Bluesky</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>This work is educational and not a substitute for medical care.</p>
+        <p>&copy; 2026 Leyla Fıratlı</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../site.js"></script>
 </body>
 </html>
