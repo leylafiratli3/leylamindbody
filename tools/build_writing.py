@@ -42,7 +42,8 @@ os.chdir(ROOT)
 SQUIGGLE = ('<svg viewBox="0 0 300 18" preserveAspectRatio="none" fill="none" aria-hidden="true">'
             '<path d="M3 13C70 5 150 16 200 9s95-4 97 2" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>')
 PERSON = {"@type": "Person", "name": "Leyla Fıratlı", "url": f"{SITE}/en/about.html",
-          "jobTitle": "Breathwork Therapist & Mind-Body Practitioner"}
+          "jobTitle": "Breathwork Therapist & Mind-Body Practitioner",
+          "sameAs": [SUBSTACK, "https://www.instagram.com/leylafiratli/"]}
 CLASS_TEXT = ("I share my story, explain how mind-body pain happens, help you tell whether you might be "
               "experiencing it, and leave you with a roadmap and tools to start working with it.")
 
