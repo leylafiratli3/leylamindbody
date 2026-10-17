@@ -9,6 +9,7 @@ People with chronic pain who have been dismissed by doctors, who have tried ever
 ## How to work with me
 
 - Before big changes, look at the shared stylesheet and components first, then give me a short plan.
+- When I ask you to redesign a page or section, always give me a few design options to choose from first (a short menu with small previews), before you build anything.
 - Work on a branch.
 - Keep all SEO work intact: titles, meta descriptions, canonical URLs, Open Graph tags, JSON-LD, alt text, sitemap. Every page has a unique title and description.
 - The site is English only. The old /tr/ pages redirect to /en/. Don't add language switchers or hreflang back.

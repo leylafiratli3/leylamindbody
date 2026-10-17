@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Free 1-Hour Mind-Body Class for Chronic Pain | Leyla Fıratlı</title>
-  <meta name="description" content="A free 1-hour online class on the mind-body approach to chronic pain: understand how pain works, breathe together, and see if this path is for you.">
+  <meta name="description" content="A free 50-minute class on the mind-body approach to chronic pain. I share my story, explain how mind-body pain happens, help you tell whether you might be experiencing it, and leave you with a roadmap and tools to start working with it.">
   <link rel="canonical" href="https://mindbodyhealingwithleyla.com/en/free-practices.html">
 
   <link rel="icon" type="image/png" href="../assets/favicon.png">
 
   <meta property="og:title" content="Free 1-Hour Mind-Body Class for Chronic Pain | Leyla Fıratlı">
-  <meta property="og:description" content="A free 1-hour online class on the mind-body approach to chronic pain: understand how pain works, breathe together, and see if this path is for you.">
+  <meta property="og:description" content="A free 50-minute class on the mind-body approach to chronic pain. I share my story, explain how mind-body pain happens, help you tell whether you might be experiencing it, and leave you with a roadmap and tools to start working with it.">
   <meta property="og:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
   <meta property="og:url" content="https://mindbodyhealingwithleyla.com/en/free-practices.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Free 1-Hour Mind-Body Class for Chronic Pain | Leyla Fıratlı">
-  <meta name="twitter:description" content="A free 1-hour online class on the mind-body approach to chronic pain: understand how pain works, breathe together, and see if this path is for you.">
+  <meta name="twitter:description" content="A free 50-minute class on the mind-body approach to chronic pain. I share my story, explain how mind-body pain happens, help you tell whether you might be experiencing it, and leave you with a roadmap and tools to start working with it.">
   <meta name="twitter:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,8 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="/en/chronic-pain-healing.html">Work with me</a>
         <a href="/en/about.html">About</a>
-        <a href="#" target="_blank" rel="noopener">Writing</a>
+        <a href="/en/writing.html">Writing</a>
+        <a href="/en/resources.html">Resources</a>
         <a href="/en/contact.html">Contact</a>
         <a href="/en/free-practices.html" class="btn btn-primary nav-cta">Free class</a>
       </nav>
@@ -56,14 +57,14 @@
     <nav aria-label="Mobile">
       <a href="/en/chronic-pain-healing.html">Work with me</a>
       <a href="/en/about.html">About</a>
-      <a href="#" target="_blank" rel="noopener">Writing</a>
+      <a href="/en/writing.html">Writing</a>
+      <a href="/en/resources.html">Resources</a>
       <a href="/en/contact.html">Contact</a>
     </nav>
     <div class="mobile-foot">
       <a href="/en/free-practices.html" class="btn btn-primary">Free class</a>
       <div class="mobile-social">
-        <a href="#">Substack</a>
-        <a href="#">Bluesky</a>
+        <a href="https://leylafiratli.substack.com/" target="_blank" rel="noopener">Substack</a>
         <a href="#">Instagram</a>
       </div>
     </div>
@@ -71,33 +72,59 @@
 
   <main id="main">
 
-    <section class="section bg-indigo">
-      <img src="../assets/figures/fig-lotus.webp" class="fig fig-accent rot-r" style="top:2.2rem;right:3%" alt="" loading="lazy" aria-hidden="true">
-      <div class="wrap-narrow reveal in">
-        <span class="stamp">Free 50-minute class</span>
-        <h1 style="margin-top:1rem">Mind Body Medicine <span style="color:var(--rose)">101</span></h1>
-        <p class="lede">A free 50-minute class on the mind-body approach to chronic pain. I share my story, explain how mind-body pain happens, help you tell whether yours is, and leave you with a roadmap and tools to start. Watch instantly, no experience needed.</p>
-        <div class="btn-row"><a href="#watch" class="btn btn-primary btn-lg">Watch the free class</a></div>
+    <!-- HERO: sign-up + portrait (indigo). Becomes the player after sign-up. -->
+    <section class="section bg-indigo fc-hero" id="watch">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="reveal in">
+            <span class="stamp">Free 50-minute class</span>
+            <h1 style="margin-top:1rem">Mind Body Medicine <span style="color:var(--rose)">101</span></h1>
+            <!-- Opt-in gate -->
+            <div id="fc-gate">
+              <p class="lede">A free 50-minute class on the mind-body approach to chronic pain. I share my story, explain how mind-body pain happens, help you tell whether you might be experiencing it, and leave you with a roadmap and tools to start working with it.</p>
+              <form id="fc-form" class="fc-form" novalidate>
+                <div class="fc-fields">
+                  <input type="text" name="name" placeholder="Your first name" autocomplete="given-name" aria-label="Your first name">
+                  <input type="email" name="email" placeholder="Your email" autocomplete="email" required aria-label="Your email">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Watch now</button>
+                <p class="fc-error" id="fc-error" role="alert" hidden></p>
+                <p class="fc-fineprint">I'll also email you the link so you can come back any time.</p>
+              </form>
+            </div>
+          </div>
+          <div class="hero-media fc-preview-col reveal in">
+            <div class="fc-preview">
+              <img src="../assets/mbm101-banner.png" alt="Leyla Fıratlı looking into the camera, on a wooden porch" width="1600" height="864">
+            </div>
+          </div>
+        </div>
+        <!-- Player (revealed after signup) -->
+        <div id="fc-player" hidden>
+          <div class="fc-stage">
+            <div class="fc-video">
+              <iframe id="fc-iframe" src="" title="Mind Body Medicine 101, a free class" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="fc-stage-bar">
+              <span class="fc-now"><span class="fc-dot" aria-hidden="true"></span>Now playing</span>
+              <span>50 minutes</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <div class="edge" style="background:var(--indigo)"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--ecru)" d="M0,100 L0,45 C220,95 430,5 660,42 C880,78 1050,22 1200,55 L1200,100 Z"/></svg></div>
 
     <!-- What the hour looks like -->
     <section class="section bg-ecru">
-      <div class="wrap hero-grid">
-        <div class="reveal">
-          <h2>What you'll learn</h2>
-          <ul class="check-list">
-            <li>my own story of chronic pain, and how I found my way out</li>
-            <li>what mind-body medicine is, and the science of how pain really works</li>
-            <li>how mind-body pain happens, and how to tell if yours is mind-body</li>
-            <li>a roadmap and practical tools to start working with your pain today</li>
-          </ul>
-          <p>It's free and on-demand, with no pressure to work with me afterwards. If it opens something for you, we can talk about next steps.</p>
-        </div>
-        <div class="hero-media reveal center">
-          <img src="../assets/figures/fig-dance.webp" class="fig fig-media" alt="Illustration of a body moving freely, mid-dance" width="563" height="626" loading="lazy">
-        </div>
+      <div class="wrap reveal">
+        <h2>What you'll learn</h2>
+        <ol class="principles four" style="list-style:none;padding:0;margin:2.5rem 0 0">
+          <li class="principle"><span class="num">1</span><p>my own story of chronic pain, and how I found my way out</p></li>
+          <li class="principle"><span class="num">2</span><p>what mind-body medicine is, and the science of how pain really works</p></li>
+          <li class="principle"><span class="num">3</span><p>how mind-body pain happens, and how to tell if you might be experiencing it</p></li>
+          <li class="principle"><span class="num">4</span><p>a roadmap and practical tools to start working with your pain today</p></li>
+        </ol>
       </div>
     </section>
 
@@ -111,30 +138,11 @@
     </section>
 
     <!-- Watch the free class (indigo) -->
-    <section class="section bg-indigo center" id="watch">
+    <section class="section bg-indigo center" id="fc-cta">
       <div class="wrap-narrow reveal">
-        <!-- Opt-in gate -->
-        <div id="fc-gate">
-          <h2>Watch the free class</h2>
-          <p>Enter your details and start watching straight away. I'll also email you the link so you can come back any time.</p>
-          <form id="fc-form" class="fc-form" novalidate>
-            <div class="fc-fields">
-              <input type="text" name="name" placeholder="Your first name" autocomplete="given-name" aria-label="Your first name">
-              <input type="email" name="email" placeholder="Your email" autocomplete="email" required aria-label="Your email">
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg">Watch now</button>
-            <p class="fc-error" id="fc-error" role="alert" hidden></p>
-            <p class="fc-fineprint">No spam, ever. Unsubscribe any time.</p>
-          </form>
-        </div>
-        <!-- Player (revealed after signup) -->
-        <div id="fc-player" hidden>
-          <h2>Mind Body Medicine 101</h2>
-          <div class="fc-video">
-            <iframe id="fc-iframe" src="" title="Mind Body Medicine 101, a free class" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <p style="margin-top:1.5rem">When you're ready for the next step, <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener">book a free intro call</a>.</p>
-        </div>
+        <h2>Watch the free class</h2>
+        <p style="margin-inline:auto">Enter your name and email at the top of this page and start watching straight away.</p>
+        <div class="btn-row" style="justify-content:center"><a href="#watch" class="btn btn-primary btn-lg">Take me to the class</a></div>
       </div>
     </section>
 
@@ -154,15 +162,12 @@
         </nav>
         <nav class="footer-nav" aria-label="More">
           <p class="footer-head">More</p>
-          <a href="/en/decolonial-approach.html">A decolonial approach</a>
-          <a href="/en/breathwork-somatics.html">Breathwork &amp; somatic work</a>
           <a href="/en/resources.html">Resources</a>
-          <a href="#" target="_blank" rel="noopener">Writing</a>
+          <a href="/en/writing.html">Writing</a>
         </nav>
         <div class="footer-social">
           <p class="footer-head">Connect</p>
-          <a href="#">Substack</a>
-          <a href="#">Bluesky</a>
+          <a href="https://leylafiratli.substack.com/" target="_blank" rel="noopener">Substack</a>
           <a href="#">Instagram</a>
         </div>
       </div>
@@ -219,9 +224,14 @@
     var errEl = document.getElementById('fc-error');
     if (!form) return;
 
+    var hero = document.getElementById('watch');
+
     function showPlayer() {
       gate.hidden = true;
       player.hidden = false;
+      hero.classList.add('is-watching');
+      var cta = document.getElementById('fc-cta');
+      if (cta) cta.hidden = true;
       if (iframe.getAttribute('src')) return;
       fetch(API + '/api/free-class/video?locale=' + LOCALE)
         .then(function (r) { return r.json(); })
