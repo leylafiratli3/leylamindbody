@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
 const { getSignedPlaybackUrl } = require('./lib/video');
-const { subscribeFreeClass } = require('./lib/kit');
+const { subscribeFreeClass } = require('./lib/sender');
 
 const app = express();
 app.set('trust proxy', 1); // behind Fly.io proxy — needed for correct client IPs (rate limiting)
@@ -98,7 +98,7 @@ function freeClassVideoId(locale) {
 }
 
 // POST /api/free-class/signup { name, email, locale } — saves the lead and
-// subscribes them to Kit (if configured). A duplicate email still returns ok
+// subscribes them to Sender (if configured). A duplicate email still returns ok
 // so returning visitors can watch.
 app.post('/api/free-class/signup', freeClassLimiter, async (req, res) => {
   const { name, email } = req.body || {};
@@ -120,7 +120,7 @@ app.post('/api/free-class/signup', freeClassLimiter, async (req, res) => {
     }
   }
 
-  // Subscribe to Kit — never block access if this fails.
+  // Subscribe to Sender — never block access if this fails.
   try {
     await subscribeFreeClass({
       email: cleanEmail,
@@ -128,7 +128,7 @@ app.post('/api/free-class/signup', freeClassLimiter, async (req, res) => {
       locale,
     });
   } catch (err) {
-    console.error('Kit subscribe failed:', err.message);
+    console.error('Sender subscribe failed:', err.message);
   }
 
   res.status(201).json({ ok: true });
