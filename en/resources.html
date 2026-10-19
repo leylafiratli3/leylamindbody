@@ -1,602 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | Mind-Body Healing w Leyla</title>
-    <meta name="description" content="Explore healing resources including reading lists, podcast recommendations, and journal prompts to support your mind-body healing journey.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'display': ['Cormorant Garamond', 'serif'],
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        'earth': {
-                            50: '#fdf8f3',
-                            100: '#f9e8d8',
-                            200: '#f3d4b8',
-                            300: '#eab894',
-                            400: '#e0966b',
-                            500: '#d67c4a',
-                            600: '#c86a3d',
-                            700: '#a85535',
-                            800: '#864532',
-                            900: '#6f3b2f',
-                        },
-                        'clay': {
-                            50: '#faf6f2',
-                            100: '#f2e8dd',
-                            200: '#e4d1bc',
-                            300: '#d3b595',
-                            400: '#c19a73',
-                            500: '#b0855f',
-                            600: '#a07352',
-                            700: '#855e45',
-                            800: '#6f4e3c',
-                            900: '#5a4133',
-                        },
-                        'sage': {
-                            50: '#f6f7f6',
-                            100: '#e3e7e3',
-                            200: '#c7d0c7',
-                            300: '#a3b1a3',
-                            400: '#7a8c7a',
-                            500: '#5f715f',
-                            600: '#4a5a4a',
-                            700: '#3d483d',
-                            800: '#333c33',
-                            900: '#2b322b',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    
-    <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="../themes.css">
-    
-    <style>
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.75rem;
-            padding: 0.75rem 1.25rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            background: linear-gradient(135deg, #844b4b 0%, #6a3d3d 100%);
-            color: white;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(132, 75, 75, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #6a3d3d 0%, #5a2f2f 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(132, 75, 75, 0.4);
-        }
-        
-        .text-theme-primary { color: #844b4b !important; }
-        .bg-theme-primary { background-color: #844b4b !important; }
-.nav-book-session-btn { background-color: #844b4b; color: white; border-color: #844b4b; }
-.nav-book-session-btn:hover { background-color: #6d3a3a !important; color: white !important; border-color: #6d3a3a !important; }
-.nav-lang-btn { background-color: transparent; border-color: #d9c7b8; color: #5a4133; }
-.nav-lang-btn:hover { background-color: #f0ebe6; border-color: #c4b5a8; color: #5a4133; }
-.nav-link-theme { color: #5a4133; }
-.nav-link { font-size: 1.0625rem; font-weight: 500; letter-spacing: 0.01em; color: #5a4133; }
-.nav-link:hover { color: #844b4b; }
-.nav-cta { font-size: 1.0625rem; font-weight: 500; padding: 0.625rem 1.25rem; border-radius: 0.375rem; }
-@media (min-width: 1024px) {
-    .nav-link { font-size: 1.25rem; }
-    .nav-cta { font-size: 1.125rem; padding: 0.75rem 1.5rem; }
-}
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 640px) {
-            .max-w-6xl { max-width: 100% !important; }
-            .max-w-7xl { max-width: 100% !important; }
-            .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-12 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
-            .text-5xl { font-size: 2.5rem !important; }
-            .text-6xl { font-size: 3rem !important; }
-            .text-7xl { font-size: 3.5rem !important; }
-        }
-        
-        .nav-logo {
-    height: 58px !important;
-    width: auto !important;
-    max-width: 220px !important;
-    min-height: 58px !important;
-    object-fit: contain !important;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@media (min-width: 1024px) {
-    .nav-logo {
-        height: 72px !important;
-        max-width: 280px !important;
-        min-height: 72px !important;
+  <title>Chronic Pain Resources: Books &amp; Journal Prompts | Leyla Fıratlı</title>
+  <meta name="description" content="Books, journal prompts, and practices for mind-body healing from chronic pain, the tools that supported my own freedom and continue to help others.">
+  <link rel="canonical" href="https://mindbodyhealingwithleyla.com/en/resources.html">
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+  <meta property="og:title" content="Chronic Pain Resources: Books &amp; Journal Prompts | Leyla Fıratlı">
+  <meta property="og:description" content="Books, journal prompts, and practices for mind-body healing from chronic pain, the tools that supported my own freedom and continue to help others.">
+  <meta property="og:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
+  <meta property="og:url" content="https://mindbodyhealingwithleyla.com/en/resources.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chronic Pain Resources: Books &amp; Journal Prompts | Leyla Fıratlı">
+  <meta name="twitter:description" content="Books, journal prompts, and practices for mind-body healing from chronic pain, the tools that supported my own freedom and continue to help others.">
+  <meta name="twitter:image" content="https://mindbodyhealingwithleyla.com/assets/leylaportrait.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="../liberation.css">
+
+  <style>
+    /* editorial opening spread: heading and contents on the left, tall photo of Leyla in the mountains on the right */
+    .res-hero { padding-block: clamp(48px, 8vw, 104px) clamp(24px, 4vw, 48px); }
+    .res-spread { display: grid; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+    @media (min-width: 900px) { .res-spread { grid-template-columns: 1.15fr 0.85fr; } }
+    .res-hero h1 { font-size: clamp(2.6rem, 6.5vw, 5rem); line-height: 1.04; max-width: 12ch; }
+    .res-hero .lede { margin-top: 1.5rem; max-width: 46ch; }
+    .res-photo { max-width: 460px; width: 100%; justify-self: end; }
+    .res-contents { margin-top: clamp(2rem, 4vw, 2.75rem); border-top: 1.5px solid var(--indigo); max-width: 420px; }
+    .res-contents a {
+      display: flex; gap: 1.25rem; align-items: baseline; padding-block: 0.8rem; border-bottom: 1px solid var(--ecru-deep);
+      font-family: var(--font-head); font-weight: 600; font-size: 1.2rem; color: var(--indigo); text-decoration: none;
     }
+    .res-contents a span { font-family: var(--font-body); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; }
+    .res-contents a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .res-contents a:focus-visible { outline: 2px solid var(--indigo); outline-offset: 4px; border-radius: 2px; }
+    #reading-list, #journal-prompts, #more-to-explore { scroll-margin-top: 90px; }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://mindbodyhealingwithleyla.com/en/resources.html#page",
+      "url": "https://mindbodyhealingwithleyla.com/en/resources.html",
+      "name": "Chronic Pain Resources: Books & Journal Prompts",
+      "inLanguage": "en",
+      "description": "Books, journal prompts, and practices for mind-body healing from chronic pain, the tools that supported my own freedom and continue to help others.",
+      "author": {
+        "@id": "https://mindbodyhealingwithleyla.com/#leyla"
+      },
+      "publisher": {
+        "@id": "https://mindbodyhealingwithleyla.com/#leyla"
+      },
+      "dateModified": "2026-10-17",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://mindbodyhealingwithleyla.com/en/",
+        "name": "Leyla Fıratlı"
+      },
+      "breadcrumb": {
+        "@id": "https://mindbodyhealingwithleyla.com/en/resources.html#breadcrumb"
+      },
+      "hasPart": [
+        {
+          "@id": "https://mindbodyhealingwithleyla.com/en/resources.html#reading-list"
+        },
+        {
+          "@id": "https://mindbodyhealingwithleyla.com/en/resources.html#journal-prompts"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mindbodyhealingwithleyla.com/en/resources.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mindbodyhealingwithleyla.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resources",
+          "item": "https://mindbodyhealingwithleyla.com/en/resources.html"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://mindbodyhealingwithleyla.com/en/resources.html#reading-list",
+      "name": "Reading list for mind-body chronic pain",
+      "url": "https://mindbodyhealingwithleyla.com/en/resources.html#reading-list",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Book",
+            "name": "The Mindbody Prescription",
+            "author": {
+              "@type": "Person",
+              "name": "John E. Sarno"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Book",
+            "name": "The Politics of Trauma",
+            "author": {
+              "@type": "Person",
+              "name": "Staci K. Haines"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Book",
+            "name": "Mind Your Body",
+            "author": {
+              "@type": "Person",
+              "name": "Nicole Sachs"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Book",
+            "name": "Becoming Supernatural",
+            "author": {
+              "@type": "Person",
+              "name": "Joe Dispenza"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://mindbodyhealingwithleyla.com/en/resources.html#journal-prompts",
+      "name": "Journal prompts for chronic pain",
+      "url": "https://mindbodyhealingwithleyla.com/en/resources.html#journal-prompts",
+      "numberOfItems": 21,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "What does your pain feel like?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#observe"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "When did it first appear?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#observe"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What makes it better or worse?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#observe"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "What does your pain get in the way of?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#observe"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "How does it move?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#observe"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "If your pain could speak, what would it say?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#deepen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "If your pain had a voice, what tone would it use?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#deepen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Write a direct dialogue.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#deepen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "What do you hate most about the pain?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#deepen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "What is your pain protecting you from?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#deepen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Write a letter from the perspective of the pain.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#deepen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Write your pain a letter.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#express"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Name your anger.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#express"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Write a rage list.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#express"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Let yourself grieve.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#express"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Claim responsibility.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#express"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Imagine your life without this pain.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#envision"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Write a letter from the free version of you.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#envision"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Write a day in the life of your free self.",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#envision"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "What has pain taught you that you want to carry into a pain-free life?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#envision"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Where can you find gratitude?",
+          "url": "https://mindbodyhealingwithleyla.com/en/resources.html#envision"
+        }
+      ]
+    }
+  ]
 }
-    </style>
+  </script>
 </head>
-<body class="bg-earth-50 text-clay-800 font-sans overflow-x-hidden">
-    <!-- Header -->
-    <header x-data="{ mobileMenuOpen: false, workWithMeOpen: false }" class="sticky top-0 z-40 border-b border-gray-200 transition-all duration-300" style="background-color: #f5f4f6;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 lg:h-24 w-full gap-4">
-                <!-- Mobile Menu Button -->
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    @keydown.escape="mobileMenuOpen = false"
-                    class="lg:hidden p-2 rounded-lg hover:bg-clay-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary transition-all duration-300 text-clay-600"
-                    aria-label="Toggle menu"
-                    aria-expanded="false"
-                    x-bind:aria-expanded="mobileMenuOpen"
-                >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- Logo (left) -->
-<a href="index.html" class="flex items-center flex-shrink-0">
-    <img src="../assets/leylafiratlilogo.png" alt="Body-Wise Healing Logo" class="nav-logo">
-</a>
-<!-- Desktop Navigation -->
-<nav class="hidden lg:flex flex-1 items-center justify-evenly min-w-0 px-6">
-    <a href="index.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Home
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="about.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        About
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <div class="relative" @mouseenter="workWithMeOpen = true" @mouseleave="workWithMeOpen = false">
-        <a href="index.html#work-together" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display inline-flex items-center py-1">
-            Work With Me
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-            <svg class="w-3.5 h-3.5 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="/en/" class="brand">Leyla Fıratlı</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/en/chronic-pain-healing.html">Work with me</a>
+        <a href="/en/about.html">About</a>
+        <a href="/en/writing.html">Writing</a>
+        <a href="/en/resources.html">Resources</a>
+        <a href="/en/contact.html">Contact</a>
+        <a href="/en/free-practices.html" class="btn btn-primary nav-cta">Free class</a>
+      </nav>
+      <button class="nav-toggle" data-menu-toggle aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mobile-top">
+      <a href="/en/" class="mobile-brand">Leyla Fıratlı</a>
+      <button class="mobile-close" data-menu-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <a href="/en/chronic-pain-healing.html">Work with me</a>
+      <a href="/en/about.html">About</a>
+      <a href="/en/writing.html">Writing</a>
+      <a href="/en/resources.html">Resources</a>
+      <a href="/en/contact.html">Contact</a>
+    </nav>
+    <div class="mobile-foot">
+      <a href="/en/free-practices.html" class="btn btn-primary">Free class</a>
+      <div class="mobile-social">
+        <a href="https://leylafiratli.substack.com/" target="_blank" rel="noopener">Substack</a>
+        <a href="https://www.instagram.com/leylafiratli/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="section bg-ecru res-hero">
+      <div class="wrap res-spread">
+        <div class="reveal in">
+          <p class="eyebrow">Resources · Updated <time datetime="2026-10-17">17 October 2026</time></p>
+          <h1>Tools to help you find your <mark class="hl">way</mark> through</h1>
+          <p class="lede">Books, prompts, and practices that supported my own freedom from chronic pain, and continue to help others. This page will always be a work in progress.</p>
+          <nav class="res-contents" aria-label="On this page">
+            <a href="#reading-list"><span>01</span>Reading list</a>
+            <a href="#journal-prompts"><span>02</span>Journal prompts</a>
+            <a href="#more-to-explore"><span>03</span>More to explore</a>
+            <a href="#start-here"><span>04</span>Start here</a>
+          </nav>
+        </div>
+        <figure class="photo photo-tall res-photo reveal in">
+          <picture>
+            <source srcset="../assets/leylainnaturevertical.webp" type="image/webp">
+            <img src="../assets/leylainnaturevertical.jpg" alt="Leyla standing in a high mountain meadow with a walking staff, looking down the valley at a winding dirt road" width="600" height="800" fetchpriority="high">
+          </picture>
+        </figure>
+      </div>
+    </section>
+    <div class="edge" style="background:var(--ecru)"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--ecru-deep)" d="M0,100 L0,45 C220,95 430,5 660,42 C880,78 1050,22 1200,55 L1200,100 Z"/></svg></div>
+
+    <section class="section bg-ecru-deep" id="reading-list" aria-labelledby="reading-list-title">
+      <div class="wrap">
+      <h2 class="reveal" id="reading-list-title">Reading list</h2>
+      <div class="cards two" style="margin-top:2rem">
+        <article class="card reveal">
+          <h3>The Mindbody Prescription</h3>
+          <p class="credentials">Dr. John Sarno</p>
+          <p>A deeper dive into mind-body syndrome and the brain-based origins of chronic pain.</p>
+          <p class="related-writing"><span class="label">From my writing</span><a href="/en/writing/what-is-tms.html">What is TMS, the name Dr. Sarno gave to mind-body pain?</a></p>
+        </article>
+        <article class="card reveal">
+          <h3>The Politics of Trauma</h3>
+          <p class="credentials">Staci Haines</p>
+          <p>Explores how trauma is political, and how healing must address both personal and systemic dimensions.</p>
+          <p class="related-writing"><span class="label">From my writing</span><a href="/en/writing/what-does-a-decolonial-approach-to-chronic-pain-mean.html">What does a decolonial approach to chronic pain mean?</a></p>
+        </article>
+        <article class="card reveal">
+          <h3>Mind Your Body</h3>
+          <p class="credentials">Dr. Nicole Sachs</p>
+          <p>A practical guide to using journaling and expressive writing as tools for mind-body work.</p>
+          <p class="related-writing"><span class="label">From my writing</span><a href="/en/writing/how-do-i-know-if-my-pain-is-mind-body.html">How do I know if my pain might be mind-body?</a></p>
+        </article>
+        <article class="card reveal">
+          <h3>Becoming Supernatural</h3>
+          <p class="credentials">Dr. Joe Dispenza</p>
+          <p>I don't fully align with Dispenza's individual-centered framing, but his research offers useful tools for shifting your experience of pain.</p>
+          <p class="related-writing"><span class="label">From my writing</span><a href="/en/writing/is-chronic-pain-all-in-my-head.html">Is this pain all in my head?</a></p>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <section class="section bg-indigo" id="journal-prompts" aria-labelledby="journal-prompts-title">
+      <div class="wrap-narrow reveal">
+        <h2 id="journal-prompts-title">Journal prompts</h2>
+        <p>Journaling is one of the most powerful tools in this work. Move through these in your own time, there's no right way.</p>
+
+        <div class="stage-tabs" role="group" aria-label="Choose a stage of prompts">
+        <input type="radio" name="stage" id="stage-observe" checked>
+        <input type="radio" name="stage" id="stage-deepen">
+        <input type="radio" name="stage" id="stage-express">
+        <input type="radio" name="stage" id="stage-envision">
+          <div class="stage-tablist">
+          <label for="stage-observe">Observe</label>
+          <label for="stage-deepen">Deepen</label>
+          <label for="stage-express">Express</label>
+          <label for="stage-envision">Envision</label>
+          </div>
+        <div class="stage-panel" id="observe">
+          <h3 class="sr-only">Observe</h3>
+          <ol class="prompt-list">
+            <li>
+              <p class="prompt">What does your pain feel like?</p>
+              <p class="prompt-more">Describe the physical sensations without labeling them as symptoms. What color, texture, or temperature would you give it?</p>
+            </li>
+            <li>
+              <p class="prompt">When did it first appear?</p>
+              <p class="prompt-more">What was happening in your life around that time? What were you feeling? Does it feel old or new?</p>
+            </li>
+            <li>
+              <p class="prompt">What makes it better or worse?</p>
+              <p class="prompt-more">Notice patterns. Does it change with stress, weather, relationships, or activities?</p>
+            </li>
+            <li>
+              <p class="prompt">What does your pain get in the way of?</p>
+              <p class="prompt-more">What hidden benefits does it give you: attention, rest, protection, avoidance?</p>
+            </li>
+            <li>
+              <p class="prompt">How does it move?</p>
+              <p class="prompt-more">Does it shift places or change in intensity? What patterns can you notice?</p>
+            </li>
+          </ol>
+        </div>
+        <div class="stage-panel" id="deepen">
+          <h3 class="sr-only">Deepen</h3>
+          <ol class="prompt-list">
+            <li>
+              <p class="prompt">If your pain could speak, what would it say?</p>
+              <p class="prompt-more">What message might it be carrying?</p>
+            </li>
+            <li>
+              <p class="prompt">If your pain had a voice, what tone would it use?</p>
+              <p class="prompt-more">Angry, pleading, sarcastic, scared, demanding, childlike?</p>
+            </li>
+            <li>
+              <p class="prompt">Write a direct dialogue.</p>
+              <p class="prompt-more">Pain: "…" You: "…" Let it go as long as it needs, no censoring.</p>
+            </li>
+            <li>
+              <p class="prompt">What do you hate most about the pain?</p>
+              <p class="prompt-more">What does it stop you from doing, and how does that make you feel?</p>
+            </li>
+            <li>
+              <p class="prompt">What is your pain protecting you from?</p>
+              <p class="prompt-more">If it were gone tomorrow, what might actually feel scary about that?</p>
+            </li>
+            <li>
+              <p class="prompt">Write a letter from the perspective of the pain.</p>
+              <p class="prompt-more">Explain why it's here and what it's trying to do.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="stage-panel" id="express">
+          <h3 class="sr-only">Express</h3>
+          <ol class="prompt-list">
+            <li>
+              <p class="prompt">Write your pain a letter.</p>
+              <p class="prompt-more">Thank it, and explain why you don't need it anymore. Keep reading it until your nervous system is convinced.</p>
+            </li>
+            <li>
+              <p class="prompt">Name your anger.</p>
+              <p class="prompt-more">Write the names of people in your life and express your anger at them, in your raw, unfiltered voice.</p>
+            </li>
+            <li>
+              <p class="prompt">Write a rage list.</p>
+              <p class="prompt-more">Everything you're furious about, from tiny daily annoyances to the deepest betrayals. Destroy the list later.</p>
+            </li>
+            <li>
+              <p class="prompt">Let yourself grieve.</p>
+              <p class="prompt-more">Write about what pain has taken from you, the time, trust, or experiences you've lost.</p>
+            </li>
+            <li>
+              <p class="prompt">Claim responsibility.</p>
+              <p class="prompt-more">Write about the ways your mind and body may have created this pain to protect you, and why you're now ready to let it go.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="stage-panel" id="envision">
+          <h3 class="sr-only">Envision</h3>
+          <ol class="prompt-list">
+            <li>
+              <p class="prompt">Imagine your life without this pain.</p>
+              <p class="prompt-more">What would you do first? How would your life change?</p>
+            </li>
+            <li>
+              <p class="prompt">Write a letter from the free version of you.</p>
+              <p class="prompt-more">Give it a date. Read it every day.</p>
+            </li>
+            <li>
+              <p class="prompt">Write a day in the life of your free self.</p>
+              <p class="prompt-more">How do you move, speak, feel, and show up in the world? What does your body feel like?</p>
+            </li>
+            <li>
+              <p class="prompt">What has pain taught you that you want to carry into a pain-free life?</p>
+            </li>
+            <li>
+              <p class="prompt">Where can you find gratitude?</p>
+              <p class="prompt-more">Come back to this when the pain visits.</p>
+            </li>
+          </ol>
+        </div>
+        </div>
+
+        <p class="related-writing"><span class="label">From my writing</span><a href="/en/writing/how-i-found-freedom-from-a-year-of-back-and-leg-pain.html">How I found freedom from a year of back and leg pain</a></p>
+      </div>
+    </section>
+
+    <section class="section wrap" id="more-to-explore" aria-labelledby="more-title">
+      <h2 class="reveal" id="more-title">More to explore</h2>
+      <div class="cards two" style="margin-top:2rem">
+        <article class="card reveal">
+          <h3>The Cure for Chronic Pain podcast</h3>
+          <p>A podcast dedicated to understanding and healing chronic pain through mind-body approaches.</p>
+          <p><a href="https://www.youtube.com/channel/UC-tz1Du69PhcBkC3-9_Mgmw" target="_blank" rel="noopener">Listen here →</a></p>
+        </article>
+        <article class="card reveal">
+          <h3>Dr. John Sarno's lecture on mind-body syndrome</h3>
+          <p>The foundational lecture explaining the mind-body connection in chronic pain.</p>
+          <p><a href="https://www.youtube.com/watch?v=cbF2HMXtfZ4" target="_blank" rel="noopener">Watch here →</a></p>
+        </article>
+        <article class="card reveal">
+          <h3>Success story archive</h3>
+          <p>Real stories of recovery from the TMS Wiki community, proof that freedom is possible.</p>
+          <p><a href="https://www.tmswiki.org/forum/forums/success-stories-subforum.27/" target="_blank" rel="noopener">Read stories →</a></p>
+        </article>
+        <article class="card reveal">
+          <h3>Letters to Dr. Sarno</h3>
+          <p>Heartfelt testimonials from people who found freedom through Dr. Sarno's work.</p>
+          <p><a href="http://www.thankyoudrsarno.org/2025/05" target="_blank" rel="noopener">Read letters →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Start here (indigo): five articles for someone new to this work -->
+    <section class="section bg-indigo" id="start-here" aria-labelledby="start-title">
+      <div class="wrap-narrow reveal">
+        <h2 id="start-title">Start here</h2>
+        <!-- TODO: Leyla to check this line is in her voice. -->
+        <p>If you're new to this work, these are the pieces I'd read first.</p>
+        <ol class="start-list">
+          <li><a href="/en/writing/what-is-a-mind-body-approach-to-chronic-pain.html"><span class="start-n" aria-hidden="true">01</span><span class="start-t">What is a mind-body approach to chronic pain?</span><span class="start-arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="/en/writing/how-do-i-know-if-my-pain-is-mind-body.html"><span class="start-n" aria-hidden="true">02</span><span class="start-t">How do I know if my pain might be mind-body?</span><span class="start-arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="/en/writing/is-chronic-pain-all-in-my-head.html"><span class="start-n" aria-hidden="true">03</span><span class="start-t">Is this pain all in my head?</span><span class="start-arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="/en/writing/do-i-need-to-see-a-doctor-first.html"><span class="start-n" aria-hidden="true">04</span><span class="start-t">Do I need to see a doctor before starting mind-body work?</span><span class="start-arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="/en/writing/how-i-found-freedom-from-a-year-of-back-and-leg-pain.html"><span class="start-n" aria-hidden="true">05</span><span class="start-t">How I found freedom from a year of back and leg pain</span><span class="start-arrow" aria-hidden="true">→</span></a></li>
+        </ol>
+        <p class="start-all"><a href="/en/writing.html">All writing</a></p>
+      </div>
+    </section>
+
+    <!-- Free class (ecru-deep, banner) -->
+    <section class="section bg-ecru-deep" style="padding-block:clamp(48px,7vw,96px)">
+      <div class="wrap postcard class-postcard">
+        <a href="/en/free-practices.html" class="class-banner reveal" aria-label="Watch the free class: Mind Body Medicine 101">
+          <img src="../assets/mbm101-banner.png" alt="Banner for Mind Body Medicine 101, a free 50-minute class with Leyla Fıratlı. It lists what the class covers. 01 My story. 02 How to know if your pain is mind-body. 03 A roadmap to freedom from pain." width="1600" height="864" loading="lazy">
         </a>
-        <div x-show="workWithMeOpen" x-transition class="absolute left-0 top-full pt-1 z-50" style="display: none;">
-            <div class="bg-white rounded-md shadow border border-clay-100 py-1.5 min-w-[280px]">
-                <a href="chronic-pain-healing.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-                <a href="breathwork-somatics.html" class="block px-4 py-2 text-base font-medium text-clay-600 hover:text-theme-primary hover:bg-clay-50 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
-            </div>
+        <div class="reveal">
+          <p class="eyebrow">Free 50-minute class</p>
+          <h2>Start with the free class</h2>
+          <p>I share my story, explain how mind-body pain happens, help you tell whether you might be experiencing it, and leave you with a roadmap and tools to start working with it.</p>
+          <div class="btn-row"><a href="/en/free-practices.html" class="btn btn-primary btn-lg">Get instant access</a></div>
         </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-brand">Leyla Fıratlı</p>
+      <div class="footer-grid">
+        <nav class="footer-nav" aria-label="Footer">
+          <p class="footer-head">Navigate</p>
+          <a href="/en/">Home</a>
+          <a href="/en/chronic-pain-healing.html">Work with me</a>
+          <a href="/en/free-practices.html">Free class</a>
+          <a href="/en/about.html">About</a>
+          <a href="/en/contact.html">Contact</a>
+        </nav>
+        <nav class="footer-nav" aria-label="More">
+          <p class="footer-head">More</p>
+          <a href="/en/resources.html">Resources</a>
+          <a href="/en/writing.html">Writing</a>
+        </nav>
+        <div class="footer-social">
+          <p class="footer-head">Connect</p>
+          <a href="https://leylafiratli.substack.com/" target="_blank" rel="noopener">Substack</a>
+          <a href="https://www.instagram.com/leylafiratli/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-stance">
+        <p class="footer-head">In case it's not obvious:</p>
+        <div class="stance-row">
+        <ul class="stance-flags">
+          <li>
+            <svg class="flag" viewBox="0 0 36 24" role="img" aria-label="Palestinian flag">
+              <rect width="36" height="24" fill="#ffffff"/>
+              <rect width="36" height="8" fill="#000000"/>
+              <rect y="16" width="36" height="8" fill="#007A3D"/>
+              <path d="M0 0 16 12 0 24Z" fill="#CE1126"/>
+            </svg>
+          </li>
+          <li>
+            <svg class="flag" viewBox="0 0 36 24" role="img" aria-label="Rainbow pride flag">
+              <rect width="36" height="24" fill="#750787"/>
+              <rect width="36" height="4" fill="#E40303"/>
+              <rect y="4" width="36" height="4" fill="#FF8C00"/>
+              <rect y="8" width="36" height="4" fill="#FFED00"/>
+              <rect y="12" width="36" height="4" fill="#008026"/>
+              <rect y="16" width="36" height="4" fill="#004DFF"/>
+            </svg>
+          </li>
+          <li>
+            <svg class="flag" viewBox="0 0 36 24" role="img" aria-label="Transgender pride flag">
+              <rect width="36" height="24" fill="#5BCEFA"/>
+              <rect y="4.8" width="36" height="4.8" fill="#F5A9B8"/>
+              <rect y="9.6" width="36" height="4.8" fill="#ffffff"/>
+              <rect y="14.4" width="36" height="4.8" fill="#F5A9B8"/>
+            </svg>
+          </li>
+        </ul>
+        <p class="stance-line">None of us are free until all of us are free</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>This work is educational and not a substitute for medical care.</p>
+        <p>&copy; 2026 Leyla Fıratlı</p>
+      </div>
     </div>
-    <a href="free-practices.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Free Practices
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-    <a href="contact.html" class="nav-link nav-link-theme hover:text-theme-primary transition-colors duration-300 relative group font-display py-1">
-        Contact
-        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
-</nav>
+  </footer>
 
-<div class="hidden lg:flex items-center gap-3 flex-shrink-0">
-    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="nav-cta nav-book-session-btn inline-flex items-center gap-1.5 border font-display transition-colors">
-        Book a session
-        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-    </a>
-    <a href="/tr/" class="nav-cta nav-lang-btn inline-flex items-center border font-display transition-colors">Türkçe</a>
-</div>
-
-<!-- Mobile spacer -->
-<div class="lg:hidden flex-1"></div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div x-show="mobileMenuOpen" x-transition class="lg:hidden border-t border-clay-200">
-                <nav class="py-6 space-y-4">
-    <a href="index.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Home</a>
-    <a href="about.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">About</a>
-    <div class="space-y-1">
-        <span class="block text-lg font-medium text-clay-500 font-display">Work With Me</span>
-        <a href="chronic-pain-healing.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Freedom from Chronic Pain</a>
-        <a href="breathwork-somatics.html" class="block pl-4 text-base font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display whitespace-nowrap">Breathwork and Somatic Awareness</a>
-    </div>
-    <a href="free-practices.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Free Practices</a>
-    <a href="contact.html" class="block text-lg font-medium text-clay-600 hover:text-theme-primary transition-colors duration-300 font-display">Contact</a>
-    <a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display bg-theme-primary text-white border-theme-primary hover:opacity-90 transition-opacity duration-300 mt-2">
-        Book a session
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-    </a>
-    <a href="/tr/" class="inline-flex items-center gap-2 px-5 py-3 text-base font-medium border border-clay-200 rounded-lg font-display text-clay-600 hover:bg-clay-50 transition-colors duration-300 mt-2">Türkçe</a>
-</nav>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Resources Main Content -->
-        <section class="py-20 lg:py-24 relative overflow-hidden">
-            <div class="w-full px-4 sm:px-6 lg:px-8">
-                <!-- Page Title -->
-                <div class="text-center mb-20">
-                    <h1 class="text-5xl lg:text-7xl font-display font-light text-clay-800 mb-8 tracking-tight">
-                        Resources
-                    </h1>
-                    <p class="text-xl lg:text-2xl text-clay-600 max-w-4xl mx-auto leading-relaxed">
-                        Tools, books, and practices that have supported my healing journey and continue to help others find freedom from chronic pain. This page will always be a work in progress.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reading List Section -->
-        <section class="py-20 lg:py-24 bg-sage-200 relative overflow-hidden w-full">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-6xl font-display font-light text-clay-800 mb-8 tracking-tight">
-                        Reading List
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Book 1 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col gap-4">
-                                <div class="flex-1">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800 mb-2">The MindBody Prescription</h3>
-                                    <p class="text-lg text-clay-600 mb-3 font-medium">Dr. John Sarno</p>
-                                    <p class="text-base text-clay-600 leading-relaxed">
-                                        A deeper dive into the mind-body syndrome and the brain-based origins of chronic pain.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Book 2 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col gap-4">
-                                <div class="flex-1">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800 mb-2">The Politics of Trauma</h3>
-                                    <p class="text-lg text-clay-600 mb-3 font-medium">Staci Haines</p>
-                                    <p class="text-base text-clay-600 leading-relaxed">
-                                        Explores how trauma is political and how healing must address both personal and systemic dimensions.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Book 3 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col gap-4">
-                                <div class="flex-1">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800 mb-2">Mind Your Body</h3>
-                                    <p class="text-lg text-clay-600 mb-3 font-medium">Dr. Nicole Sachs</p>
-                                    <p class="text-base text-clay-600 leading-relaxed">
-                                        A practical guide to using journaling and expressive writing as tools for mind-body healing.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Book 4 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col gap-4">
-                                <div class="flex-1">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800 mb-2">Becoming Supernatural</h3>
-                                    <p class="text-lg text-clay-600 mb-3 font-medium">Dr. Joe Dispenza</p>
-                                    <p class="text-base text-clay-600 leading-relaxed">
-                                        While I don't fully align with Dispenza's individual-centered approach to healing and manifestation, his research provides useful tools for shifting our experience of pain.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Journal Prompts -->
-        <section class="py-20 lg:py-24 bg-theme-primary relative overflow-hidden w-full">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-6xl font-display font-light text-white mb-8 tracking-tight">
-                        Journal Prompts
-                    </h2>
-                </div>
-
-                <div class="space-y-4" x-data="{ 
-                    activeSection: null,
-                    toggleSection(section) {
-                        this.activeSection = this.activeSection === section ? null : section;
-                    }
-                }">
-                        <!-- Observe -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-clay-100/50 overflow-hidden">
-                            <button @click="toggleSection('observe')" class="w-full p-6 text-left hover:bg-white/80 transition-colors duration-300 focus:outline-none">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800">Observe</h3>
-                                    <svg class="w-6 h-6 text-clay-600 transition-transform duration-300" :class="{ 'rotate-180': activeSection === 'observe' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div x-show="activeSection === 'observe'" x-transition class="px-6 pb-6">
-                                <div class="space-y-4">
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">What does your pain feel like?</p>
-                                        <p class="text-sm text-clay-600">Describe the physical sensations without labeling them as symptoms. What color, texture, or temperature would you give it?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">When did it first appear?</p>
-                                        <p class="text-sm text-clay-600">What was happening in your life around that time? What emotions were you experiencing? Does it feel old or new?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">What makes it better or worse?</p>
-                                        <p class="text-sm text-clay-600">Notice patterns. Does it change with stress, weather, relationships, or activities?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">What does your pain get in the way of?</p>
-                                        <p class="text-sm text-clay-600">What hidden benefits does it give you (attention, rest, protection, avoidance)?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">How does it move?</p>
-                                        <p class="text-sm text-clay-600">Does it shift places or change in intensity? Are there any patterns you can notice?</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Deepen -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-clay-100/50 overflow-hidden">
-                            <button @click="toggleSection('deepen')" class="w-full p-6 text-left hover:bg-white/80 transition-colors duration-300 focus:outline-none">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800">Deepen</h3>
-                                    <svg class="w-6 h-6 text-clay-600 transition-transform duration-300" :class="{ 'rotate-180': activeSection === 'deepen' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div x-show="activeSection === 'deepen'" x-transition class="px-6 pb-6">
-                                <div class="space-y-4">
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">If your pain could speak, what would it say?</p>
-                                        <p class="text-sm text-clay-600">What message might it be carrying?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">If your pain had a voice, what tone would it use?</p>
-                                        <p class="text-sm text-clay-600">Is it angry, pleading, sarcastic, scared, demanding, or childlike?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Write a direct dialogue</p>
-                                        <p class="text-sm text-clay-600">Pain: "..." You: "..." Let the conversation go as long as it needs — no censoring.</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">What do you hate most about the pain?</p>
-                                        <p class="text-sm text-clay-600">What does it stop you from doing, and how does that make you feel?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">What do you love most about the pain?</p>
-                                        <p class="text-sm text-clay-600">What does it enable you to do?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">What is your pain protecting you from?</p>
-                                        <p class="text-sm text-clay-600">If it were gone tomorrow, what might actually feel scary about that?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Write yourself a letter from the perspective of the pain</p>
-                                        <p class="text-sm text-clay-600">Explain why it's here and what it's trying to do.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Express -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-clay-100/50 overflow-hidden">
-                            <button @click="toggleSection('express')" class="w-full p-6 text-left hover:bg-white/80 transition-colors duration-300 focus:outline-none">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800">Express</h3>
-                                    <svg class="w-6 h-6 text-clay-600 transition-transform duration-300" :class="{ 'rotate-180': activeSection === 'express' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div x-show="activeSection === 'express'" x-transition class="px-6 pb-6">
-                                <div class="space-y-4">
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Write your pain a letter</p>
-                                        <p class="text-sm text-clay-600">Express your gratitude for it and explain why you don't need it anymore. Keep reading it to yourself until your nervous system is convinced.</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Repressed anger creates chronic pain</p>
-                                        <p class="text-sm text-clay-600">Write down the names of people in your life and express your anger at them. Use your raw and unfiltered voice.</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Write a rage list</p>
-                                        <p class="text-sm text-clay-600">Everything you are furious about — from the tiniest daily annoyances to the deepest betrayals. Destroy the list later.</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Let yourself grieve</p>
-                                        <p class="text-sm text-clay-600">Write about what pain has taken from you. Mourn the time, trust, or experiences you've lost.</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Claim responsibility</p>
-                                        <p class="text-sm text-clay-600">Write about the ways your mind and body may have created this pain to protect you — and why you are now ready to let it go.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Envision -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-clay-100/50 overflow-hidden">
-                            <button @click="toggleSection('envision')" class="w-full p-6 text-left hover:bg-white/80 transition-colors duration-300 focus:outline-none">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="text-2xl font-display font-medium text-clay-800">Envision</h3>
-                                    <svg class="w-6 h-6 text-clay-600 transition-transform duration-300" :class="{ 'rotate-180': activeSection === 'envision' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </div>
-                            </button>
-                            <div x-show="activeSection === 'envision'" x-transition class="px-6 pb-6">
-                                <div class="space-y-4">
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Imagine your life without this pain</p>
-                                        <p class="text-sm text-clay-600">What would you do first? How would your life change?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Write a letter from the healed version of you</p>
-                                        <p class="text-sm text-clay-600">Give it a date. Read it every day.</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Write a day in the life of your healed self</p>
-                                        <p class="text-sm text-clay-600">How do you move, speak, feel, and show up in the world? What does your body feel like?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">What is something pain has taught you?</p>
-                                        <p class="text-sm text-clay-600">That you want to carry into a pain-free life?</p>
-                                    </div>
-                                    <div class="p-4 bg-earth-100/60 rounded-lg">
-                                        <p class="text-base text-clay-700 font-medium mb-2">Where can you find gratitude?</p>
-                                        <p class="text-sm text-clay-600">In the ways the pain has changed you? Come back to this when the pain visits.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Additional Resources -->
-        <section class="py-20 lg:py-24 bg-clay-200 relative overflow-hidden w-full">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-6xl font-display font-light text-clay-800 mb-8 tracking-tight">
-                        Additional Resources
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-10">
-                        <!-- Resource 1 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-10 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="border-l-4 border-theme-primary pl-6">
-                                <h3 class="font-medium text-clay-800 text-xl mb-4">The Cure for Chronic Pain Podcast</h3>
-                                <p class="text-base text-clay-600 mb-4">A comprehensive podcast dedicated to understanding and healing chronic pain through mind-body approaches</p>
-                                <a href="https://www.youtube.com/channel/UC-tz1Du69PhcBkC3-9_Mgmw" target="_blank" class="text-theme-primary text-base hover:underline font-medium">Listen here →</a>
-                            </div>
-                        </div>
-
-                        <!-- Resource 2 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-10 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="border-l-4 border-theme-primary pl-6">
-                                <h3 class="font-medium text-clay-800 text-xl mb-4">Dr. John Sarno's Lecture on the Mind-Body Syndrome</h3>
-                                <p class="text-base text-clay-600 mb-4">The foundational lecture explaining TMS and the mind-body connection in chronic pain</p>
-                                <a href="https://www.youtube.com/watch?v=cbF2HMXtfZ4" target="_blank" class="text-theme-primary text-base hover:underline font-medium">Watch here →</a>
-                            </div>
-                        </div>
-
-                        <!-- Resource 3 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-10 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="border-l-4 border-theme-primary pl-6">
-                                <h3 class="font-medium text-clay-800 text-xl mb-4">Success Story Archive</h3>
-                                <p class="text-base text-clay-600 mb-4">Real stories of healing from the TMS Wiki community - inspiration and proof that recovery is possible</p>
-                                <a href="https://www.tmswiki.org/forum/forums/success-stories-subforum.27/" target="_blank" class="text-theme-primary text-base hover:underline font-medium">Read stories →</a>
-                            </div>
-                        </div>
-
-                        <!-- Resource 4 -->
-                        <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-10 shadow-xl border border-clay-100/50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                            <div class="border-l-4 border-theme-primary pl-6">
-                                <h3 class="font-medium text-clay-800 text-xl mb-4">Letters to Dr. Sarno from Real Patients</h3>
-                                <p class="text-base text-clay-600 mb-4">Heartfelt testimonials from patients who found healing through Dr. Sarno's work</p>
-                                <a href="http://www.thankyoudrsarno.org/2025/05" target="_blank" class="text-theme-primary text-base hover:underline font-medium">Read letters →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-    <!-- Footer -->
-    <footer class="bg-clay-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stay in Touch Section -->
-            <div class="text-center mb-12">
-                <h3 class="font-display font-light text-3xl mb-8">Stay in Touch</h3>
-                <!-- Mailchimp Signup Form -->
-                <div class="flex justify-center">
-                    <div class="w-80">
-                        <!-- Begin Mailchimp Signup Form -->
-                        <div id="mc_embed_signup">
-                            <form action="https://gmail.us6.list-manage.com/subscribe/post?u=067a6ef2fb18a6cdb6902c632&amp;id=4dfc3d16e2&amp;f_id=00df32e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-                                <div id="mc_embed_signup_scroll">
-                                    <div class="mc-field-group relative">
-                                        <input type="email" value="" name="EMAIL" class="required email w-full px-6 py-4 pr-16 bg-clay-800 border border-clay-700 rounded-full text-white placeholder-clay-400 focus:outline-none focus:ring-2 focus:ring-theme-primary focus:border-transparent" id="mce-EMAIL" placeholder="Email Address" required>
-                                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-clay-700 hover:bg-clay-600 rounded-full flex items-center justify-center transition-colors duration-300">
-                                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <div id="mce-responses" class="clear mt-4">
-                                        <div class="response text-white text-sm" id="mce-error-response" style="display:none"></div>
-                                        <div class="response text-white text-sm" id="mce-success-response" style="display:none"></div>
-                                    </div>
-                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_067a6ef2fb18a6cdb6902c632_4dfc3d16e2" tabindex="-1" value=""></div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--End mc_embed_signup-->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright -->
-            <div class="border-t border-clay-700 pt-8 text-center">
-                <p class="text-clay-400 mb-4 text-sm">
-                    This work is educational and not a substitute for medical care.
-                </p>
-                <p class="text-clay-400 text-sm">
-                    © 2025 Leyla. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="../script.js"></script>
-    
-    <!-- Mailchimp Form Validation Script -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
-        (function($) {
-            window.fnames = new Array(); 
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';
-            ftypes[0]='email';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-    </script>
+  <script src="../site.js"></script>
 </body>
 </html>

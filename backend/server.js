@@ -2,8 +2,12 @@ const express = require('express');
 const Database = require('better-sqlite3');
 const cors = require('cors');
 const path = require('path');
+const rateLimit = require('express-rate-limit');
+const { getSignedPlaybackUrl } = require('./lib/video');
+const { subscribeFreeClass } = require('./lib/sender');
 
 const app = express();
+app.set('trust proxy', 1); // behind Fly.io proxy — needed for correct client IPs (rate limiting)
 const PORT = process.env.PORT || 3000;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'leyla2026';
 // No capacity limit
@@ -33,7 +37,17 @@ app.use(cors({
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+// Stripe webhook needs the raw request body for signature verification,
+// so it is mounted before the JSON body parser.
+app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }), require('./routes/stripe-webhook'));
+
 app.use(express.json());
+
+// Video store (data in Neon via Drizzle — see routes/ and db/)
+app.use(require('./routes/products'));
+app.use(require('./routes/checkout'));
+app.use(require('./routes/video-token'));
+app.use(require('./routes/admin-sales'));
 
 // Auth middleware for admin routes
 function requireAdmin(req, res, next) {
@@ -64,6 +78,73 @@ app.post('/api/register', (req, res) => {
     res.status(201).json({ message: 'Kayıt başarılı' });
   } catch (err) {
     res.status(500).json({ error: 'Bir hata oluştu' });
+  }
+});
+
+// ---- Free class lead magnet (email → instant on-demand video) ----
+
+const freeClassLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+function freeClassVideoId(locale) {
+  if (locale === 'tr' && process.env.FREE_CLASS_VIDEO_ID_TR) {
+    return process.env.FREE_CLASS_VIDEO_ID_TR;
+  }
+  return process.env.FREE_CLASS_VIDEO_ID_EN || process.env.FREE_CLASS_VIDEO_ID;
+}
+
+// POST /api/free-class/signup { name, email, locale } — saves the lead and
+// subscribes them to Sender (if configured). A duplicate email still returns ok
+// so returning visitors can watch.
+app.post('/api/free-class/signup', freeClassLimiter, async (req, res) => {
+  const { name, email } = req.body || {};
+  const locale = req.body?.locale === 'tr' ? 'tr' : 'en';
+
+  const cleanEmail = (email || '').toLowerCase().trim();
+  const cleanName = (name || '').trim();
+  if (!cleanEmail || !cleanEmail.includes('@')) {
+    return res.status(400).json({ error: 'A valid email is required' });
+  }
+
+  // Save the lead (UNIQUE email → already signed up, which is fine).
+  try {
+    db.prepare("INSERT INTO registrations (name, email, phone, registered_at) VALUES (?, ?, ?, datetime('now'))")
+      .run(cleanName || cleanEmail, cleanEmail, null);
+  } catch (err) {
+    if (!/UNIQUE/i.test(err.message)) {
+      console.error('free-class signup DB error:', err.message);
+    }
+  }
+
+  // Subscribe to Sender — never block access if this fails.
+  try {
+    await subscribeFreeClass({
+      email: cleanEmail,
+      firstName: cleanName.split(' ')[0],
+      locale,
+    });
+  } catch (err) {
+    console.error('Sender subscribe failed:', err.message);
+  }
+
+  res.status(201).json({ ok: true });
+});
+
+// GET /api/free-class/video?locale=en — short-lived signed Bunny playback URL.
+app.get('/api/free-class/video', (req, res) => {
+  const locale = req.query.locale === 'tr' ? 'tr' : 'en';
+  const videoId = freeClassVideoId(locale);
+  if (!videoId) return res.status(404).json({ error: 'Video not configured yet' });
+  try {
+    const url = getSignedPlaybackUrl(videoId, { expiresInSeconds: 6 * 3600 });
+    res.json({ url });
+  } catch (err) {
+    console.error('free-class video failed:', err.message);
+    res.status(500).json({ error: 'Could not load the video' });
   }
 });
 

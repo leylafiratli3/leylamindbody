@@ -3,14 +3,25 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed.js"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "@supabase/supabase-js": "^2.47.0",
     "better-sqlite3": "^11.7.0",
     "cors": "^2.8.5",
-    "express": "^4.21.0"
+    "drizzle-orm": "^0.38.3",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.1",
+    "jose": "^5.9.6",
+    "resend": "^4.0.1",
+    "stripe": "^17.5.0"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.7.10"
+    "@flydotio/dockerfile": "^0.7.10",
+    "drizzle-kit": "^0.30.1"
   }
 }
