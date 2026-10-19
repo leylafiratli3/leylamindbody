@@ -1,6 +1,6 @@
 # Mind-Body Healing with Leyla
 
-Bilingual (EN/TR) static site hosted on **GitHub Pages** (`mindbodyhealingwithleyla.com`), with a small API on **Fly.io** (`backend/`, app `leyla-mindbody-api`) that powers:
+Bilingual (EN/TR) static site hosted on **GitHub Pages** (`leylafiratli.com`), with a small API on **Fly.io** (`backend/`, app `leyla-mindbody-api`) that powers:
 
 - free-class signups (existing feature — SQLite on a Fly volume, unchanged), and
 - the **video classes store**: Stripe payments, Supabase accounts, Neon database, Bunny Stream video, Resend email.
@@ -45,10 +45,10 @@ Shared client logic lives in `store.js` (root, next to `script.js`). The languag
 
 ## What you need to gather
 
-1. **Supabase** (new project, auth only): Project URL + **anon key** → paste into `store.js` (they are publishable). **Service-role key** and **JWT secret** (Project Settings → API) → Fly secrets. In Supabase Auth settings, add `https://mindbodyhealingwithleyla.com/en/set-password.html` and `.../tr/sifre-olustur.html` to the redirect allow-list.
+1. **Supabase** (new project, auth only): Project URL + **anon key** → paste into `store.js` (they are publishable). **Service-role key** and **JWT secret** (Project Settings → API) → Fly secrets. In Supabase Auth settings, add `https://leylafiratli.com/en/set-password.html` and `.../tr/sifre-olustur.html` to the redirect allow-list.
 2. **Neon**: create a project, copy the `DATABASE_URL` connection string.
 3. **Stripe** (US account): secret key; after registering the webhook (below), the webhook signing secret. Prices are charged in USD on `/en` and TRY on `/tr` (no Turkish installments — not possible on a US account). Discount codes created in the Stripe dashboard work automatically (`allow_promotion_codes` is on). Refunds are issued from the Stripe dashboard; the webhook then revokes access automatically. Note: a *partial* refund also revokes — refund in full or expect access to be removed either way.
-4. **Bunny Stream**: create a Stream library; note the **library ID**, **API key**, **CDN hostname**. Enable **Embed View Token Authentication** (library → Security) and copy the **token authentication key**; set **Allowed Referrers** to `mindbodyhealingwithleyla.com`. Upload each video twice (EN + TR) and note both GUIDs.
+4. **Bunny Stream**: create a Stream library; note the **library ID**, **API key**, **CDN hostname**. Enable **Embed View Token Authentication** (library → Security) and copy the **token authentication key**; set **Allowed Referrers** to `leylafiratli.com`. Upload each video twice (EN + TR) and note both GUIDs.
 5. **Resend**: API key + a verified sending domain for `EMAIL_FROM`.
 
 ## Setup
@@ -96,8 +96,8 @@ fly secrets set -a leyla-mindbody-api \
   DATABASE_URL=... SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... SUPABASE_JWT_SECRET=... \
   STRIPE_SECRET_KEY=... STRIPE_WEBHOOK_SECRET=... \
   BUNNY_STREAM_LIBRARY_ID=... BUNNY_STREAM_API_KEY=... BUNNY_STREAM_CDN_HOSTNAME=... BUNNY_TOKEN_AUTH_KEY=... \
-  RESEND_API_KEY=... EMAIL_FROM='Leyla <hello@mindbodyhealingwithleyla.com>' \
-  APP_URL=https://mindbodyhealingwithleyla.com
+  RESEND_API_KEY=... EMAIL_FROM='Leyla <hello@leylafiratli.com>' \
+  APP_URL=https://leylafiratli.com
 ```
 
 All secrets are server-side only; nothing secret is in the static pages.

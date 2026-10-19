@@ -8,6 +8,15 @@ const { subscribeFreeClass } = require('./lib/sender');
 
 const app = express();
 app.set('trust proxy', 1); // behind Fly.io proxy — needed for correct client IPs (rate limiting)
+
+// The site moved from mindbodyhealingwithleyla.com to leylafiratli.com. The old domain points
+// here, and every old address gets a permanent redirect to the same page on the new domain.
+const OLD_HOSTS = ['mindbodyhealingwithleyla.com', 'www.mindbodyhealingwithleyla.com'];
+app.use((req, res, next) => {
+  const host = (req.hostname || '').toLowerCase();
+  if (OLD_HOSTS.includes(host)) return res.redirect(301, 'https://leylafiratli.com' + req.originalUrl);
+  next();
+});
 const PORT = process.env.PORT || 3000;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'leyla2026';
 // No capacity limit
@@ -30,6 +39,8 @@ db.exec(`
 // Middleware
 app.use(cors({
   origin: [
+    'https://leylafiratli.com',
+    'https://www.leylafiratli.com',
     'https://mindbodyhealingwithleyla.com',
     'http://localhost:8080',
     'http://127.0.0.1:8080'

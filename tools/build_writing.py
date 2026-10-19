@@ -35,7 +35,7 @@ The page header and footer are copied from en/about.html, so nav changes there c
 import datetime, glob, html, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = 'https://mindbodyhealingwithleyla.com'
+SITE = 'https://leylafiratli.com'
 SUBSTACK = 'https://leylafiratli.substack.com/'
 os.chdir(ROOT)
 

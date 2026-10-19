@@ -33,7 +33,7 @@ router.post('/api/checkout', checkoutLimiter, async (req, res) => {
       return res.status(404).json({ error: 'Product not found' });
     }
 
-    const appUrl = process.env.APP_URL || 'https://mindbodyhealingwithleyla.com';
+    const appUrl = process.env.APP_URL || 'https://leylafiratli.com';
     const stripePriceId = locale === 'tr' ? product.stripePriceIdTry : product.stripePriceIdUsd;
 
     // Use a pre-created Stripe Price when configured, otherwise inline price_data.

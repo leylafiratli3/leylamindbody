@@ -12,4 +12,4 @@ Disallow: /en/checkout-success.html
 # Note: /tr/ pages are intentionally left crawlable so search engines
 # can read their noindex + canonical tags and drop them from the index.
 
-Sitemap: https://mindbodyhealingwithleyla.com/sitemap.xml
+Sitemap: https://leylafiratli.com/sitemap.xml

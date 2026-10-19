@@ -60,7 +60,7 @@ async function handleCheckoutCompleted(event) {
   }
 
   const admin = supabaseAdmin();
-  const appUrl = process.env.APP_URL || 'https://mindbodyhealingwithleyla.com';
+  const appUrl = process.env.APP_URL || 'https://leylafiratli.com';
   const redirectTo = `${appUrl}${SET_PASSWORD_PAGE[locale]}`;
 
   // Find-or-create the Supabase user. generateLink(type: 'invite') creates the
