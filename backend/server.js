@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
 const { getSignedPlaybackUrl } = require('./lib/video');
-const { subscribeFreeClass } = require('./lib/sender');
+const { subscribeFreeClass, subscribeNewsletter, sendEmail } = require('./lib/sender');
 
 const app = express();
 app.set('trust proxy', 1); // behind Fly.io proxy — needed for correct client IPs (rate limiting)
@@ -157,6 +157,93 @@ app.get('/api/free-class/video', (req, res) => {
     console.error('free-class video failed:', err.message);
     res.status(500).json({ error: 'Could not load the video' });
   }
+});
+
+// ---- Contact form ("Send me a note") ----
+// Each note is saved here first, so nothing is lost if email fails, then emailed to Leyla
+// through Sender with Reply-To set to the writer. Ticking the optional box also adds the
+// writer to the Sender newsletter group; without it, writing a note never adds anyone to a list.
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS contact_messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    how_found TEXT,
+    message TEXT NOT NULL,
+    newsletter INTEGER NOT NULL DEFAULT 0,
+    emailed INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  )
+`);
+
+const contactLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  limit: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+const CONTACT_TO = process.env.CONTACT_TO || 'hello@leylafiratli.com';
+const CONTACT_FROM = process.env.CONTACT_FROM || 'hello@leylafiratli.com';
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+// POST /api/contact { name, email, how_found, message, newsletter, website }
+app.post('/api/contact', contactLimiter, async (req, res) => {
+  const b = req.body || {};
+  // "website" is a hidden field people never see; bots fill it in. Pretend it worked.
+  if (b.website) return res.status(201).json({ ok: true });
+
+  const name = String(b.name || '').trim().slice(0, 200);
+  const email = String(b.email || '').toLowerCase().trim().slice(0, 254);
+  const howFound = String(b.how_found || '').trim().slice(0, 500);
+  const message = String(b.message || '').trim().slice(0, 10000);
+  const newsletter = b.newsletter === true || b.newsletter === 'on' || b.newsletter === 'yes';
+
+  if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Please fill in your name, email and message.' });
+  }
+
+  const saved = db.prepare('INSERT INTO contact_messages (name, email, how_found, message, newsletter) VALUES (?, ?, ?, ?, ?)')
+    .run(name, email, howFound || null, message, newsletter ? 1 : 0);
+
+  if (newsletter) {
+    subscribeNewsletter({ email, firstName: name.split(' ')[0] })
+      .catch((err) => console.error('Sender newsletter subscribe failed:', err.message));
+  }
+
+  const lines = [
+    `From: ${name} <${email}>`,
+    howFound ? `How they found you: ${howFound}` : null,
+    `Joined the email list: ${newsletter ? 'yes' : 'no'}`,
+    '',
+    message,
+  ].filter((l) => l !== null);
+
+  try {
+    await sendEmail({
+      from: { email: CONTACT_FROM, name: 'leylafiratli.com contact form' },
+      to: { email: CONTACT_TO, name: 'Leyla Fıratlı' },
+      replyTo: email,
+      subject: `New note from ${name}`,
+      text: lines.join('\n'),
+      html: `<div style="font-family:sans-serif;font-size:16px;line-height:1.6">${lines.map((l) => escapeHtml(l)).join('<br>')}</div>`,
+    });
+    db.prepare('UPDATE contact_messages SET emailed = 1 WHERE id = ?').run(saved.lastInsertRowid);
+  } catch (err) {
+    console.error('contact email failed (note is saved in contact_messages):', err.message);
+    return res.status(502).json({ error: 'email failed' });
+  }
+
+  res.status(201).json({ ok: true });
+});
+
+// GET /api/contact-messages - Admin: list all notes, newest first
+app.get('/api/contact-messages', requireAdmin, (req, res) => {
+  res.json({ messages: db.prepare('SELECT * FROM contact_messages ORDER BY id DESC').all() });
 });
 
 // GET /api/registrations - Admin: list all
