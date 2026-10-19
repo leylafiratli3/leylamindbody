@@ -1,4 +1,4 @@
-This is the website of Leyla Fıratlı, breathwork therapist and mind-body practitioner. I work with people living with chronic pain, drawing on Dr. John Sarno's work, breath, and somatic awareness, with a decolonial and political lens. I live and work in Türkiye. Domain: https://mindbodyhealingwithleyla.com
+This is the website of Leyla Fıratlı, breathwork therapist and mind-body practitioner. I work with people living with chronic pain, drawing on Dr. John Sarno's work, breath, and somatic awareness, with a decolonial and political lens. I live and work in Türkiye. Domain: https://leylafiratli.com
 
 Read this before you write any code or copy for this site. The design and the voice matter as much as the code working.
 
