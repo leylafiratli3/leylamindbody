@@ -14,7 +14,8 @@ app.set('trust proxy', 1); // behind Fly.io proxy — needed for correct client 
 const OLD_HOSTS = ['mindbodyhealingwithleyla.com', 'www.mindbodyhealingwithleyla.com'];
 app.use((req, res, next) => {
   const host = (req.hostname || '').toLowerCase();
-  if (OLD_HOSTS.includes(host)) return res.redirect(301, 'https://leylafiratli.com' + req.originalUrl);
+  // Pages moved out of /en/, so drop that prefix and skip the extra hop
+  if (OLD_HOSTS.includes(host)) return res.redirect(301, 'https://leylafiratli.com' + req.originalUrl.replace(/^\/en(\/|$)/, '/'));
   next();
 });
 const PORT = process.env.PORT || 3000;

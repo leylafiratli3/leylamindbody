@@ -23,7 +23,7 @@ Some signs I look for:
 - You have other symptoms that come and go, like back pain or gut trouble.
 - Your tests are normal.
 
-None of these proves anything on its own. But the more you recognize, the more likely your nervous system is involved. I wrote more in [How do I know if my pain might be mind-body?](/en/writing/how-do-i-know-if-my-pain-is-mind-body.html)
+None of these proves anything on its own. But the more you recognize, the more likely your nervous system is involved. I wrote more in [How do I know if my pain might be mind-body?](/writing/how-do-i-know-if-my-pain-is-mind-body.html)
 
 ## When should a headache be checked right away?
 

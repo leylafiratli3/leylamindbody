@@ -18,7 +18,7 @@ function supabaseAdmin() {
   );
 }
 
-const SET_PASSWORD_PAGE = { en: '/en/set-password.html', tr: '/tr/sifre-olustur.html' };
+const SET_PASSWORD_PAGE = { en: '/set-password.html', tr: '/tr/sifre-olustur.html' };
 
 async function alreadyProcessed(eventId) {
   const [row] = await db.select().from(schema.processedStripeEvents)

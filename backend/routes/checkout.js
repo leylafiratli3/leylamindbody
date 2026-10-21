@@ -15,8 +15,8 @@ const checkoutLimiter = rateLimit({
 });
 
 // Locale-specific pages the customer returns to after Stripe Checkout
-const SUCCESS_PAGE = { en: '/en/checkout-success.html', tr: '/tr/odeme-basarili.html' };
-const PRODUCT_PAGE = { en: '/en/product.html', tr: '/tr/ders.html' };
+const SUCCESS_PAGE = { en: '/checkout-success.html', tr: '/tr/odeme-basarili.html' };
+const PRODUCT_PAGE = { en: '/product.html', tr: '/tr/ders.html' };
 
 // POST /api/checkout { slug, locale } → { url }
 // EN checks out in USD, TR in TRY. Buying is allowed without an account —

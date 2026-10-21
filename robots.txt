@@ -2,14 +2,14 @@ User-agent: *
 Allow: /
 
 # Transactional / private store pages — no need to index
-Disallow: /en/watch.html
-Disallow: /en/library.html
-Disallow: /en/login.html
-Disallow: /en/set-password.html
-Disallow: /en/forgot-password.html
-Disallow: /en/checkout-success.html
+Disallow: /watch.html
+Disallow: /library.html
+Disallow: /login.html
+Disallow: /set-password.html
+Disallow: /forgot-password.html
+Disallow: /checkout-success.html
 
-# Note: /tr/ pages are intentionally left crawlable so search engines
+# Note: /en/ and /tr/ redirect pages are intentionally left crawlable so search engines
 # can read their noindex + canonical tags and drop them from the index.
 
 Sitemap: https://leylafiratli.com/sitemap.xml

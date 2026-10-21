@@ -45,7 +45,7 @@ Shared client logic lives in `store.js` (root, next to `script.js`). The languag
 
 ## What you need to gather
 
-1. **Supabase** (new project, auth only): Project URL + **anon key** → paste into `store.js` (they are publishable). **Service-role key** and **JWT secret** (Project Settings → API) → Fly secrets. In Supabase Auth settings, add `https://leylafiratli.com/en/set-password.html` and `.../tr/sifre-olustur.html` to the redirect allow-list.
+1. **Supabase** (new project, auth only): Project URL + **anon key** → paste into `store.js` (they are publishable). **Service-role key** and **JWT secret** (Project Settings → API) → Fly secrets. In Supabase Auth settings, add `https://leylafiratli.com/set-password.html` and `.../tr/sifre-olustur.html` to the redirect allow-list.
 2. **Neon**: create a project, copy the `DATABASE_URL` connection string.
 3. **Stripe** (US account): secret key; after registering the webhook (below), the webhook signing secret. Prices are charged in USD on `/en` and TRY on `/tr` (no Turkish installments — not possible on a US account). Discount codes created in the Stripe dashboard work automatically (`allow_promotion_codes` is on). Refunds are issued from the Stripe dashboard; the webhook then revokes access automatically. Note: a *partial* refund also revokes — refund in full or expect access to be removed either way.
 4. **Bunny Stream**: create a Stream library; note the **library ID**, **API key**, **CDN hostname**. Enable **Embed View Token Authentication** (library → Security) and copy the **token authentication key**; set **Allowed Referrers** to `leylafiratli.com`. Upload each video twice (EN + TR) and note both GUIDs.

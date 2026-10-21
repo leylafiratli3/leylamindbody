@@ -1,7 +1,7 @@
 // Shared client logic for the video classes store (EN + TR pages).
 // Loaded after the Supabase CDN script:
 //   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-//   <script src="../store.js"></script>
+//   <script src="store.js"></script>
 // Only publishable values live here, the anon key is designed to be public;
 // all secrets stay on the server (Fly.io).
 
@@ -103,7 +103,7 @@ const Store = (() => {
         const file = pageFile();
         const other = locale === 'en'
             ? '/tr/' + (PAGE_MAP[file] || '')
-            : '/en/' + (PAGE_MAP_REVERSE[file] || '');
+            : '/' + (PAGE_MAP_REVERSE[file] || '');
         const slug = getParam('p');
         return slug ? `${other}?p=${encodeURIComponent(slug)}` : other;
     }
@@ -133,7 +133,7 @@ const Store = (() => {
         document.querySelectorAll('.store-logout').forEach((btn) => {
             btn.addEventListener('click', async () => {
                 await sb.auth.signOut();
-                window.location.href = locale === 'en' ? '/en/classes.html' : '/tr/dersler.html';
+                window.location.href = locale === 'en' ? '/classes.html' : '/tr/dersler.html';
             });
         });
     }

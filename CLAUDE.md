@@ -12,7 +12,7 @@ People with chronic pain who have been dismissed by doctors, who have tried ever
 - When I ask you to redesign a page or section, always give me a few design options to choose from first (a short menu with small previews), before you build anything.
 - Work on a branch.
 - Keep all SEO work intact: titles, meta descriptions, canonical URLs, Open Graph tags, JSON-LD, alt text, sitemap. Every page has a unique title and description.
-- The site is English only. The old /tr/ pages redirect to /en/. Don't add language switchers or hreflang back.
+- The site is English only. The home page is leylafiratli.com and pages live at the top level (leylafiratli.com/about.html). The old /en/ and /tr/ addresses are redirect pages. Don't add language switchers or hreflang back.
 - When you finish, tell me what changed and give me a list of TODOs. Keep the summary plain and short.
 - If you're not sure about copy, leave a clear TODO: Leyla to write instead of inventing text in my name.
 

@@ -4,7 +4,7 @@
 Run from the project root:   python3 tools/build_writing.py
 
 Each file in _writing/ is one article. The file name sets the order and the address:
-  04-what-is-tms.md  ->  /en/writing/what-is-tms.html, fourth in the list.
+  04-what-is-tms.md  ->  /writing/what-is-tms.html, fourth in the list.
 
 A file starts with a few "key: value" lines, then a line with only ---, then the text:
 
@@ -20,7 +20,7 @@ A file starts with a few "key: value" lines, then a line with only ---, then the
   The first paragraph is the short, direct answer.
 
   ## A heading
-  More paragraphs. Blank line between paragraphs. [link text](/en/about.html), *italic*, **bold**.
+  More paragraphs. Blank line between paragraphs. [link text](/about.html), *italic*, **bold**.
   End a line with \\ to keep the line break inside a paragraph (With love,\\ then Leyla on the next line).
   - list item
   1. numbered list item
@@ -30,7 +30,7 @@ A file starts with a few "key: value" lines, then a line with only ---, then the
   Its answer.
 
 The first three articles are shown large on the Writing page, the rest in the compact list.
-The page header and footer are copied from en/about.html, so nav changes there carry over.
+The page header and footer are copied from about.html, so nav changes there carry over.
 """
 import datetime, glob, html, json, os, re, sys
 
@@ -41,7 +41,7 @@ os.chdir(ROOT)
 
 SQUIGGLE = ('<svg viewBox="0 0 300 18" preserveAspectRatio="none" fill="none" aria-hidden="true">'
             '<path d="M3 13C70 5 150 16 200 9s95-4 97 2" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>')
-PERSON = {"@type": "Person", "name": "Leyla Fıratlı", "url": f"{SITE}/en/about.html",
+PERSON = {"@type": "Person", "name": "Leyla Fıratlı", "url": f"{SITE}/about.html",
           "jobTitle": "Breathwork Therapist & Mind-Body Practitioner",
           "sameAs": [SUBSTACK, "https://www.instagram.com/leylafiratli/"]}
 CLASS_TEXT = ("I share my story, explain how mind-body pain happens, help you tell whether you might be "
@@ -127,10 +127,10 @@ if not ARTICLES:
     sys.exit('No articles found in _writing/.')
 
 # ---------- shared page shell (from the About page) ----------
-about = open('en/about.html', encoding='utf-8').read()
+about = open('about.html', encoding='utf-8').read()
 header = about[about.index('<body>'):about.index('  <main id="main">')]
 footer = about[about.index('  </main>'):]
-fonts = about[about.index('  <link rel="preconnect" href="https://fonts.googleapis.com">'):about.index('  <link rel="stylesheet" href="../liberation.css">')]
+fonts = about[about.index('  <link rel="preconnect" href="https://fonts.googleapis.com">'):about.index('  <link rel="stylesheet" href="liberation.css">')]
 
 
 def head(title, desc, url, up, og_type, ld, image='leylaprofilepic'):
@@ -182,14 +182,14 @@ def class_band(up):
     return f'''    <!-- FREE CLASS (ecru-deep, banner). The free class section always carries the banner photo. -->
     <section class="section bg-ecru-deep" style="padding-block:clamp(48px,7vw,96px)">
       <div class="wrap postcard class-postcard">
-        <a href="/en/free-practices.html" class="class-banner" aria-label="Watch the free class: Mind Body Medicine 101">
+        <a href="/free-practices.html" class="class-banner" aria-label="Watch the free class: Mind Body Medicine 101">
           <img src="{up}assets/mbm101-banner.png" alt="Banner for Mind Body Medicine 101, a free 50-minute class with Leyla Fıratlı. It lists what the class covers. 01 My story. 02 How to know if your pain is mind-body. 03 A roadmap to freedom from pain." width="1600" height="864" loading="lazy">
         </a>
         <div>
           <p class="eyebrow">Free 50-minute class</p>
           <h2>Start with the free class</h2>
           <p>{CLASS_TEXT}</p>
-          <div class="btn-row"><a href="/en/free-practices.html" class="btn btn-primary btn-lg">Get instant access</a></div>
+          <div class="btn-row"><a href="/free-practices.html" class="btn btn-primary btn-lg">Get instant access</a></div>
         </div>
       </div>
     </section>
@@ -197,9 +197,9 @@ def class_band(up):
 
 
 # ---------- article pages ----------
-os.makedirs('en/writing', exist_ok=True)
+os.makedirs('writing', exist_ok=True)
 for i, a in enumerate(ARTICLES):
-    url = f"{SITE}/en/writing/{a['slug']}.html"
+    url = f"{SITE}/writing/{a['slug']}.html"
     qa = [(a['title'], a['answer'])] + [(q, ' '.join(ans)) for q, ans in a['related']]
     ld = [
         {"@context": "https://schema.org", "@type": "Article", "headline": a['title'], "description": a['desc'],
@@ -208,8 +208,8 @@ for i, a in enumerate(ARTICLES):
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": plain(q), "acceptedAnswer": {"@type": "Answer", "text": plain(t)}} for q, t in qa]},
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/en/"},
-            {"@type": "ListItem", "position": 2, "name": "Writing", "item": f"{SITE}/en/writing.html"},
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Writing", "item": f"{SITE}/writing.html"},
             {"@type": "ListItem", "position": 3, "name": a['title'], "item": url}]},
     ]
     body = ''.join(f'            {b}\n' for b in a['body'])
@@ -225,11 +225,11 @@ for i, a in enumerate(ARTICLES):
                    + '            </div>\n          </div>\n')
     nxt = [ARTICLES[(i + k) % len(ARTICLES)] for k in (1, 2, 3, 4) if len(ARTICLES) > k][:4]
     others = ''.join(f'''            <li>
-              <a href="/en/writing/{o["slug"]}.html" class="other-tile">
+              <a href="/writing/{o["slug"]}.html" class="other-tile">
                 <span class="photo">
                   <picture>
-                    <source srcset="../../assets/{o["image"]}.webp" type="image/webp">
-                    <img src="../../assets/{o["image"]}.jpg" alt="" width="{o["w"]}" height="{o["h"]}" loading="lazy"{focus(o)}>
+                    <source srcset="../assets/{o["image"]}.webp" type="image/webp">
+                    <img src="../assets/{o["image"]}.jpg" alt="" width="{o["w"]}" height="{o["h"]}" loading="lazy"{focus(o)}>
                   </picture>
                 </span>
                 <span class="other-title">{o["title"]}</span>
@@ -244,14 +244,14 @@ for i, a in enumerate(ARTICLES):
       <div class="wrap">
         <div class="post-grid">
           <div class="post-head">
-            <p class="eyebrow"><a href="/en/writing.html">Writing</a> <span aria-hidden="true">/</span> <a href="/en/writing.html#{anchor(a['topic'])}" class="no-arrow">{a['topic']}</a></p>
+            <p class="eyebrow"><a href="/writing.html">Writing</a> <span aria-hidden="true">/</span> <a href="/writing.html#{anchor(a['topic'])}" class="no-arrow">{a['topic']}</a></p>
             <h1>{a['title']}</h1>
-            <p class="post-meta">By <a href="/en/about.html">Leyla Fıratlı</a> <span aria-hidden="true">·</span> <time datetime="{a['date']}">{a['date_text']}</time> <span aria-hidden="true">·</span> {a['minutes']} min read</p>
+            <p class="post-meta">By <a href="/about.html">Leyla Fıratlı</a> <span aria-hidden="true">·</span> <time datetime="{a['date']}">{a['date_text']}</time> <span aria-hidden="true">·</span> {a['minutes']} min read</p>
             <p class="lede post-answer">{a['answer']}</p>
           </div>
           <div class="post-side">
             <figure class="photo photo-tall">
-              {picture(a, '../../', '              ', lazy=False)}
+              {picture(a, '../', '              ', lazy=False)}
             </figure>
             <aside class="post-aside">
 {toc}              <p><a href="https://calendly.com/leylafiratli/introduction-call" target="_blank" rel="noopener" class="btn btn-outline">Book a free intro call</a></p>
@@ -273,10 +273,10 @@ for i, a in enumerate(ARTICLES):
       </div>
     </article>
 
-{class_band('../../')}
+{class_band('../')}
 '''
-    page = head(f"{a['title']} | Leyla Fıratlı", a['desc'], url, '../../', 'article', ld, a['image']) + header + main + footer.replace('src="../site.js"', 'src="../../site.js"')
-    open(f"en/writing/{a['slug']}.html", 'w', encoding='utf-8').write(page)
+    page = head(f"{a['title']} | Leyla Fıratlı", a['desc'], url, '../', 'article', ld, a['image']) + header + main + footer.replace('src="site.js"', 'src="../site.js"')
+    open(f"writing/{a['slug']}.html", 'w', encoding='utf-8').write(page)
 
 # ---------- Substack: latest posts, read from the public feed at build time ----------
 def substack_posts(limit=4):
@@ -333,7 +333,7 @@ TOPICS += [t for t in dict.fromkeys(a['topic'] for a in ARTICLES) if t not in TO
 
 
 def post_row(a, up, lazy=True):
-    href = f"/en/writing/{a['slug']}.html"
+    href = f"/writing/{a['slug']}.html"
     return f'''          <li class="blog-post" data-topic="{anchor(a['topic'])}">
             <a href="{href}" class="blog-thumb photo" tabindex="-1" aria-hidden="true">
               {picture(a, up, '              ', lazy=lazy)}
@@ -354,7 +354,7 @@ def sidebar(up):
             <img class="side-photo" src="{up}assets/portrait-small.jpg" alt="Leyla Fıratlı" width="440" height="440" loading="lazy">
             <!-- TODO: Leyla to rewrite these two lines in her voice. -->
             <p>I'm Leyla, a breathwork therapist and mind-body practitioner in Akyaka, Türkiye. I write about chronic pain, breath and freedom.</p>
-            <a href="/en/about.html" class="post-more">More about me</a>
+            <a href="/about.html" class="post-more">More about me</a>
           </div>
           <div class="side-block side-ss">
             <p class="eyebrow">Substack</p>
@@ -416,7 +416,7 @@ def filter_css():
     return '  <style>\n    ' + '\n    '.join(rules) + '\n  </style>\n'
 
 
-# Keeps the address in step with the filter, so /en/writing.html#symptoms opens filtered
+# Keeps the address in step with the filter, so /writing.html#symptoms opens filtered
 # and the topic link at the top of each article works. The filtering itself is CSS.
 FILTER_JS = '''  <script>
   (function () {
@@ -440,7 +440,7 @@ FILTER_JS = '''  <script>
 
 def podcast_section():
     """The homepage's "Hear from me" podcast block, so both stay identical."""
-    home = open('en/index.html', encoding='utf-8').read()
+    home = open('index.html', encoding='utf-8').read()
     a = home.index('    <!-- 3. PODCAST (ecru-deep) -->')
     b = home.index('    </section>\n', a) + len('    </section>\n')
     return '\n' + (home[a:b]
@@ -486,28 +486,28 @@ def blog_page(title_h1, lede, posts, up):
 {class_band(up)}'''
 
 
-url = f"{SITE}/en/writing.html"
+url = f"{SITE}/writing.html"
 desc = "Writing on chronic pain, breath and the mind-body approach by Leyla Fıratlı, with longer essays on Substack."
 ld = [
     {"@context": "https://schema.org", "@type": "Blog", "name": "Writing by Leyla Fıratlı", "url": url, "description": desc,
      "author": PERSON, "inLanguage": "en",
-     "blogPost": [{"@type": "BlogPosting", "headline": a['title'], "url": f"{SITE}/en/writing/{a['slug']}.html",
+     "blogPost": [{"@type": "BlogPosting", "headline": a['title'], "url": f"{SITE}/writing/{a['slug']}.html",
                    "datePublished": a['date'], "author": PERSON, "articleSection": a['topic']} for a in ARTICLES]},
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/en/"},
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
         {"@type": "ListItem", "position": 2, "name": "Writing", "item": url}]},
 ]
 main = blog_page(
     f'<h1><span class="mark">Writing{SQUIGGLE}</span></h1>',
     '<p class="lede">Answers to the questions I get asked most about this work.<br>My longer thoughts are on Substack.</p>',
-    ARTICLES, '../')
-page_head = head('Writing on chronic pain and the mind-body approach | Leyla Fıratlı', desc, url, '../', 'website', ld)
+    ARTICLES, '')
+page_head = head('Writing on chronic pain and the mind-body approach | Leyla Fıratlı', desc, url, '', 'website', ld)
 page_head = page_head.replace('</head>', filter_css() + '</head>')
-open('en/writing.html', 'w', encoding='utf-8').write(
+open('writing.html', 'w', encoding='utf-8').write(
     page_head + header + main + footer.replace('</body>', FILTER_JS + '</body>'))
 
 # topic pages from an earlier version are no longer built
-for old in glob.glob('en/writing/topic-*.html'):
+for old in glob.glob('writing/topic-*.html'):
     os.remove(old)
 
 # ---------- sitemap ----------
@@ -515,8 +515,8 @@ s = open('sitemap.xml', encoding='utf-8').read()
 today = datetime.date.today().isoformat()
 add = ''
 for u, pr in [('writing.html', '0.8')] + [(f"writing/{a['slug']}.html", '0.7') for a in ARTICLES]:
-    if f'/en/{u}<' not in s:
-        add += f'  <url>\n    <loc>{SITE}/en/{u}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>{pr}</priority>\n  </url>\n'
+    if f'/{u}<' not in s:
+        add += f'  <url>\n    <loc>{SITE}/{u}</loc>\n    <lastmod>{today}</lastmod>\n    <priority>{pr}</priority>\n  </url>\n'
 if add:
     open('sitemap.xml', 'w', encoding='utf-8').write(s.replace('</urlset>', add + '</urlset>'))
 

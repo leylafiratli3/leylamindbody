@@ -36,7 +36,7 @@ Everyone is different, and the same person can have very different sessions. The
 
 Breath is the bridge between your conscious mind and your autonomic nervous system, and conscious connected breathwork is a beautiful way to walk across that bridge together.
 
-When pain is protecting you from something you haven't been able to feel, the breath can give that feeling a way to move. I wrote more about this in [What does breath have to do with chronic pain?](/en/writing/what-does-breath-have-to-do-with-pain.html)
+When pain is protecting you from something you haven't been able to feel, the breath can give that feeling a way to move. I wrote more about this in [What does breath have to do with chronic pain?](/writing/what-does-breath-have-to-do-with-pain.html)
 
 ## What happens in a session?
 
