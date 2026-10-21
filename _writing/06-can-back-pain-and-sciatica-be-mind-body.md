@@ -18,7 +18,7 @@ So a bulge on your scan can be real and still not be the reason you hurt. A scan
 
 ## When should back pain be checked by a doctor?
 
-Some back pain needs medical attention right away: pain after a fall or accident, weakness in your leg that keeps getting worse, numbness in your groin or inner thighs, or any change in bladder or bowel control. Please don't wait with these. I wrote more in [Do I need to see a doctor first?](/en/writing/do-i-need-to-see-a-doctor-first.html)
+Some back pain needs medical attention right away: pain after a fall or accident, weakness in your leg that keeps getting worse, numbness in your groin or inner thighs, or any change in bladder or bowel control. Please don't wait with these. I wrote more in [Do I need to see a doctor first?](/writing/do-i-need-to-see-a-doctor-first.html)
 
 ## My back and my leg
 
@@ -26,7 +26,7 @@ After teaching a yoga class, I was suddenly struck with excruciating pain from m
 
 ## What does healing look like?
 
-In my [five-week program](/en/chronic-pain-healing.html), we move through four phases:
+In my [five-week program](/chronic-pain-healing.html), we move through four phases:
 
 1. **Believing it's possible.** Coming to trust that living free of pain is possible for you, too.
 2. **Listening.** Learning to hear what your nervous system is telling you, through breath and somatic awareness.

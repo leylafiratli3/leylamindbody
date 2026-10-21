@@ -22,7 +22,7 @@ If you are reading this list and recognizing yourself again and again, your body
 
 ## When should I see a doctor instead?
 
-I wrote more about this in [Do I need to see a doctor first?](/en/writing/do-i-need-to-see-a-doctor-first.html)
+I wrote more about this in [Do I need to see a doctor first?](/writing/do-i-need-to-see-a-doctor-first.html)
 
 Before starting this work, I always recommend seeing a doctor first. This will help us rule out serious conditions that need medical attention and enable us to move through our work with deeper confidence.
 
@@ -47,7 +47,7 @@ Everyone's timeline is different. For some people it shifts quickly, and for oth
 7. Growing up, did you often feel you had to hide what you were feeling to stay safe or keep the peace?
 8. Do you spend a lot of time checking, researching or worrying about your pain?
 
-If you answered yes to several of these, your nervous system is likely playing a big role in your pain. The [free 50-minute class](/en/free-practices.html) is a good way to start exploring.
+If you answered yes to several of these, your nervous system is likely playing a big role in your pain. The [free 50-minute class](/free-practices.html) is a good way to start exploring.
 
 With love,\
 Leyla

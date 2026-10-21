@@ -27,7 +27,7 @@ For a lot of the people I work with, that weight also includes living in an unju
 
 These names overlap. Dr. John Sarno called it tension myositis syndrome (TMS), and later the mindbody syndrome. More recent writers call it neuroplastic pain. Researchers use the term nociplastic pain for pain driven by changes in how the nervous system processes signals, rather than by tissue damage or nerve injury.
 
-The language and the theories differ, but they point to the same truth: pain can be real, physical, and driven by the nervous system more than by damage. I wrote more about [what TMS means](/en/writing/what-is-tms.html).
+The language and the theories differ, but they point to the same truth: pain can be real, physical, and driven by the nervous system more than by damage. I wrote more about [what TMS means](/writing/what-is-tms.html).
 
 ## What does a mind-body approach look like in practice?
 

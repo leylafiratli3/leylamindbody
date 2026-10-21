@@ -49,4 +49,4 @@ Sarno believed the first step is understanding that the pain isn't caused by dam
 
 ### Do I need to read Dr. Sarno's books before we work together?
 
-No. Many people find them helpful, but you can start without them. My [free class](/en/free-practices.html) covers the basics of my understanding.
+No. Many people find them helpful, but you can start without them. My [free class](/free-practices.html) covers the basics of my understanding.

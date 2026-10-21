@@ -15,7 +15,7 @@ const TEMPLATES = {
         <p>Thank you for your purchase of <strong>${p.productTitle}</strong>.</p>
         <p>To watch it, set a password for your account (it uses this email address):</p>
         <p><a href="${p.actionLink}">Set your password</a></p>
-        <p>Afterwards you can log in any time at <a href="${p.appUrl}/en/login.html">${p.appUrl}/en/login.html</a> and find everything you own in your library.</p>
+        <p>Afterwards you can log in any time at <a href="${p.appUrl}/login.html">${p.appUrl}/login.html</a> and find everything you own in your library.</p>
         <p>With warmth,<br>Leyla</p>`,
     }),
     tr: (p) => ({
@@ -35,7 +35,7 @@ const TEMPLATES = {
       html: `
         <p>Hi,</p>
         <p>Your purchase of <strong>${p.productTitle}</strong> is confirmed and has been added to your library.</p>
-        <p><a href="${p.appUrl}/en/library.html">Go to your library</a> (log in with this email address).</p>
+        <p><a href="${p.appUrl}/library.html">Go to your library</a> (log in with this email address).</p>
         <p>With warmth,<br>Leyla</p>`,
     }),
     tr: (p) => ({
