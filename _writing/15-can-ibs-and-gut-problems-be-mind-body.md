@@ -1,13 +1,13 @@
 title: Can IBS and gut problems be mind-body?
 topic: Symptoms
 date: 2026-10-12
-updated: 2026-10-17
+updated: 2026-10-24
 description: Gut symptoms are a very common way mind-body pain can show up. The gut and the brain are in constant conversation through the nervous system.
 image: grove-crouch
 size: 1050x1400
 alt: Leyla crouching in a eucalyptus grove, looking toward the camera
 ---
-Gut symptoms are a very common way mind-body pain can show up. The gut and the brain are in constant conversation through the nervous system, and any gut symptoms often have a strong mind-body component.
+Gut symptoms are a very common way mind-body pain can show up. The gut and the brain are in constant conversation through the nervous system, and many gut symptoms have a strong mind-body component.
 
 ## The gut listens to the nervous system
 
@@ -23,6 +23,18 @@ Some signs I look for:
 - It started during a hard time in your life.
 - The foods that set it off keep changing.
 - You have other symptoms that come and go, like headaches or back pain.
+
+## When should gut symptoms be checked?
+
+See a doctor before you start this work if you have:
+
+- blood in your stool, or black stools
+- weight loss you can't explain
+- a fever along with your gut symptoms
+- symptoms that wake you up at night
+- new symptoms that started after age 50
+- trouble swallowing, or vomiting that keeps coming back
+- a family history of bowel cancer, celiac disease or inflammatory bowel disease
 
 ## Working with the gut
 

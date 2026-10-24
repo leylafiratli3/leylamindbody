@@ -1,7 +1,7 @@
 title: Do I need to see a doctor before starting mind-body work?
 topic: Understanding pain
 date: 2026-10-12
-updated: 2026-10-17
+updated: 2026-10-24
 description: Yes, I recommend having a doctor rule out serious medical causes first. Knowing nothing dangerous is going on in your body makes it much easier to trust mind-body work and go deeper with it.
 image: hillside-plants
 size: 1000x673
@@ -25,7 +25,7 @@ If you're nervous about going back, it can help to write down your symptoms befo
 
 That choice is yours to make. I can only share my recommendation, and you're welcome to start this work wherever you are.
 
-Mind-body work doesn't have any contraindications. Some breathing practices aren't right for everyone, for example during pregnancy or with epilepsy or a heart condition. So we'll talk about your health at the start, and I'll adapt the practices to you.
+Some breathing practices aren't right for everyone, for example during pregnancy or with epilepsy or a heart condition. So we'll talk about your health at the start, and I'll adapt the practices to you. I wrote the full list in [Is breathwork safe for everyone?](/writing/what-is-conscious-connected-breathwork.html#is-breathwork-safe-for-everyone)
 
 And whatever you decide, please get emergency care right away if you ever notice numbness in your groin, loss of bladder or bowel control, or weakness in your legs that is quickly getting worse.
 
@@ -40,7 +40,7 @@ Leyla
 
 ### What if all my tests are normal?
 
-That's very common with mind-body pain. Normal tests don't mean the pain is imagined. They mean the cause is probably not structural damage.
+That's very common with mind-body pain. Normal tests don't mean the pain is imagined. They mean nothing dangerous was found, and that your nervous system may be playing a big part.
 
 ### Can I do this alongside medical treatment?
 

@@ -1,7 +1,7 @@
 title: What is conscious connected breathwork?
 topic: Breath
 date: 2026-10-12
-updated: 2026-10-17
+updated: 2026-10-24
 image: dunes-soft
 size: 1200x813
 alt: Soft sand dunes with hazy mountains behind them
@@ -37,6 +37,21 @@ Everyone is different, and the same person can have very different sessions. The
 Breath is the bridge between your conscious mind and your autonomic nervous system, and conscious connected breathwork is a beautiful way to walk across that bridge together.
 
 When pain is protecting you from something you haven't been able to feel, the breath can give that feeling a way to move. I wrote more about this in [What does breath have to do with chronic pain?](/writing/what-does-breath-have-to-do-with-pain.html)
+
+## Is breathwork safe for everyone?
+
+No. Connected breathing can be intense for the body, and it isn't right for everyone. Before we breathe together for the first time, I ask about your health. If any of these apply to you, we use gentler practices like slow breathing instead, or we wait until your doctor says it's okay:
+
+- pregnancy
+- epilepsy or a history of seizures
+- a heart condition, high blood pressure, or a history of stroke or aneurysm
+- glaucoma or a detached retina
+- recent surgery or injury
+- psychosis, bipolar disorder, or a recent stay in a psychiatric hospital
+- severe asthma
+- frequent panic attacks (we can still work together, but we start slowly)
+
+If you're not sure whether something in your health history matters, tell me in the intro call and we'll figure it out together, with your doctor if needed.
 
 ## What happens in a session?
 
