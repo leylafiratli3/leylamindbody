@@ -25,7 +25,7 @@ If you're nervous about going back, it can help to write down your symptoms befo
 
 That choice is yours to make. I can only share my recommendation, and you're welcome to start this work wherever you are.
 
-Some breathing practices aren't right for everyone, for example during pregnancy or with epilepsy or a heart condition. So we'll talk about your health at the start, and I'll adapt the practices to you. I wrote the full list in [Is breathwork safe for everyone?](/writing/what-is-conscious-connected-breathwork.html#is-breathwork-safe-for-everyone)
+Some breathing practices aren't right for everyone, for example during pregnancy or with epilepsy or a heart condition. So we'll talk about your health at the start, and I'll adapt the practices to you. I wrote more about this in [Is breathwork safe for everyone?](/writing/what-is-conscious-connected-breathwork.html#is-breathwork-safe-for-everyone)
 
 And whatever you decide, please get emergency care right away if you ever notice numbness in your groin, loss of bladder or bowel control, or weakness in your legs that is quickly getting worse.
 
