@@ -1,13 +1,13 @@
 title: Can IBS and gut problems be mind-body?
 topic: Symptoms
 date: 2026-10-12
-updated: 2026-10-17
+updated: 2026-10-24
 description: Gut symptoms are a very common way mind-body pain can show up. The gut and the brain are in constant conversation through the nervous system.
 image: grove-crouch
 size: 1050x1400
 alt: Leyla crouching in a eucalyptus grove, looking toward the camera
 ---
-Gut symptoms are a very common way mind-body pain can show up. The gut and the brain are in constant conversation through the nervous system, and any gut symptoms often have a strong mind-body component.
+Gut symptoms are a very common way mind-body pain can show up. The gut and the brain are in constant conversation through the nervous system, and many gut symptoms have a strong mind-body component.
 
 ## The gut listens to the nervous system
 
