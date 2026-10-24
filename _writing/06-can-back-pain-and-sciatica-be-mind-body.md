@@ -16,10 +16,6 @@ But these findings are very common in people who have no pain at all. A [2015 re
 
 So a bulge on your scan can be real and still not be the reason you hurt. A scan shows what your spine looks like. It can't show what your nervous system is doing.
 
-## When should back pain be checked by a doctor?
-
-Some back pain needs medical attention right away: pain after a fall or accident, weakness in your leg that keeps getting worse, numbness in your groin or inner thighs, or any change in bladder or bowel control. Please don't wait with these. I wrote more in [Do I need to see a doctor first?](/writing/do-i-need-to-see-a-doctor-first.html)
-
 ## My back and my leg
 
 After teaching a yoga class, I was suddenly struck with excruciating pain from my lower back down my right leg. What followed was nearly a year of barely being able to get out of bed. I couldn't walk for more than a few minutes. I went from one medical treatment to the next, and nothing held. Then I found Dr. John Sarno's work. For the first time, I let myself turn toward the pain instead of fighting it, and I listened for what it had to say. Within two weeks, the pain lifted completely.
