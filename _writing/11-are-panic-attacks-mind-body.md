@@ -1,7 +1,7 @@
 title: Are panic attacks mind-body?
 topic: Symptoms
 date: 2026-10-12
-updated: 2026-10-24
+updated: 2026-10-17
 image: fog-walk
 size: 1200x900
 alt: Leyla walking away across a green field into thick fog
@@ -31,12 +31,6 @@ Most of us fight panic the moment it starts. We try to make it stop, we look for
 Often, it's the fear of the panic that keeps it going.
 
 Somatic awareness offers another way. It means noticing what's happening in your body, without judging it or trying to fix it. It's the same thing we do with pain: instead of running from it, we turn toward it and get curious.
-
-## When should panic be checked by a doctor?
-
-If you've never had a panic attack before, have a doctor check you, so you know it's your alarm and not your heart or your thyroid.
-
-Get emergency care right away if you have chest pain that spreads to your arm, jaw or back, if you faint, or if it feels different from your usual panic.
 
 ## What helps in the moment
 

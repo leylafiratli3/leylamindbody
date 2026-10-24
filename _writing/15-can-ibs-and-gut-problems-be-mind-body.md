@@ -24,18 +24,6 @@ Some signs I look for:
 - The foods that set it off keep changing.
 - You have other symptoms that come and go, like headaches or back pain.
 
-## When should gut symptoms be checked?
-
-See a doctor before you start this work if you have:
-
-- blood in your stool, or black stools
-- weight loss you can't explain
-- a fever along with your gut symptoms
-- symptoms that wake you up at night
-- new symptoms that started after age 50
-- trouble swallowing, or vomiting that keeps coming back
-- a family history of bowel cancer, celiac disease or inflammatory bowel disease
-
 ## Working with the gut
 
 We use slow breath to help your body come out of alert. We practice staying with the sensations in your belly, without bracing against them.
