@@ -21,14 +21,6 @@ Being cleared by a doctor and being dismissed by one can happen in the same appo
 
 If you're nervous about going back, it can help to write down your symptoms beforehand, bring someone you trust, or simply ask: "Is there anything dangerous here that I need to know about?" That question gets you the answer you actually need.
 
-## I've chosen not to get medically checked. Can I still do this work?
-
-That choice is yours to make. I can only share my recommendation, and you're welcome to start this work wherever you are.
-
-Some breathing practices aren't right for everyone, for example during pregnancy or with epilepsy or a heart condition. So we'll talk about your health at the start, and I'll adapt the practices to you. I wrote more about this in [Is breathwork safe for everyone?](/writing/what-is-conscious-connected-breathwork.html#is-breathwork-safe-for-everyone)
-
-And whatever you decide, please get emergency care right away if you ever notice numbness in your groin, loss of bladder or bowel control, or weakness in your legs that is quickly getting worse.
-
 ## What I am and what I'm not
 
 I'm a breathwork therapist and mind-body practitioner, trained in the SarnoXSachs Chronic Pain Practitioner Training and [Inspire Breathwork](https://inspire-breathwork.org/). I help people understand their pain and feel safe in their bodies again. I don't diagnose, I don't give medical advice, and I don't replace your doctor.
