@@ -40,18 +40,7 @@ When pain is protecting you from something you haven't been able to feel, the br
 
 ## Is breathwork safe for everyone?
 
-No. Connected breathing can be intense for the body, and it isn't right for everyone. Before we breathe together for the first time, I ask about your health. If any of these apply to you, we use gentler practices like slow breathing instead, or we wait until your doctor says it's okay:
-
-- pregnancy
-- epilepsy or a history of seizures
-- a heart condition, high blood pressure, or a history of stroke or aneurysm
-- glaucoma or a detached retina
-- recent surgery or injury
-- psychosis, bipolar disorder, or a recent stay in a psychiatric hospital
-- severe asthma
-- frequent panic attacks (we can still work together, but we start slowly)
-
-If you're not sure whether something in your health history matters, tell me in the intro call and we'll figure it out together, with your doctor if needed.
+Connected breathing can be intense for the body, and it isn't right for everyone. We talk about your medical history before bringing any breathwork into our practice. If you have any contraindications, we discuss them and adjust the practice accordingly.
 
 ## What happens in a session?
 
