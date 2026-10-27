@@ -533,6 +533,33 @@ body.menu-open { overflow: hidden; }
 .card.card-plum h3, .card.card-plum p { color: var(--ecru); }
 
 /* ---------- Work with me / program page ---------- */
+/* Two-column editorial layout: photo hero, heading left and text right, weeks in a grid */
+.work-hero h1 { font-size: clamp(2.4rem, 4.4vw, 3.75rem); }
+.work-hero .lede { margin-top: 1.25rem; }
+@media (min-width: 900px) { .work-hero .hero-grid { grid-template-columns: 1.3fr 0.7fr; } }
+.work-hero .hero-media .framed { max-width: 440px; margin-inline: auto; }
+@media (max-width: 899px) { .work-hero .hero-media .framed { max-width: 300px; } .work-intro .photo { display: none; } }
+.side-head { display: grid; gap: clamp(1rem, 3vw, 1.75rem) clamp(2rem, 6vw, 5rem); }
+.side-head + .side-head, .cards + .side-head { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
+.side-head h2 { margin: 0; }
+.side-head .criteria-list { grid-template-columns: 1fr; margin-top: 0; }
+.side-head .criteria-list li { font-size: 1.1rem; }
+@media (min-width: 900px) {
+  .side-head { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: start; }
+  .side-head > .side-title { position: sticky; top: 110px; }
+}
+.week-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 700px) {
+  .week-grid { grid-template-columns: 1fr 1fr; }
+  .week-grid .week:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+.week { background: var(--ecru-deep); border-radius: var(--radius-card); padding: clamp(1.5rem, 3vw, 1.75rem); }
+.week .week-label { font-family: var(--font-body); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--indigo); opacity: 0.75; margin: 0; }
+.week h3 { font-size: 1.25rem; margin: 0.4rem 0 0.5rem; }
+.week p { margin: 0; }
+.cards.included { margin-top: clamp(3rem, 6vw, 4.5rem); }
+@media (min-width: 900px) { .cards.included { grid-template-columns: 1.6fr 1fr; align-items: start; } }
+
 .cols-2 { display: grid; gap: clamp(1.5rem, 4vw, 3rem); }
 @media (min-width: 820px) { .cols-2 { grid-template-columns: 1fr 1fr; } }
 .meta-line { font-size: 0.95rem; opacity: 0.85; margin-top: 1.25rem; }
