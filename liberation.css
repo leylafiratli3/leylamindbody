@@ -551,6 +551,8 @@ body.menu-open { overflow: hidden; }
 .side-body > :last-child { margin-bottom: 0; }
 /* a little colour: rose highlighter in section headings (see the HTML), pink week labels, rules tinted on rose */
 .bg-rose .ruled > li, .bg-rose .ruled > div, .bg-rose .ruled > :last-child { border-color: rgba(35, 40, 94, 0.28); }
+.bg-indigo .ruled > li, .bg-indigo .ruled > div, .bg-indigo .ruled > :last-child { border-color: rgba(239, 231, 218, 0.22); }
+.bg-indigo .ruled h3 { color: var(--rose); }
 .side-body .lead { font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.5; }
 .side-body h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
 
