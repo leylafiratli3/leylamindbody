@@ -549,12 +549,7 @@ body.menu-open { overflow: hidden; }
   .side-head > .side-title { position: sticky; top: 110px; }
 }
 .side-body > :last-child { margin-bottom: 0; }
-/* a little colour: rose brush mark above each section heading, pink week labels, rules tinted on rose */
-.side-title::before {
-  content: ""; display: block; width: 46px; height: 7px; margin-bottom: 1.1rem; border-radius: 6px 3px 7px 2px;
-  background: var(--rose); transform: rotate(-2deg);
-}
-.bg-rose .side-title::before { background: var(--indigo); }
+/* a little colour: rose highlighter in section headings (see the HTML), pink week labels, rules tinted on rose */
 .bg-rose .ruled > li, .bg-rose .ruled > div, .bg-rose .ruled > :last-child { border-color: rgba(35, 40, 94, 0.28); }
 .side-body .lead { font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.5; }
 .side-body h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
