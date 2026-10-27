@@ -44,8 +44,9 @@ SQUIGGLE = ('<svg viewBox="0 0 300 18" preserveAspectRatio="none" fill="none" ar
 PERSON = {"@type": "Person", "name": "Leyla Fıratlı", "url": f"{SITE}/about.html",
           "jobTitle": "Breathwork Therapist & Mind-Body Practitioner",
           "sameAs": [SUBSTACK, "https://www.instagram.com/leylafiratli/"]}
-CLASS_TEXT = ("I share my story, explain how mind-body pain happens, help you tell whether you might be "
-              "experiencing it, and leave you with a roadmap and tools to start working with it.")
+CLASS_TEXT = ("I share my story, explain how your nervous system can get stuck in protection, and how that can "
+              "show up as chronic pain, anxiety or panic. I'll help you tell whether this might be happening for you, "
+              "and leave you with a roadmap and tools to start working with it.")
 
 
 # ---------- reading the article files ----------
