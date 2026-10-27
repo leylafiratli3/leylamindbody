@@ -1,14 +1,6 @@
 User-agent: *
 Allow: /
 
-# Transactional / private store pages — no need to index
-Disallow: /watch.html
-Disallow: /library.html
-Disallow: /login.html
-Disallow: /set-password.html
-Disallow: /forgot-password.html
-Disallow: /checkout-success.html
-
 # Note: /en/ and /tr/ redirect pages are intentionally left crawlable so search engines
 # can read their noindex + canonical tags and drop them from the index.
 
