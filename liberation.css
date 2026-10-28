@@ -612,6 +612,10 @@ body.menu-open { overflow: hidden; }
 /* featured testimonial */
 .feature-quote { max-width: 60ch; margin: 2.5rem auto 0; padding: 0; }
 .feature-quote p { font-family: var(--font-head); font-style: italic; font-weight: 400; font-size: clamp(1.2rem, 2.5vw, 1.65rem); line-height: 1.5; max-width: none; }
+.feature-quote blockquote { margin: 0; }
+.feature-quote p + p { margin-top: 1rem; }
+.feature-quote figcaption { font-family: var(--font-body); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1.5rem; color: var(--rose); }
+.feature-quote + .feature-quote { margin-top: clamp(3.5rem, 7vw, 5rem); }
 .step-week { font-family: var(--font-body); font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--periwinkle); margin: 0 0 0.2rem; }
 .step h3 { margin: 0; font-size: 1.3rem; }
 .step p { margin: 0.4rem 0 0; max-width: none; }
