@@ -22,7 +22,7 @@ After teaching a yoga class, I was suddenly struck with excruciating pain from m
 
 ## What does healing look like?
 
-In my [five-week program](/chronic-pain-healing.html), we move through four phases:
+In my [five-week program](/breathwork-therapy-for-chronic-protection.html), we move through four phases:
 
 1. **Believing it's possible.** Coming to trust that living free of pain is possible for you, too.
 2. **Listening.** Learning to hear what your nervous system is telling you, through breath and somatic awareness.
