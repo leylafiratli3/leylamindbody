@@ -616,6 +616,20 @@ body.menu-open { overflow: hidden; }
 .feature-quote p + p { margin-top: 1rem; }
 .feature-quote figcaption { font-family: var(--font-body); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 1.5rem; color: var(--rose); }
 .feature-quote + .feature-quote { margin-top: clamp(3.5rem, 7vw, 5rem); }
+.feature-quote figcaption::before { content: "\2013\00a0"; }
+/* side-scrolling testimonials */
+.carousel-track { display: flex; gap: var(--pad); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding-bottom: 0.5rem; }
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track:focus-visible { outline: 2px solid var(--rose); outline-offset: 6px; border-radius: 8px; }
+.carousel-track .slide { flex: 0 0 100%; max-width: none; margin: 0; scroll-snap-align: start; }
+.carousel-track .slide + .slide { margin-top: 0; }
+.carousel-controls { display: flex; gap: 0.75rem; margin-top: 2.5rem; }
+.carousel-btn { width: 48px; height: 48px; border-radius: 999px; border: 1.5px solid var(--ecru); background: none; color: var(--ecru); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background .2s ease, color .2s ease, opacity .2s ease; }
+.carousel-btn svg { width: 20px; height: 20px; }
+.carousel-btn:hover { background: var(--rose); border-color: var(--rose); color: var(--indigo); }
+.carousel-btn:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+.carousel-btn:disabled { opacity: 0.35; cursor: default; background: none; border-color: var(--ecru); color: var(--ecru); }
+@media (prefers-reduced-motion: reduce) { .carousel-track { scroll-behavior: auto; } }
 .step-week { font-family: var(--font-body); font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--periwinkle); margin: 0 0 0.2rem; }
 .step h3 { margin: 0; font-size: 1.3rem; }
 .step p { margin: 0.4rem 0 0; max-width: none; }

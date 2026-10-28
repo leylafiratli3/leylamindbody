@@ -105,4 +105,25 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     reveals.forEach(function (el) { io.observe(el); });
   }
+
+  /* ---- Side-scrolling testimonials: arrow buttons ---- */
+  document.querySelectorAll("[data-carousel]").forEach(function (wrap) {
+    var track = wrap.querySelector(".carousel-track");
+    var prev = wrap.querySelector("[data-prev]");
+    var next = wrap.querySelector("[data-next]");
+    if (!track || !prev || !next) return;
+    var step = function () {
+      var s = track.querySelector(".slide");
+      return s ? s.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0) : track.clientWidth;
+    };
+    var update = function () {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    };
+    prev.addEventListener("click", function () { track.scrollBy({ left: -step() }); });
+    next.addEventListener("click", function () { track.scrollBy({ left: step() }); });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
 })();
