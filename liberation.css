@@ -285,7 +285,10 @@ strong { font-weight: 600; }
     background: var(--ecru); border-radius: 16px; padding: 0.6rem;
     box-shadow: var(--shadow-drop); display: none; margin-top: 0.4rem;
   }
+  /* bridge the gap so the menu stays open while the pointer moves down to it */
+  .has-dropdown > .dropdown::before { content: ""; position: absolute; left: 0; right: 0; top: -0.6rem; height: 0.6rem; }
   .has-dropdown:hover > .dropdown, .has-dropdown:focus-within > .dropdown, .dropdown.open { display: block; }
+  .dropdown a { white-space: nowrap; }
   .dropdown a {
     display: block; padding: 0.6rem 0.75rem; border-radius: 10px; text-transform: none;
     letter-spacing: normal; font-size: 15px;
