@@ -71,4 +71,4 @@ All my sessions are breather-led and their length varies based on the needs of t
 
 ### Can I do breathwork online?
 
-Yes. All my 1:1 sessions are online, so you can work with me from anywhere.
+Yes. All my sessions are online, so you can work with me from anywhere.
