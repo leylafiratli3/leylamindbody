@@ -618,7 +618,7 @@ body.menu-open { overflow: hidden; }
 .feature-quote + .feature-quote { margin-top: clamp(3.5rem, 7vw, 5rem); }
 .feature-quote figcaption::before { content: "\2013\00a0"; }
 /* side-scrolling testimonials */
-.carousel-track { display: flex; gap: var(--pad); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding-bottom: 0.5rem; }
+.carousel-track { display: flex; align-items: flex-start; gap: var(--pad); overflow-x: auto; overflow-y: hidden; transition: height .4s ease; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; padding-bottom: 0.5rem; }
 .carousel-track::-webkit-scrollbar { display: none; }
 .carousel-track:focus-visible { outline: 2px solid var(--rose); outline-offset: 6px; border-radius: 8px; }
 .carousel-track .slide { flex: 0 0 100%; max-width: none; margin: 0; scroll-snap-align: start; }
@@ -630,7 +630,8 @@ body.menu-open { overflow: hidden; }
 .carousel-btn:hover { background: var(--rose); border-color: var(--rose); color: var(--indigo); }
 .carousel-btn:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
 .carousel-btn:disabled { opacity: 0.35; cursor: default; background: none; border-color: var(--ecru); color: var(--ecru); }
-@media (prefers-reduced-motion: reduce) { .carousel-track { scroll-behavior: auto; } }
+.section.testimonials-band { padding-block: clamp(56px, 7vw, 96px); }
+@media (prefers-reduced-motion: reduce) { .carousel-track { scroll-behavior: auto; transition: none; } }
 .step-week { font-family: var(--font-body); font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--periwinkle); margin: 0 0 0.2rem; }
 .step h3 { margin: 0; font-size: 1.3rem; }
 .step p { margin: 0.4rem 0 0; max-width: none; }
