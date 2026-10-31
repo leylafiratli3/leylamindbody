@@ -247,6 +247,117 @@ app.get('/api/contact-messages', requireAdmin, (req, res) => {
   res.json({ messages: db.prepare('SELECT * FROM contact_messages ORDER BY id DESC').all() });
 });
 
+// ---- Group program sign-up form (join.html) ----
+// Joining the 5-week program, or the January waitlist. Saved here first, then emailed to
+// Leyla through Sender. She reads every form and replies with payment details, or asks to
+// talk first when a health item is ticked.
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS program_signups (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    group_choice TEXT NOT NULL,
+    waitlist INTEGER NOT NULL DEFAULT 0,
+    emailed INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  )
+`);
+// Columns added with the longer sign-up form
+{
+  const have = db.prepare('PRAGMA table_info(program_signups)').all().map((c) => c.name);
+  for (const col of ['whatsapp', 'reason', 'health', 'experience', 'heard']) {
+    if (!have.includes(col)) db.exec(`ALTER TABLE program_signups ADD COLUMN ${col} TEXT`);
+  }
+}
+
+// Keys match the <option> values on join.html
+const PROGRAM_GROUPS = {
+  'eu-sat': 'EU group, Saturdays 12:00 Istanbul (English)',
+  'eu-mon': 'EU group, Mondays 21:00 Istanbul (English)',
+  'us-sun': 'US group, Sundays 12:00 ET (English)',
+  'tr-sat': 'Turkish group, Saturdays 10:00 Istanbul (Turkish)',
+  'unsure': 'Not sure yet',
+  'waitlist-en': 'January waitlist, in English',
+  'waitlist-tr': 'January waitlist, in Turkish',
+};
+const HEALTH_ITEMS = [
+  'Pregnancy',
+  'Heart condition or high blood pressure',
+  'History of stroke or aneurysm',
+  'Epilepsy or seizures',
+  'Glaucoma or retinal detachment',
+  'Recent surgery or injury',
+  'Severe asthma',
+  'Psychosis, schizophrenia or bipolar disorder',
+  'Severe dissociation or recent psychiatric hospitalisation',
+];
+const EXPERIENCE = ['Never', 'A few times', 'Regularly'];
+
+// POST /api/join { name, email, whatsapp, group, reason, health: [], experience, heard, website }
+app.post('/api/join', contactLimiter, async (req, res) => {
+  const b = req.body || {};
+  if (b.website) return res.status(201).json({ ok: true });
+
+  const name = String(b.name || '').trim().slice(0, 200);
+  const email = String(b.email || '').toLowerCase().trim().slice(0, 254);
+  const whatsapp = String(b.whatsapp || '').trim().slice(0, 40);
+  const group = PROGRAM_GROUPS[b.group] ? b.group : null;
+  const reason = String(b.reason || '').trim().slice(0, 5000);
+  const heard = String(b.heard || '').trim().slice(0, 500);
+  const experience = EXPERIENCE.includes(b.experience) ? b.experience : null;
+  const rawHealth = Array.isArray(b.health) ? b.health : [b.health].filter(Boolean);
+  const health = HEALTH_ITEMS.filter((h) => rawHealth.includes(h));
+  const noneTicked = rawHealth.includes('None of these');
+
+  if (!name || !group || !experience || (!health.length && !noneTicked) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Please fill in every required question.' });
+  }
+  const waitlist = group.startsWith('waitlist');
+  const talkFirst = health.length > 0;
+  const healthText = talkFirst ? health.join('; ') : 'None of these';
+
+  const saved = db.prepare(`INSERT INTO program_signups
+      (name, email, group_choice, waitlist, whatsapp, reason, health, experience, heard)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+    .run(name, email, PROGRAM_GROUPS[group], waitlist ? 1 : 0, whatsapp || null, reason || null, healthText, experience, heard || null);
+
+  const lines = [
+    `From: ${name} <${email}>`,
+    `WhatsApp: ${whatsapp || 'not given'}`,
+    `Group: ${PROGRAM_GROUPS[group]}`,
+    `Breathwork before: ${experience}`,
+    `Health and safety: ${healthText}${talkFirst ? '  (talk first)' : ''}`,
+    `How they heard: ${heard || 'not given'}`,
+    '',
+    'What brings them here:',
+    reason || '(left empty)',
+  ];
+  const subject = `${talkFirst ? 'Talk first: ' : ''}${waitlist ? 'January waitlist' : 'New sign-up'}: ${name}`;
+
+  try {
+    await sendEmail({
+      from: { email: CONTACT_FROM, name: 'leylafiratli.com sign-up form' },
+      to: { email: CONTACT_TO, name: 'Leyla Fıratlı' },
+      replyTo: email,
+      subject,
+      text: lines.join('\n'),
+      html: `<div style="font-family:sans-serif;font-size:16px;line-height:1.6">${lines.map((l) => escapeHtml(l)).join('<br>')}</div>`,
+    });
+    db.prepare('UPDATE program_signups SET emailed = 1 WHERE id = ?').run(saved.lastInsertRowid);
+  } catch (err) {
+    // Still a success for the visitor: the sign-up is saved.
+    console.error('program form email failed (sign-up is saved in program_signups):', err.message);
+  }
+
+  res.status(201).json({ ok: true, waitlist });
+});
+
+// GET /api/program-signups - Admin: list all, newest first
+app.get('/api/program-signups', requireAdmin, (req, res) => {
+  res.json({ signups: db.prepare('SELECT * FROM program_signups ORDER BY id DESC').all() });
+});
+
 // GET /api/registrations - Admin: list all
 app.get('/api/registrations', requireAdmin, (req, res) => {
   const registrations = db.prepare('SELECT * FROM registrations ORDER BY id ASC').all();
