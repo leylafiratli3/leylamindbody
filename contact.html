@@ -32,43 +32,6 @@
     .note-hero { padding-block: clamp(48px, 7vw, 88px) clamp(16px, 3vw, 32px); }
     .note-section { padding-top: clamp(24px, 4vw, 48px); }
     .note-intro { max-width: 760px; }
-    /* the note: a sheet of warm white paper you write on */
-    .note-paper {
-      position: relative; background: #FFFCF6; color: var(--indigo); border-radius: 6px 24px 24px 6px;
-      padding: clamp(2.75rem, 6vw, 3.75rem) clamp(1.5rem, 5vw, 3.25rem) clamp(2rem, 5vw, 3rem);
-      box-shadow: 0 18px 40px rgba(16, 19, 52, 0.35); transform: rotate(-0.4deg);
-    }
-    .note-paper .stamp { color: var(--indigo); border-color: var(--indigo); }
-    .note-paper .btn-primary { background: var(--indigo); color: var(--ecru); border-color: var(--indigo); }
-    .note-paper .btn-primary:hover { background: var(--indigo-soft); border-color: var(--indigo-soft); color: var(--ecru); }
-    .note-paper .stamp { position: absolute; top: 1.25rem; right: 1.5rem; }
-    .field { margin-bottom: 1.75rem; }
-    .field label {
-      display: block; font-family: var(--font-body); font-weight: 500; font-size: 13px;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--indigo); margin-bottom: 0.15rem;
-    }
-    .field input, .field textarea {
-      display: block; width: 100%; font-family: var(--font-head); font-style: italic; font-size: 1.2rem;
-      color: var(--indigo); background-color: transparent; border: 0; border-bottom: 1.5px solid var(--indigo);
-      border-radius: 0; padding: 0.35rem 0.1rem; outline: none;
-    }
-    /* ruled lines, one per line of writing */
-    .field textarea {
-      line-height: 2.4rem; padding-block: 0; border-bottom: 0; resize: vertical; min-height: 12rem;
-      background-image: linear-gradient(to bottom, transparent calc(2.4rem - 1.5px), var(--indigo) calc(2.4rem - 1.5px));
-      background-size: 100% 2.4rem; background-attachment: local;
-    }
-    .field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--indigo); outline-offset: 4px; border-radius: 2px; }
-    .form-row { display: grid; gap: 0 2rem; }
-    @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
-    .note-send { display: flex; justify-content: flex-end; }
-    .note-check { display: flex; align-items: center; gap: 0.75rem; margin: -0.5rem 0 1.75rem; }
-    .note-check input { width: 1.25rem; height: 1.25rem; margin: 0; flex: none; accent-color: var(--indigo); }
-    .note-check label { font-size: 1rem; color: var(--indigo); }
-    .note-check input:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
-    .note-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-    .note-paper .form-status { font-family: var(--font-head); font-weight: 600; color: var(--indigo); margin: 1rem 0 0; }
-    @media (prefers-reduced-motion: no-preference) { .note-paper { transition: transform .3s ease; } }
   </style>
 </head>
 <body>

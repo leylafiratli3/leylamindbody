@@ -1040,3 +1040,102 @@ fieldset.sr-only { min-width: 0; margin: 0; padding: 0; border: 0; }
 .start-list a:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; border-radius: 4px; }
 .start-all { margin-top: 1.5rem; }
 @media (prefers-reduced-motion: reduce) { .start-arrow { transition: none; } .start-list a:hover .start-arrow { transform: none; } }
+
+/* ---------- Note paper forms (contact form, program intake form) ---------- */
+/* the note: a sheet of warm white paper you write on */
+.note-paper {
+  position: relative; background: #FFFCF6; color: var(--indigo); border-radius: 6px 24px 24px 6px;
+  padding: clamp(2.75rem, 6vw, 3.75rem) clamp(1.5rem, 5vw, 3.25rem) clamp(2rem, 5vw, 3rem);
+  box-shadow: 0 18px 40px rgba(16, 19, 52, 0.35); transform: rotate(-0.4deg);
+}
+.note-paper .stamp { color: var(--indigo); border-color: var(--indigo); }
+.note-paper .btn-primary { background: var(--indigo); color: var(--ecru); border-color: var(--indigo); }
+.note-paper .btn-primary:hover { background: var(--indigo-soft); border-color: var(--indigo-soft); color: var(--ecru); }
+.note-paper .stamp { position: absolute; top: 1.25rem; right: 1.5rem; }
+.field { margin-bottom: 1.75rem; }
+.field label {
+  display: block; font-family: var(--font-body); font-weight: 500; font-size: 13px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--indigo); margin-bottom: 0.15rem;
+}
+.field input, .field textarea {
+  display: block; width: 100%; font-family: var(--font-head); font-style: italic; font-size: 1.2rem;
+  color: var(--indigo); background-color: transparent; border: 0; border-bottom: 1.5px solid var(--indigo);
+  border-radius: 0; padding: 0.35rem 0.1rem; outline: none;
+}
+/* ruled lines, one per line of writing */
+.field textarea {
+  line-height: 2.4rem; padding-block: 0; border-bottom: 0; resize: vertical; min-height: 12rem;
+  background-image: linear-gradient(to bottom, transparent calc(2.4rem - 1.5px), var(--indigo) calc(2.4rem - 1.5px));
+  background-size: 100% 2.4rem; background-attachment: local;
+}
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--indigo); outline-offset: 4px; border-radius: 2px; }
+.form-row { display: grid; gap: 0 2rem; }
+@media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.note-send { display: flex; justify-content: flex-end; }
+.note-check { display: flex; align-items: center; gap: 0.75rem; margin: -0.5rem 0 1.75rem; }
+.note-check input { width: 1.25rem; height: 1.25rem; margin: 0; flex: none; accent-color: var(--indigo); }
+.note-check label { font-size: 1rem; color: var(--indigo); }
+.note-check input:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+.note-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.note-paper .form-status { font-family: var(--font-head); font-weight: 600; color: var(--indigo); margin: 1rem 0 0; }
+@media (prefers-reduced-motion: no-preference) { .note-paper { transition: transform .3s ease; } }
+
+/* ---------- How to join (program page) ---------- */
+.waitlist-line { margin: 1.25rem 0 0; }
+.waitlist-line a { color: var(--indigo); font-weight: 500; }
+.join-steps { list-style: none; counter-reset: join; margin: 1.25rem 0 2.25rem; padding: 0; }
+.join-steps li { counter-increment: join; position: relative; padding-left: 3rem; line-height: 1.6; }
+.join-steps li + li { margin-top: 1rem; }
+.join-steps li::before {
+  content: counter(join); position: absolute; left: 0; top: -0.1rem;
+  width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--indigo); color: var(--ecru); font-family: var(--font-body); font-weight: 500; font-size: 0.95rem;
+}
+/* on a light band the paper needs a much softer shadow than on indigo */
+.bg-ecru-deep .note-paper { box-shadow: 0 14px 34px rgba(35, 40, 94, 0.14); }
+.note-paper .field select {
+  display: block; width: 100%; font-family: var(--font-head); font-style: italic; font-size: 1.2rem;
+  color: var(--indigo); background-color: transparent; border: 0; border-bottom: 1.5px solid var(--indigo);
+  border-radius: 0; padding: 0.35rem 1.75rem 0.35rem 0.1rem; outline: none; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2323285E' stroke-width='2'%3E%3Cpath stroke-linecap='round' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.1rem center; background-size: 1.1rem;
+}
+.note-paper .field select option, .note-paper .field select optgroup { font-family: var(--font-body); font-style: normal; color: var(--indigo); background: var(--ecru); }
+.note-paper .field select:focus-visible { outline: 2px solid var(--indigo); outline-offset: 4px; border-radius: 2px; }
+.join-done:focus { outline: none; }
+.join-done p { margin: 0 0 0.5rem; }
+.join-done-title { font-family: var(--font-head); font-weight: 600; font-size: 1.3rem; }
+.join-close { margin: 1.5rem 0 0; font-weight: 700; }
+
+/* ---------- Join page (sign-up form) ---------- */
+.note-fieldset { border: 0; padding: 0; margin: 0 0 2rem; min-width: 0; }
+.note-fieldset legend {
+  padding: 0; font-family: var(--font-body); font-weight: 500; font-size: 13px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--indigo); margin-bottom: 0.6rem;
+}
+.fieldset-note { margin: 0 0 1rem; font-size: 1rem; line-height: 1.6; }
+.fieldset-q { margin: 0 0 0.85rem; font-weight: 500; }
+.health-list .note-check, .radio-row .note-check { margin: 0; align-items: flex-start; }
+.health-list .note-check input, .radio-row .note-check input { margin-top: 0.2rem; }
+.radio-row { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; }
+.back-link { color: var(--indigo); font-weight: 500; }
+.join-signoff { margin-top: 1.25rem !important; font-family: var(--font-head); font-style: italic; font-size: 1.15rem; }
+/* the paper stays light inside dark bands, so its text stays indigo */
+.note-paper, .note-paper p, .note-paper label, .note-paper legend { color: var(--indigo); }
+.radio-row .note-check label { font-size: 1rem; line-height: 1.45; }
+.health-list .note-check label { font-size: 0.9rem; line-height: 1.4; }
+.join-hero { display: grid; gap: 1.5rem 4rem; align-items: end; }
+.join-hero h1 { margin: 0; }
+.join-hero h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); }
+/* health checklist: two columns that each flow top to bottom, so long items don't break the row rhythm */
+.health-list { columns: 1; column-gap: 2.25rem; }
+@media (min-width: 640px) { .health-list { columns: 2; } }
+.health-list .note-check { break-inside: avoid; margin: 0 0 0.6rem; }
+.health-list .note-check input, .check-none input { width: 1.05rem; height: 1.05rem; margin-top: 0.14rem; }
+.check-none { margin: 0.4rem 0 0; padding-top: 0.75rem; border-top: 1px solid rgba(35, 40, 94, 0.18); align-items: flex-start; }
+.check-none label { font-size: 0.9rem; line-height: 1.4; }
+.join-send { justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; }
+.join-send .join-close { margin: 0; }
+.join-call { padding-block: clamp(48px, 7vw, 96px); }
+.join-call .btn-row { justify-content: center; margin-top: 1.5rem; }
