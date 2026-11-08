@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Join breathwork therapy for chronic protection | Leyla Fıratlı</title>
-  <meta name="description" content="Sign up for the 5-week online group program for chronic pain, anxiety and panic. Small groups, starts November 28, €75.">
+  <meta name="description" content="Sign up for the 5-week online group program for chronic pain, anxiety and panic. Small groups, English groups start January 9, Turkish group November 28. €75.">
   <link rel="canonical" href="https://leylafiratli.com/join.html">
   <meta name="robots" content="noindex, follow">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <meta property="og:title" content="Join breathwork therapy for chronic protection | Leyla Fıratlı">
-  <meta property="og:description" content="Sign up for the 5-week online group program for chronic pain, anxiety and panic. Small groups, starts November 28, €75.">
+  <meta property="og:description" content="Sign up for the 5-week online group program for chronic pain, anxiety and panic. Small groups, English groups start January 9, Turkish group November 28. €75.">
   <meta property="og:image" content="https://leylafiratli.com/assets/jtree-bay.jpg">
   <meta property="og:url" content="https://leylafiratli.com/join.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Join breathwork therapy for chronic protection | Leyla Fıratlı">
-  <meta name="twitter:description" content="Sign up for the 5-week online group program for chronic pain, anxiety and panic. Small groups, starts November 28, €75.">
+  <meta name="twitter:description" content="Sign up for the 5-week online group program for chronic pain, anxiety and panic. Small groups, English groups start January 9, Turkish group November 28. €75.">
   <meta name="twitter:image" content="https://leylafiratli.com/assets/jtree-bay.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,16 +119,18 @@
             <label for="join-group">Which group would you like to join?</label>
             <select id="join-group" name="group" required>
               <option value="" selected disabled>Choose a group</option>
-              <optgroup label="Starting in November">
-                <option value="eu-sat" data-cohort>English, Saturdays 12:00 Istanbul, 10:00 CET</option>
-                <option value="eu-mon" data-cohort>English, Mondays 21:00 Istanbul, 19:00 CET</option>
-                <option value="us-sun" data-cohort>English, Sundays 12:00 ET, 09:00 PT</option>
-                <option value="tr-sat" data-cohort>Turkish, Saturdays 10:00 Istanbul</option>
-                <option value="unsure" data-cohort>Not sure yet</option>
+              <optgroup label="English groups, starting in January">
+                <option value="eu-sat" data-closes="2027-01-07">English, Saturdays from January 9, 12:00 Istanbul, 10:00 CET</option>
+                <option value="eu-mon" data-closes="2027-01-07">English, Mondays from January 11, 21:00 Istanbul, 19:00 CET</option>
+                <option value="us-sun" data-closes="2027-01-07">English, Sundays from January 10, 12:00 ET, 09:00 PT</option>
               </optgroup>
-              <optgroup label="January waitlist">
-                <option value="waitlist-en">January waitlist, in English</option>
-                <option value="waitlist-tr">January waitlist, in Turkish</option>
+              <optgroup label="Turkish group, starting in November">
+                <option value="tr-sat" data-closes="2026-11-26">Turkish, Saturdays from November 28, 10:00 Istanbul</option>
+              </optgroup>
+              <option value="unsure" data-closes="2027-01-07">Not sure yet</option>
+              <optgroup label="Waitlist for the next groups">
+                <option value="waitlist-en">Waitlist for the next groups, in English</option>
+                <option value="waitlist-tr">Waitlist for the next groups, in Turkish</option>
               </optgroup>
             </select>
           </div>
@@ -174,7 +176,7 @@
             <input type="text" id="join-website" name="website" tabindex="-1" autocomplete="off">
           </div>
           <div class="note-send join-send">
-            <p class="join-close">Enrollment closes Thursday, November 26.</p>
+            <p class="join-close">Enrollment closes Thursday, January 7 for the English groups, and Thursday, November 26 for the Turkish group.</p>
             <button type="submit" class="btn btn-primary btn-lg">Send my form</button>
           </div>
           <p class="form-status" id="join-status" role="status" aria-live="polite"></p>
@@ -274,10 +276,10 @@
       var health = Array.prototype.slice.call(form.querySelectorAll('input[name="health"]'));
       var none = document.getElementById('health-none');
 
-      // After enrollment closes (end of Thursday, November 26, Istanbul time) only the waitlist stays open.
-      if (Date.now() > Date.parse('2026-11-26T23:59:59+03:00')) {
-        select.querySelectorAll('[data-cohort]').forEach(function (o) { o.disabled = true; });
-      }
+      // Each group closes at the end of its enrollment day (Istanbul time); the waitlist stays open.
+      select.querySelectorAll('[data-closes]').forEach(function (o) {
+        if (Date.now() > Date.parse(o.dataset.closes + 'T23:59:59+03:00')) o.disabled = true;
+      });
 
       // ?group=waitlist-en (from the program page) picks that group
       var pre = new URLSearchParams(location.search).get('group');
@@ -320,7 +322,7 @@
           return res.json();
         }).then(function (data) {
           if (data.waitlist) {
-            document.getElementById('join-done-text').textContent = "You're on the January waitlist. I'll write to you when the dates are set.";
+            document.getElementById('join-done-text').textContent = "You're on the waitlist for the next groups. I'll write to you when the dates are set.";
           }
           form.hidden = true;
           done.hidden = false;

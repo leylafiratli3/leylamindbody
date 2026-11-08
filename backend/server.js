@@ -248,7 +248,7 @@ app.get('/api/contact-messages', requireAdmin, (req, res) => {
 });
 
 // ---- Group program sign-up form (join.html) ----
-// Joining the 5-week program, or the January waitlist. Saved here first, then emailed to
+// Joining the 5-week program, or the waitlist for the next groups. Saved here first, then emailed to
 // Leyla through Sender. She reads every form and replies with payment details, or asks to
 // talk first when a health item is ticked.
 
@@ -278,8 +278,8 @@ const PROGRAM_GROUPS = {
   'us-sun': 'US group, Sundays 12:00 ET (English)',
   'tr-sat': 'Turkish group, Saturdays 10:00 Istanbul (Turkish)',
   'unsure': 'Not sure yet',
-  'waitlist-en': 'January waitlist, in English',
-  'waitlist-tr': 'January waitlist, in Turkish',
+  'waitlist-en': 'Waitlist for the next groups, in English',
+  'waitlist-tr': 'Waitlist for the next groups, in Turkish',
 };
 const HEALTH_ITEMS = [
   'Pregnancy',
@@ -333,7 +333,7 @@ app.post('/api/join', contactLimiter, async (req, res) => {
     'What brings them here:',
     reason || '(left empty)',
   ];
-  const subject = `${talkFirst ? 'Talk first: ' : ''}${waitlist ? 'January waitlist' : 'New sign-up'}: ${name}`;
+  const subject = `${talkFirst ? 'Talk first: ' : ''}${waitlist ? 'Waitlist' : 'New sign-up'}: ${name}`;
 
   try {
     await sendEmail({
