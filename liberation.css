@@ -1139,3 +1139,17 @@ fieldset.sr-only { min-width: 0; margin: 0; padding: 0; border: 0; }
 .join-send .join-close { margin: 0; }
 .join-call { padding-block: clamp(48px, 7vw, 96px); }
 .join-call .btn-row { justify-content: center; margin-top: 1.5rem; }
+
+/* ---------- Email strip (rose band above the footer) ---------- */
+.email-strip { padding-block: clamp(40px, 6vw, 64px); }
+.email-strip-inner { display: grid; gap: 1.25rem 3rem; align-items: center; }
+@media (min-width: 900px) { .email-strip-inner { grid-template-columns: 1fr minmax(0, 30rem); } }
+.email-strip h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 0 0 0.4rem; }
+.email-strip-text p { margin: 0; max-width: 46ch; }
+.email-strip-form { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.email-strip-form input { flex: 1 1 14rem; min-width: 0; font: inherit; font-size: 16px; color: var(--indigo); background: var(--ecru); border: 1.5px solid transparent; border-radius: 999px; padding: 0.8rem 1.2rem; outline: none; }
+.email-strip-form input::placeholder { color: rgba(35, 40, 94, 0.6); }
+.email-strip-form input:focus-visible { border-color: var(--indigo); }
+.email-strip-form .btn { flex: 0 0 auto; }
+.email-strip-note { flex-basis: 100%; margin: 0.2rem 0 0; font-size: 0.9rem; }
+.email-strip-note.is-error { font-weight: 500; }
