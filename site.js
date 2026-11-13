@@ -131,4 +131,45 @@
     window.addEventListener("load", update);
     update();
   });
+
+  /* ---- Email strip: free class sign-up, then straight to the class ---- */
+  document.querySelectorAll("[data-email-strip]").forEach(function (form) {
+    var msg = form.querySelector("[data-email-strip-msg]");
+    var btn = form.querySelector("button[type=submit]");
+    var input = form.querySelector("input[type=email]");
+    var note = msg ? msg.textContent : "";
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = (input.value || "").trim();
+      msg.classList.remove("is-error");
+      if (!email || email.indexOf("@") < 0) {
+        msg.textContent = "Please enter a valid email address.";
+        msg.classList.add("is-error");
+        input.focus();
+        return;
+      }
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "One moment…";
+      fetch("https://leyla-mindbody-api.fly.dev/api/free-class/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email, locale: "en" })
+      })
+        .then(function (r) { if (!r.ok) throw new Error(); })
+        .then(function () {
+          try { localStorage.setItem("fcWatched", "1"); } catch (err) {}
+          window.location.href = "/free-practices.html?watch=1#watch";
+        })
+        .catch(function () {
+          msg.textContent = "Something went wrong. Please try again.";
+          msg.classList.add("is-error");
+          btn.disabled = false;
+          btn.textContent = label;
+        });
+    });
+    input.addEventListener("input", function () {
+      if (msg.classList.contains("is-error")) { msg.classList.remove("is-error"); msg.textContent = note; }
+    });
+  });
 })();

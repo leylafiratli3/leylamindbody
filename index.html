@@ -392,7 +392,23 @@
         </div>
       </div>
     </section>
-    <div class="edge" style="background:var(--indigo)"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--ecru)" d="M0,100 L0,45 C220,95 430,5 660,42 C880,78 1050,22 1200,55 L1200,100 Z"/></svg></div>
+    <div class="edge" style="background:var(--indigo)"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--rose)" d="M0,100 L0,45 C220,95 430,5 660,42 C880,78 1050,22 1200,55 L1200,100 Z"/></svg></div>
+
+    <!-- EMAIL STRIP (rose): free class sign-up, joins the Sender free class list -->
+    <section class="email-strip bg-rose" aria-labelledby="email-strip-title">
+      <div class="wrap email-strip-inner">
+        <div class="email-strip-text">
+          <h2 id="email-strip-title">Get the free class in your inbox</h2>
+          <p>Mind Body Medicine 101, my free 50-minute class on chronic pain, anxiety and panic.</p>
+        </div>
+        <form class="email-strip-form" data-email-strip novalidate>
+          <label class="sr-only" for="email-strip-email">Your email</label>
+          <input id="email-strip-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+          <button type="submit" class="btn btn-primary">Send me the class</button>
+          <p class="email-strip-note" data-email-strip-msg role="status">You can unsubscribe whenever you want.</p>
+        </form>
+      </div>
+    </section>
 
   </main>
 
