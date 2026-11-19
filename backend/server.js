@@ -19,7 +19,6 @@ app.use((req, res, next) => {
   next();
 });
 const PORT = process.env.PORT || 3000;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'leyla2026';
 // No capacity limit
 
 // Database setup
@@ -61,14 +60,8 @@ app.use(require('./routes/checkout'));
 app.use(require('./routes/video-token'));
 app.use(require('./routes/admin-sales'));
 
-// Auth middleware for admin routes
-function requireAdmin(req, res, next) {
-  const auth = req.headers.authorization;
-  if (!auth || auth !== `Bearer ${ADMIN_PASSWORD}`) {
-    return res.status(401).json({ error: 'Yetkisiz erişim' });
-  }
-  next();
-}
+// Admin routes: see lib/admin-auth.js
+const { requireAdmin } = require('./lib/admin-auth');
 
 // POST /api/register - Public signup
 app.post('/api/register', (req, res) => {
@@ -409,6 +402,95 @@ app.get('/api/registrations/export', (req, res, next) => {
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', 'attachment; filename=zihin_beden_yolu_kayitlar.csv');
   res.send(csv);
+});
+
+// ---- Pre-session intake form (intake.html in English, intake-tr.html in Turkish) ----
+// Clients get a private link before their first session. Their answers hold health details, so
+// they are kept only here, read only on the admin page, and never put in an email: the email to
+// Leyla says who filled it in and nothing else. Each answer is saved with the question as the
+// client saw it, in their language, so the admin page shows the form exactly as it was filled in.
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS intake_forms (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    lang TEXT NOT NULL DEFAULT 'en',
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    answers TEXT NOT NULL,
+    consent_at TEXT NOT NULL,
+    emailed INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  )
+`);
+
+const intakeLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  limit: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+// POST /api/intake { lang, name, email, consent, answers: [{ part, q, a }], website }
+app.post('/api/intake', intakeLimiter, async (req, res) => {
+  const b = req.body || {};
+  if (b.website) return res.status(201).json({ ok: true });
+
+  const lang = b.lang === 'tr' ? 'tr' : 'en';
+  const name = String(b.name || '').trim().slice(0, 200);
+  const email = String(b.email || '').toLowerCase().trim().slice(0, 254);
+  const consent = b.consent === true || b.consent === 'on' || b.consent === 'yes';
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Please fill in your name and email.' });
+  }
+  if (!consent) return res.status(400).json({ error: 'Please tick the box to agree to your answers being stored.' });
+  if (!Array.isArray(b.answers) || !b.answers.length || b.answers.length > 80) {
+    return res.status(400).json({ error: 'The form arrived empty. Please try again.' });
+  }
+  const answers = b.answers.map((x) => ({
+    part: String((x && x.part) || '').trim().slice(0, 120),
+    q: String((x && x.q) || '').trim().slice(0, 600),
+    a: String((x && x.a) || '').trim().slice(0, 6000),
+  })).filter((x) => x.q);
+
+  const saved = db.prepare("INSERT INTO intake_forms (lang, name, email, answers, consent_at) VALUES (?, ?, ?, ?, datetime('now'))")
+    .run(lang, name, email, JSON.stringify(answers));
+
+  // Only who and when: the answers stay on the server.
+  const lines = [
+    `${name} <${email}> filled in your pre-session intake form (${lang === 'tr' ? 'Turkish' : 'English'}).`,
+    '',
+    'Read it on your admin page: https://leylafiratli.com/admin.html',
+  ];
+  try {
+    await sendEmail({
+      from: { email: CONTACT_FROM, name: 'leylafiratli.com intake form' },
+      to: { email: CONTACT_TO, name: 'Leyla Fıratlı' },
+      replyTo: email,
+      subject: `New intake form from ${name}`,
+      text: lines.join('\n'),
+      html: `<div style="font-family:sans-serif;font-size:16px;line-height:1.6">${lines.map((l) => escapeHtml(l)).join('<br>')}</div>`,
+    });
+    db.prepare('UPDATE intake_forms SET emailed = 1 WHERE id = ?').run(saved.lastInsertRowid);
+  } catch (err) {
+    // The form is saved; only the heads-up email failed. The client should not have to send it again.
+    console.error('intake email failed (form is saved in intake_forms):', err.message);
+  }
+
+  res.status(201).json({ ok: true });
+});
+
+// GET /api/intakes - Admin: all intake forms, newest first
+app.get('/api/intakes', requireAdmin, (req, res) => {
+  const intakes = db.prepare('SELECT * FROM intake_forms ORDER BY id DESC').all()
+    .map((r) => ({ ...r, answers: JSON.parse(r.answers) }));
+  res.json({ intakes });
+});
+
+// DELETE /api/intakes/:id - Admin: delete one for good (a client can ask for their answers to be deleted)
+app.delete('/api/intakes/:id', requireAdmin, (req, res) => {
+  const result = db.prepare('DELETE FROM intake_forms WHERE id = ?').run(req.params.id);
+  if (result.changes === 0) return res.status(404).json({ error: 'Not found' });
+  res.json({ ok: true });
 });
 
 // Root

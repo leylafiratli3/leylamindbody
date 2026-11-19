@@ -44,6 +44,13 @@
     .empty { padding: 2rem 0; }
     .admin-msg { font-weight: 500; min-height: 1.5em; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .intake-answers { margin: 0.5rem 0 0; }
+    .intake-answers h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; padding-bottom: 0.35rem; border-bottom: 1px solid rgba(35, 40, 94, 0.18); }
+    .intake-answers .q { font-weight: 500; margin: 0.85rem 0 0.15rem; }
+    .intake-answers .a { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .intake-answers .a.blank { opacity: 0.55; }
+    .ad-entry details summary { cursor: pointer; font-weight: 500; margin-top: 0.5rem; }
+    .entry-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
     @media (max-width: 560px) { .ad-entry dl { grid-template-columns: 1fr; } .ad-entry dt { padding-top: 0.5rem; } }
   </style>
 </head>
@@ -65,7 +72,8 @@
 
     <div id="dash" hidden>
       <div class="tabs" role="tablist" aria-label="Forms">
-        <button type="button" class="tab" role="tab" data-tab="signups" aria-selected="true">Program sign-ups<span class="count" id="count-signups"></span></button>
+        <button type="button" class="tab" role="tab" data-tab="intakes" aria-selected="true">Intake forms<span class="count" id="count-intakes"></span></button>
+        <button type="button" class="tab" role="tab" data-tab="signups" aria-selected="false">Program sign-ups<span class="count" id="count-signups"></span></button>
         <button type="button" class="tab" role="tab" data-tab="contact" aria-selected="false">Contact notes<span class="count" id="count-contact"></span></button>
         <button type="button" class="tab" role="tab" data-tab="freeclass" aria-selected="false">Free class<span class="count" id="count-freeclass"></span></button>
       </div>
@@ -95,8 +103,8 @@
       var KEY = 'leyla-admin';
       var pw = null;
       try { pw = sessionStorage.getItem(KEY); } catch (e) {}
-      var data = { signups: [], contact: [], freeclass: [] };
-      var tab = 'signups';
+      var data = { signups: [], contact: [], freeclass: [], intakes: [] };
+      var tab = 'intakes';
       var $ = function (id) { return document.getElementById(id); };
 
       function esc(s) {
@@ -118,10 +126,11 @@
 
       function load() {
         $('dash-msg').textContent = 'Loading…';
-        return Promise.all([get('/api/program-signups'), get('/api/contact-messages'), get('/api/registrations')]).then(function (res) {
+        return Promise.all([get('/api/program-signups'), get('/api/contact-messages'), get('/api/registrations'), get('/api/intakes')]).then(function (res) {
           data.signups = res[0].signups || [];
           data.contact = res[1].messages || [];
           data.freeclass = (res[2].registrations || []).slice().reverse();
+          data.intakes = res[3].intakes || [];
           $('login').hidden = true; $('dash').hidden = false; $('logout').hidden = false;
           $('dash-msg').textContent = '';
           try { sessionStorage.setItem(KEY, pw); } catch (e) {}
@@ -146,6 +155,9 @@
         $('count-signups').textContent = '(' + data.signups.length + ')';
         $('count-contact').textContent = '(' + data.contact.length + ')';
         $('count-freeclass').textContent = '(' + data.freeclass.length + ')';
+        $('count-intakes').textContent = '(' + data.intakes.length + ')';
+        // Intake forms hold health details: no CSV of them, so no copies end up in Downloads.
+        $('csv').style.display = tab === 'intakes' ? 'none' : '';
         document.querySelectorAll('.tab').forEach(function (t) { t.setAttribute('aria-selected', t.dataset.tab === tab ? 'true' : 'false'); });
         $('filter-wrap').style.visibility = tab === 'signups' ? 'visible' : 'hidden';
         var rows = filtered();
@@ -165,6 +177,15 @@
               row('What brings them', r.reason ? '<span class="note-body" style="display:block;margin:0">' + esc(r.reason) + '</span>' : '') +
               '</dl></article>';
           }).join('');
+        } else if (tab === 'intakes') {
+          html = rows.map(function (r) {
+            return '<article class="ad-entry"><div class="ad-entry-head"><p class="ad-entry-name">' + esc(r.name) + '</p><span class="ad-entry-date">' + esc(when(r.created_at)) + '</span></div><dl>' +
+              row('Email', '<a href="mailto:' + esc(r.email) + '">' + esc(r.email) + '</a>') +
+              row('Language', r.lang === 'tr' ? 'Turkish' : 'English') +
+              '</dl><details><summary>Read the answers</summary>' + intakeAnswers(r) + '</details>' +
+              '<div class="entry-actions"><button type="button" class="btn btn-outline btn-small" data-print="' + r.id + '">Print or save as PDF</button>' +
+              '<button type="button" class="btn btn-outline btn-small" data-delete="' + r.id + '">Delete</button></div></article>';
+          }).join('');
         } else if (tab === 'contact') {
           html = rows.map(function (r) {
             return '<article class="ad-entry"><div class="ad-entry-head"><p class="ad-entry-name">' + esc(r.name) + '</p><span class="ad-entry-date">' + esc(when(r.created_at)) + '</span></div><dl>' +
@@ -179,6 +200,40 @@
             '</tbody></table></div>';
         }
         $('list').innerHTML = html;
+      }
+
+      // The answers, grouped under the form's own section headings, in the client's language.
+      function intakeAnswers(r) {
+        var part = null;
+        return '<div class="intake-answers">' + (r.answers || []).map(function (x) {
+          var head = '';
+          if (x.part && x.part !== part) { part = x.part; head = '<h3>' + esc(part) + '</h3>'; }
+          return head + '<p class="q">' + esc(x.q) + '</p><p class="a' + (x.a ? '' : ' blank') + '">' + (x.a ? esc(x.a) : '–') + '</p>';
+        }).join('') + '</div>';
+      }
+
+      function printIntake(id) {
+        var r = data.intakes.filter(function (x) { return String(x.id) === String(id); })[0];
+        if (!r) return;
+        var w = window.open('', '_blank');
+        if (!w) return;
+        w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>' + esc(r.name) + ' · intake form</title>' +
+          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:wght@600&display=swap">' +
+          '<style>body{font:15px/1.55 "DM Sans",sans-serif;color:#23285E;max-width:720px;margin:32px auto;padding:0 24px}h1,h3{font-family:Fraunces,serif}h1{margin:0 0 4px}' +
+          '.meta{margin:0 0 16px;opacity:.8}h3{font-size:17px;margin:22px 0 6px;padding-bottom:4px;border-bottom:1px solid #ccc}.q{font-weight:500;margin:10px 0 2px}.a{margin:0;white-space:pre-wrap}.blank{opacity:.5}</style>' +
+          '</head><body><h1>' + esc(r.name) + '</h1><p class="meta">' + esc(r.email) + ' · ' + esc(when(r.created_at)) + '</p>' + intakeAnswers(r) + '</body></html>');
+        w.document.close();
+        setTimeout(function () { w.print(); }, 400);
+      }
+
+      function deleteIntake(id) {
+        var r = data.intakes.filter(function (x) { return String(x.id) === String(id); })[0];
+        if (!r || !confirm('Delete the intake form from ' + r.name + ' for good? This cannot be undone.')) return;
+        fetch(API + '/api/intakes/' + encodeURIComponent(id), { method: 'DELETE', headers: { Authorization: 'Bearer ' + pw } }).then(function (res) {
+          if (res.status === 401) throw new Error('auth');
+          if (!res.ok) throw new Error('http');
+          return load();
+        }).catch(fail);
       }
 
       function csv() {
@@ -225,6 +280,11 @@
         t.addEventListener('click', function () { tab = t.dataset.tab; render(); });
       });
       $('filter').addEventListener('change', render);
+      $('list').addEventListener('click', function (e) {
+        var p = e.target.closest('[data-print]'), d = e.target.closest('[data-delete]');
+        if (p) printIntake(p.dataset.print);
+        if (d) deleteIntake(d.dataset.delete);
+      });
       $('refresh').addEventListener('click', function () { load().catch(fail); });
       $('csv').addEventListener('click', csv);
 
