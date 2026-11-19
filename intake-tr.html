@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seans öncesi bilgi formu | Leyla Fıratlı</title>
+  <!-- A private page for clients: sent by link, not linked from the site, not in the sitemap -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,0..100;1,9..144,400..600,0..100&display=swap">
+  <link rel="stylesheet" href="liberation.css">
+  <style>
+    .intake-hero { padding-block: clamp(48px, 7vw, 88px) clamp(24px, 4vw, 40px); }
+    .intake-section { padding-top: clamp(32px, 5vw, 56px); }
+    .intake .note-paper { transform: none; }
+    .intake-part { margin-bottom: 2.75rem; }
+    .intake-part h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 0 0 1.5rem; padding-bottom: 0.6rem; border-bottom: 1.5px solid rgba(35, 40, 94, 0.18); }
+    /* questions read as sentences, not as small capital labels */
+    .intake .field[data-q] label, .intake .note-fieldset legend { text-transform: none; letter-spacing: 0; font-size: 1.05rem; line-height: 1.45; margin-bottom: 0.4rem; }
+    .intake .field textarea { min-height: 0; }
+    .intake .note-fieldset .fieldset-note { margin-bottom: 0.85rem; }
+    .intake-how { margin: 0 0 1.5rem; padding-left: 1.2rem; }
+    .intake-how li { margin-bottom: 0.6rem; line-height: 1.6; }
+    .agree-list .note-check, .consent-check { margin: 0 0 0.85rem; align-items: flex-start; }
+    .agree-list .note-check input, .consent-check input { margin-top: 0.2rem; }
+    .consent-check { margin: 1.5rem 0 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(35, 40, 94, 0.18); }
+    .intake-done:focus { outline: none; }
+    .intake-done .join-done-title { margin: 0 0 0.5rem; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .intake-foot { padding: 32px 0 48px; text-align: center; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav"><a href="/" class="brand">Leyla Fıratlı</a></div>
+  </header>
+
+  <main id="main" class="intake">
+    <section class="section bg-ecru intake-hero">
+      <div class="wrap-narrow">
+        <p class="eyebrow">İlk seansımızdan önce</p>
+        <h1>Seans öncesi <mark class="hl">bilgi formu</mark></h1>
+        <p class="lede">Görüşmemizden önce bu formu doldurmaya zaman ayırdığınız için teşekkür ederim. Burada doğru ya da yanlış cevap yok. İstediğiniz kadarını paylaşabilir, istemediğiniz soruyu boş bırakabilirsiniz. Yazdığınız her şey aramızda kalır ve ilk seansımızdan önce sizi ve bedeninizi tanımama yardımcı olur.</p>
+      </div>
+    </section>
+
+    <section class="section bg-ecru-deep intake-section">
+      <div class="wrap-narrow">
+        <form action="https://leyla-mindbody-api.fly.dev/api/intake" method="POST" id="intake-form" class="note-paper"
+              data-sending="Gönderiliyor…" data-error="Bir şeyler ters gitti. Lütfen bana hello@leylafiratli.com adresinden yazın.">
+          <span class="stamp" aria-hidden="true">Leyla için</span>
+          <div class="form-row">
+            <div class="field"><label for="name">Ad soyad</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="email">E-posta</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+          </div>
+
+        <section class="intake-part" data-part="Sizi tanıyalım">
+          <div class="field" data-q><label for="q1">Sizi buraya getiren ne?</label><textarea id="q1" rows="3"></textarea></div>
+          <div class="field" data-q><label for="q2">Bu durum ne zamandır devam ediyor?</label><textarea id="q2" rows="2"></textarea></div>
+        </section>
+        <section class="intake-part" data-part="Kronik ağrı">
+          <h2>Kronik ağrı</h2>
+          <fieldset class="note-fieldset" data-q><legend>Kronik ağrıyla mı yaşıyorsunuz?</legend><p class="fieldset-note">Yani üç ay veya daha uzun süredir, çoğu gün ağrınız oluyor mu?</p><div class="radio-row"><div class="note-check"><input type="radio" id="q3-0" name="q3"><label for="q3-0">Evet</label></div><div class="note-check"><input type="radio" id="q3-1" name="q3"><label for="q3-1">Hayır</label></div><div class="note-check"><input type="radio" id="q3-2" name="q3"><label for="q3-2">Emin değilim</label></div></div></fieldset>
+          <div class="field" data-q><label for="q4">Evet ise, bir tanı konuldu mu? Örneğin fibromiyalji, migren ya da IBS.</label><textarea id="q4" rows="2"></textarea></div>
+          <div class="field" data-q><label for="q5">Bedeninizin neresinde ağrı veya rahatsızlık hissediyorsunuz?</label><textarea id="q5" rows="3"></textarea></div>
+          <div class="field" data-q><label for="q6">Bedeninizde başka neler fark ediyorsunuz?</label><textarea id="q6" rows="3"></textarea></div>
+          <div class="field" data-q><label for="q7">Ağrınızı ne hafifletiyor, ne kötüleştiriyor?</label><textarea id="q7" rows="3"></textarea></div>
+          <div class="field" data-q><label for="q8">Bu konuda bir doktora gittiniz mi? Size ne söylediler?</label><textarea id="q8" rows="3"></textarea></div>
+          <div class="field" data-q><label for="q9">Herhangi bir tahlil veya görüntüleme yaptırdınız mı? Sonuçları neydi?</label><textarea id="q9" rows="3"></textarea></div>
+          <div class="field" data-q><label for="q10">Şimdiye kadar neler denediniz, işe yarayan bir şey oldu mu?</label><textarea id="q10" rows="3"></textarea></div>
+        </section>
+        <section class="intake-part" data-part="Sağlığınız">
+          <h2>Sağlığınız</h2>
+          <fieldset class="note-fieldset" data-q>
+            <legend>Şu an ya da geçmişte sizin için geçerli olanlar</legend>
+            <p class="fieldset-note">Her nefes çalışması herkese uygun değildir. Size güvenli pratikleri seçebilmem için sizin için geçerli olanları işaretleyin. Bir kutuyu işaretlemeniz birlikte çalışamayacağımız anlamına gelmez, yalnızca çalışmamızı ona göre uyarlayacağım anlamına gelir.</p>
+            <div class="health-list">
+              <div class="note-check"><input type="checkbox" id="q11-0"><label for="q11-0">Hamilelik veya hamilelik ihtimali</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-1"><label for="q11-1">Epilepsi veya nöbet</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-2"><label for="q11-2">Kalp rahatsızlığı</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-3"><label for="q11-3">Yüksek tansiyon</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-4"><label for="q11-4">Anevrizma</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-5"><label for="q11-5">İnme (felç)</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-6"><label for="q11-6">Glokom veya retina dekolmanı</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-7"><label for="q11-7">Astım veya başka bir solunum sorunu</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-8"><label for="q11-8">Son 6 ayda ameliyat veya ciddi yaralanma</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-9"><label for="q11-9">Böbrek hastalığı</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-10"><label for="q11-10">Osteoporoz</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-11"><label for="q11-11">Diyabet</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-12"><label for="q11-12">Psikoz veya bipolar bozukluk</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-13"><label for="q11-13">Şu sıralar panik atak</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-14"><label for="q11-14">Bayılma</label></div>
+              <div class="note-check"><input type="checkbox" id="q11-15"><label for="q11-15">Alkol veya madde bırakma süreci</label></div>
+            </div>
+            <div class="note-check check-none"><input type="checkbox" id="q11-none" data-none><label for="q11-none">Hiçbiri</label></div>
+          </fieldset>
+          <div class="field" data-q><label for="q12">Kullandığınız ilaçlar var mı?</label><textarea id="q12" rows="2"></textarea></div>
+          <div class="field" data-q><label for="q13">Fiziksel veya ruhsal sağlığınızla ilgili bilmem gereken başka bir şey var mı?</label><textarea id="q13" rows="3"></textarea></div>
+        </section>
+        <section class="intake-part" data-part="Son olarak">
+          <h2>Son olarak</h2>
+          <div class="field" data-q><label for="q14">Daha önce nefes çalışması, somatik çalışma veya meditasyon yaptınız mı?</label><textarea id="q14" rows="2"></textarea></div>
+          <div class="field" data-q><label for="q15">Bilmemi istediğiniz başka bir şey var mı?</label><textarea id="q15" rows="3"></textarea></div>
+        </section>
+
+        <section class="intake-part">
+          <h2>Çalışma şeklim</h2>
+          <ul class="intake-how">
+            <li>Nefesinizin kontrolü her zaman sizde. Dilediğiniz an yavaşlayabilir, mola verebilir, gözlerinizi açabilir ya da tamamen durabilirsiniz. Bunun için bir açıklama yapmanız gerekmez.</li>
+            <li>Seanstan sonraki bir iki gün içinde bazı duygular ya da bedensel hisler kendini göstermeye devam edebilir. Kendinize iyi bakın, bol su için ve zorlandığınız bir şey olursa bana yazmaktan çekinmeyin.</li>
+            <li>Bu çalışma tıbbi ya da psikolojik tedavinin yerine geçmez, onlara destek olur.</li>
+            <li>Paylaştığınız her şey aramızda kalır. Tek istisna, sizin ya da bir başkasının güvenliği konusunda ciddi bir endişe duymamdır.</li>
+          </ul>
+        </section>
+
+        <section class="intake-part" data-part="Başlamadan önce">
+          <h2>Başlamadan önce</h2>
+          <fieldset class="note-fieldset" data-q>
+            <legend class="visually-hidden">Aşağıdakileri onaylıyorum</legend>
+            <div class="agree-list">
+              <div class="note-check"><input type="checkbox" id="agree-0" required><label for="agree-0">Leyla&#x27;nın çalışma şeklini okudum ve kabul ediyorum.</label></div>
+              <div class="note-check"><input type="checkbox" id="agree-1" required><label for="agree-1">Bu çalışmanın tıbbi veya psikolojik desteğin yerini tutmadığını, onu desteklediğini biliyorum.</label></div>
+              <div class="note-check"><input type="checkbox" id="agree-2" required><label for="agree-2">Verdiğim sağlık bilgileri bildiğim kadarıyla doğrudur. Bir şey değişirse Leyla&#x27;ya haber vereceğim.</label></div>
+              <div class="note-check"><input type="checkbox" id="agree-3" required><label for="agree-3">Seans sırasında istediğim an ara verebileceğimi ya da durabileceğimi biliyorum.</label></div>
+            </div>
+          </fieldset>
+          <div class="note-check consent-check"><input type="checkbox" id="consent" name="consent" required><label for="consent">Sağlık bilgilerim de dahil olmak üzere cevaplarımın, seanslarımıza hazırlanmak amacıyla Leyla tarafından saklanmasına açık rıza veriyorum. İstediğim zaman silinmelerini isteyebilirim.</label></div>
+        </section>
+
+          <div class="note-trap" aria-hidden="true">
+            <label for="website">Burayı boş bırakın</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="note-send"><button type="submit" class="btn btn-primary btn-lg">Formu gönder</button></div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="note-paper intake-done" id="intake-done" tabindex="-1" hidden>
+          <p class="join-done-title">Teşekkür ederim, formunuz bana ulaştı.</p>
+          <p>İlk seansımızdan önce okuyacağım. O zamana kadar bir şey değişirse bana yazmanız yeterli.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ecru-deep intake-foot"><p>Bu çalışma eğitim amaçlıdır ve tıbbi bakımın yerini tutmaz.</p></footer>
+
+  <script src="intake.js"></script>
+</body>
+</html>

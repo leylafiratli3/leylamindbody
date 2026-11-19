@@ -5,15 +5,7 @@ const { db, schema } = require('../db');
 
 const router = express.Router();
 
-// Same Bearer-password guard as the registrations admin (see server.js).
-function requireAdmin(req, res, next) {
-  const auth = req.headers.authorization;
-  const password = process.env.ADMIN_PASSWORD || 'leyla2026';
-  if (!auth || auth !== `Bearer ${password}`) {
-    return res.status(401).json({ error: 'Yetkisiz erişim' });
-  }
-  next();
-}
+const { requireAdmin } = require('../lib/admin-auth');
 
 // Buyer emails live in Supabase Auth, not Neon — resolve them via the admin API,
 // caching per request since one buyer often owns several products.
